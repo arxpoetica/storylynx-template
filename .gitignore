@@ -1,0 +1,8 @@
+.DS_Store
+node_modules
+/__sapper__/
+.esm-cache
+.env
+.env.*
+!.env.defaults
+/_hidden
