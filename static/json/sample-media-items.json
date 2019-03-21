@@ -1,915 +1,1185 @@
 [
 	{
-		"title": "Fugiat cupidatat ex ipsum nostrud dolor reprehenderit est ullamco non laboris. (1)",
-		"summary": "cupidatat anim duis labore in deserunt sunt laboris nostrud consequat minim culpa laboris elit veniam irure aliqua officia est duis consectetur tempor reprehenderit dolore mollit excepteur ut et reprehenderit amet exercitation laboris deserunt dolor proident aliqua cillum Lorem aliquip cillum duis consequat",
-		"timestamp": 1552317502038,
-		"timestampFormatted": "Mar 11, 2019",
-		"type": 601,
-		"src": "http://lorempixel.com/460/180/nature",
+		"title": "Ad ullamco deserunt aliqua nisi cillum ullamco. (1)",
+		"summary": "qui aliqua duis Lorem magna enim aliqua esse officia ullamco ea ex ipsum in nostrud aliqua",
+		"timestamp": 1551159479099,
+		"timestampFormatted": "Feb 25, 2019",
+		"type": 248,
+		"src": "http://lorempixel.com/560/280/nature",
 		"url": "/path/to/article-1.html",
 		"image": "img/_examples/news-list-1.png",
-		"imageAlt": "veniam voluptate dolore consectetur dolor sit"
+		"tags": [
+			"nature",
+			"transport"
+		]
 	},
 	{
-		"title": "Occaecat id ipsum aliquip ad quis. (2)",
-		"summary": "proident nulla non duis sint mollit laborum enim consequat minim incididunt aute exercitation amet voluptate consectetur et sunt velit anim eiusmod sunt velit culpa adipisicing laborum amet",
-		"timestamp": 1549833502041,
-		"timestampFormatted": "Feb 10, 2019",
-		"type": 198,
-		"src": "http://lorempixel.com/200/80/business",
+		"title": "Laboris qui consectetur mollit velit reprehenderit aliquip nisi excepteur proident. (2)",
+		"summary": "enim occaecat occaecat reprehenderit elit magna mollit excepteur aute non Lorem esse aute anim ex quis ut eiusmod ea enim nisi magna commodo anim velit labore mollit velit officia aliqua minim in culpa est officia esse sit adipisicing occaecat magna laborum duis",
+		"timestamp": 1549186679102,
+		"timestampFormatted": "Feb 3, 2019",
+		"type": 314,
+		"src": "http://lorempixel.com/180/620/food",
 		"url": "/path/to/article-2.html",
 		"image": "img/_examples/news-list-2.png",
-		"imageAlt": "veniam ullamco laboris proident sit dolore"
+		"tags": [
+			"food",
+			"transport",
+			"people",
+			"sports"
+		]
 	},
 	{
-		"title": "Anim et irure qui officia nostrud aliqua dolore nostrud est ullamco ad labore aute. (3)",
-		"summary": "mollit sit nisi irure Lorem cupidatat sunt sit nostrud labore sunt laborum labore duis ad amet excepteur ad id irure consequat cillum id elit id in culpa aliqua pariatur dolor cillum pariatur in ipsum excepteur nisi enim exercitation veniam mollit id nostrud est et",
-		"timestamp": 1547864302041,
-		"timestampFormatted": "Jan 18, 2019",
-		"type": 168,
-		"src": "http://lorempixel.com/300/600/cats",
+		"title": "In anim eiusmod eiusmod quis enim cillum officia elit Lorem dolore sunt. (3)",
+		"summary": "ea consequat quis do exercitation nisi sint consequat consectetur et duis ut adipisicing sit ut qui aliquip qui id nulla velit aute nulla excepteur veniam nostrud eiusmod id cupidatat enim eiusmod ex labore culpa occaecat magna laboris",
+		"timestamp": 1552973879102,
+		"timestampFormatted": "Mar 18, 2019",
+		"type": 244,
+		"src": "http://lorempixel.com/600/200/food",
 		"url": "/path/to/article-3.html",
 		"image": "img/_examples/news-list-3.png",
-		"imageAlt": "cillum laboris et anim anim consectetur"
+		"tags": [
+			"food"
+		]
 	},
 	{
-		"title": "Cillum tempor minim eiusmod tempor nulla labore sint fugiat nisi qui nisi aute aliqua. (4)",
-		"summary": "pariatur sunt veniam duis ea magna aliquip minim est do fugiat ullamco pariatur proident reprehenderit sit ut proident aliquip mollit nostrud occaecat non occaecat velit voluptate aute",
-		"timestamp": 1546539502042,
-		"timestampFormatted": "Jan 3, 2019",
-		"type": 389,
-		"src": "http://lorempixel.com/140/520/business",
+		"title": "Proident minim qui duis quis non velit aliqua excepteur laborum enim incididunt nulla. (4)",
+		"summary": "fugiat proident ea dolore culpa",
+		"timestamp": 1547077079102,
+		"timestampFormatted": "Jan 9, 2019",
+		"type": 462,
+		"src": "http://lorempixel.com/120/100/abstract",
 		"url": "/path/to/article-4.html",
 		"image": "img/_examples/news-list-4.png",
-		"imageAlt": "mollit deserunt mollit nisi proident sint"
+		"tags": [
+			"abstract"
+		]
 	},
 	{
-		"title": "Consequat est esse eiusmod elit adipisicing labore deserunt magna voluptate ut occaecat quis dolore. (5)",
-		"summary": "nulla do adipisicing velit proident laboris aute voluptate ipsum eu tempor ipsum voluptate aliqua elit culpa excepteur eu duis aliquip nulla sit in ut aliquip officia eu Lorem eiusmod amet sit proident cillum",
-		"timestamp": 1550287102042,
-		"timestampFormatted": "Feb 15, 2019",
-		"type": 313,
-		"src": "http://lorempixel.com/200/360/nature",
+		"title": "Sit laboris anim pariatur esse voluptate dolor irure magna ad pariatur aute. (5)",
+		"summary": "pariatur sunt proident cupidatat consequat anim pariatur pariatur laboris commodo aliqua fugiat aute elit enim Lorem",
+		"timestamp": 1546292279103,
+		"timestampFormatted": "Dec 31, 2018",
+		"type": 618,
+		"src": "http://lorempixel.com/240/100/transport",
 		"url": "/path/to/article-5.html",
 		"image": "img/_examples/news-list-1.png",
-		"imageAlt": "aliquip anim duis officia cillum magna"
+		"tags": [
+			"cats",
+			"transport",
+			"food"
+		]
 	},
 	{
-		"title": "Enim dolor eiusmod aute ex exercitation excepteur consectetur aliquip nisi officia ipsum. (6)",
-		"summary": "ipsum et laboris adipisicing labore duis velit minim do incididunt est qui ullamco occaecat adipisicing excepteur fugiat aliquip tempor adipisicing tempor ullamco proident reprehenderit non eiusmod do dolor non eu elit",
-		"timestamp": 1552871902042,
-		"timestampFormatted": "Mar 17, 2019",
-		"type": 561,
-		"src": "http://lorempixel.com/460/620/business",
+		"title": "Officia pariatur sit eu pariatur. (6)",
+		"summary": "adipisicing nisi tempor nisi irure laboris enim incididunt elit qui tempor dolor excepteur esse ipsum ipsum anim culpa irure minim excepteur aliquip aliquip dolor proident",
+		"timestamp": 1547257079103,
+		"timestampFormatted": "Jan 11, 2019",
+		"type": 282,
+		"src": "http://lorempixel.com/100/360/technics",
 		"url": "/path/to/article-6.html",
 		"image": "img/_examples/news-list-2.png",
-		"imageAlt": "sunt fugiat labore aliqua consequat veniam"
+		"tags": [
+			"technics",
+			"cats"
+		]
 	},
 	{
-		"title": "Aliquip tempor duis reprehenderit veniam laborum. (7)",
-		"summary": "veniam proident voluptate labore ut elit culpa pariatur voluptate magna commodo in cillum",
-		"timestamp": 1550099902042,
-		"timestampFormatted": "Feb 13, 2019",
-		"type": 416,
-		"src": "http://lorempixel.com/320/380/food",
+		"title": "Nostrud enim quis eu labore qui reprehenderit qui duis sit cupidatat pariatur id. (7)",
+		"summary": "in in duis proident nisi adipisicing ut aute ex sint sint enim sint non amet id amet",
+		"timestamp": 1552973879103,
+		"timestampFormatted": "Mar 18, 2019",
+		"type": 135,
+		"src": "http://lorempixel.com/600/600/city",
 		"url": "/path/to/article-7.html",
 		"image": "img/_examples/news-list-3.png",
-		"imageAlt": "voluptate dolore sint nostrud veniam et"
+		"tags": [
+			"city",
+			"technics",
+			"food"
+		]
 	},
 	{
-		"title": "Cupidatat mollit dolore aliquip adipisicing enim aliquip aliquip cupidatat. (8)",
-		"summary": "officia consequat occaecat nisi cupidatat eiusmod eiusmod labore sunt eiusmod cupidatat veniam aliqua cillum proident do ad ut incididunt ex nisi exercitation eiusmod quis exercitation amet",
-		"timestamp": 1546525102042,
-		"timestampFormatted": "Jan 3, 2019",
-		"type": 138,
-		"src": "http://lorempixel.com/640/540/technics",
+		"title": "Nostrud anim occaecat dolore enim quis tempor commodo non eu elit sint magna aliquip Lorem. (8)",
+		"summary": "culpa labore in nostrud eu irure reprehenderit ea id id id nulla nisi sit",
+		"timestamp": 1551789479103,
+		"timestampFormatted": "Mar 5, 2019",
+		"type": 621,
+		"src": "http://lorempixel.com/100/420/sports",
 		"url": "/path/to/article-8.html",
 		"image": "img/_examples/news-list-4.png",
-		"imageAlt": "cupidatat ipsum do qui sunt dolore"
+		"tags": [
+			"fashion",
+			"sports",
+			"animals"
+		]
 	},
 	{
-		"title": "Laboris ipsum duis eu ad irure proident ipsum sunt sunt laborum non. (9)",
-		"summary": "laborum consectetur esse laborum id dolor fugiat laboris enim ex voluptate ullamco aliqua amet commodo fugiat dolore deserunt consectetur ad",
-		"timestamp": 1545463102042,
-		"timestampFormatted": "Dec 22, 2018",
-		"type": 442,
-		"src": "http://lorempixel.com/460/620/nightlife",
+		"title": "Quis voluptate ullamco nostrud qui fugiat fugiat. (9)",
+		"summary": "aute eu culpa consequat duis ex officia ad voluptate consequat ut qui proident ipsum aute sint laborum minim enim ad duis qui incididunt esse sit deserunt magna proident aliquip sit aliquip et et voluptate et id irure velit velit minim",
+		"timestamp": 1552945079103,
+		"timestampFormatted": "Mar 18, 2019",
+		"type": 355,
+		"src": "http://lorempixel.com/620/400/nature",
 		"url": "/path/to/article-9.html",
 		"image": "img/_examples/news-list-1.png",
-		"imageAlt": "adipisicing in voluptate duis veniam proident"
+		"tags": [
+			"nature"
+		]
 	},
 	{
-		"title": "Ex enim exercitation reprehenderit qui qui voluptate amet magna cupidatat velit. (10)",
-		"summary": "magna consectetur ullamco eiusmod incididunt cillum ex adipisicing amet mollit qui cupidatat elit ullamco cillum esse",
-		"timestamp": 1549441102042,
-		"timestampFormatted": "Feb 6, 2019",
-		"type": 691,
-		"src": "http://lorempixel.com/200/160/food",
+		"title": "Pariatur excepteur anim reprehenderit irure aliqua fugiat esse incididunt elit. (10)",
+		"summary": "duis laboris magna anim incididunt adipisicing elit duis dolore aliqua ipsum sint amet enim eiusmod dolore culpa ea magna deserunt commodo voluptate",
+		"timestamp": 1547656679103,
+		"timestampFormatted": "Jan 16, 2019",
+		"type": 189,
+		"src": "http://lorempixel.com/400/440/city",
 		"url": "/path/to/article-10.html",
 		"image": "img/_examples/news-list-2.png",
-		"imageAlt": "mollit deserunt excepteur ut fugiat pariatur"
+		"tags": [
+			"city"
+		]
 	},
 	{
-		"title": "Laboris enim veniam ipsum ut in reprehenderit laboris esse ullamco sunt mollit ut do. (11)",
-		"summary": "mollit sit exercitation aliqua id officia laborum enim mollit duis anim tempor proident labore mollit qui excepteur eiusmod voluptate aute adipisicing et sit cillum nostrud reprehenderit fugiat labore consectetur tempor nisi duis eu magna occaecat duis cillum labore et incididunt laborum consequat nulla ad",
-		"timestamp": 1550672302042,
-		"timestampFormatted": "Feb 20, 2019",
-		"type": 381,
-		"src": "http://lorempixel.com/580/500/cats",
+		"title": "Ipsum exercitation exercitation in labore proident non ipsum commodo culpa dolore. (11)",
+		"summary": "veniam officia minim esse ipsum sint eu quis non in eiusmod qui ea mollit irure laboris adipisicing velit aliqua ullamco ullamco",
+		"timestamp": 1552383479103,
+		"timestampFormatted": "Mar 12, 2019",
+		"type": 323,
+		"src": "http://lorempixel.com/140/420/cats",
 		"url": "/path/to/article-11.html",
 		"image": "img/_examples/news-list-3.png",
-		"imageAlt": "anim laborum laboris dolor aliqua in"
+		"tags": [
+			"cats",
+			"abstract"
+		]
 	},
 	{
-		"title": "Cillum ullamco laboris nisi incididunt proident aute excepteur. (12)",
-		"summary": "ad cillum eiusmod et eu voluptate deserunt tempor dolore est exercitation proident reprehenderit excepteur ea eiusmod",
-		"timestamp": 1547068702042,
-		"timestampFormatted": "Jan 9, 2019",
-		"type": 114,
-		"src": "http://lorempixel.com/260/200/business",
+		"title": "Ex quis mollit adipisicing elit eiusmod enim ea. (12)",
+		"summary": "minim incididunt ut sint labore fugiat ad fugiat sit labore labore et exercitation non est sunt deserunt cupidatat tempor culpa pariatur officia esse labore anim aliqua elit labore in fugiat incididunt velit est magna sit",
+		"timestamp": 1551753479104,
+		"timestampFormatted": "Mar 4, 2019",
+		"type": 253,
+		"src": "http://lorempixel.com/600/580/nightlife",
 		"url": "/path/to/article-12.html",
 		"image": "img/_examples/news-list-4.png",
-		"imageAlt": "ad minim eu culpa cillum fugiat"
+		"tags": [
+			"nightlife",
+			"animals"
+		]
 	},
 	{
-		"title": "Excepteur proident aute laborum exercitation velit irure. (13)",
-		"summary": "laboris consequat sunt culpa dolore reprehenderit sint sunt aliqua enim ullamco deserunt",
-		"timestamp": 1548296302042,
-		"timestampFormatted": "Jan 23, 2019",
-		"type": 213,
-		"src": "http://lorempixel.com/620/640/technics",
+		"title": "Velit deserunt irure ut dolor officia esse Lorem occaecat ex fugiat irure et ea excepteur. (13)",
+		"summary": "laborum duis elit eu cillum veniam aute nulla eu nulla sint laboris ad laborum enim mollit Lorem culpa reprehenderit in",
+		"timestamp": 1548542279104,
+		"timestampFormatted": "Jan 26, 2019",
+		"type": 547,
+		"src": "http://lorempixel.com/180/260/food",
 		"url": "/path/to/article-13.html",
 		"image": "img/_examples/news-list-1.png",
-		"imageAlt": "qui proident dolore sunt officia laboris"
+		"tags": [
+			"food",
+			"nature",
+			"transport"
+		]
 	},
 	{
-		"title": "Voluptate exercitation et cillum tempor voluptate tempor proident id cupidatat sunt ex ut et. (14)",
-		"summary": "incididunt incididunt sit est qui ea minim labore sit ipsum",
-		"timestamp": 1549469902042,
-		"timestampFormatted": "Feb 6, 2019",
-		"type": 581,
-		"src": "http://lorempixel.com/660/660/business",
+		"title": "Officia laboris in voluptate Lorem do sit dolor adipisicing ad nostrud aliquip adipisicing. (14)",
+		"summary": "ipsum labore anim quis cupidatat aliqua anim aliqua et duis dolor deserunt ex ipsum aliqua dolore enim est adipisicing commodo qui officia excepteur nostrud tempor cupidatat deserunt reprehenderit velit voluptate sit aute consequat adipisicing incididunt et",
+		"timestamp": 1552531079104,
+		"timestampFormatted": "Mar 13, 2019",
+		"type": 212,
+		"src": "http://lorempixel.com/340/180/technics",
 		"url": "/path/to/article-14.html",
 		"image": "img/_examples/news-list-2.png",
-		"imageAlt": "laboris aute cillum quis sit culpa"
+		"tags": [
+			"technics"
+		]
 	},
 	{
-		"title": "Ullamco fugiat cillum nostrud deserunt magna elit magna deserunt enim. (15)",
-		"summary": "quis est laboris labore in reprehenderit Lorem in deserunt amet dolore excepteur anim ullamco enim ut et fugiat nisi duis adipisicing do culpa sit aliquip veniam quis incididunt exercitation",
-		"timestamp": 1550492302042,
+		"title": "Nostrud eu labore officia sit minim pariatur occaecat mollit culpa aliqua veniam reprehenderit ad. (15)",
+		"summary": "dolore proident duis magna adipisicing aute nulla non enim esse est nostrud ad id pariatur Lorem minim nisi consectetur laborum enim duis qui pariatur sit",
+		"timestamp": 1550547479104,
 		"timestampFormatted": "Feb 18, 2019",
-		"type": 235,
-		"src": "http://lorempixel.com/380/120/city",
+		"type": 219,
+		"src": "http://lorempixel.com/80/220/city",
 		"url": "/path/to/article-15.html",
 		"image": "img/_examples/news-list-3.png",
-		"imageAlt": "id commodo ex non ut in"
+		"tags": [
+			"city",
+			"abstract"
+		]
 	},
 	{
-		"title": "Voluptate Lorem elit labore officia est et adipisicing nulla. (16)",
-		"summary": "fugiat consectetur veniam id laborum sunt enim eu velit ipsum minim amet ea culpa veniam consectetur velit eu ex ipsum est commodo commodo aliquip est cupidatat do veniam magna qui ex excepteur pariatur et sint magna pariatur velit laborum voluptate esse occaecat anim dolor",
-		"timestamp": 1549070302042,
-		"timestampFormatted": "Feb 1, 2019",
-		"type": 621,
-		"src": "http://lorempixel.com/540/500/people",
+		"title": "Nisi ipsum sit veniam occaecat aute amet. (16)",
+		"summary": "cupidatat officia laboris nostrud Lorem ut occaecat ullamco elit exercitation non ullamco commodo aute ut adipisicing aute sit enim aliqua aliquip tempor enim ut ut sunt et consequat nisi incididunt nostrud excepteur incididunt eiusmod quis ut laboris reprehenderit voluptate ut eiusmod",
+		"timestamp": 1553020679104,
+		"timestampFormatted": "Mar 19, 2019",
+		"type": 147,
+		"src": "http://lorempixel.com/500/260/nature",
 		"url": "/path/to/article-16.html",
 		"image": "img/_examples/news-list-4.png",
-		"imageAlt": "minim quis do laboris aliqua ut"
+		"tags": [
+			"nature"
+		]
 	},
 	{
-		"title": "Culpa mollit velit consectetur dolore deserunt aliqua consectetur quis pariatur consectetur proident veniam. (17)",
-		"summary": "esse nulla consequat sunt incididunt excepteur enim eu adipisicing cillum magna commodo nisi enim quis laborum voluptate magna pariatur fugiat laboris ut voluptate ex sit ea pariatur officia ea Lorem commodo mollit nostrud aliquip",
-		"timestamp": 1546820302043,
-		"timestampFormatted": "Jan 6, 2019",
-		"type": 516,
-		"src": "http://lorempixel.com/160/540/transport",
+		"title": "Minim et mollit do id. (17)",
+		"summary": "nostrud minim eu dolor reprehenderit consequat sint eiusmod qui tempor consequat quis proident esse anim commodo ullamco",
+		"timestamp": 1551267479104,
+		"timestampFormatted": "Feb 27, 2019",
+		"type": 204,
+		"src": "http://lorempixel.com/540/520/city",
 		"url": "/path/to/article-17.html",
 		"image": "img/_examples/news-list-1.png",
-		"imageAlt": "aute minim exercitation mollit reprehenderit non"
+		"tags": [
+			"sports",
+			"city",
+			"business"
+		]
 	},
 	{
-		"title": "Magna in excepteur laborum ipsum. (18)",
-		"summary": "qui cupidatat tempor sit ad in do in cillum excepteur dolore ullamco velit velit consequat ex ea ea esse laboris ea labore culpa non tempor exercitation tempor adipisicing labore enim officia",
-		"timestamp": 1548418702043,
-		"timestampFormatted": "Jan 25, 2019",
-		"type": 475,
-		"src": "http://lorempixel.com/520/600/sports",
+		"title": "Adipisicing minim ut enim labore eiusmod nulla occaecat. (18)",
+		"summary": "exercitation laboris occaecat id irure qui cillum sit ut ea non duis commodo consequat consequat sit irure nostrud esse in sint in ex exercitation enim veniam exercitation sint esse laborum ea pariatur ipsum dolor ut eiusmod sit et amet",
+		"timestamp": 1550245079104,
+		"timestampFormatted": "Feb 15, 2019",
+		"type": 365,
+		"src": "http://lorempixel.com/340/500/cats",
 		"url": "/path/to/article-18.html",
 		"image": "img/_examples/news-list-2.png",
-		"imageAlt": "eu aliqua enim sunt velit commodo"
+		"tags": [
+			"cats"
+		]
 	},
 	{
-		"title": "Elit Lorem labore enim voluptate ipsum sunt sit excepteur fugiat sint qui exercitation proident ut. (19)",
-		"summary": "incididunt elit minim occaecat ipsum in tempor qui commodo non consequat proident quis irure enim laboris sint tempor tempor nisi sunt mollit ipsum do consectetur amet nostrud culpa ea elit",
-		"timestamp": 1551194302043,
-		"timestampFormatted": "Feb 26, 2019",
-		"type": 343,
-		"src": "http://lorempixel.com/260/420/people",
+		"title": "Nostrud non minim id commodo cupidatat id est pariatur consequat. (19)",
+		"summary": "consequat in est est sit laborum",
+		"timestamp": 1546756679104,
+		"timestampFormatted": "Jan 5, 2019",
+		"type": 592,
+		"src": "http://lorempixel.com/140/580/cats",
 		"url": "/path/to/article-19.html",
 		"image": "img/_examples/news-list-3.png",
-		"imageAlt": "aliqua enim labore anim nisi est"
+		"tags": [
+			"cats",
+			"nature"
+		]
 	},
 	{
-		"title": "Enim deserunt laboris quis minim. (20)",
-		"summary": "dolor reprehenderit mollit ea excepteur voluptate cillum laborum nostrud nostrud pariatur nulla aliquip cupidatat incididunt eiusmod voluptate id cillum magna ut veniam esse anim tempor consequat consequat minim labore officia incididunt qui dolor fugiat nulla commodo labore deserunt",
-		"timestamp": 1551158302043,
-		"timestampFormatted": "Feb 25, 2019",
-		"type": 596,
-		"src": "http://lorempixel.com/600/460/transport",
+		"title": "Ut officia sunt anim eiusmod minim. (20)",
+		"summary": "enim laboris occaecat officia amet Lorem adipisicing incididunt exercitation ex Lorem proident voluptate excepteur proident",
+		"timestamp": 1548977879104,
+		"timestampFormatted": "Jan 31, 2019",
+		"type": 488,
+		"src": "http://lorempixel.com/200/580/technics",
 		"url": "/path/to/article-20.html",
 		"image": "img/_examples/news-list-4.png",
-		"imageAlt": "magna labore dolore dolore anim occaecat"
+		"tags": [
+			"technics",
+			"city"
+		]
 	},
 	{
-		"title": "Ad commodo consequat est nostrud tempor consectetur fugiat reprehenderit reprehenderit occaecat non mollit. (21)",
-		"summary": "irure laborum velit incididunt nostrud dolor eu excepteur",
-		"timestamp": 1550045902043,
-		"timestampFormatted": "Feb 13, 2019",
-		"type": 276,
-		"src": "http://lorempixel.com/160/240/transport",
+		"title": "Sunt exercitation aute veniam ut labore mollit sunt pariatur id culpa. (21)",
+		"summary": "ullamco eiusmod commodo ipsum ea commodo esse elit esse consequat ea aliqua veniam cillum consequat culpa minim laborum laborum veniam velit sunt aute velit",
+		"timestamp": 1550176679105,
+		"timestampFormatted": "Feb 14, 2019",
+		"type": 248,
+		"src": "http://lorempixel.com/540/100/animals",
 		"url": "/path/to/article-21.html",
 		"image": "img/_examples/news-list-1.png",
-		"imageAlt": "sint elit ex incididunt esse cupidatat"
+		"tags": [
+			"business",
+			"animals",
+			"sports"
+		]
 	},
 	{
-		"title": "Minim nostrud tempor culpa quis cupidatat magna eu enim eu consequat ex anim fugiat. (22)",
-		"summary": "fugiat commodo consectetur culpa elit ipsum veniam mollit laboris ea anim ullamco do enim qui exercitation",
-		"timestamp": 1546240702043,
-		"timestampFormatted": "Dec 31, 2018",
-		"type": 690,
-		"src": "http://lorempixel.com/280/260/sports",
+		"title": "Labore duis occaecat ea anim laboris irure elit consequat ullamco. (22)",
+		"summary": "ullamco eiusmod cupidatat pariatur do veniam ut ullamco est qui voluptate aute ad fugiat nostrud pariatur cupidatat officia cupidatat in excepteur Lorem laborum",
+		"timestamp": 1552178279105,
+		"timestampFormatted": "Mar 9, 2019",
+		"type": 140,
+		"src": "http://lorempixel.com/300/520/people",
 		"url": "/path/to/article-22.html",
 		"image": "img/_examples/news-list-2.png",
-		"imageAlt": "eiusmod magna voluptate proident magna eiusmod"
+		"tags": [
+			"people",
+			"nature"
+		]
 	},
 	{
-		"title": "Ipsum anim nisi tempor proident Lorem voluptate do eiusmod ea ea excepteur duis anim amet. (23)",
-		"summary": "aute in nisi nisi magna sunt officia elit et elit dolor duis ut enim nulla eu fugiat",
-		"timestamp": 1551320302043,
-		"timestampFormatted": "Feb 27, 2019",
-		"type": 697,
-		"src": "http://lorempixel.com/440/460/animals",
+		"title": "Aute veniam in magna esse laboris consequat est laborum aute laboris ea dolor Lorem. (23)",
+		"summary": "tempor in qui laborum ex quis nulla Lorem",
+		"timestamp": 1551451079105,
+		"timestampFormatted": "Mar 1, 2019",
+		"type": 396,
+		"src": "http://lorempixel.com/620/220/business",
 		"url": "/path/to/article-23.html",
 		"image": "img/_examples/news-list-3.png",
-		"imageAlt": "amet nisi sit eiusmod magna in"
+		"tags": [
+			"business",
+			"fashion"
+		]
 	},
 	{
-		"title": "Excepteur esse laboris ad anim eiusmod consequat ullamco ea irure pariatur voluptate ut. (24)",
-		"summary": "qui aliquip officia amet id enim dolor commodo commodo do commodo aliqua culpa nisi laborum aute ipsum exercitation occaecat officia proident occaecat commodo",
-		"timestamp": 1547903902043,
-		"timestampFormatted": "Jan 19, 2019",
-		"type": 237,
-		"src": "http://lorempixel.com/520/180/city",
+		"title": "Est non quis minim aliquip anim magna aliqua non id. (24)",
+		"summary": "ex id aliqua eu laboris ullamco laboris consequat eu laboris aliquip sit incididunt aliquip pariatur aliqua nulla nostrud dolor quis do",
+		"timestamp": 1551235079105,
+		"timestampFormatted": "Feb 26, 2019",
+		"type": 321,
+		"src": "http://lorempixel.com/360/100/city",
 		"url": "/path/to/article-24.html",
 		"image": "img/_examples/news-list-4.png",
-		"imageAlt": "voluptate eiusmod sit anim aliqua voluptate"
+		"tags": [
+			"city",
+			"animals"
+		]
 	},
 	{
-		"title": "Velit aute velit irure est eu nostrud nostrud incididunt anim ea nostrud ex ut. (25)",
-		"summary": "aute ipsum ex in nisi excepteur nisi ut culpa pariatur occaecat aliqua amet eu exercitation enim aliqua labore cillum incididunt duis duis tempor commodo qui fugiat dolor ullamco qui laboris aliquip nulla do commodo ex cupidatat",
-		"timestamp": 1546013902043,
-		"timestampFormatted": "Dec 28, 2018",
-		"type": 602,
-		"src": "http://lorempixel.com/360/80/abstract",
+		"title": "Anim do eu irure aliquip labore eu exercitation sint id elit dolore eu nulla nisi. (25)",
+		"summary": "reprehenderit quis ut id consectetur magna aute dolore amet consequat voluptate ea deserunt excepteur excepteur nisi culpa labore et id",
+		"timestamp": 1551011879105,
+		"timestampFormatted": "Feb 24, 2019",
+		"type": 610,
+		"src": "http://lorempixel.com/400/160/nightlife",
 		"url": "/path/to/article-25.html",
 		"image": "img/_examples/news-list-1.png",
-		"imageAlt": "adipisicing qui sit commodo duis enim"
+		"tags": [
+			"nightlife"
+		]
 	},
 	{
-		"title": "Ullamco enim veniam duis adipisicing officia eu. (26)",
-		"summary": "eu id commodo mollit irure irure incididunt esse incididunt quis fugiat est reprehenderit velit do aliquip adipisicing nulla qui cupidatat qui irure dolor",
-		"timestamp": 1547403502043,
-		"timestampFormatted": "Jan 13, 2019",
-		"type": 372,
-		"src": "http://lorempixel.com/480/560/people",
+		"title": "Magna cillum eiusmod qui sit do est laborum tempor voluptate ex. (26)",
+		"summary": "id cupidatat commodo officia et proident magna proident laborum Lorem quis consequat Lorem labore ea exercitation laboris commodo anim velit dolore qui sunt sunt reprehenderit Lorem velit ea sint nulla minim do reprehenderit incididunt duis pariatur ullamco ipsum reprehenderit",
+		"timestamp": 1546411079105,
+		"timestampFormatted": "Jan 1, 2019",
+		"type": 633,
+		"src": "http://lorempixel.com/320/460/technics",
 		"url": "/path/to/article-26.html",
 		"image": "img/_examples/news-list-2.png",
-		"imageAlt": "nisi amet sit Lorem excepteur voluptate"
+		"tags": [
+			"technics"
+		]
 	},
 	{
-		"title": "Deserunt enim aliqua est mollit consectetur aliqua labore ad excepteur pariatur consectetur. (27)",
-		"summary": "adipisicing ex ipsum amet sit sit cupidatat ipsum mollit id mollit ad veniam non enim laboris adipisicing ad aliquip consequat quis nisi anim consequat ea magna enim amet tempor dolore eiusmod est labore",
-		"timestamp": 1548033502043,
-		"timestampFormatted": "Jan 20, 2019",
-		"type": 472,
-		"src": "http://lorempixel.com/120/380/technics",
+		"title": "Nostrud sit officia nostrud Lorem exercitation sit eiusmod deserunt non labore laboris occaecat quis Lorem. (27)",
+		"summary": "aliqua do dolor do consequat velit magna nisi est magna cupidatat consectetur cillum culpa cupidatat laboris dolor nulla labore ad ullamco ut non non enim velit",
+		"timestamp": 1548916679105,
+		"timestampFormatted": "Jan 30, 2019",
+		"type": 165,
+		"src": "http://lorempixel.com/620/560/nature",
 		"url": "/path/to/article-27.html",
 		"image": "img/_examples/news-list-3.png",
-		"imageAlt": "aliquip laborum in eiusmod tempor in"
+		"tags": [
+			"nature",
+			"sports"
+		]
 	},
 	{
-		"title": "Pariatur eu sunt do est excepteur magna aliquip cupidatat dolore. (28)",
-		"summary": "proident quis culpa nulla excepteur sit aliqua ea ut magna non in fugiat laborum adipisicing laboris cupidatat eu magna velit laboris qui minim adipisicing aute ipsum commodo consectetur ad id tempor irure eiusmod minim proident et duis sunt occaecat nulla sunt cillum excepteur non",
-		"timestamp": 1547489902043,
-		"timestampFormatted": "Jan 14, 2019",
-		"type": 280,
-		"src": "http://lorempixel.com/640/400/technics",
+		"title": "Dolor nisi aliqua pariatur incididunt mollit. (28)",
+		"summary": "culpa cupidatat nostrud occaecat dolore et tempor sunt eu dolore duis eiusmod et cupidatat deserunt adipisicing aliqua consectetur proident aliquip consectetur dolore elit enim est",
+		"timestamp": 1549276679105,
+		"timestampFormatted": "Feb 4, 2019",
+		"type": 245,
+		"src": "http://lorempixel.com/440/620/food",
 		"url": "/path/to/article-28.html",
 		"image": "img/_examples/news-list-4.png",
-		"imageAlt": "sit culpa adipisicing aute fugiat ad"
+		"tags": [
+			"food",
+			"cats"
+		]
 	},
 	{
-		"title": "Fugiat ad commodo exercitation eiusmod laboris minim amet nulla ipsum irure do reprehenderit reprehenderit. (29)",
-		"summary": "aliquip voluptate amet excepteur ad velit non laborum fugiat cupidatat ullamco eiusmod qui amet do nisi aute exercitation fugiat ex sit aliqua ullamco occaecat anim aliquip cillum nulla labore commodo adipisicing ex aliquip aute do exercitation duis et Lorem magna",
-		"timestamp": 1548638302043,
-		"timestampFormatted": "Jan 27, 2019",
-		"type": 581,
-		"src": "http://lorempixel.com/560/240/people",
+		"title": "In irure est commodo quis cupidatat. (29)",
+		"summary": "ex aute dolore et in ut reprehenderit exercitation culpa aliqua elit incididunt dolore sit deserunt qui reprehenderit do Lorem non Lorem deserunt laboris Lorem cupidatat enim labore incididunt aliquip ad amet duis non laborum nostrud irure",
+		"timestamp": 1551235079105,
+		"timestampFormatted": "Feb 26, 2019",
+		"type": 555,
+		"src": "http://lorempixel.com/160/260/food",
 		"url": "/path/to/article-29.html",
 		"image": "img/_examples/news-list-1.png",
-		"imageAlt": "et aliqua mollit labore Lorem mollit"
+		"tags": [
+			"food",
+			"abstract"
+		]
 	},
 	{
-		"title": "Excepteur est laborum fugiat dolore. (30)",
-		"summary": "laboris sunt elit nulla labore deserunt officia pariatur ut aute quis occaecat sit fugiat commodo laboris exercitation cillum adipisicing sint ex quis cupidatat pariatur veniam irure consequat reprehenderit quis cupidatat tempor consectetur officia id tempor minim",
-		"timestamp": 1547702302044,
-		"timestampFormatted": "Jan 16, 2019",
-		"type": 578,
-		"src": "http://lorempixel.com/380/460/cats",
+		"title": "Laborum laboris ea nisi reprehenderit adipisicing consectetur. (30)",
+		"summary": "consectetur eu ipsum esse anim commodo",
+		"timestamp": 1551008279105,
+		"timestampFormatted": "Feb 24, 2019",
+		"type": 505,
+		"src": "http://lorempixel.com/140/100/animals",
 		"url": "/path/to/article-30.html",
 		"image": "img/_examples/news-list-2.png",
-		"imageAlt": "excepteur do irure dolore tempor aute"
+		"tags": [
+			"food",
+			"animals",
+			"business",
+			"sports"
+		]
 	},
 	{
-		"title": "Velit dolore consectetur cupidatat laborum ea aliquip velit amet consectetur dolor. (31)",
-		"summary": "officia in fugiat veniam ut cillum irure duis esse fugiat cillum Lorem ullamco culpa reprehenderit ipsum quis velit ea proident tempor quis reprehenderit ea enim amet do reprehenderit sint magna",
-		"timestamp": 1552799902044,
-		"timestampFormatted": "Mar 16, 2019",
-		"type": 613,
-		"src": "http://lorempixel.com/660/80/abstract",
+		"title": "Occaecat adipisicing minim ea aute culpa ipsum pariatur aliqua minim. (31)",
+		"summary": "minim aute tempor dolor eiusmod eu ut ipsum culpa adipisicing adipisicing dolor irure dolor occaecat ea aliqua",
+		"timestamp": 1550223479105,
+		"timestampFormatted": "Feb 15, 2019",
+		"type": 334,
+		"src": "http://lorempixel.com/320/200/people",
 		"url": "/path/to/article-31.html",
 		"image": "img/_examples/news-list-3.png",
-		"imageAlt": "in excepteur sint minim labore aute"
+		"tags": [
+			"people"
+		]
 	},
 	{
-		"title": "Id occaecat veniam dolore pariatur magna velit. (32)",
-		"summary": "et exercitation aliqua pariatur Lorem enim in esse nisi velit aliquip sit mollit magna id eu excepteur eu qui sit aliquip occaecat",
-		"timestamp": 1546463902044,
-		"timestampFormatted": "Jan 2, 2019",
-		"type": 297,
-		"src": "http://lorempixel.com/420/440/food",
+		"title": "Labore non ullamco amet aliqua ipsum ut. (32)",
+		"summary": "qui labore deserunt incididunt nulla consectetur adipisicing laborum ea voluptate ullamco ad incididunt dolor sint nisi magna sit cillum laboris non",
+		"timestamp": 1552448279105,
+		"timestampFormatted": "Mar 12, 2019",
+		"type": 238,
+		"src": "http://lorempixel.com/540/220/sports",
 		"url": "/path/to/article-32.html",
 		"image": "img/_examples/news-list-4.png",
-		"imageAlt": "dolor non consequat anim ad nisi"
+		"tags": [
+			"sports",
+			"transport",
+			"city",
+			"fashion"
+		]
 	},
 	{
-		"title": "Excepteur quis occaecat ad culpa cillum eu eu ad magna. (33)",
-		"summary": "ad ut quis laboris occaecat consectetur in",
-		"timestamp": 1546593502044,
-		"timestampFormatted": "Jan 4, 2019",
-		"type": 380,
-		"src": "http://lorempixel.com/640/640/business",
+		"title": "Elit Lorem aliquip pariatur adipisicing sunt eu amet dolor elit qui elit minim ad. (33)",
+		"summary": "tempor est non est cupidatat cillum veniam ad cupidatat nostrud excepteur est cillum eiusmod velit minim proident qui duis eiusmod eiusmod elit ut id nisi dolore laborum ut proident qui ex ipsum duis eu ipsum culpa eu eiusmod",
+		"timestamp": 1550439479105,
+		"timestampFormatted": "Feb 17, 2019",
+		"type": 596,
+		"src": "http://lorempixel.com/600/520/people",
 		"url": "/path/to/article-33.html",
 		"image": "img/_examples/news-list-1.png",
-		"imageAlt": "enim laborum aliqua aute ullamco anim"
+		"tags": [
+			"people",
+			"nightlife",
+			"food"
+		]
 	},
 	{
-		"title": "Consequat ipsum tempor laboris minim mollit. (34)",
-		"summary": "ad id deserunt consectetur consequat sint ea adipisicing consequat eu excepteur incididunt adipisicing",
-		"timestamp": 1547385502044,
-		"timestampFormatted": "Jan 13, 2019",
-		"type": 552,
-		"src": "http://lorempixel.com/460/440/people",
+		"title": "Magna officia aute velit deserunt et duis sit incididunt. (34)",
+		"summary": "irure incididunt aute irure nostrud in elit consequat ipsum mollit est ad culpa consectetur veniam aute enim non occaecat ad voluptate laborum eiusmod eu incididunt minim mollit occaecat adipisicing consequat non amet qui et sint est commodo duis ullamco est tempor veniam aliquip culpa",
+		"timestamp": 1551548279106,
+		"timestampFormatted": "Mar 2, 2019",
+		"type": 673,
+		"src": "http://lorempixel.com/660/520/nightlife",
 		"url": "/path/to/article-34.html",
 		"image": "img/_examples/news-list-2.png",
-		"imageAlt": "excepteur veniam sint ad proident consequat"
+		"tags": [
+			"nightlife"
+		]
 	},
 	{
-		"title": "Enim est commodo eu reprehenderit. (35)",
-		"summary": "amet eiusmod duis aliqua aliquip Lorem est quis irure aute id mollit id esse sunt aliquip duis eu ullamco aute reprehenderit non adipisicing consectetur consectetur elit incididunt dolor esse incididunt ex exercitation non fugiat voluptate incididunt sunt in qui commodo et amet",
-		"timestamp": 1550737102044,
-		"timestampFormatted": "Feb 21, 2019",
-		"type": 262,
-		"src": "http://lorempixel.com/160/580/food",
+		"title": "Sint dolore adipisicing velit nostrud magna sunt amet occaecat. (35)",
+		"summary": "reprehenderit esse labore ullamco adipisicing reprehenderit culpa nostrud ex tempor laboris minim reprehenderit culpa nostrud quis sunt proident sunt minim ipsum adipisicing incididunt velit duis quis velit irure dolore reprehenderit laboris consectetur laboris excepteur est culpa duis esse nisi sint sint mollit qui",
+		"timestamp": 1548455879106,
+		"timestampFormatted": "Jan 25, 2019",
+		"type": 346,
+		"src": "http://lorempixel.com/240/640/technics",
 		"url": "/path/to/article-35.html",
 		"image": "img/_examples/news-list-3.png",
-		"imageAlt": "commodo mollit anim minim consequat excepteur"
+		"tags": [
+			"sports",
+			"technics",
+			"food"
+		]
 	},
 	{
-		"title": "Et laborum reprehenderit ad est. (36)",
-		"summary": "sunt qui non occaecat excepteur est cillum anim cupidatat reprehenderit",
-		"timestamp": 1548836302044,
-		"timestampFormatted": "Jan 30, 2019",
-		"type": 683,
-		"src": "http://lorempixel.com/580/560/cats",
+		"title": "Ipsum id aliquip ad do amet est commodo cupidatat nulla. (36)",
+		"summary": "velit officia exercitation veniam proident pariatur sit nisi culpa est officia mollit nostrud",
+		"timestamp": 1547653079106,
+		"timestampFormatted": "Jan 16, 2019",
+		"type": 515,
+		"src": "http://lorempixel.com/380/420/nightlife",
 		"url": "/path/to/article-36.html",
 		"image": "img/_examples/news-list-4.png",
-		"imageAlt": "sint cupidatat qui sunt laborum laborum"
+		"tags": [
+			"nightlife",
+			"abstract",
+			"nature",
+			"fashion"
+		]
 	},
 	{
-		"title": "Et ex id nisi ea aute consequat laborum elit duis esse fugiat labore exercitation. (37)",
-		"summary": "est ullamco pariatur non est ea anim sit tempor aliquip anim quis esse irure ut tempor fugiat proident reprehenderit proident est anim enim sint fugiat Lorem in incididunt deserunt incididunt adipisicing aliquip ea eu sunt laboris exercitation culpa ex ut pariatur occaecat tempor",
-		"timestamp": 1549228702044,
-		"timestampFormatted": "Feb 3, 2019",
-		"type": 332,
-		"src": "http://lorempixel.com/200/140/nature",
+		"title": "Culpa adipisicing sit sint proident. (37)",
+		"summary": "qui quis deserunt cillum et duis nisi dolore ipsum pariatur pariatur deserunt minim labore nisi amet mollit minim nostrud cillum eu in laborum Lorem labore mollit tempor id duis labore duis duis nulla",
+		"timestamp": 1549766279106,
+		"timestampFormatted": "Feb 9, 2019",
+		"type": 350,
+		"src": "http://lorempixel.com/480/280/sports",
 		"url": "/path/to/article-37.html",
 		"image": "img/_examples/news-list-1.png",
-		"imageAlt": "esse amet sit eiusmod voluptate proident"
+		"tags": [
+			"sports",
+			"transport"
+		]
 	},
 	{
-		"title": "Sunt velit ullamco cupidatat consectetur consequat. (38)",
-		"summary": "aliquip aliqua proident incididunt nostrud sint cupidatat voluptate",
-		"timestamp": 1545556702045,
-		"timestampFormatted": "Dec 23, 2018",
-		"type": 167,
-		"src": "http://lorempixel.com/100/400/city",
+		"title": "Aliqua qui veniam tempor aliqua ex. (38)",
+		"summary": "ex eu magna sunt minim pariatur ullamco qui ipsum deserunt officia mollit velit consectetur id reprehenderit consectetur eiusmod commodo aliquip incididunt laborum ullamco sit deserunt labore nulla adipisicing",
+		"timestamp": 1548070679106,
+		"timestampFormatted": "Jan 21, 2019",
+		"type": 352,
+		"src": "http://lorempixel.com/600/380/cats",
 		"url": "/path/to/article-38.html",
 		"image": "img/_examples/news-list-2.png",
-		"imageAlt": "quis ad sit proident ex enim"
+		"tags": [
+			"cats",
+			"people"
+		]
 	},
 	{
-		"title": "Ipsum ex nostrud exercitation in fugiat laborum ut excepteur voluptate. (39)",
-		"summary": "aliqua pariatur consectetur veniam culpa tempor commodo aute sint quis qui amet mollit excepteur irure veniam minim",
-		"timestamp": 1548472702045,
-		"timestampFormatted": "Jan 25, 2019",
-		"type": 212,
-		"src": "http://lorempixel.com/420/320/city",
+		"title": "Aliquip id eiusmod ipsum culpa officia dolor ullamco cillum est. (39)",
+		"summary": "aliquip exercitation laboris do aliqua anim voluptate cillum minim ullamco aute deserunt consectetur ut aliquip commodo veniam dolor magna est minim aliqua id duis laboris tempor est aliquip minim esse aliquip culpa fugiat consectetur cillum commodo minim ut sint incididunt ex pariatur eiusmod",
+		"timestamp": 1548333479106,
+		"timestampFormatted": "Jan 24, 2019",
+		"type": 255,
+		"src": "http://lorempixel.com/600/180/nightlife",
 		"url": "/path/to/article-39.html",
 		"image": "img/_examples/news-list-3.png",
-		"imageAlt": "ex culpa dolor occaecat ad proident"
+		"tags": [
+			"nightlife",
+			"nature",
+			"animals"
+		]
 	},
 	{
-		"title": "Est sunt qui non magna cupidatat incididunt deserunt. (40)",
-		"summary": "consequat anim proident tempor deserunt minim nostrud non Lorem dolore pariatur dolore ullamco anim tempor ad et pariatur velit dolore sint do magna voluptate nulla nostrud eiusmod quis in reprehenderit sint magna ut aute nostrud consequat ad sunt consequat",
-		"timestamp": 1548476302045,
-		"timestampFormatted": "Jan 25, 2019",
-		"type": 300,
-		"src": "http://lorempixel.com/140/80/fashion",
+		"title": "Dolor in dolor qui occaecat aute do cupidatat. (40)",
+		"summary": "duis dolor occaecat tempor anim non et ex ex Lorem dolore eu consequat voluptate eiusmod ullamco aliquip proident aute ut laborum nisi cupidatat",
+		"timestamp": 1548819479106,
+		"timestampFormatted": "Jan 29, 2019",
+		"type": 641,
+		"src": "http://lorempixel.com/240/180/food",
 		"url": "/path/to/article-40.html",
 		"image": "img/_examples/news-list-4.png",
-		"imageAlt": "officia Lorem reprehenderit enim tempor et"
+		"tags": [
+			"food",
+			"business"
+		]
 	},
 	{
-		"title": "Irure laborum aliquip ut nulla sint sunt reprehenderit aliqua. (41)",
-		"summary": "voluptate id incididunt aliqua laborum pariatur eiusmod do occaecat eu aliquip do quis mollit magna nisi duis elit ad amet elit in duis veniam enim quis ullamco sint dolor",
-		"timestamp": 1546244302045,
-		"timestampFormatted": "Dec 31, 2018",
-		"type": 486,
-		"src": "http://lorempixel.com/380/420/nightlife",
+		"title": "Et velit et esse exercitation aliqua exercitation labore sint magna sint pariatur fugiat. (41)",
+		"summary": "culpa nisi tempor ut aute exercitation elit irure commodo ad eiusmod elit ea eu ipsum excepteur fugiat ullamco excepteur ut in eiusmod veniam",
+		"timestamp": 1545809879106,
+		"timestampFormatted": "Dec 26, 2018",
+		"type": 429,
+		"src": "http://lorempixel.com/280/500/animals",
 		"url": "/path/to/article-41.html",
 		"image": "img/_examples/news-list-1.png",
-		"imageAlt": "ut in enim nulla minim tempor"
+		"tags": [
+			"sports",
+			"animals",
+			"cats"
+		]
 	},
 	{
-		"title": "Elit cillum et velit consectetur minim excepteur esse sit laborum consectetur veniam cillum. (42)",
-		"summary": "nostrud aliquip officia magna pariatur sint et non cillum excepteur",
-		"timestamp": 1550744302045,
-		"timestampFormatted": "Feb 21, 2019",
-		"type": 403,
-		"src": "http://lorempixel.com/260/520/city",
+		"title": "Dolore nostrud labore nisi consequat in pariatur minim et do eu. (42)",
+		"summary": "anim non culpa do et nostrud irure aliqua mollit elit enim duis excepteur occaecat officia culpa ex ad fugiat occaecat aliquip enim voluptate minim ad ipsum",
+		"timestamp": 1550151479106,
+		"timestampFormatted": "Feb 14, 2019",
+		"type": 397,
+		"src": "http://lorempixel.com/500/440/people",
 		"url": "/path/to/article-42.html",
 		"image": "img/_examples/news-list-2.png",
-		"imageAlt": "ad ut ipsum cillum anim pariatur"
+		"tags": [
+			"people"
+		]
 	},
 	{
-		"title": "Enim officia deserunt esse in ipsum officia magna minim excepteur tempor ad. (43)",
-		"summary": "ipsum nulla exercitation irure ut cillum cupidatat adipisicing minim nostrud officia ullamco velit Lorem consectetur cillum Lorem sit minim minim in laborum commodo labore occaecat culpa mollit aliquip id non proident occaecat fugiat magna",
-		"timestamp": 1552839502045,
-		"timestampFormatted": "Mar 17, 2019",
-		"type": 629,
-		"src": "http://lorempixel.com/500/160/sports",
+		"title": "Lorem elit Lorem consequat sint aliquip. (43)",
+		"summary": "proident anim culpa amet anim labore veniam elit nulla exercitation enim cillum consequat nisi veniam cillum aliquip aute ad in proident eiusmod velit velit laborum in qui",
+		"timestamp": 1552624679106,
+		"timestampFormatted": "Mar 14, 2019",
+		"type": 516,
+		"src": "http://lorempixel.com/400/500/animals",
 		"url": "/path/to/article-43.html",
 		"image": "img/_examples/news-list-3.png",
-		"imageAlt": "aliqua sint ipsum incididunt cillum veniam"
+		"tags": [
+			"animals"
+		]
 	},
 	{
-		"title": "Commodo nostrud qui amet elit aliqua veniam aute pariatur cillum est reprehenderit. (44)",
-		"summary": "consectetur occaecat ullamco in ad ex nostrud aliquip veniam minim officia ullamco eiusmod adipisicing non sint ad",
-		"timestamp": 1551046702045,
-		"timestampFormatted": "Feb 24, 2019",
-		"type": 217,
-		"src": "http://lorempixel.com/200/280/business",
+		"title": "In id aute aute aliqua est occaecat enim deserunt voluptate mollit esse excepteur labore. (44)",
+		"summary": "officia pariatur proident in proident aliqua culpa nostrud veniam ipsum enim officia dolore fugiat est in amet aliquip officia labore aliquip aliqua velit adipisicing deserunt culpa est consectetur sunt irure non",
+		"timestamp": 1550482679106,
+		"timestampFormatted": "Feb 18, 2019",
+		"type": 394,
+		"src": "http://lorempixel.com/200/320/people",
 		"url": "/path/to/article-44.html",
 		"image": "img/_examples/news-list-4.png",
-		"imageAlt": "labore veniam Lorem ut tempor id"
+		"tags": [
+			"cats",
+			"people",
+			"technics"
+		]
 	},
 	{
-		"title": "Sint aliqua sit sint proident consectetur labore occaecat ipsum aliquip. (45)",
-		"summary": "ipsum commodo duis voluptate laborum ex qui occaecat minim labore pariatur excepteur do labore occaecat ea eu consequat nisi ex occaecat magna elit non consequat quis et sunt amet",
-		"timestamp": 1551849502045,
-		"timestampFormatted": "Mar 5, 2019",
-		"type": 253,
-		"src": "http://lorempixel.com/300/420/food",
+		"title": "Duis elit anim exercitation excepteur ex exercitation ipsum minim veniam adipisicing dolore. (45)",
+		"summary": "ipsum veniam duis exercitation sint id excepteur sit mollit veniam labore aliquip proident magna consequat",
+		"timestamp": 1548056279106,
+		"timestampFormatted": "Jan 21, 2019",
+		"type": 182,
+		"src": "http://lorempixel.com/380/300/animals",
 		"url": "/path/to/article-45.html",
 		"image": "img/_examples/news-list-1.png",
-		"imageAlt": "laborum nisi ut laborum consectetur anim"
+		"tags": [
+			"animals"
+		]
 	},
 	{
-		"title": "Nulla ad ea esse do. (46)",
-		"summary": "non tempor ut laboris excepteur commodo in non sit irure exercitation reprehenderit consequat irure exercitation esse excepteur dolore Lorem ullamco id duis consequat quis laborum quis",
-		"timestamp": 1547684302045,
-		"timestampFormatted": "Jan 16, 2019",
-		"type": 529,
-		"src": "http://lorempixel.com/620/220/animals",
+		"title": "Ut occaecat et minim aliqua do consequat dolore nulla ullamco ex ex ipsum qui aliqua. (46)",
+		"summary": "dolore reprehenderit enim id sit esse eu aute sit",
+		"timestamp": 1549798679106,
+		"timestampFormatted": "Feb 10, 2019",
+		"type": 297,
+		"src": "http://lorempixel.com/420/520/fashion",
 		"url": "/path/to/article-46.html",
 		"image": "img/_examples/news-list-2.png",
-		"imageAlt": "laborum occaecat sit commodo cupidatat et"
+		"tags": [
+			"fashion",
+			"city"
+		]
 	},
 	{
-		"title": "Excepteur qui elit aliquip ea laboris. (47)",
-		"summary": "consequat incididunt eu magna officia culpa eu officia dolor eiusmod aute eu veniam aute aliqua id ut consectetur ad labore quis laborum aute non deserunt esse dolor irure deserunt",
-		"timestamp": 1551860302045,
-		"timestampFormatted": "Mar 6, 2019",
-		"type": 116,
-		"src": "http://lorempixel.com/360/560/people",
+		"title": "Enim et cillum non fugiat dolor laborum quis et et irure velit. (47)",
+		"summary": "minim ut laboris velit incididunt officia ut aliqua laboris reprehenderit adipisicing laboris esse commodo pariatur elit quis minim elit Lorem et minim dolore sit ex deserunt excepteur duis et occaecat magna",
+		"timestamp": 1546263479106,
+		"timestampFormatted": "Dec 31, 2018",
+		"type": 178,
+		"src": "http://lorempixel.com/220/220/nature",
 		"url": "/path/to/article-47.html",
 		"image": "img/_examples/news-list-3.png",
-		"imageAlt": "veniam exercitation labore enim aute incididunt"
+		"tags": [
+			"transport",
+			"nature",
+			"animals",
+			"technics"
+		]
 	},
 	{
-		"title": "Enim sit quis sit veniam veniam minim. (48)",
-		"summary": "aliquip reprehenderit consectetur sint occaecat et elit enim duis Lorem excepteur excepteur qui ipsum adipisicing nisi nulla ex id non sunt qui in eiusmod deserunt aute excepteur commodo culpa id eu ut dolor velit labore",
-		"timestamp": 1545437902045,
-		"timestampFormatted": "Dec 21, 2018",
-		"type": 353,
-		"src": "http://lorempixel.com/380/440/cats",
+		"title": "Ullamco voluptate dolore sunt deserunt do enim Lorem. (48)",
+		"summary": "eiusmod nulla sunt id voluptate officia laboris exercitation veniam dolore in id officia incididunt",
+		"timestamp": 1550309879106,
+		"timestampFormatted": "Feb 16, 2019",
+		"type": 518,
+		"src": "http://lorempixel.com/260/80/fashion",
 		"url": "/path/to/article-48.html",
 		"image": "img/_examples/news-list-4.png",
-		"imageAlt": "ullamco magna tempor veniam incididunt nulla"
+		"tags": [
+			"fashion",
+			"abstract"
+		]
 	},
 	{
-		"title": "Proident consequat tempor aliqua velit enim ut. (49)",
-		"summary": "adipisicing labore et veniam adipisicing laboris non velit cupidatat reprehenderit labore consectetur aliquip commodo nisi enim irure nostrud laborum aliqua quis occaecat nostrud sit id laborum sint officia eiusmod laborum nostrud commodo Lorem laborum amet amet id",
-		"timestamp": 1548299902045,
-		"timestampFormatted": "Jan 23, 2019",
-		"type": 646,
-		"src": "http://lorempixel.com/540/600/technics",
+		"title": "Proident veniam anim fugiat duis magna sit qui laborum incididunt consectetur ea mollit velit aliquip. (49)",
+		"summary": "irure est exercitation exercitation culpa nulla enim",
+		"timestamp": 1546983479106,
+		"timestampFormatted": "Jan 8, 2019",
+		"type": 308,
+		"src": "http://lorempixel.com/460/140/sports",
 		"url": "/path/to/article-49.html",
 		"image": "img/_examples/news-list-1.png",
-		"imageAlt": "duis nulla nisi id sit anim"
+		"tags": [
+			"sports"
+		]
 	},
 	{
-		"title": "Excepteur proident do veniam nostrud irure amet occaecat laboris qui voluptate ad nostrud culpa. (50)",
-		"summary": "cillum cupidatat qui qui do ad sit anim deserunt dolore id tempor",
-		"timestamp": 1551925102045,
-		"timestampFormatted": "Mar 6, 2019",
-		"type": 688,
-		"src": "http://lorempixel.com/620/120/cats",
+		"title": "Do amet anim reprehenderit eiusmod consequat aliquip aliqua sit id non exercitation aliquip consectetur quis. (50)",
+		"summary": "pariatur consequat magna culpa incididunt laborum exercitation veniam cillum amet",
+		"timestamp": 1550432279106,
+		"timestampFormatted": "Feb 17, 2019",
+		"type": 669,
+		"src": "http://lorempixel.com/580/420/abstract",
 		"url": "/path/to/article-50.html",
 		"image": "img/_examples/news-list-2.png",
-		"imageAlt": "proident ullamco sit sit amet nisi"
+		"tags": [
+			"people",
+			"abstract",
+			"business"
+		]
 	},
 	{
-		"title": "Tempor fugiat Lorem minim pariatur commodo qui sint excepteur in exercitation reprehenderit id. (51)",
-		"summary": "sunt voluptate deserunt consectetur tempor deserunt mollit duis id reprehenderit do ea ex quis consequat ullamco cillum mollit quis eu veniam id pariatur laboris eu laborum mollit cupidatat consequat",
-		"timestamp": 1550045902046,
-		"timestampFormatted": "Feb 13, 2019",
-		"type": 613,
-		"src": "http://lorempixel.com/200/500/abstract",
+		"title": "Cupidatat est eiusmod culpa aliqua elit id proident mollit non Lorem minim. (51)",
+		"summary": "enim qui et in laboris consectetur eu",
+		"timestamp": 1551872279107,
+		"timestampFormatted": "Mar 6, 2019",
+		"type": 444,
+		"src": "http://lorempixel.com/580/140/nature",
 		"url": "/path/to/article-51.html",
 		"image": "img/_examples/news-list-3.png",
-		"imageAlt": "minim dolor quis officia consectetur elit"
+		"tags": [
+			"nature",
+			"city",
+			"animals",
+			"transport"
+		]
 	},
 	{
-		"title": "Adipisicing ipsum voluptate aute exercitation. (52)",
-		"summary": "Lorem fugiat ea sunt ad quis minim elit nulla id in nisi consequat ullamco velit quis consectetur fugiat quis dolor veniam pariatur enim consectetur in qui et cupidatat nulla consectetur labore occaecat nulla aliquip voluptate laborum est laborum esse consectetur labore",
-		"timestamp": 1547284702046,
-		"timestampFormatted": "Jan 12, 2019",
-		"type": 173,
-		"src": "http://lorempixel.com/540/140/nightlife",
+		"title": "Sit laboris irure non esse. (52)",
+		"summary": "do non irure tempor tempor dolor veniam labore irure Lorem culpa fugiat cillum veniam nulla sint qui",
+		"timestamp": 1551591479107,
+		"timestampFormatted": "Mar 2, 2019",
+		"type": 215,
+		"src": "http://lorempixel.com/160/380/nightlife",
 		"url": "/path/to/article-52.html",
 		"image": "img/_examples/news-list-4.png",
-		"imageAlt": "anim nostrud est occaecat velit incididunt"
+		"tags": [
+			"nightlife",
+			"business"
+		]
 	},
 	{
-		"title": "Nostrud culpa dolore minim minim velit. (53)",
-		"summary": "consequat ullamco veniam aute commodo elit velit labore occaecat aliquip sit incididunt tempor eu qui anim do laboris sit dolore dolore",
-		"timestamp": 1552429102046,
-		"timestampFormatted": "Mar 12, 2019",
-		"type": 213,
-		"src": "http://lorempixel.com/580/280/abstract",
+		"title": "Laborum ut cupidatat non cillum. (53)",
+		"summary": "nisi nostrud dolore minim pariatur in aliquip ipsum pariatur Lorem nulla irure excepteur voluptate qui quis elit proident ipsum adipisicing laboris culpa reprehenderit",
+		"timestamp": 1551998279107,
+		"timestampFormatted": "Mar 7, 2019",
+		"type": 430,
+		"src": "http://lorempixel.com/480/180/sports",
 		"url": "/path/to/article-53.html",
 		"image": "img/_examples/news-list-1.png",
-		"imageAlt": "cillum sunt ex do cupidatat commodo"
+		"tags": [
+			"sports",
+			"cats"
+		]
 	},
 	{
-		"title": "Duis aliqua duis laborum magna in consectetur sint veniam duis sint sit nulla veniam. (54)",
-		"summary": "dolor occaecat commodo reprehenderit reprehenderit laborum elit nulla occaecat tempor pariatur ad in nisi deserunt ipsum ex pariatur eiusmod nostrud velit ullamco incididunt elit ut velit sint mollit fugiat veniam voluptate Lorem exercitation aute in ad",
-		"timestamp": 1550891902046,
-		"timestampFormatted": "Feb 22, 2019",
-		"type": 225,
-		"src": "http://lorempixel.com/120/420/city",
+		"title": "Eiusmod officia anim tempor consectetur ad est eiusmod irure aliquip. (54)",
+		"summary": "dolor sit aute mollit amet laborum quis ea dolor ex anim id amet quis amet ullamco ullamco fugiat sit",
+		"timestamp": 1552005479107,
+		"timestampFormatted": "Mar 7, 2019",
+		"type": 246,
+		"src": "http://lorempixel.com/260/480/cats",
 		"url": "/path/to/article-54.html",
 		"image": "img/_examples/news-list-2.png",
-		"imageAlt": "id non ea ut ut aliquip"
+		"tags": [
+			"cats",
+			"animals",
+			"abstract"
+		]
 	},
 	{
-		"title": "Adipisicing in aliqua esse incididunt quis ex laboris exercitation enim dolor. (55)",
-		"summary": "ea enim ipsum enim officia dolore ut dolore proident laborum et aute officia ex nisi nostrud mollit anim et fugiat irure et adipisicing id non proident occaecat commodo tempor",
-		"timestamp": 1547813902046,
-		"timestampFormatted": "Jan 18, 2019",
-		"type": 135,
-		"src": "http://lorempixel.com/540/540/transport",
+		"title": "Occaecat aliqua magna amet ullamco elit quis id labore tempor ex. (55)",
+		"summary": "qui ad aliquip sint cupidatat non est minim et eu qui est exercitation quis eu laboris sint ullamco cillum do cupidatat minim minim ex Lorem cillum cillum ipsum culpa id labore minim qui nulla aliquip",
+		"timestamp": 1549867079107,
+		"timestampFormatted": "Feb 10, 2019",
+		"type": 269,
+		"src": "http://lorempixel.com/600/500/business",
 		"url": "/path/to/article-55.html",
 		"image": "img/_examples/news-list-3.png",
-		"imageAlt": "duis veniam dolore sunt laboris elit"
+		"tags": [
+			"cats",
+			"business",
+			"people"
+		]
 	},
 	{
-		"title": "Laborum do ex deserunt mollit esse. (56)",
-		"summary": "anim sunt fugiat officia labore aliqua sint occaecat consequat aute cupidatat consequat non in laborum est mollit et sunt fugiat cillum exercitation elit amet cupidatat laborum exercitation velit veniam ut anim enim velit exercitation voluptate do duis dolore enim sit fugiat tempor nulla ad",
-		"timestamp": 1552187902046,
-		"timestampFormatted": "Mar 9, 2019",
-		"type": 257,
-		"src": "http://lorempixel.com/120/400/abstract",
+		"title": "Pariatur esse irure non ut deserunt non. (56)",
+		"summary": "fugiat occaecat culpa voluptate ea occaecat eu nisi cupidatat ea adipisicing anim ipsum magna cupidatat id",
+		"timestamp": 1547966279107,
+		"timestampFormatted": "Jan 19, 2019",
+		"type": 300,
+		"src": "http://lorempixel.com/600/140/fashion",
 		"url": "/path/to/article-56.html",
 		"image": "img/_examples/news-list-4.png",
-		"imageAlt": "voluptate veniam duis cillum non velit"
+		"tags": [
+			"fashion",
+			"technics",
+			"nightlife"
+		]
 	},
 	{
-		"title": "Proident nulla consequat excepteur est eu ea incididunt officia duis cillum. (57)",
-		"summary": "sit est dolor elit duis eiusmod amet sit magna velit est in pariatur occaecat veniam consequat adipisicing minim aliquip mollit ut esse veniam nostrud ad culpa anim ut consectetur veniam ex occaecat voluptate ea labore amet nisi ut",
-		"timestamp": 1551914302046,
+		"title": "Fugiat elit labore enim culpa. (57)",
+		"summary": "cupidatat ipsum qui irure ut pariatur in anim in sint sunt est adipisicing nisi voluptate officia aliqua non minim cillum minim veniam sit esse ex nulla aliqua veniam tempor",
+		"timestamp": 1551857879107,
 		"timestampFormatted": "Mar 6, 2019",
-		"type": 468,
-		"src": "http://lorempixel.com/640/560/animals",
+		"type": 199,
+		"src": "http://lorempixel.com/160/120/nightlife",
 		"url": "/path/to/article-57.html",
 		"image": "img/_examples/news-list-1.png",
-		"imageAlt": "magna in adipisicing deserunt esse eu"
+		"tags": [
+			"nightlife"
+		]
 	},
 	{
-		"title": "In ut ad commodo ullamco quis sit nisi aute dolore labore. (58)",
-		"summary": "magna fugiat ad minim enim dolore sunt Lorem anim amet cillum voluptate veniam veniam sint laboris",
-		"timestamp": 1546845502046,
-		"timestampFormatted": "Jan 7, 2019",
-		"type": 653,
-		"src": "http://lorempixel.com/80/660/transport",
+		"title": "Consectetur do Lorem veniam ut irure. (58)",
+		"summary": "aliquip commodo duis non reprehenderit laboris magna ullamco quis qui ut deserunt qui",
+		"timestamp": 1550306279107,
+		"timestampFormatted": "Feb 16, 2019",
+		"type": 683,
+		"src": "http://lorempixel.com/440/420/technics",
 		"url": "/path/to/article-58.html",
 		"image": "img/_examples/news-list-2.png",
-		"imageAlt": "aliquip Lorem proident quis duis exercitation"
+		"tags": [
+			"technics",
+			"sports",
+			"nightlife"
+		]
 	},
 	{
-		"title": "Sit ad mollit deserunt nostrud duis occaecat. (59)",
-		"summary": "enim nisi qui quis voluptate aute anim ex voluptate duis officia sint proident aliqua aliquip id irure esse in elit occaecat qui labore commodo aliqua aliquip sunt mollit aliquip ex ad in fugiat nulla sit pariatur ipsum mollit consequat dolore anim",
-		"timestamp": 1547619502046,
-		"timestampFormatted": "Jan 15, 2019",
-		"type": 488,
-		"src": "http://lorempixel.com/180/520/business",
+		"title": "Enim dolor pariatur sit et anim aliqua minim aliquip fugiat magna. (59)",
+		"summary": "consequat ex duis tempor id aliquip voluptate ea veniam eu mollit quis in magna minim do velit laboris commodo proident sint do reprehenderit deserunt incididunt tempor",
+		"timestamp": 1548459479107,
+		"timestampFormatted": "Jan 25, 2019",
+		"type": 499,
+		"src": "http://lorempixel.com/480/140/people",
 		"url": "/path/to/article-59.html",
 		"image": "img/_examples/news-list-3.png",
-		"imageAlt": "anim amet tempor dolor qui commodo"
+		"tags": [
+			"people"
+		]
 	},
 	{
-		"title": "Amet eu pariatur veniam eu aliqua aliquip exercitation fugiat incididunt excepteur laborum elit ipsum. (60)",
-		"summary": "ea voluptate mollit ut officia culpa consectetur sit fugiat id elit irure",
-		"timestamp": 1551417502046,
-		"timestampFormatted": "Feb 28, 2019",
-		"type": 596,
-		"src": "http://lorempixel.com/360/420/business",
+		"title": "Enim mollit ipsum do ad Lorem ea Lorem commodo culpa minim mollit aliquip pariatur. (60)",
+		"summary": "mollit irure dolore aliqua dolore aute quis dolore non anim occaecat sint Lorem nostrud officia dolore mollit proident deserunt",
+		"timestamp": 1550219879107,
+		"timestampFormatted": "Feb 15, 2019",
+		"type": 537,
+		"src": "http://lorempixel.com/100/400/sports",
 		"url": "/path/to/article-60.html",
 		"image": "img/_examples/news-list-4.png",
-		"imageAlt": "sunt et veniam aliquip quis voluptate"
+		"tags": [
+			"sports",
+			"fashion"
+		]
 	},
 	{
-		"title": "Quis commodo non commodo velit qui amet. (61)",
-		"summary": "nostrud magna incididunt qui anim labore adipisicing sit ex nostrud occaecat sunt amet consectetur proident mollit culpa exercitation aliquip sit reprehenderit Lorem est laborum cupidatat cillum quis cillum in in sunt veniam nostrud sint ea proident nulla occaecat proident id id",
-		"timestamp": 1549657102046,
-		"timestampFormatted": "Feb 8, 2019",
-		"type": 120,
-		"src": "http://lorempixel.com/320/580/fashion",
+		"title": "Anim incididunt magna labore excepteur labore pariatur eiusmod nulla consequat cillum velit commodo fugiat. (61)",
+		"summary": "magna veniam reprehenderit ea ex id amet pariatur do eu duis est non consequat",
+		"timestamp": 1546483079107,
+		"timestampFormatted": "Jan 2, 2019",
+		"type": 358,
+		"src": "http://lorempixel.com/380/640/nightlife",
 		"url": "/path/to/article-61.html",
 		"image": "img/_examples/news-list-1.png",
-		"imageAlt": "qui dolor enim irure aliquip elit"
+		"tags": [
+			"nightlife",
+			"food"
+		]
 	},
 	{
-		"title": "Reprehenderit laboris Lorem exercitation labore irure sit dolore laboris sint id. (62)",
-		"summary": "consequat laborum aliqua qui anim sit ex culpa excepteur exercitation aliquip do non veniam consequat reprehenderit tempor mollit ullamco nisi nostrud eu magna pariatur adipisicing cupidatat elit minim Lorem laboris cillum ea et amet incididunt sunt nulla non minim consequat voluptate labore",
-		"timestamp": 1548476302046,
-		"timestampFormatted": "Jan 25, 2019",
-		"type": 237,
-		"src": "http://lorempixel.com/460/480/sports",
+		"title": "Mollit excepteur et est exercitation cillum laborum eiusmod adipisicing ea minim. (62)",
+		"summary": "culpa voluptate qui commodo cillum qui elit aliqua eu pariatur laborum consequat reprehenderit minim nulla non eiusmod laboris proident exercitation eiusmod est nulla occaecat non est exercitation",
+		"timestamp": 1549337879107,
+		"timestampFormatted": "Feb 4, 2019",
+		"type": 355,
+		"src": "http://lorempixel.com/240/560/food",
 		"url": "/path/to/article-62.html",
 		"image": "img/_examples/news-list-2.png",
-		"imageAlt": "adipisicing in nisi Lorem consequat aute"
+		"tags": [
+			"food",
+			"nightlife"
+		]
 	},
 	{
-		"title": "Ut sunt dolor Lorem excepteur deserunt mollit mollit. (63)",
-		"summary": "irure amet est ea sunt ad voluptate ullamco cillum ea ea excepteur ullamco pariatur sit sint dolor ullamco fugiat elit",
-		"timestamp": 1549469902046,
-		"timestampFormatted": "Feb 6, 2019",
-		"type": 682,
-		"src": "http://lorempixel.com/480/80/transport",
+		"title": "Aliquip quis ea pariatur commodo. (63)",
+		"summary": "minim ex adipisicing quis tempor anim esse ea do ut qui laborum ut culpa amet quis culpa ipsum amet velit amet commodo voluptate consequat ad commodo nostrud proident nostrud officia enim tempor occaecat enim esse",
+		"timestamp": 1547836679107,
+		"timestampFormatted": "Jan 18, 2019",
+		"type": 407,
+		"src": "http://lorempixel.com/420/120/sports",
 		"url": "/path/to/article-63.html",
 		"image": "img/_examples/news-list-3.png",
-		"imageAlt": "in aliqua dolor consequat amet voluptate"
+		"tags": [
+			"food",
+			"nature",
+			"sports",
+			"people"
+		]
 	},
 	{
-		"title": "Voluptate amet magna dolor do occaecat incididunt id quis. (64)",
-		"summary": "aute amet nostrud eiusmod est",
-		"timestamp": 1549203502046,
-		"timestampFormatted": "Feb 3, 2019",
-		"type": 191,
-		"src": "http://lorempixel.com/240/280/abstract",
+		"title": "Nulla cillum dolore aliquip qui esse sunt consequat. (64)",
+		"summary": "veniam magna cillum mollit est cupidatat incididunt fugiat est ea aliquip tempor nulla duis esse amet tempor Lorem",
+		"timestamp": 1546699079107,
+		"timestampFormatted": "Jan 5, 2019",
+		"type": 203,
+		"src": "http://lorempixel.com/440/600/people",
 		"url": "/path/to/article-64.html",
 		"image": "img/_examples/news-list-4.png",
-		"imageAlt": "nulla velit esse do deserunt exercitation"
+		"tags": [
+			"people",
+			"animals"
+		]
 	},
 	{
-		"title": "Tempor excepteur anim esse labore amet cupidatat sit cupidatat. (65)",
-		"summary": "minim in ea nisi incididunt quis aliqua Lorem eiusmod cupidatat nostrud ex nisi ad sunt deserunt aliquip elit in non do sunt commodo pariatur",
-		"timestamp": 1551791902046,
-		"timestampFormatted": "Mar 5, 2019",
-		"type": 241,
-		"src": "http://lorempixel.com/220/200/abstract",
+		"title": "Proident elit nostrud velit duis ex. (65)",
+		"summary": "aliqua nulla adipisicing sint culpa velit",
+		"timestamp": 1548833879107,
+		"timestampFormatted": "Jan 30, 2019",
+		"type": 126,
+		"src": "http://lorempixel.com/520/620/transport",
 		"url": "/path/to/article-65.html",
 		"image": "img/_examples/news-list-1.png",
-		"imageAlt": "aliqua do cupidatat eu nostrud enim"
+		"tags": [
+			"nature",
+			"transport",
+			"food"
+		]
 	},
 	{
-		"title": "Laboris pariatur exercitation nisi ex quis. (66)",
-		"summary": "dolore voluptate deserunt aute in duis eiusmod est cillum enim labore minim consequat ipsum voluptate officia dolore culpa dolor occaecat amet commodo ex exercitation consequat dolore officia cillum eu velit sit id dolore non mollit cillum est qui commodo id elit",
-		"timestamp": 1546402702046,
-		"timestampFormatted": "Jan 1, 2019",
-		"type": 486,
-		"src": "http://lorempixel.com/280/360/animals",
+		"title": "Elit voluptate nostrud ea ut laborum occaecat in. (66)",
+		"summary": "deserunt occaecat enim incididunt consequat laboris qui nisi voluptate in do ut culpa reprehenderit ullamco",
+		"timestamp": 1552621079107,
+		"timestampFormatted": "Mar 14, 2019",
+		"type": 216,
+		"src": "http://lorempixel.com/600/140/abstract",
 		"url": "/path/to/article-66.html",
 		"image": "img/_examples/news-list-2.png",
-		"imageAlt": "est mollit aliquip cillum dolor nostrud"
+		"tags": [
+			"abstract",
+			"technics"
+		]
 	},
 	{
-		"title": "Irure elit eiusmod occaecat cupidatat ut sit fugiat nostrud sint officia aliqua cillum do. (67)",
-		"summary": "minim occaecat sunt veniam velit pariatur Lorem enim ad veniam culpa occaecat cillum elit",
-		"timestamp": 1550881102046,
-		"timestampFormatted": "Feb 22, 2019",
-		"type": 553,
-		"src": "http://lorempixel.com/480/380/sports",
+		"title": "Dolore do excepteur est cupidatat mollit fugiat dolor proident ad aliqua labore labore officia. (67)",
+		"summary": "labore anim laboris excepteur laboris ea quis id laboris ipsum reprehenderit ipsum adipisicing est nisi nisi ipsum officia sint irure ullamco commodo ullamco deserunt et consectetur consequat eiusmod ullamco aliquip et velit",
+		"timestamp": 1550061479108,
+		"timestampFormatted": "Feb 13, 2019",
+		"type": 142,
+		"src": "http://lorempixel.com/600/200/people",
 		"url": "/path/to/article-67.html",
 		"image": "img/_examples/news-list-3.png",
-		"imageAlt": "cillum proident ipsum in officia proident"
+		"tags": [
+			"nightlife",
+			"people",
+			"transport"
+		]
 	},
 	{
-		"title": "Nostrud voluptate dolor exercitation cillum aliqua in elit aliquip adipisicing excepteur est irure elit. (68)",
-		"summary": "aliqua in aliquip id laboris ex reprehenderit excepteur irure consectetur Lorem ex occaecat aute exercitation voluptate incididunt excepteur voluptate culpa ut aliquip laboris incididunt ex nostrud id minim ea ullamco ut ut",
-		"timestamp": 1547140702046,
-		"timestampFormatted": "Jan 10, 2019",
-		"type": 201,
-		"src": "http://lorempixel.com/360/320/nightlife",
+		"title": "Non esse culpa aliquip culpa ad consequat irure ad non enim pariatur officia velit voluptate. (68)",
+		"summary": "cupidatat ullamco culpa exercitation laborum laboris aute tempor veniam cillum proident ad reprehenderit elit incididunt culpa cillum dolor",
+		"timestamp": 1551404279108,
+		"timestampFormatted": "Feb 28, 2019",
+		"type": 126,
+		"src": "http://lorempixel.com/480/500/cats",
 		"url": "/path/to/article-68.html",
 		"image": "img/_examples/news-list-4.png",
-		"imageAlt": "dolore fugiat dolore exercitation reprehenderit sint"
+		"tags": [
+			"abstract",
+			"cats",
+			"city"
+		]
 	},
 	{
-		"title": "Magna esse velit aliqua cillum aliqua. (69)",
-		"summary": "ipsum amet reprehenderit culpa reprehenderit reprehenderit esse adipisicing ut excepteur do irure culpa occaecat est est reprehenderit velit consectetur culpa veniam duis proident do adipisicing cillum labore Lorem elit deserunt incididunt anim commodo in do quis adipisicing eu in dolor anim adipisicing aliqua",
-		"timestamp": 1545740302046,
-		"timestampFormatted": "Dec 25, 2018",
-		"type": 472,
-		"src": "http://lorempixel.com/380/200/food",
+		"title": "Laborum commodo do eu id irure deserunt non reprehenderit amet. (69)",
+		"summary": "aute ipsum culpa enim adipisicing officia duis pariatur Lorem esse in velit amet nulla et cupidatat nisi voluptate aliqua aliquip qui dolor commodo ad culpa pariatur sit exercitation exercitation minim in velit voluptate sint dolore cupidatat dolor veniam ea laborum",
+		"timestamp": 1545651479108,
+		"timestampFormatted": "Dec 24, 2018",
+		"type": 233,
+		"src": "http://lorempixel.com/340/560/city",
 		"url": "/path/to/article-69.html",
 		"image": "img/_examples/news-list-1.png",
-		"imageAlt": "occaecat quis aliqua eiusmod et tempor"
+		"tags": [
+			"city",
+			"business",
+			"people",
+			"technics"
+		]
 	},
 	{
-		"title": "Ea tempor culpa adipisicing consequat eiusmod aliqua elit nostrud mollit. (70)",
-		"summary": "exercitation anim eiusmod voluptate exercitation qui eiusmod anim anim magna eu ut aliquip commodo irure in officia quis consequat",
-		"timestamp": 1547079502046,
-		"timestampFormatted": "Jan 9, 2019",
-		"type": 663,
-		"src": "http://lorempixel.com/440/520/people",
+		"title": "Veniam ea irure ea fugiat voluptate. (70)",
+		"summary": "nostrud officia proident laboris culpa ex cupidatat consequat eu nisi excepteur laborum cillum aliqua nostrud ex tempor ipsum deserunt enim ad aliquip irure",
+		"timestamp": 1552383479108,
+		"timestampFormatted": "Mar 12, 2019",
+		"type": 549,
+		"src": "http://lorempixel.com/400/660/nature",
 		"url": "/path/to/article-70.html",
 		"image": "img/_examples/news-list-2.png",
-		"imageAlt": "culpa voluptate ex qui velit cupidatat"
+		"tags": [
+			"nature",
+			"sports"
+		]
 	},
 	{
-		"title": "Adipisicing culpa voluptate mollit veniam minim cupidatat adipisicing proident eu est enim dolor amet ex. (71)",
-		"summary": "ipsum Lorem amet non ut aliqua elit commodo esse magna occaecat nostrud occaecat incididunt veniam Lorem cillum mollit veniam excepteur",
-		"timestamp": 1552745902046,
-		"timestampFormatted": "Mar 16, 2019",
-		"type": 668,
-		"src": "http://lorempixel.com/440/180/technics",
+		"title": "Amet minim consectetur elit consectetur nisi aliqua elit aliqua eiusmod eiusmod eu ullamco. (71)",
+		"summary": "esse fugiat amet nisi reprehenderit sint reprehenderit voluptate esse laboris duis irure sit dolor fugiat pariatur sunt veniam et sint est",
+		"timestamp": 1551253079108,
+		"timestampFormatted": "Feb 27, 2019",
+		"type": 507,
+		"src": "http://lorempixel.com/620/100/fashion",
 		"url": "/path/to/article-71.html",
 		"image": "img/_examples/news-list-3.png",
-		"imageAlt": "velit consectetur ipsum ut duis duis"
+		"tags": [
+			"fashion",
+			"abstract"
+		]
 	},
 	{
-		"title": "Eu est nisi Lorem commodo. (72)",
-		"summary": "cupidatat enim enim voluptate aute aute in et qui tempor in amet ut culpa veniam eu amet exercitation incididunt amet cupidatat eu incididunt reprehenderit aliquip id esse et sunt do deserunt anim quis esse pariatur nulla tempor nisi",
-		"timestamp": 1546064302046,
-		"timestampFormatted": "Dec 28, 2018",
-		"type": 336,
-		"src": "http://lorempixel.com/240/400/sports",
+		"title": "Est dolore consequat fugiat ipsum elit anim dolore do eu sint officia ea. (72)",
+		"summary": "esse commodo dolore deserunt nulla veniam fugiat sint sunt quis sint aute voluptate cupidatat minim consequat in sint do qui dolore anim duis dolore mollit non est do enim exercitation veniam nostrud incididunt eiusmod do pariatur enim mollit",
+		"timestamp": 1551994679108,
+		"timestampFormatted": "Mar 7, 2019",
+		"type": 161,
+		"src": "http://lorempixel.com/200/240/people",
 		"url": "/path/to/article-72.html",
 		"image": "img/_examples/news-list-4.png",
-		"imageAlt": "labore ad laboris duis anim exercitation"
+		"tags": [
+			"people",
+			"animals"
+		]
 	},
 	{
-		"title": "Cillum anim amet minim consectetur. (73)",
-		"summary": "mollit nisi irure esse sit adipisicing dolor non laboris reprehenderit incididunt fugiat exercitation officia minim velit reprehenderit pariatur anim ex deserunt ut velit irure tempor adipisicing ad ut sint irure est sint non ullamco exercitation et",
-		"timestamp": 1550963902047,
-		"timestampFormatted": "Feb 23, 2019",
-		"type": 483,
-		"src": "http://lorempixel.com/560/420/fashion",
+		"title": "Amet voluptate veniam id officia. (73)",
+		"summary": "occaecat duis minim voluptate id excepteur in nisi cillum sint cupidatat aute reprehenderit duis labore esse excepteur veniam est exercitation non exercitation magna cupidatat nostrud pariatur ullamco excepteur voluptate fugiat proident",
+		"timestamp": 1547422679108,
+		"timestampFormatted": "Jan 13, 2019",
+		"type": 585,
+		"src": "http://lorempixel.com/300/540/nature",
 		"url": "/path/to/article-73.html",
 		"image": "img/_examples/news-list-1.png",
-		"imageAlt": "duis est pariatur adipisicing ea non"
+		"tags": [
+			"nature",
+			"business"
+		]
 	},
 	{
-		"title": "Et cupidatat fugiat aliqua nisi amet esse. (74)",
-		"summary": "in do magna dolor est amet pariatur laborum occaecat fugiat aliqua eiusmod elit ex officia aliqua dolor proident sunt duis anim ipsum consequat enim nisi id dolor",
-		"timestamp": 1547230702047,
-		"timestampFormatted": "Jan 11, 2019",
-		"type": 420,
-		"src": "http://lorempixel.com/400/280/animals",
+		"title": "Et nisi sunt fugiat aliquip eu nulla et excepteur laborum veniam occaecat. (74)",
+		"summary": "est ullamco nulla esse pariatur ad commodo culpa laboris excepteur eu enim velit ipsum enim eu elit nulla eu magna exercitation dolor nulla labore nisi do voluptate ullamco do do tempor anim ex nostrud cupidatat cillum id qui laboris duis elit ad commodo",
+		"timestamp": 1551472679108,
+		"timestampFormatted": "Mar 1, 2019",
+		"type": 457,
+		"src": "http://lorempixel.com/620/560/nature",
 		"url": "/path/to/article-74.html",
 		"image": "img/_examples/news-list-2.png",
-		"imageAlt": "proident nisi deserunt laborum ea eu"
+		"tags": [
+			"nature",
+			"people"
+		]
 	},
 	{
-		"title": "Excepteur officia ea dolor velit sunt commodo sunt eu amet do et. (75)",
-		"summary": "non Lorem aute sint labore exercitation qui incididunt ad nisi laboris aliquip cillum labore amet do do deserunt ut",
-		"timestamp": 1549711102047,
-		"timestampFormatted": "Feb 9, 2019",
-		"type": 501,
-		"src": "http://lorempixel.com/380/120/transport",
+		"title": "Ullamco mollit proident proident occaecat. (75)",
+		"summary": "amet amet sint laborum tempor ipsum qui mollit qui enim dolore do cupidatat veniam aute nulla magna aliquip excepteur in non sint sint sint et fugiat exercitation nostrud deserunt reprehenderit elit deserunt magna",
+		"timestamp": 1548189479108,
+		"timestampFormatted": "Jan 22, 2019",
+		"type": 421,
+		"src": "http://lorempixel.com/600/520/city",
 		"url": "/path/to/article-75.html",
 		"image": "img/_examples/news-list-3.png",
-		"imageAlt": "adipisicing anim qui veniam irure culpa"
+		"tags": [
+			"city",
+			"animals",
+			"business",
+			"technics"
+		]
 	},
 	{
-		"title": "Fugiat cillum eiusmod aliqua laborum eiusmod amet occaecat anim fugiat. (76)",
-		"summary": "consectetur laboris magna ea cupidatat exercitation nisi fugiat cillum officia incididunt duis tempor commodo velit aliqua mollit minim cillum culpa est fugiat cillum aliquip cupidatat enim do laborum consectetur voluptate nulla deserunt anim qui incididunt labore commodo",
-		"timestamp": 1550027902047,
-		"timestampFormatted": "Feb 12, 2019",
-		"type": 621,
-		"src": "http://lorempixel.com/200/340/fashion",
+		"title": "Lorem sunt pariatur minim deserunt culpa. (76)",
+		"summary": "consequat deserunt duis pariatur incididunt consectetur reprehenderit quis commodo eiusmod mollit nulla amet ipsum dolore",
+		"timestamp": 1549179479108,
+		"timestampFormatted": "Feb 3, 2019",
+		"type": 674,
+		"src": "http://lorempixel.com/200/480/sports",
 		"url": "/path/to/article-76.html",
 		"image": "img/_examples/news-list-4.png",
-		"imageAlt": "consectetur ut eiusmod exercitation qui dolor"
+		"tags": [
+			"sports",
+			"fashion",
+			"technics"
+		]
 	},
 	{
-		"title": "Velit cupidatat eu minim Lorem incididunt ipsum. (77)",
-		"summary": "fugiat ut consequat duis quis ullamco culpa sunt pariatur qui velit excepteur elit exercitation consequat nostrud ut anim deserunt elit culpa duis pariatur pariatur ea consectetur adipisicing nisi consectetur magna occaecat deserunt officia fugiat ea eu laborum qui sint in magna laboris tempor exercitation",
-		"timestamp": 1548087502047,
-		"timestampFormatted": "Jan 21, 2019",
-		"type": 244,
-		"src": "http://lorempixel.com/560/480/nightlife",
+		"title": "Exercitation veniam deserunt anim incididunt deserunt deserunt in. (77)",
+		"summary": "ut dolor exercitation laborum laboris magna enim labore Lorem cillum sit quis nostrud nisi anim incididunt sit nostrud anim incididunt labore ad magna ullamco excepteur pariatur duis incididunt ipsum Lorem minim qui dolore qui id et nulla velit veniam non cupidatat ex",
+		"timestamp": 1547847479108,
+		"timestampFormatted": "Jan 18, 2019",
+		"type": 455,
+		"src": "http://lorempixel.com/180/540/nightlife",
 		"url": "/path/to/article-77.html",
 		"image": "img/_examples/news-list-1.png",
-		"imageAlt": "anim do nostrud ipsum nostrud nisi"
+		"tags": [
+			"nightlife"
+		]
 	},
 	{
-		"title": "Deserunt id esse anim consectetur sunt. (78)",
-		"summary": "excepteur minim et ut consectetur do consequat irure anim commodo labore culpa nisi incididunt dolore duis labore esse Lorem non in consequat do excepteur cupidatat nostrud adipisicing amet duis laborum ex anim tempor est magna dolore id adipisicing eu",
-		"timestamp": 1546755502047,
-		"timestampFormatted": "Jan 5, 2019",
-		"type": 197,
-		"src": "http://lorempixel.com/560/660/transport",
+		"title": "Eiusmod labore nisi ut in qui sint et. (78)",
+		"summary": "qui occaecat culpa veniam nulla cupidatat velit non minim consequat laborum minim",
+		"timestamp": 1545349079108,
+		"timestampFormatted": "Dec 20, 2018",
+		"type": 636,
+		"src": "http://lorempixel.com/540/280/cats",
 		"url": "/path/to/article-78.html",
 		"image": "img/_examples/news-list-2.png",
-		"imageAlt": "tempor elit et laboris do id"
+		"tags": [
+			"cats",
+			"food",
+			"transport"
+		]
 	},
 	{
-		"title": "Exercitation eu cillum ad excepteur qui nisi. (79)",
-		"summary": "Lorem laboris irure enim nisi occaecat in officia id culpa aute duis nisi sunt laboris consequat dolor quis eiusmod",
-		"timestamp": 1546078702047,
-		"timestampFormatted": "Dec 29, 2018",
-		"type": 216,
-		"src": "http://lorempixel.com/460/380/cats",
+		"title": "Dolor anim esse eu fugiat pariatur nostrud duis. (79)",
+		"summary": "tempor minim velit tempor dolore nostrud voluptate adipisicing exercitation ad labore esse in veniam et ut eu anim ipsum laboris",
+		"timestamp": 1545979079108,
+		"timestampFormatted": "Dec 27, 2018",
+		"type": 562,
+		"src": "http://lorempixel.com/140/440/technics",
 		"url": "/path/to/article-79.html",
 		"image": "img/_examples/news-list-3.png",
-		"imageAlt": "incididunt culpa eiusmod labore nulla id"
+		"tags": [
+			"technics"
+		]
 	},
 	{
-		"title": "Quis amet consequat amet laborum duis officia anim in. (80)",
-		"summary": "aute laboris Lorem in velit deserunt magna nostrud dolore do voluptate nostrud minim tempor do pariatur",
-		"timestamp": 1548911902047,
-		"timestampFormatted": "Jan 30, 2019",
-		"type": 264,
-		"src": "http://lorempixel.com/140/160/business",
+		"title": "In non duis adipisicing id. (80)",
+		"summary": "sit elit minim occaecat est tempor ad cillum mollit fugiat deserunt ex adipisicing",
+		"timestamp": 1551857879108,
+		"timestampFormatted": "Mar 6, 2019",
+		"type": 617,
+		"src": "http://lorempixel.com/440/440/abstract",
 		"url": "/path/to/article-80.html",
 		"image": "img/_examples/news-list-4.png",
-		"imageAlt": "ut proident do duis aliqua duis"
+		"tags": [
+			"abstract",
+			"animals"
+		]
 	},
 	{
-		"title": "Est reprehenderit consequat sint labore exercitation. (81)",
-		"summary": "quis ad veniam et commodo fugiat veniam duis enim sunt officia tempor reprehenderit duis do qui nulla commodo non ipsum anim officia commodo Lorem aliqua nisi cupidatat nostrud velit irure incididunt ut anim commodo cillum dolor",
-		"timestamp": 1546582702047,
-		"timestampFormatted": "Jan 3, 2019",
-		"type": 462,
-		"src": "http://lorempixel.com/440/640/transport",
+		"title": "Nisi consectetur magna adipisicing voluptate sint velit qui. (81)",
+		"summary": "culpa commodo enim magna commodo qui ea voluptate sunt consectetur deserunt tempor occaecat excepteur ut consectetur proident tempor nulla",
+		"timestamp": 1551065879108,
+		"timestampFormatted": "Feb 24, 2019",
+		"type": 238,
+		"src": "http://lorempixel.com/160/420/animals",
 		"url": "/path/to/article-81.html",
 		"image": "img/_examples/news-list-1.png",
-		"imageAlt": "et voluptate ea cillum nisi nisi"
+		"tags": [
+			"animals",
+			"abstract"
+		]
 	},
 	{
-		"title": "Enim tempor veniam commodo est anim dolore aliqua. (82)",
-		"summary": "commodo consectetur deserunt cupidatat amet voluptate incididunt tempor id dolore enim eiusmod non culpa irure duis elit excepteur eiusmod sint tempor incididunt elit consectetur sint sit nisi consequat deserunt exercitation dolore irure officia nulla exercitation duis cillum",
-		"timestamp": 1548321502047,
-		"timestampFormatted": "Jan 24, 2019",
-		"type": 308,
-		"src": "http://lorempixel.com/280/340/technics",
+		"title": "Reprehenderit excepteur labore occaecat id tempor reprehenderit amet ipsum culpa et. (82)",
+		"summary": "sunt exercitation proident ut et est in mollit non qui reprehenderit quis labore enim laboris excepteur ut dolor culpa Lorem qui nulla consequat nostrud esse culpa amet dolor mollit minim eu dolor enim et enim commodo id veniam amet aliquip",
+		"timestamp": 1546605479108,
+		"timestampFormatted": "Jan 4, 2019",
+		"type": 107,
+		"src": "http://lorempixel.com/580/320/sports",
 		"url": "/path/to/article-82.html",
 		"image": "img/_examples/news-list-2.png",
-		"imageAlt": "tempor pariatur deserunt ullamco aliqua officia"
+		"tags": [
+			"sports",
+			"technics"
+		]
 	},
 	{
-		"title": "Duis et tempor consequat ex elit. (83)",
-		"summary": "in sunt anim cillum consectetur veniam duis dolore occaecat pariatur magna tempor velit pariatur nisi",
-		"timestamp": 1546931902047,
-		"timestampFormatted": "Jan 8, 2019",
-		"type": 378,
-		"src": "http://lorempixel.com/520/240/fashion",
+		"title": "Magna id laboris quis quis mollit anim labore Lorem tempor laborum culpa ea amet ex. (83)",
+		"summary": "consequat velit sunt labore voluptate amet qui commodo pariatur aliqua nostrud sit labore adipisicing duis cillum ad veniam voluptate sint exercitation laborum consectetur esse proident sit eiusmod cillum voluptate adipisicing nostrud",
+		"timestamp": 1552603079108,
+		"timestampFormatted": "Mar 14, 2019",
+		"type": 231,
+		"src": "http://lorempixel.com/420/500/cats",
 		"url": "/path/to/article-83.html",
 		"image": "img/_examples/news-list-3.png",
-		"imageAlt": "aliqua est magna quis in amet"
+		"tags": [
+			"city",
+			"cats",
+			"people"
+		]
 	}
 ]

@@ -1,6 +1,6 @@
 import { loremIpsum } from 'lorem-ipsum'
 import { format, subHours } from 'date-fns'
-import { hyphenate, random } from '../../_server/utils/basic-utils.js'
+import { hyphenate, random, unique } from '../../_server/utils/basic-utils.js'
 
 const youtubes = [
 	'https://www.youtube.com/watch?v=KpMZXrRo99g',
@@ -14,7 +14,18 @@ const youtubes = [
 	'https://www.youtube.com/watch?v=YsBVu6f8pR8',
 ]
 
-// https://loremflickr.com/320/240?lock=1
+const videos = [
+	'https://ak7.picdn.net/shutterstock/videos/1015813417/preview/stock-footage-leaves-shadow-on-the-wall-chiangmai-thailand.webm',
+	'https://ak7.picdn.net/shutterstock/videos/1015637317/preview/stock-footage-leave-shadows-on-the-wall-chiangmai-thailand.webm',
+	'https://ak1.picdn.net/shutterstock/videos/1009123061/preview/stock-footage-leaves-shadow-on-the-wall.mp4',
+	'https://ak7.picdn.net/shutterstock/videos/3538277/preview/stock-footage-water-whirlpool-close-up-in-slow-motion.webm',
+	'https://ak6.picdn.net/shutterstock/videos/1016655106/preview/stock-footage-winter-in-siberia-drone-flight-over-the-frozen-mountain-forest.webm',
+	'https://ak8.picdn.net/shutterstock/videos/27008998/preview/stock-footage-top-view-of-the-giant-waves-foaming-and-splashing-in-the-ocean-sunny-day-slow-motion-video.webm',
+	'https://ak6.picdn.net/shutterstock/videos/24364166/preview/stock-footage-cg-animation-of-white-powder-explosion-on-black-background-slow-motion-movement-with-acceleration.webm',
+	'https://ak3.picdn.net/shutterstock/videos/23786773/preview/stock-footage-cg-animation-of-powder-explosion-with-blue-red-orange-and-violet-colors-on-white-background-slow.webm',
+	'https://ak4.picdn.net/shutterstock/videos/18809354/preview/stock-footage-silhouette-of-unrecognizable-people-commuting-in-the-city-crowded-metropolis-street-scenery.webm',
+]
+
 const tags = [
 	'abstract',
 	'animals',
@@ -37,6 +48,8 @@ module.exports = () => {
 	return [...Array(83).keys()].map(($$$, index) => {
 
 		const timestamp = subHours(new Date(), random(24, 24 * 90))
+		const randomTags = unique([...Array(random(1, 4)).keys()].map(() => tags[random(0, tags.length - 1)]))
+		const tag = randomTags[random(0, randomTags.length - 1)]
 
 		const item = {
 			title: `${loremIpsum()} (${index + 1})`,
@@ -44,13 +57,10 @@ module.exports = () => {
 			timestamp: parseInt(format(timestamp, 'x')),
 			timestampFormatted: format(timestamp, 'MMM D, YYYY'),
 			type: random(100, 600),
-			src: `http://lorempixel.com/${random(4, 30) * 20}/${random(4, 30) * 20}/${hyphenate(tags[random(0, tags.length - 1)])}`,
+			src: `http://lorempixel.com/${random(4, 30) * 20}/${random(4, 30) * 20}/${hyphenate(tag)}`,
 			url: `/path/to/article-${index + 1}.html`,
 			image: `img/_examples/news-list-${(index % 4) + 1}.png`,
-			imageAlt: loremIpsum({ count: 6, units: 'words' }),
-			// tags: _.uniq(_.map(new Array(random(0, 3) === 0 ? random(1, 6) : 1), (item, index) => {
-			// 	return tags[random(tags.length - 1)]
-			// })),
+			tags: randomTags,
 		}
 
 		return item
