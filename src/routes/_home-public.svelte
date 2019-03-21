@@ -10,7 +10,7 @@
 	.content {
 		max-width: 50rem;
 		margin: 0 auto;
-		padding: resolve($header-height-noauth + 50px) 2rem 50px;
+		padding: resolve($header-height-noauth + 5rem) 2rem 5rem;
 		text-align: center;
 	}
 	h1 {

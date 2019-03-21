@@ -42,6 +42,6 @@
 		align-items: center;
 		height: $footer-height;
 		margin: 0 auto;
-		padding: 0 20px
+		padding: 0 2rem
 	}
 </style>
