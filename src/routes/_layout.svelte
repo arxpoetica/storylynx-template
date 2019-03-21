@@ -3,6 +3,7 @@
 	<main>
 		<slot></slot>
 	</main>
+	<Footer/>
 </div>
 
 <script>
@@ -10,6 +11,7 @@
 	import { getSession } from '@sapper/app'
 	import { target } from '../stores/app-store.js'
 	import Header from '../components/layout/Header.svelte'
+	import Footer from '../components/layout/Footer.svelte'
 
 	const session = getSession()
 	const { user } = $session
