@@ -4,7 +4,7 @@
 {#if items}
 	<div class="media-items">
 		{#each items as item}
-			<MediaItem/>
+			<MediaItem {item}/>
 		{/each}
 	</div>
 {:else}
@@ -32,7 +32,6 @@
 	.media-items {
 		display: flex;
 		flex-wrap: wrap;
-		align-items: center;
 		margin: 0 -0.6rem 2rem;
 	}
 </style>

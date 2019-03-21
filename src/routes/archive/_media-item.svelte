@@ -1,9 +1,14 @@
 <div class="media-item">
-	<img src="/img/johnny-miller.jpg" alt="Johnny Miller wins an award.">
-	<h2>Title</h2>
-	<p>Lorem ipsum dolor sit amet.</p>
+	<LazyImg src={item.src}/>
+	<h2>{item.title}</h2>
+	<p>{item.summary}</p>
 	<a href="/archive/{'to-come'}">Explore</a>
 </div>
+
+<script>
+	import LazyImg from './_lazy-img.svelte'
+	export let item
+</script>
 
 <style type="text/scss">
 	.media-item {
