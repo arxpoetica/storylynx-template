@@ -1,8 +1,9 @@
 <div class="media-item">
+	<!-- <h1>{item.type}</h1> -->
 	<LazyImg src={item.src}/>
 	<h2>{item.title}</h2>
 	<p>{item.summary}</p>
-	<a href="/archive/{'to-come'}">Explore</a>
+	<a href="/archive/{item.id}" rel=prefetch>Explore</a>
 </div>
 
 <script>

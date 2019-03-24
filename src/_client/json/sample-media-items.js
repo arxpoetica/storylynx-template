@@ -65,7 +65,7 @@ module.exports = () => {
 		// types: video, audio, text, image
 		const chance = random(1, 8)
 		item.type = chance === 6 ? 'video' : (chance === 7 ? 'audio' : (chance === 8 ? 'text' : 'image'))
-		item.url = `/archive/${item.type}-${index + 1}.html`
+		item.id = `${item.type}-${index + 1}`
 		if (item.type === 'video') {
 			item.src = `http://lorempixel.com/${random(4, 30) * 20}/${random(4, 30) * 20}/${hyphenate(tag)}`
 		// } else if (item.type === 'audio') {
