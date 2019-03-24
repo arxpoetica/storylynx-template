@@ -45,7 +45,9 @@ const tags = [
 
 module.exports = () => {
 
-	return [...Array(83).keys()].map(($$$, index) => {
+	const arr = [...Array(83).keys()]
+
+	return arr.map(($$$, index) => {
 
 		const timestamp = subHours(new Date(), random(24, 24 * 90))
 		const randomTags = unique([...Array(random(1, 4)).keys()].map(() => tags[random(0, tags.length - 1)]))
@@ -56,11 +58,21 @@ module.exports = () => {
 			summary: loremIpsum({ count: random(5, 40), units: 'words' }),
 			timestamp: parseInt(format(timestamp, 'x')),
 			timestampFormatted: format(timestamp, 'MMM D, YYYY'),
-			type: random(100, 600),
-			src: `http://lorempixel.com/${random(4, 30) * 20}/${random(4, 30) * 20}/${hyphenate(tag)}`,
-			url: `/path/to/article-${index + 1}.html`,
-			image: `img/_examples/news-list-${(index % 4) + 1}.png`,
 			tags: randomTags,
+		}
+
+
+		// types: video, audio, text, image
+		const chance = random(1, 8)
+		item.type = chance === 6 ? 'video' : (chance === 7 ? 'audio' : (chance === 8 ? 'text' : 'image'))
+		item.url = `/archive/${item.type}-${index + 1}.html`
+		if (item.type === 'video') {
+			item.src = `http://lorempixel.com/${random(4, 30) * 20}/${random(4, 30) * 20}/${hyphenate(tag)}`
+		// } else if (item.type === 'audio') {
+		// 	item.src = `http://lorempixel.com/${random(4, 30) * 20}/${random(4, 30) * 20}/${hyphenate(tag)}`
+		// } else if (item.type === 'text') {
+		} else if (item.type === 'image') {
+			item.src = `http://lorempixel.com/${random(4, 30) * 20}/${random(4, 30) * 20}/${hyphenate(tag)}`
 		}
 
 		return item
