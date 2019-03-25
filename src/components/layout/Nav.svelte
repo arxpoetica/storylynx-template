@@ -5,6 +5,7 @@
 		<li data-on="{segment === 'experience'}"><a href="/experience" rel=prefetch>Experience</a></li>
 		<li data-on="{segment === 'archive'}"><a href="/archive" rel=prefetch>Archive</a></li>
 		<li data-on="{segment === 'about'}"><a href="/about" rel=prefetch>About</a></li>
+		<li data-on="{segment === 'news'}"><a href="/news" rel=prefetch>News</a></li>
 		<li data-on="{segment === 'contact'}"><a href="/contact" rel=prefetch>Contact</a></li>
 
 		<!-- {#if $session.user}
