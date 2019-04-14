@@ -12,7 +12,12 @@ export const fastClone = obj => JSON.parse(JSON.stringify(obj)) // https://stack
 export const unique = arr => arr.filter((value, index, self) => self.indexOf(value) === index)
 
 // maths
-export const random = (lower, upper) => Math.floor(Math.random() * upper) + lower
+export const random = (lower, upper) => {
+	// see: https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
+	lower = Math.ceil(lower)
+	upper = Math.floor(upper)
+	return Math.floor(Math.random() * (upper - lower + 1)) + lower
+}
 
 // NOTE: might write my own helpers?
 // https://medium.com/@abustamam/for-loops-vs-foreach-in-javascript-7a977278a39e

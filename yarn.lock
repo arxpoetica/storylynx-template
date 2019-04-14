@@ -1808,10 +1808,10 @@ dasherize@2.0.0:
   resolved "https://registry.yarnpkg.com/dasherize/-/dasherize-2.0.0.tgz#6d809c9cd0cf7bb8952d80fc84fa13d47ddb1308"
   integrity sha1-bYCcnNDPe7iVLYD8hPoT1H3bEwg=
 
-date-fns@1.30.1:
-  version "1.30.1"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
-  integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
+dayjs@1.8.12:
+  version "1.8.12"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.12.tgz#f9610fb9b115aa2fe2a07e742c130df418cee76a"
+  integrity sha512-7keChCzzjU68sYJpk7kEI1Q9qbJyscyiW0STwEhqDFt+2js9pA/BSzmYE4PRxcMMoUMxNeY0TEMZHqV/JBR4OA==
 
 debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
@@ -4664,10 +4664,10 @@ supports-color@^6.1.0:
   dependencies:
     has-flag "^3.0.0"
 
-svelte@3.0.0-beta.19:
-  version "3.0.0-beta.19"
-  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.0.0-beta.19.tgz#42cc5f88e3a952f3a8ee32eb955e2827a7a2d9b0"
-  integrity sha512-0MoHTQATrTwm257v+mnrG4TEXCzugHzs5gluPoyCSi8Tz69s1xhSqbek+Vx0kGFXeo1v3GCEZwd9i2VRyn1kWg==
+svelte@3.0.0-beta.21:
+  version "3.0.0-beta.21"
+  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.0.0-beta.21.tgz#2e24409a2b2351153f8a46baae9b389c9121a036"
+  integrity sha512-TlYvRrwnA9SeoNwxD1nv6kzQO/KxPGISyaJrzizt1kEBSKEdY4rB9U1URDfpMtdAKdYJkeXXca4Tt6FWAyS5Ng==
 
 svgo@1.2.0:
   version "1.2.0"

@@ -31,6 +31,6 @@
 
 <script>
 	// import { page } from '@sapper/app'
-	import LazyImg from './_lazy-img.svelte'
+	import LazyImg from '../../components/shared/LazyImg.svelte'
 	export let item
 </script>
