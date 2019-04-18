@@ -1,29 +1,39 @@
 <!-- <p>{JSON.stringify(item)}</p> -->
 
 <div class="news-item">
-	<!-- <LazyImg src={item.src}/> -->
+	{#if item.cover}
+		<LazyImg src={item.cover.url} alt={item.cover.attribution}/>
+	{:else}
+		<LazyImg src="https://wearehubgames-website.s3.amazonaws.com/hero/upload/775/logo-blank-big.svg" alt="blank"/>
+	{/if}
 	<h2>{item.title}</h2>
 	<h3>Posted {formattedDate} at {formattedTime}</h3>
 	{#if item.summary}
 		<p>{item.summary}</p>
 	{/if}
-	<a href="/archive/{item.id}" rel=prefetch>Explore</a>
+	<!-- {#if item.content && item.content.text}
+		<p>{item.content.text}</p>
+	{/if} -->
+	<!-- <a href="/archive/{item.id}" rel=prefetch>Explore</a> -->
+	<h4>Tags:</h4>
+	<div class="tags">
+		{#each tags as tag, index}
+			<strong>{tag}</strong>
+		{/each}
+	</div>
 </div>
 
-<!-- title: "ten 10", -->
-<!-- content: "excepteur sint tempor adipisicing mollit dolor cupidatat adipisicing ad in enim sunt voluptate irure eiusmod amet deserunt pariatur magna amet ullamco enim velit officia enim incididunt excepteur anim consectetur duis mollit pariatur", -->
-<!-- summary: "", -->
-<!-- published: true, -->
-<!-- _id: "5c9c4b202d0fb50c30cde46a", -->
-<!-- createdAt: "2019-03-28T04:18:40.063Z", -->
-<!-- updatedAt: "2019-03-28T04:18:40.067Z", -->
-<!-- __v: 0, -->
-<!-- id: "5c9c4b202d0fb50c30cde46a", -->
-<!-- cover: null -->
+<!-- {
+	"id": "cjulw3475qrw90946wrvtbagv",
+	"tags": [{
+		"tag": "awards"
+	}]
+} -->
+
 
 <script>
 	import dayjs from 'dayjs'
-	// import LazyImg from '../../components/shared/LazyImg.svelte'
+	import LazyImg from '../../components/shared/LazyImg.svelte'
 	export let item
 
 	// 2 seconds ago
@@ -41,6 +51,8 @@
 	$: parsed = dayjs(item.createdAt)
 	$: formattedDate = parsed.format('MMMM DD, YYYY')
 	$: formattedTime = parsed.format('h:mm a')
+
+	$: tags = item.tags.map(tag => tag.tag)
 </script>
 
 <style type="text/scss">
@@ -52,5 +64,18 @@
 		padding: 1.2rem 2rem;
 		background-color: $gray-7;
 		box-shadow: 0 0 2px $gray-5;
+	}
+	h4 {
+		margin: 0 0 0.4rem;
+	}
+	.tags {
+		display: flex;
+		strong {
+			margin-right: 0.4rem;
+			padding: 0 0.4rem;
+			background-color: $gray-6;
+			border: 1px solid $gray-4;
+			cursor: pointer;
+		}
 	}
 </style>

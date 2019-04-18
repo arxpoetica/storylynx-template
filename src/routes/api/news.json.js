@@ -3,19 +3,17 @@ import { cmsQuery } from '../../_server/utils/loaders'
 export async function get(req, res) {
 
 	try {
-		const { articles } = await cmsQuery(`
-			{
-				articles(where: { status: PUBLISHED }) {
-					id
-					status
-					createdAt
-					updatedAt
-					title
-					content { html }
-					summary
-				}
+		const { articles } = await cmsQuery(`{
+			articles(where: { status: PUBLISHED }) {
+				id
+				createdAt
+				title
+				content { text }
+				summary
+				cover { url attribution }
+				tags { tag }
 			}
-		`)
+		}`)
 		res.json(articles)
 
 	} catch (error) {

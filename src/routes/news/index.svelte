@@ -4,22 +4,7 @@
 {#if items && items.length}
 	<div class="news-items">
 		{#each items as item}
-
-			<h2>{item}</h2>
-			<!-- <h2>{item.name}</h2> -->
-			<!-- <div class="photos">
-				{#if item.photos && item.photos.length}
-					{#each item.photos as photo}
-						{#if photo.status === 'PUBLISHED'}
-							<div class="photo">
-								<img src={photo.url} alt={photo.mimeType}/>
-							</div>
-						{/if}
-					{/each}
-				{/if}
-			</div> -->
-
-			<!-- <NewsItem {item}/> -->
+			<NewsItem {item}/>
 		{/each}
 	</div>
 	<!-- {#if showLoadMore}
@@ -41,7 +26,7 @@
 </script>
 
 <script>
-	// import NewsItem from './_news-item.svelte'
+	import NewsItem from './_news-item.svelte'
 	export let items = []
 
 	// let showLoadMore = true
