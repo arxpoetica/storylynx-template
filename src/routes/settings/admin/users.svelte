@@ -9,7 +9,7 @@
 {/if}
 
 <script context="module">
-	import { graphQuery } from '../../_services/loaders.js'
+	import { graphQuery } from '../../../_server/utils/loaders'
 	export async function preload({ params }) {
 		const { users } = await graphQuery(this.fetch, '{ users { username email bio avatar last first displayName } }')
 		return { users }
