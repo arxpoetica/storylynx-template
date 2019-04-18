@@ -1,26 +1,26 @@
 <footer>
-    <div class="footer-evil-wrap">
-        <a data-on="{segment === 'terms'}"href="/terms">Terms &amp; Conditions</a>
-        <a data-on="{segment === 'privacy'}"href="/privacy-policy">Privacy Policy</a>
+	<div class="footer-evil-wrap">
+		<a data-on="{segment === 'terms'}"href="/terms">Terms &amp; Conditions</a>
+		<a data-on="{segment === 'privacy'}"href="/privacy-policy">Privacy Policy</a>
 
-        <a class="cobranding" href="https://www.johnnymillerchampfoundation.org/" target="_blank">The Champ Foundation</a>
-    </div>
+		<a class="cobranding" href="https://www.johnnymillerchampfoundation.org/" target="_blank">The Champ Foundation</a>
+	</div>
 </footer>
 
 <script>
-    export let segment
+	export let segment
 </script>
 
 <style type="text/scss">
-    footer {
-        height: $footer-height;
+	footer {
+		height: $footer-height;
 		bottom: 0;
 		left: 0;
 		width: 100%;
 		background-color: $bg2;
 		color: $black;
 		font: 1.3rem/1 $font;
-        a {
+		a {
 			height: 28px;
 			padding: 0 8px;
 			border-radius: 1px;
@@ -31,10 +31,10 @@
 			&:hover,
 			&:focus {
 				background-color: $yellow-light
-            }
-            &.cobranding {
-                margin-left: auto;
-            }
+			}
+			&.cobranding {
+				margin-left: auto;
+			}
 		}
 	}
 	.footer-evil-wrap {

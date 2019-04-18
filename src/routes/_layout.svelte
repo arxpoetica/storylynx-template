@@ -3,7 +3,7 @@
 	<main>
 		<slot></slot>
 	</main>
-	<Footer/>
+	<Footer segment={segment || 'home'}/>
 </div>
 
 <script>
