@@ -1,19 +1,15 @@
 <!-- <p>{JSON.stringify(item)}</p> -->
 
-<div class="news-item">
+<!-- <a class="news-item" href="/news/{item.id}" rel=prefetch> -->
+<a class="news-item" href="/news/{item.id}">
 	{#if item.cover}
 		<LazyImg src={item.cover.url} alt={item.cover.attribution}/>
 	{:else}
 		<LazyImg src="https://wearehubgames-website.s3.amazonaws.com/hero/upload/775/logo-blank-big.svg" alt="blank"/>
 	{/if}
 	<h2>{item.title}</h2>
-	<h3>Posted {formattedDate} at {formattedTime}</h3>
-	{#if item.summary}
-		<p>{item.summary}</p>
-	{/if}
-	<!-- {#if item.content && item.content.text}
-		<p>{item.content.text}</p>
-	{/if} -->
+	<h3>{formattedstamp(item.createdAt)}</h3>
+	<p>{summary}</p>
 	<!-- <a href="/archive/{item.id}" rel=prefetch>Explore</a> -->
 	<h4>Tags:</h4>
 	<div class="tags">
@@ -21,36 +17,22 @@
 			<strong>{tag}</strong>
 		{/each}
 	</div>
-</div>
-
-<!-- {
-	"id": "cjulw3475qrw90946wrvtbagv",
-	"tags": [{
-		"tag": "awards"
-	}]
-} -->
-
+</a>
 
 <script>
-	import dayjs from 'dayjs'
+	import { formattedstamp } from '../../_server/utils/basic-utils'
 	import LazyImg from '../../components/shared/LazyImg.svelte'
 	export let item
 
-	// 2 seconds ago
-	// 20 seconds ago
-	// 34 seconds ago
-	// 1 minute ago
-	// 55 minutes ago
-	// 2 hours ago
-	// 23 hours ago
-	// 1 day ago
-	// 2 days ago
-	// 3 days ago
-	// 7 days ago
-	// March 19
-	$: parsed = dayjs(item.createdAt)
-	$: formattedDate = parsed.format('MMMM DD, YYYY')
-	$: formattedTime = parsed.format('h:mm a')
+	let summary = ''
+	$: if (item.summary) {
+		summary = item.summary
+	} else if (item.content.text) {
+		const text = item.content.text
+		summary = text.length > 100 ? text.slice(0, 99).trim() + '...' : text
+	} else {
+		summary = 'No summary.'
+	}
 
 	$: tags = item.tags.map(tag => tag.tag)
 </script>

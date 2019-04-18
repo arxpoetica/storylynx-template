@@ -19,5 +19,12 @@ export const random = (lower, upper) => {
 	return Math.floor(Math.random() * (upper - lower + 1)) + lower
 }
 
+// date/time
+import dayjs from 'dayjs'
+export const datestamp = datetime => dayjs(datetime).format('MMMM DD, YYYY')
+export const timestamp = datetime => dayjs(datetime).format('h:mma')
+// TODO: 2 seconds ago, 20 seconds ago, 34 seconds ago, 1 minute ago, 55 minutes ago, 2 hours ago, 23 hours ago, 1 day ago, 2 days ago, 3 days ago, 7 days ago, March 19
+export const formattedstamp = datetime => `Posted ${datestamp(datetime)} at ${timestamp(datetime)}`
+
 // NOTE: might write my own helpers?
 // https://medium.com/@abustamam/for-loops-vs-foreach-in-javascript-7a977278a39e

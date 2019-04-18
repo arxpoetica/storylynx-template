@@ -18,9 +18,7 @@
 
 <script context="module">
 	export async function preload() {
-		const res = await this.fetch('/api/news.json')
-		const items = await res.json()
-		console.log(items)
+		const items = await (await this.fetch('/api/articles.json')).json()
 		return { items }
 	}
 </script>
@@ -50,18 +48,5 @@
 		display: flex;
 		flex-wrap: wrap;
 		margin: 0 -0.6rem 2rem;
-	}
-	.photos {
-		display: flex;
-		flex-wrap: wrap;
-	}
-	.photo {
-		flex: 1;
-		max-width: 40rem;
-		min-width: 30rem;
-		margin: 0 0.6rem 1.2rem;
-		padding: 1.2rem 2rem;
-		background-color: $gray-7;
-		box-shadow: 0 0 2px $gray-5;
 	}
 </style>

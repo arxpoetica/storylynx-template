@@ -4,7 +4,12 @@ export async function get(req, res) {
 
 	try {
 		const { articles } = await cmsQuery(`{
-			articles(where: { status: PUBLISHED }) {
+			articles(
+				# first: 3,
+				# skip: 0,
+				where: { status: PUBLISHED },
+				orderBy: createdAt_DESC
+			) {
 				id
 				createdAt
 				title
