@@ -4,45 +4,34 @@ import advancedFormat from 'dayjs/plugin/advancedFormat'
 dayjs.extend(advancedFormat)
 import { hyphenate, random, unique } from '../../_server/utils/basic-utils.js'
 
-import { youtubes, videos, tags } from '../js/json-helpers.js'
+import { assetIds, tags } from '../js/json-helpers.js'
 
 export default () => {
 
-	const arr = [...Array(30).keys()]
+	const arr = [...Array(50).keys()]
 
-	return arr.map(($$$, index) => {
-
-		const timestamp = dayjs()
-			.set('date', random(0, 27))
-			.set('month', random(0, 11))
-			.set('year', random(2013, 2018))
-			.set('hour', random(1, 24))
-			.set('minute', random(0, 59))
-			.set('second', random(0, 59))
-		const randomTags = unique([...Array(random(1, 4)).keys()].map(() => tags[random(0, tags.length - 1)]))
-		const tag = randomTags[random(0, randomTags.length - 1)]
-
-		const item = {
-			title: `${loremIpsum()} (${index + 1})`,
-			summary: loremIpsum({ count: random(5, 40), units: 'words' }),
-			timestamp: parseInt(timestamp.format('x')),
-			timestampFormatted: timestamp.format('MMM D, YYYY'),
+	return arr.map((_, index) => {
+		const title = `${loremIpsum()} (${index + 1})`
+		const summary = loremIpsum({ count: random(5, 30), units: 'words' })
+		const content = [...Array(random(2, 20)).keys()].map(el => {
+			const rand = random(0, 8)
+			const type = rand === 0 ? 'h2' : 'p'
+			const words = loremIpsum({ count: random(5, 40), units: 'words' })
+			return `<${type}>${words}</${type}>`
+		})
+		const randomTags = unique([...Array(random(1, 4)).keys()]
+			.map(() => tags[random(0, tags.length - 1)]))
+			.map(tag => { return { tag } })
+		randomTags.push({ tag: 'delete' })
+		return {
+			status: random(0, 15) === 0 ? 'DRAFT' : 'PUBLISHED',
+			title,
+			slug: random(0, 3) === 0 ? hyphenate(title).toLowerCase() : `news-item-${index + 1}`,
+			summary,
+			content,
+			coverId: assetIds[random(1, assetIds.length) - 1],
 			tags: randomTags,
 		}
-
-		// types: video, audio, text, image
-		const chance = random(1, 8)
-		item.type = chance === 6 ? 'video' : (chance === 7 ? 'audio' : (chance === 8 ? 'text' : 'image'))
-		item.id = `${item.type}-${index + 1}`
-		if (item.type === 'video') {
-			item.src = `http://lorempixel.com/${random(4, 30) * 20}/${random(4, 30) * 20}/${hyphenate(tag)}`
-		// } else if (item.type === 'text') {
-		} else if (item.type === 'image') {
-			item.src = `http://lorempixel.com/${random(4, 30) * 20}/${random(4, 30) * 20}/${hyphenate(tag)}`
-		}
-
-		return item
-
 	})
 
 }

@@ -1,5 +1,5 @@
 import path from 'path'
-import chalk from 'chalk'
+import { yellow } from 'ansi-colors'
 import './src/_server/build/config'
 
 import resolve from 'rollup-plugin-node-resolve';
@@ -99,7 +99,7 @@ function onwarn(warning) {
 		return
 	}
 	console.log()
-	console.log(chalk.yellow(`${warning.message} in:`))
+	console.log(yellow(`${warning.message} in:`))
 	console.log(warning.filename.split(__dirname)[1])
 	console.log(warning.frame)
 	console.log()

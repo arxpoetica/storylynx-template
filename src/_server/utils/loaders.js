@@ -1,15 +1,35 @@
 import fetch from 'cross-fetch'
 
 export const cmsQuery = async function(query) {
-	const res = await fetch(process.env.JM_GRAPHCMS_ENDPOINT, {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json',
-			Authorization: 'Bearer ' + process.env.JM_GRAPHCMS_TOKEN,
-		},
-		body: JSON.stringify({ query }),
-	})
-	return (await res.json()).data
+	try {
+		const res = await fetch(process.env.JM_GRAPHCMS_ENDPOINT, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: 'Bearer ' + process.env.JM_GRAPHCMS_TOKEN,
+			},
+			body: JSON.stringify({ query }),
+		})
+		return (await res.json()).data
+	} catch (error) {
+		console.log(error)
+	}
+}
+
+export const cmsMutate = async function(query, variables) {
+	try {
+		const res = await fetch(process.env.JM_GRAPHCMS_ENDPOINT, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: 'Bearer ' + process.env.JM_GRAPHCMS_MUTATE_TOKEN,
+			},
+			body: JSON.stringify({ query, variables }),
+		})
+		return (await res.json()).data
+	} catch (error) {
+		console.log(error)
+	}
 }
 
 export const graphQuery = async function(query, convertRawKeys) {

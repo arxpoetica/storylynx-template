@@ -21,6 +21,13 @@ export const random = (lower, upper) => {
 
 // date/time
 import dayjs from 'dayjs'
+export const randomTimestamp = () => dayjs()
+	.set('date', random(0, 27))
+	.set('month', random(0, 11))
+	.set('year', random(2013, 2018))
+	.set('hour', random(1, 24))
+	.set('minute', random(0, 59))
+	.set('second', random(0, 59))
 export const datestamp = datetime => dayjs(datetime).format('MMMM DD, YYYY')
 export const timestamp = datetime => dayjs(datetime).format('h:mma')
 // TODO: 2 seconds ago, 20 seconds ago, 34 seconds ago, 1 minute ago, 55 minutes ago, 2 hours ago, 23 hours ago, 1 day ago, 2 days ago, 3 days ago, 7 days ago, March 19
