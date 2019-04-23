@@ -3,7 +3,7 @@
 <!-- <a class="news-item" href="/news/{item.id}" rel=prefetch> -->
 <a class="news-item" href="/news/{item.id}">
 	<LazyImg {src} {alt}/>
-	<h2>{item.title} - {item.cover.url}</h2>
+	<h2>{item.title}</h2>
 	<h3>{formattedstamp(item.createdAt)}</h3>
 	<p>{summary}</p>
 	<!-- <a href="/archive/{item.id}" rel=prefetch>Explore</a> -->
