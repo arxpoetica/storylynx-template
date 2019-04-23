@@ -5,7 +5,7 @@ export async function get(req, res) {
 	try {
 		const { articles } = await cmsQuery(`{
 			articles(
-				# first: 3,
+				first: 3,
 				# skip: 0,
 				where: { status: PUBLISHED },
 				orderBy: createdAt_DESC
@@ -15,7 +15,7 @@ export async function get(req, res) {
 				title
 				content { text }
 				summary
-				cover { url attribution }
+				cover { url attribution handle }
 				tags { tag }
 			}
 		}`)

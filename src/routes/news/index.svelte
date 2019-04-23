@@ -41,6 +41,10 @@
 	// 	if (olderItems.length < 3) { showLoadMore = false }
 	// 	items = [...items, ...olderItems]
 	// }
+
+
+	// let items, pageNumber = 0, pageSize = 20;
+	// $: items = sorted.slice(pageNumber * pageSize, (pageNumber + 1) * pageSize);
 </script>
 
 <style type="text/scss">

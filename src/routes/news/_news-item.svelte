@@ -2,12 +2,8 @@
 
 <!-- <a class="news-item" href="/news/{item.id}" rel=prefetch> -->
 <a class="news-item" href="/news/{item.id}">
-	{#if item.cover}
-		<LazyImg src={item.cover.url} alt={item.cover.attribution}/>
-	{:else}
-		<LazyImg src="https://wearehubgames-website.s3.amazonaws.com/hero/upload/775/logo-blank-big.svg" alt="blank"/>
-	{/if}
-	<h2>{item.title}</h2>
+	<LazyImg {src} {alt}/>
+	<h2>{item.title} - {item.cover.url}</h2>
 	<h3>{formattedstamp(item.createdAt)}</h3>
 	<p>{summary}</p>
 	<!-- <a href="/archive/{item.id}" rel=prefetch>Explore</a> -->
@@ -23,6 +19,11 @@
 	import { formattedstamp } from '../../_server/utils/basic-utils'
 	import LazyImg from '../../components/shared/LazyImg.svelte'
 	export let item
+
+	$: src = item.cover ?
+		`${item.cover.url.split(item.cover.handle)[0]}resize=w:400,h:400,fit:crop/${item.cover.handle}` :
+		'https://wearehubgames-website.s3.amazonaws.com/hero/upload/775/logo-blank-big.svg'
+	$: alt = item.cover ? item.cover.attribution : 'blank'
 
 	let summary = ''
 	$: if (item.summary) {

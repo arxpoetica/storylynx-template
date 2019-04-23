@@ -91,16 +91,14 @@ export default {
 };
 
 function onwarn(warning) {
-	// Silence circular dependency warning for moment package
+	// Silence circular dependency warning for @sapper shtuff
 	if (
 		warning.code === 'CIRCULAR_DEPENDENCY' &&
-		!warning.importer.indexOf(path.normalize('src/node_modules/@sapper/'))
+		warning.message.indexOf(' -> src/node_modules/@sapper')
 	) {
 		return
 	}
 	console.log()
-	console.log(yellow(`${warning.message} in:`))
-	console.log(warning.filename.split(__dirname)[1])
-	console.log(warning.frame)
+	console.log(yellow(warning.message))
 	console.log()
 }
