@@ -1,3 +1,4 @@
+import { red } from 'ansi-colors'
 import postcss from 'postcss'
 import postcssScssSyntax from 'postcss-scss'
 // UNFORTUNATELY THIS IS AN ABSOLUTE PATH, WEIRDLY
@@ -27,10 +28,7 @@ export default function(/* domain */) {
 				}
 
 			} catch (error) {
-				console.log('Error: something went wrong'.red)
-				console.log('Error: something went wrong'.red)
-				console.log('Error: something went wrong'.red)
-				console.log('Error: something went wrong'.red)
+				console.log(red('Error: something went wrong'))
 				console.log(error)
 				return { code: ''/* , map: '' */ }
 			}

@@ -1,6 +1,6 @@
 // FIXME: config should work
 // import config from './_server/build/config'
-import 'colors'
+import { green, yellow, red } from 'ansi-colors'
 import express from 'express'
 import morgan from 'morgan'
 import helmet from 'helmet'
@@ -19,11 +19,11 @@ const development = NODE_ENV === 'development'
 // TODO: https://shapeshed.com/uncaught-exceptions-in-node/
 // handle all uncaught exceptions
 // see - https://nodejs.org/api/process.html#process_event_uncaughtexception
-process.on('uncaughtException', error => console.error('Uncaught Exception:'.red, error))
+process.on('uncaughtException', error => console.error(red('Uncaught Exception:'), error))
 // handle all unhandled promise rejections
 // see - http://bluebirdjs.com/docs/api/error-management-configuration.html#global-rejection-events
 // or for latest node - https://nodejs.org/api/process.html#process_event_unhandledrejection
-process.on('unhandledRejection', error => console.error('Unhandled Rejection:'.red, error))
+process.on('unhandledRejection', error => console.error(red('Unhandled Rejection:'), error))
 
 // ---> FOOTGUN!?
 async function start() {
@@ -65,15 +65,15 @@ async function start() {
 	app.listen(PORT, setTimeout(() => {
 		console.log()
 		console.log()
-		console.log('       \'\\                   .  .                        |>' + '18'.red + '>>')
+		console.log('       \'\\                   .  .                        |>' + red('18') + '>>')
 		console.log('         \\              .         \' .                   |')
-		console.log('        O>>'.yellow + '         .                 \'o                |')
-		console.log('         \\'.yellow + '       .                                      |')
-		console.log('         /\\'.yellow + '    .                                        |')
-		console.log('        / /'.yellow + '  .\'                                         |')
-		console.log('     ^^^^^^^`^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^'.green)
+		console.log(yellow('        O>>') + '         .                 \'o                |')
+		console.log(yellow('         \\') + '       .                                      |')
+		console.log(yellow('         /\\') + '    .                                        |')
+		console.log(yellow('        / /') + '  .\'                                         |')
+		console.log(green('     ^^^^^^^`^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^'))
 		console.log('     ~~~~~~~~   Johnny Miller   ~~~~~~~~   his personal website.')
-		console.log('     listening on port '.green + PORT + ' in '.green + NODE_ENV + ' mode'.green)
+		console.log(green('     listening on port ') + PORT + green(' in ') + NODE_ENV + green(' mode'))
 		console.log()
 		// console.log(JSON.stringify(process.env, null, 2))
 		console.log()

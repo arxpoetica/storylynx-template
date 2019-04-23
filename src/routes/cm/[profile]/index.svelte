@@ -29,7 +29,7 @@
 </div>
 
 <script context="module">
-	import { graphQuery } from '../../_services/loaders.js'
+	import { graphQuery } from '../../../_server/utils/loaders'
 	export async function preload({ params }) {
 		const { user } = await graphQuery(this.fetch, `{
 			user(username: "${params.profile}")  {

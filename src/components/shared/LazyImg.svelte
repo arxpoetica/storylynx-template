@@ -1,5 +1,5 @@
 <div class="shell">
-	<img {src} alt="" use:lazy/>
+	<img {src} {alt} use:lazy/>
 	{#if loaded}
 		<div class="img {show ? 'show' : ''}" style="background-image:url({src});"></div>
 	{:else}
@@ -10,7 +10,7 @@
 <script>
 	import { onMount, tick } from 'svelte'
 	export let src
-	// export let alt
+	export let alt = 'No information present about this image.'
 	export let loaded = false
 	let show = false
 
