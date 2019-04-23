@@ -1,3 +1,4 @@
+// dummy data
 export const assetIds = [
 	'cjulw20urqrs40946pujpkptz',
 	'cjuou3amc1j7c0946unvl6lx4',
@@ -13,11 +14,70 @@ export const assetIds = [
 	'cjuou3b291j8z0946j0yh5xxb',
 ]
 
+// dummy data
 export const tags = [
 	'tournament',
 	'family',
 	'awards',
 	'broadcast',
+]
+
+// dummy data
+export const articleIds = [
+	'cjukjavgllmkf0946o58o4uvi',
+	'cjulvrndrqqp90946caa2yxdw',
+	'cjulw3475qrw90946wrvtbagv',
+	'cjulw5nolqs6a0946g6h5ow9c',
+	'cjuqax3y45isl09467y0mjbx7',
+	'cjuqb0z595j1x0946gy2t03l2',
+	'cjuqb4ud45jdm0946y19o9alj',
+	'cjuqb8pmm5jpg0946imshplpu',
+	'cjuqbckte5k3409462tgse3aw',
+	'cjuqbgfzt5kjd0946wfoz3nr0',
+	'cjuqbkb5t5l020946rjol3bi7',
+	'cjuqbo6ee5lgi0946v7s3j6bx',
+	'cjuqbs1kn5lu40946zrb8m5mi',
+	'cjuqbvwx55m6u0946kt62h9b2',
+	'cjuqbzs6p5mki0946r90892pg',
+	'cjuqc3ni45n0609468uvba6k5',
+	'cjuqc7ipt5nfy0946bez0fhfi',
+	'cjuqcbdzt5nuf09469ln2gkf6',
+	'cjuqcf9865o6y0946gu7dxf9i',
+	'cjuqcj4gi5on00946a3s8qzf4',
+	'cjuqcmzs05p040946upp6itc0',
+	'cjuqcqux75pem0946ecjnvpje',
+	'cjuqcuq5v5psw0946qyyae4nc',
+	'cjuqcylcz5q7e0946542w5t7c',
+	'cjuqd2gmj5qkc09462lyclprz',
+	'cjuqd6bwj5qwi0946p5xwslhm',
+	'cjuqda79d5r960946e17kw543',
+	'cjuqde2kl5rlp0946gix4xvk5',
+	'cjuqdhxtx5ry00946v46mjbkk',
+	'cjuqdlt5z5sck09464m06aytb',
+	'cjuqdpohv5ssu0946i7lqli8o',
+	'cjuqdtjrq5t9u0946ji9ak16w',
+	'cjuqdxf5t5toz0946nczj80j8',
+	'cjuqe1aeg5u1y0946vcyb7z0u',
+	'cjuqe55qq5ug5094624vhn8oc',
+	'cjuqe913x5uwj09462lry7wia',
+	'cjuqecwes5vce0946x5ogqvwh',
+	'cjuqegrsw5vsn09468nzoowkn',
+	'cjuqekn4o5w920946pdewcz9l',
+	'cjuqeoid25wio09463t3toycl',
+	'cjuqesdoq5wqw0946gyxomnyw',
+	'cjuqew8ux5x0b0946qywvf0st',
+	'cjuqf045l5x8j0946hl35f39v',
+	'cjuqf3zdo5xgw09460hnaoew1',
+	'cjuqf7um95xph09460f4axrhr',
+	'cjuqfbprg5xyi0946spoxsqkv',
+	'cjuqffkzb5y6o0946usybpj23',
+	'cjuqfjga75yfj0946dlp4de52',
+	'cjuqfnbex5ypd0946vswfkyzs',
+	'cjuqfr6sn5yx209464hk6skp3',
+	'cjuqfv22f5z4x0946g2qyemj9',
+	'cjuqfyxbi5zd90946acxwqvzf',
+	'cjuqg2ski5zl409466r66q9dr',
+	'cjuqg6o1h5zth0946xha0x97l',
 ]
 
 // export const youtubes = [
