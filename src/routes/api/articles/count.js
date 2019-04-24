@@ -1,6 +1,6 @@
-import { cmsQuery } from '../../server/utils/loaders'
+import { cmsQuery } from '../../../server/utils/loaders'
 
-export async function get(req, res) {
+export async function post(req, res) {
 
 	try {
 		const { articles } = await cmsQuery(`{

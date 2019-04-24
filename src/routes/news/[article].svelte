@@ -20,7 +20,7 @@
 <script context="module">
 	import { POST } from '../../server/utils/loaders'
 	export async function preload({ params }) {
-		const article = await POST('/api/article.json', { id: params.article })
+		const article = await POST('/api/articles/single.json', { id: params.article })
 		return { article }
 	}
 </script>

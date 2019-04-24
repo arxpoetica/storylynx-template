@@ -1,24 +1,62 @@
-<div class="media-item">
-	<!-- <h1>{item.type}</h1> -->
-	<LazyImg src={item.src}/>
+<!-- <a class="media-item" href="/archive/{item.id}" rel=prefetch> -->
+<a class="media-item" href="/archive/{item.id}">
+	<LazyImg {src} {alt}/>
 	<h2>{item.title}</h2>
-	<p>{item.summary}</p>
-	<a href="/archive/{item.id}" rel=prefetch>Explore</a>
-</div>
+	<h3>{formattedstamp(item.createdAt)}</h3>
+	<p>{summary}</p>
+	<!-- <a href="/archive/{item.id}" rel=prefetch>Explore</a> -->
+	<h4>Tags:</h4>
+	<div class="tags">
+		{#each tags as tag, index}
+			<strong>{tag}</strong>
+		{/each}
+	</div>
+</a>
 
 <script>
+	import { formattedstamp } from '../../_server/utils/basic-utils'
 	import LazyImg from '../../components/shared/LazyImg.svelte'
 	export let item
+
+	$: src = item.cover ?
+		`${item.cover.url.split(item.cover.handle)[0]}resize=w:400,h:400,fit:crop/${item.cover.handle}` :
+		'https://wearehubgames-website.s3.amazonaws.com/hero/upload/775/logo-blank-big.svg'
+	$: alt = item.cover ? item.cover.attribution : 'blank'
+
+	let summary = ''
+	$: if (item.summary) {
+		summary = item.summary
+	} else if (item.content.text) {
+		const text = item.content.text
+		summary = text.length > 100 ? text.slice(0, 99).trim() + '...' : text
+	} else {
+		summary = 'No summary.'
+	}
+
+	$: tags = item.tags.map(tag => tag.tag)
 </script>
 
 <style type="text/scss">
 	.media-item {
 		flex: 1;
-		max-width: 30rem;
-		min-width: 20rem;
+		max-width: 40rem;
+		min-width: 30rem;
 		margin: 0 0.6rem 1.2rem;
 		padding: 1.2rem 2rem;
 		background-color: $gray-7;
 		box-shadow: 0 0 2px $gray-5;
+	}
+	h4 {
+		margin: 0 0 0.4rem;
+	}
+	.tags {
+		display: flex;
+		strong {
+			margin-right: 0.4rem;
+			padding: 0 0.4rem;
+			background-color: $gray-6;
+			border: 1px solid $gray-4;
+			cursor: pointer;
+		}
 	}
 </style>

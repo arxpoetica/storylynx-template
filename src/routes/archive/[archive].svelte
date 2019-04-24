@@ -1,36 +1,30 @@
-<!-- <h1>{$page.params.archive}</h1> -->
-<!-- <p>{JSON.stringify(item)}</p> -->
+<!-- <svelte:head><title>...</title></svelte:head> -->
 
 <h1>{item.title}</h1>
-<h2>{item.type}</h2>
-<LazyImg src={item.src}/>
-<p>{item.summary}</p>
-<ul>
-	{#each item.tags as tag}
-		<li>{tag}</li>
+<h2>{formattedstamp(item.createdAt)}</h2>
+<h4>Tags:</h4>
+<div class="tags">
+	{#each tags as tag, index}
+		<strong>{tag}</strong>
 	{/each}
-</ul>
+</div>
 
-<!-- "timestamp": 1547764967174, -->
-<!-- "timestampFormatted": "Jan 17, 2019", -->
-<!-- "type": "image", -->
-<!-- "id": "image-4", -->
-<!-- "src": "" -->
+<div class="content">
+	{@html item.content.html}
+</div>
 
 <script context="module">
+	import { POST } from '../../_server/utils/loaders'
 	export async function preload({ params }) {
-		const res = await this.fetch('/json/sample-media-items.json', {
-			method: 'GET',
-			headers: { 'Content-Type': 'application/json' },
-			credentials: 'same-origin',
-		})
-		const items = await res.json()
-		return { item: items[params.archive.split('-')[1]] }
+		const item = await POST('/api/articles/single.json', { id: params.article })
+		return { item }
 	}
 </script>
 
 <script>
-	// import { page } from '@sapper/app'
-	import LazyImg from '../../components/shared/LazyImg.svelte'
+	import { formattedstamp } from '../../_server/utils/basic-utils'
 	export let item
+	$: tags = item.tags.map(tag => tag.tag)
 </script>
+
+<!-- <style type="text/scss"></style> -->
