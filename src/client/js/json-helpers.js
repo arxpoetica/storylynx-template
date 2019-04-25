@@ -100,6 +100,87 @@ export const mimeTypeEnums = [
 // .weba	WEBM audio	audio/webm
 // .webm	WEBM video	video/webm
 
+export const externalMedia = [{
+	urls: ['https://storage.googleapis.com/coverr-main/mp4/Sunset-Desert-Run.mp4'],
+	summary: 'A runner in the desert.',
+	externalThumbUrl: 'https://storage.googleapis.com/coverr-public/poster/Sunset-Desert-Run.jpg',
+}, {
+	urls: ['https://storage.googleapis.com/coverr-main/mp4/Steaming-Yellowstone.mp4'],
+	summary: 'Bubbling sulfur pools at Yellowstone.',
+	externalThumbUrl: 'https://storage.googleapis.com/coverr-public/poster/Steaming-Yellowstone.jpg',
+}, {
+	urls: ['https://storage.googleapis.com/coverr-main/mp4/Horse-Shoe-Bend.mp4'],
+	summary: 'Horse shoe bend at Glen Canyon National Recreation Area.',
+	externalThumbUrl: 'https://storage.googleapis.com/coverr-public/poster/Horse-Shoe-Bend.jpg',
+}, {
+	urls: ['https://storage.googleapis.com/coverr-main/mp4/Desert-Crater.mp4'],
+	summary: 'The grand desert.',
+	externalThumbUrl: 'https://storage.googleapis.com/coverr-public/poster/Desert-Crater.jpg',
+}, {
+	urls: ['https://storage.googleapis.com/coverr-main/mp4/Sunflower_field.mp4'],
+	summary: 'Sunflowers!',
+	externalThumbUrl: 'https://storage.googleapis.com/coverr-public/poster/Sunflower_field.jpg',
+}, {
+	urls: ['https://storage.googleapis.com/coverr-main/mp4/Candolim-Beach.mp4'],
+	summary: 'Overly saturated, falsely colorized footage of Candolim Beach.',
+	externalThumbUrl: 'https://storage.googleapis.com/coverr-public/poster/Candolim-Beach.jpg',
+}, {
+	urls: [
+		'https://www.videvo.net/videvo_files/converted/2015_02/videos/Luna_00001.mov92931.mp4',
+		'https://www.videvo.net/videvo_files/converted/2015_02/preview/Luna_00001.mov92931.webm',
+	],
+	summary: 'The moon shines through the clouds.',
+	externalThumbUrl: 'https://www.videvo.net/videvo_files/images/preview_Luna_00001.jpg',
+}, {
+	urls: [
+		'https://www.videvo.net/videvo_files/converted/2016_05/preview/524013672.mp456058.webm',
+		'https://www.videvo.net/videvo_files/converted/2016_05/videos/524013672.mp456058.mp4',
+	],
+	summary: 'Footage of flying low over the ocean at sunset.',
+	externalThumbUrl: 'https://download.videvo.net/videvo_files/video/premium/video0009/thumbnails/wales_beach_sunset4k05_small.jpg',
+}, {
+	urls: ['https://scontent.cdninstagram.com/vp/bf082005c0808adb6eaac13b4a7ee61b/5CC483C6/t50.2886-16/32586821_465909987176489_7363748491756477738_n.mp4?_nc_ht=scontent.cdninstagram.com'],
+	summary: 'An elephant in Thailand.',
+	externalThumbUrl: 'https://scontent-sjc3-1.cdninstagram.com/vp/94d9d54157c8490d9693d9ee7dd6ad38/5D5CFC11/t51.2885-15/e35/31421737_251959435371045_6743237961984245760_n.jpg?_nc_ht=scontent-sjc3-1.cdninstagram.com',
+}, {
+	urls: ['http://www.cyberbasetradingpost.com/wp-content/uploads/2014/03/fire.mp3'],
+	summary: 'A campfire at night.',
+	externalThumbUrl: 'https://prevent-lss.com/wp-content/uploads/2017/07/47295652_m.jpg',
+}, {
+	urls: ['http://www.anzwad.com/dods/sound/ambient/windwinter.wav'],
+	summary: 'Winter winds.',
+	externalThumbUrl: '',
+}, {
+	urls: ['https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b5/Lonely_Villa_%281909%29.webm/Lonely_Villa_%281909%29.webm.480p.vp9.webm'],
+	summary: 'The Lonely Villa, a 1909 American silent short starring 17-yr-old Mary Pickford.',
+	externalThumbUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Lonely_Villa_%281909%29.webm/450px--Lonely_Villa_%281909%29.webm.jpg',
+}, {
+	urls: ['https://upload.wikimedia.org/wikipedia/commons/a/a5/Beethoven_-_Sonata_opus_111_-1.ogg'],
+	summary: 'Beethoven Sonata 32 Op.111 in C minor',
+	externalThumbUrl: 'https://sl.wikipedia.org/wiki/Ludwig_van_Beethoven#/media/File:Beethovensmall.jpg',
+}, {
+	urls: ['https://upload.wikimedia.org/wikipedia/commons/e/ee/Animals_In_Rocket_Flight.ogv'],
+	summary: 'Animals In Rocket Flight - an Airforce Video',
+	externalThumbUrl: '',
+}, {
+	urls: ['https://ak6.picdn.net/shutterstock/videos/24364166/preview/stock-footage-cg-animation-of-white-powder-explosion-on-black-background-slow-motion-movement-with-acceleration.webm'],
+	summary: '',
+	externalThumbUrl: '',
+}, {
+	urls: ['https://www.youtube.com/watch?v=BRhkQDINQj0'],
+	summary: 'Flatiron drone video - Superstition Mountains',
+	externalThumbUrl: '',
+}, {
+	urls: ['https://www.youtube.com/watch?v=oQlcKEd3IHo'],
+	summary: 'Johnny Miller\'s Swing Keys',
+	externalThumbUrl: 'https://static1.squarespace.com/static/56147064e4b0262b0af888ae/t/5615eb29e4b089e8994ea122/1444277083996/AP760710055+2.jpg',
+	thumbId: 'cjuou3at51j8209462ewq84ko',
+}, {
+	urls: ['https://vimeo.com/42261942'],
+	summary: 'Wolf Mountain',
+	externalThumbUrl: 'https://i.vimeocdn.com/video/459390435.webp?mw=1300&mh=552',
+}]
+
 // export const youtubes = [
 // 	'https://www.youtube.com/watch?v=KpMZXrRo99g',
 // 	'https://www.youtube.com/watch?v=lZHUmQ-dCXM',

@@ -12,7 +12,8 @@
     "debug:build": "node --inspect --inspect-brk ./node_modules/sapper/sapper build --legacy",
     "dev:articles:generate": "node -r esm -r ./src/server/build/config.js scripts/articles-generate.js",
     "dev:articles:fix": "node -r esm -r ./src/server/build/config.js scripts/articles-fix.js",
-    "dev:externalassets:generate": "node -r esm -r ./src/server/build/config.js scripts/externalassets-generate.js",
+    "dev:externalassets-1:generate": "node -r esm -r ./src/server/build/config.js scripts/externalassets-generate-1.js",
+    "dev:externalassets-2:generate": "node -r esm -r ./src/server/build/config.js scripts/externalassets-generate-2.js",
     "watch": "trim watch --svgo --postcss --json"
   },
   "dependencies": {
