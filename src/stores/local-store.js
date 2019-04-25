@@ -2,7 +2,7 @@
 
 import { writable } from 'svelte/store'
 const storage = typeof localStorage !== 'undefined' ? localStorage : {
-	removeItem: key => { if (storage[key]) { delete storage[key] } },
+	removeItem: () => {},
 }
 
 /**

@@ -10,8 +10,9 @@
     "start": "node __sapper__/build",
     "debug": "sapper dev --inspect",
     "debug:build": "node --inspect --inspect-brk ./node_modules/sapper/sapper build --legacy",
-    "dev:generate:news": "node -r esm -r ./src/server/build/config.js scripts/news-generate-fake-content.js",
-    "dev:fix:news": "node -r esm -r ./src/server/build/config.js scripts/news-fix-fake-content.js",
+    "dev:articles:generate": "node -r esm -r ./src/server/build/config.js scripts/articles-generate.js",
+    "dev:articles:fix": "node -r esm -r ./src/server/build/config.js scripts/articles-fix.js",
+    "dev:externalassets:generate": "node -r esm -r ./src/server/build/config.js scripts/externalassets-generate.js",
     "watch": "trim watch --svgo --postcss --json"
   },
   "dependencies": {

@@ -80,6 +80,26 @@ export const articleIds = [
 	'cjuqg6o1h5zth0946xha0x97l',
 ]
 
+export const mimeTypeEnums = [
+	'AVI',
+	'MP3_audio',
+	'MPEG_Video',
+	'OGG_audio',
+	'OGG_video',
+	'Waveform_Audio_Format',
+	'WEBM_audio',
+	'WEBM_video',
+	'Unknown',
+]
+// .avi	AVI: Audio Video Interleave	video/x-msvideo
+// .mp3	MP3 audio	audio/mpeg
+// .mpeg	MPEG Video	video/mpeg
+// .oga	OGG audio	audio/ogg
+// .ogv	OGG video	video/ogg
+// .wav	Waveform Audio Format	audio/wav
+// .weba	WEBM audio	audio/webm
+// .webm	WEBM video	video/webm
+
 // export const youtubes = [
 // 	'https://www.youtube.com/watch?v=KpMZXrRo99g',
 // 	'https://www.youtube.com/watch?v=lZHUmQ-dCXM',
