@@ -13,13 +13,15 @@
 
 <script context="module">
 	import { POST } from '../../_server/utils/loaders'
-	export async function preload() {
-		const { resources, count } = await POST('/api/resources/page.json', {})
+	export async function preload({ query }) {
+		const { resources, count } = await POST('/api/resources/page.json', Object.assign({ pageSize: 4 }, query))
 		return { resources, count }
 	}
 </script>
 
 <script>
+	import { onMount } from 'svelte'
+	import { page } from '@sapper/app'
 	import { extractThumb } from './_resource-helpers'
 
 	import Resource from './_resource.svelte'

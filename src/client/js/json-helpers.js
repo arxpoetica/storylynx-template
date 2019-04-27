@@ -157,7 +157,7 @@ export const externalMedia = [{
 }, {
 	urls: ['https://upload.wikimedia.org/wikipedia/commons/a/a5/Beethoven_-_Sonata_opus_111_-1.ogg'],
 	summary: 'Beethoven Sonata 32 Op.111 in C minor',
-	externalThumbUrl: 'https://sl.wikipedia.org/wiki/Ludwig_van_Beethoven#/media/File:Beethovensmall.jpg',
+	externalThumbUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/c0/Beethovensmall.jpg',
 }, {
 	urls: ['https://upload.wikimedia.org/wikipedia/commons/e/ee/Animals_In_Rocket_Flight.ogv'],
 	summary: 'Animals In Rocket Flight - an Airforce Video',

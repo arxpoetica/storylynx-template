@@ -3,15 +3,16 @@ import { cmsQuery } from '../../../_server/utils/loaders'
 export async function post(req, res) {
 
 	try {
-		debugger
-		// const { resources } = await cmsQuery(`{
+		const page = req.body.page ? parseInt(req.body.page) : 0
+		const pageSize = req.body.pageSize ? parseInt(req.body.pageSize) : 20
+		const skip = page * pageSize
+
 		const { resources, resourcesConnection } = await cmsQuery(`{
 
 			resourcesConnection(where: { status: PUBLISHED }) { aggregate { count } }
-
 			resources(
-				first: 3,
-				skip: 0,
+				first: ${pageSize},
+				skip: ${skip},
 				where: { status: PUBLISHED }
 				orderBy: createdAt_DESC
 			) {

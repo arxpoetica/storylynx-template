@@ -962,7 +962,7 @@ export const resources = [{
 		],
 		"summary": "Beethoven Sonata 32 Op.111 in C minor",
 		"thumb": null,
-		"externalThumbUrl": "https://sl.wikipedia.org/wiki/Ludwig_van_Beethoven#/media/File:Beethovensmall.jpg",
+		"externalThumbUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Beethovensmall.jpg",
 		"tags": [{
 				"tag": "tournament"
 			}, {
