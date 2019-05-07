@@ -21,7 +21,8 @@
 
 <script>
 	import { onMount } from 'svelte'
-	import { page } from '@sapper/app'
+	import { stores } from '@sapper/app'
+	const { page } = stores()
 	import { extractThumb } from './_resource-helpers'
 
 	import Resource from './_resource.svelte'
