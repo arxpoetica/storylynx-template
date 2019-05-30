@@ -2,7 +2,7 @@ const tinycolor = require('tinycolor2')
 
 module.exports.plugins = [
 	require('postcss-easy-import')({
-		path: ['src/_client/postcss', 'router'],
+		path: ['src/client/postcss', 'router'],
 		extensions: ['.css', '.scss', '.postcss'],
 		prefix: '_',
 	}),

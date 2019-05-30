@@ -2,7 +2,7 @@ import { red } from 'ansi-colors'
 import postcss from 'postcss'
 import postcssScssSyntax from 'postcss-scss'
 // UNFORTUNATELY THIS IS AN ABSOLUTE PATH, WEIRDLY
-const plugins = require('./src/_server/build/postcss.config.vars').plugins
+const plugins = require('./src/server/build/postcss.config.vars').plugins
 
 export default function(/* domain */) {
 	// NOTE: `domain` is useful for debugging if it is SSR or DOM

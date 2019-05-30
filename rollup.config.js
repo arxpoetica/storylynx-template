@@ -1,6 +1,6 @@
 import path from 'path'
 import { yellow } from 'ansi-colors'
-import './src/_server/build/config'
+import './src/server/build/config'
 
 import resolve from 'rollup-plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
@@ -13,8 +13,8 @@ import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 
-import preprocess from './src/_server/build/rollup.preprocess'
-import sharedVars from './src/_server/build/rollup.vars'
+import preprocess from './src/server/build/rollup.preprocess'
+import sharedVars from './src/server/build/rollup.vars'
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';

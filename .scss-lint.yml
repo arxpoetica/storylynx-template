@@ -3,7 +3,7 @@
 
 scss_files: '**/*.scss'
 
-# exclude: 'src/_client/lib/whatever/**'
+# exclude: 'src/client/lib/whatever/**'
 
 linters:
   BangFormat:

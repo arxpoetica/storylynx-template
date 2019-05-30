@@ -16,7 +16,7 @@
 </a>
 
 <script>
-	import { formattedstamp } from '../../_server/utils/basic-utils'
+	import { formattedstamp } from '../../server/utils/basic-utils'
 	import LazyImg from '../../components/shared/LazyImg.svelte'
 	export let item
 

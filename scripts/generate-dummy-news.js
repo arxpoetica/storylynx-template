@@ -4,7 +4,7 @@ import { JSDOM } from 'jsdom'
 const serializer = new Html({ parseHtml: JSDOM.fragment })
 import articles from '../static/json/sample-news-items.json'
 const articlesLength = articles.length
-import { cmsMutate } from '../src/_server/utils/loaders'
+import { cmsMutate } from '../src/server/utils/loaders'
 
 // articles.forEach(async(article, index) => {
 // 	if (index < 2) {
