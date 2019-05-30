@@ -19,8 +19,8 @@
 	const session = getSession()
 
 	import Nav from './Nav.svelte'
-	// import AuthLogo from '../../client/svg/compiled/logo-header.svg'
-	// import NoAuthLogo from '../../client/svg/compiled/logo-header-noauth.svg'
+	// import AuthLogo from '../../routes/_svg/logo-header.svg'
+	// import NoAuthLogo from '../../routes/_svg/logo-header-noauth.svg'
 </script>
 
 <style type="text/scss">

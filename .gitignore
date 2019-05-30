@@ -6,3 +6,4 @@ node_modules
 .env.*
 !.env.defaults
 /_hidden
+/src/routes/_refresh.svelte
