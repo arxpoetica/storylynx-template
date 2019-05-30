@@ -10,13 +10,8 @@
     "start": "node __sapper__/build",
     "debug": "sapper dev --inspect",
     "debug:build": "node --inspect --inspect-brk ./node_modules/sapper/sapper build --legacy",
-    "watch": "trim watch --svgo --postcss",
-    "dev:json:if": "if [ $e = \"unlink\" ]; then c=\"\\033[31m\" n=\"${f//src\\/client\\/json\\/}\" yarn run -s dev:json:unlink; else c=\"\\033[32m\" yarn run -s dev:json:compile; fi;",
-    "dev:json:info": "echo \"\\033[0;35m---> JSON file event $c$e\\033[0;35m\\033[0m $f\"",
-    "dev:json:compile": "yarn run -s dev:json:info; node -r esm src/server/build/json-compile.js",
-    "dev:json:unlink": "yarn run -s dev:json:info; rm src/client/json/$n",
     "dev:generate:news": "node -r esm -r ./src/server/build/config.js scripts/generate-dummy-news.js",
-    "watch:json": "SHELL=/bin/bash chokidar 'src/client/json/**.js' -c 'f={path} e={event} run-s -s dev:json:if' --silent"
+    "watch": "trim watch --svgo --postcss --json"
   },
   "dependencies": {
     "ansi-colors": "3.2.4",
@@ -41,6 +36,10 @@
     "@babel/plugin-transform-runtime": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/runtime": "^7.0.0",
+    "@sapper-dragon/json": "0.0.8",
+    "@sapper-dragon/postcss": "0.0.7",
+    "@sapper-dragon/svgo": "0.0.7",
+    "@sapper-dragon/trimmings": "0.0.8",
     "babel-plugin-transform-runtime": "6.23.0",
     "babel-preset-env": "1.7.0",
     "babel-register": "6.26.0",

@@ -6,11 +6,11 @@ import { hyphenate, random, unique } from '../../server/utils/basic-utils.js'
 
 import { assetIds, tags } from '../js/json-helpers.js'
 
-export default () => {
+export const compile = () => {
 
 	const arr = [...Array(50).keys()]
 
-	return arr.map((_, index) => {
+	const result = arr.map((_, index) => {
 		const title = `${loremIpsum()} (${index + 1})`
 		const summary = loremIpsum({ count: random(5, 30), units: 'words' })
 		const content = [...Array(random(2, 20)).keys()].map(el => {
@@ -34,4 +34,5 @@ export default () => {
 		}
 	})
 
+	console.log(JSON.stringify(result))
 }
