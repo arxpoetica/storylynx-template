@@ -1,15 +1,11 @@
 <svelte:head><title>Johnny Miller - Home</title></svelte:head>
 
-{#if $session.user}
-	<Private/>
-{:else}
-	<Public/>
-{/if}
+<div class="content">
+	<h1>Johnny Miller</h1>
+	<h2>His personal website.</h2>
+	<img src="/img/johnny-miller.jpg" alt="Johnny Miller wins an award.">
+</div>
 
-<script>
-	import { stores } from '@sapper/app'
-	const { session } = stores()
+<!-- <script></script> -->
 
-	import Private from './_home-private.svelte'
-	import Public from './_home-public.svelte'
-</script>
+<!-- <style type="text/scss"></style> -->

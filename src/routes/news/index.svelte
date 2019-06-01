@@ -19,7 +19,7 @@
 {/if}
 
 <script context="module">
-	import { POST } from '../../_server/utils/loaders'
+	import { POST } from '../../server/utils/loaders'
 	export async function preload() {
 		const items = await POST('/api/articles/page.json', {  })
 		return { items }

@@ -12,7 +12,7 @@
 {/if}
 
 <script context="module">
-	import { POST } from '../../_server/utils/loaders'
+	import { POST } from '../../server/utils/loaders'
 	export async function preload({ query }) {
 		const { resources, count } = await POST('/api/resources/page.json', Object.assign({ pageSize: 4 }, query))
 		return { resources, count }

@@ -1,7 +1,7 @@
-import { unique, random } from '../src/_server/utils/basic-utils'
+import { unique, random } from '../src/server/utils/basic-utils'
 import { magenta } from 'ansi-colors'
-import { cmsMutate } from '../src/_server/utils/loaders'
-import { assetIds, tags, articleIds } from '../src/_client/js/json-helpers'
+import { cmsMutate } from '../src/server/utils/loaders'
+import { assetIds, tags, articleIds } from '../src/client/js/json-helpers'
 
 articleIds.forEach(async(id, index) => {
 	const rando = random(1, 4)

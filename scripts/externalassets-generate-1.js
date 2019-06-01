@@ -1,8 +1,8 @@
 import { magenta } from 'ansi-colors'
 import { loremIpsum } from 'lorem-ipsum'
-import { cmsMutate } from '../src/_server/utils/loaders'
-import { random, unique } from '../src/_server/utils/basic-utils'
-import { tags/* , mimeTypeEnums */ } from '../src/_client/js/json-helpers'
+import { cmsMutate } from '../src/server/utils/loaders'
+import { random, unique } from '../src/server/utils/basic-utils'
+import { tags/* , mimeTypeEnums */ } from '../src/client/js/json-helpers'
 
 const arr = [...Array(49).keys()]
 arr.forEach(async(item, index) => {

@@ -1,7 +1,7 @@
 import { magenta } from 'ansi-colors'
-import { cmsMutate } from '../src/_server/utils/loaders'
-import { random, unique } from '../src/_server/utils/basic-utils'
-import { tags, externalMedia/* , mimeTypeEnums */ } from '../src/_client/js/json-helpers'
+import { cmsMutate } from '../src/server/utils/loaders'
+import { random, unique } from '../src/server/utils/basic-utils'
+import { tags, externalMedia/* , mimeTypeEnums */ } from '../src/client/js/json-helpers'
 
 externalMedia.forEach(async(item, index) => {
 	await runMutation(item, index)
