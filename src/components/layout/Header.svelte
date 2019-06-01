@@ -15,8 +15,8 @@
 <script>
 	export let segment
 
-	import { getSession } from '@sapper/app'
-	const session = getSession()
+	import { stores } from '@sapper/app'
+	const { session } = stores()
 
 	import Nav from './Nav.svelte'
 	// import AuthLogo from '../../routes/_svg/logo-header.svg'

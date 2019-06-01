@@ -20,8 +20,8 @@
 <script>
 	export let segment
 	// import NavMenu from './NavMenu.svelte'
-	import { getSession } from '@sapper/app'
-	const session = getSession()
+	import { stores } from '@sapper/app'
+	const { session } = stores()
 	async function logout(event) {
 		event.preventDefault()
 		await fetch('auth/logout', { method: 'POST' })

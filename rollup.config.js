@@ -1,4 +1,3 @@
-import path from 'path'
 import { yellow } from 'ansi-colors'
 import './src/server/build/config'
 
