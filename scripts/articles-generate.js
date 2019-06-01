@@ -1,9 +1,9 @@
 import { magenta } from 'ansi-colors'
-// import Html from 'slate-html-serializer'
-// import { JSDOM } from 'jsdom'
-// const serializer = new Html({ parseHtml: JSDOM.fragment })
+import Html from 'slate-html-serializer'
+import { JSDOM } from 'jsdom'
+const serializer = new Html({ parseHtml: JSDOM.fragment })
 import articles from '../static/json/sample-news-items.json'
-// import { cmsMutate } from '../src/server/utils/loaders'
+import { cmsMutate } from '../src/server/utils/loaders'
 
 async function runMutation(index) {
 
@@ -41,17 +41,16 @@ async function runMutation(index) {
 	`
 	const variables = {
 		status: article.status,
-		// content: serializer.deserialize(article.content.join('\n')),
+		content: serializer.deserialize(article.content.join('\n')),
 		connect: article.tags,
 	}
 
-	console.log(mutation)
-	console.log(variables)
+	// console.log(mutation)
+	// console.log(variables)
 	// console.log(article.title)
 
-	// const { createArticle: newArticle } = await cmsMutate(mutation, variables)
-	// console.log(newArticle)
-
+	const { createArticle: newArticle } = await cmsMutate(mutation, variables)
+	console.log(newArticle)
 }
 
 articles.forEach(async(article, index) => runMutation(index))
