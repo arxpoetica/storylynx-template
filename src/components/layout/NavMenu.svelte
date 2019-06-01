@@ -26,8 +26,8 @@
 
 <script>
 	import { beforeUpdate, onMount } from 'svelte'
-	import { page, getSession } from '@sapper/app'
-	const session = getSession()
+	import { stores } from '@sapper/app'
+	const { page, session } = stores()
 
 	let open = false
 	let priorPath = $page.path

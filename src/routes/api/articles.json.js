@@ -1,4 +1,4 @@
-import { cmsQuery } from '../../_server/utils/loaders'
+import { cmsQuery } from '../../server/utils/loaders'
 
 export async function get(req, res) {
 

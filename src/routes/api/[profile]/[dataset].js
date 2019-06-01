@@ -10,9 +10,9 @@
 // import { validate } from '../../_services/auth-check'
 // import { graphql } from 'graphql'
 // import { makeExecutableSchema } from 'graphql-tools'
-// import { getApi } from '../../../_server/db/arangodb-api'
+// import { getApi } from '../../../server/db/arangodb-api'
 // const api = getApi()
-// // import mappers from '../../../_server/graphql-api/utils/mappers'
+// // import mappers from '../../../server/graphql-api/utils/mappers'
 
 // const matchTypes = {
 // 	string: 'String',

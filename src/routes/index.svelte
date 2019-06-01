@@ -7,8 +7,8 @@
 {/if}
 
 <script>
-	import { getSession } from '@sapper/app'
-	const session = getSession()
+	import { stores } from '@sapper/app'
+	const { session } = stores()
 
 	import Private from './_home-private.svelte'
 	import Public from './_home-public.svelte'

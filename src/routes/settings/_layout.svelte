@@ -28,8 +28,8 @@
 </script>
 
 <script>
-	import { getSession, page } from '@sapper/app'
-	const session = getSession()
+	import { stores } from '@sapper/app'
+	const { page, session } = stores()
 	$: paths = $page.path.split('/')
 	$: section = paths[paths.length - 1]
 </script>

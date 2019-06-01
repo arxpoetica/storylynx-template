@@ -1,7 +1,7 @@
-// import { log } from '../../../../_server/utils/migration-tools'
-// import { getApi } from '../../../../_server/db/arangodb-api'
+// import { log } from '../../../../server/utils/migration-tools'
+// import { getApi } from '../../../../server/db/arangodb-api'
 // const api = getApi()
-// import { driver } from '../../../../_server/db/arangodb-driver'
+// import { driver } from '../../../../server/db/arangodb-driver'
 // const db = driver.connect()
 
 export default {

@@ -15,12 +15,12 @@
 <script>
 	export let segment
 
-	import { getSession } from '@sapper/app'
-	const session = getSession()
+	import { stores } from '@sapper/app'
+	const { session } = stores()
 
 	import Nav from './Nav.svelte'
-	// import AuthLogo from '../../_client/svg/compiled/logo-header.svg'
-	// import NoAuthLogo from '../../_client/svg/compiled/logo-header-noauth.svg'
+	// import AuthLogo from '../../routes/_svg/logo-header.svg'
+	// import NoAuthLogo from '../../routes/_svg/logo-header-noauth.svg'
 </script>
 
 <style type="text/scss">

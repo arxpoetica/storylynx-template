@@ -1,3 +1,8 @@
+<!-- DEV ONLY -->
+{#if Refresh}
+	<svelte:component this={Refresh}/>
+{/if}
+
 <div class="layout">
 	<Header segment={segment || 'home'}/>
 	<main>
@@ -8,12 +13,12 @@
 
 <script>
 	import { afterUpdate, onMount } from 'svelte'
-	import { getSession } from '@sapper/app'
+	import { stores } from '@sapper/app'
 	import { target } from '../stores/app-store.js'
 	import Header from '../components/layout/Header.svelte'
 	import Footer from '../components/layout/Footer.svelte'
 
-	const session = getSession()
+	const { session } = stores()
 	const { user } = $session
 
 	let html$
@@ -32,7 +37,12 @@
 		}
 	})
 
+	let Refresh = false
 	onMount(async () => {
+		if (process.env.NODE_ENV === 'development') {
+			Refresh = (await import('./_refresh.svelte')).default
+		}
+
 		// DOM ONLY STUFF ---------- >>>>
 		// TODO: move to `<svelte:window>` or `<svelte:body>` ????
 		document.addEventListener('click', event => target.set(event.target))
