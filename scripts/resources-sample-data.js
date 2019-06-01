@@ -848,7 +848,7 @@ export const resources = [{
 		],
 		"summary": "Johnny Miller's Swing Keys",
 		"thumb": {
-			"id": "cjuou3at51j8209462ewq84ko"
+			"id": "cjwe12y49y8n60946s0t7nlr2"
 		},
 		"externalThumbUrl": "https://static1.squarespace.com/static/56147064e4b0262b0af888ae/t/5615eb29e4b089e8994ea122/1444277083996/AP760710055+2.jpg",
 		"tags": [{

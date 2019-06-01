@@ -23,13 +23,15 @@ export const compile = () => {
 			.map(() => tags[random(0, tags.length - 1)]))
 			.map(tag => { return { tag } })
 		randomTags.push({ tag: 'delete' })
+		const coverId = random(1, 4) === 1 ? false : assetIds[random(1, assetIds.length) - 1]
+
 		return {
 			status: random(0, 15) === 0 ? 'DRAFT' : 'PUBLISHED',
 			title,
 			slug: random(0, 3) === 0 ? hyphenate(title).toLowerCase() : `news-item-${index + 1}`,
 			summary,
 			content,
-			coverId: assetIds[random(1, assetIds.length) - 1],
+			coverId,
 			tags: randomTags,
 		}
 	})

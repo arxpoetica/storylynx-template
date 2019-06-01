@@ -660,10 +660,10 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-0.5.0.tgz#b21510597fd601e5d7c95008b76bf0d254ebfd31"
   integrity sha512-oZLYFEAzUKyi3SKnXvj32ZCEGH6RDnao7COuCVhDydMS9NrCSVXhM79VaKyP5+Zc33m0QXEd2DN3UkU7OsHcfw==
 
-"@sapper-dragon/json@0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@sapper-dragon/json/-/json-0.0.8.tgz#1ec857c458b0ab2519853a5062530e4c8b34fb09"
-  integrity sha512-jr1tfHjLabmiymmqDJvQo3XF31BJ6eAQZw5b3ifIsddAnJFrnrF+Ol28lUEXLwmoeMjUgTcejDIVuM0AsIiWYQ==
+"@sapper-dragon/json@0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@sapper-dragon/json/-/json-0.0.9.tgz#9f07f10e903edbf92e978f952441de1884467e46"
+  integrity sha512-fH7lEAZVsv5KuV/hoco0XFyuYd2r3aXdiWafhRg0g0LkXWn/dOqmRG+YWjAqHkz8eApvBR2x+YQNgrKDPEuhqw==
   dependencies:
     ansi-colors "3.2.4"
     esm "3.2.25"
