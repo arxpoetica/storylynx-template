@@ -1,9 +1,5 @@
 import { loremIpsum } from 'lorem-ipsum'
-import dayjs from 'dayjs'
-import advancedFormat from 'dayjs/plugin/advancedFormat'
-dayjs.extend(advancedFormat)
-import { hyphenate, random, unique } from '../../server/utils/basic-utils.js'
-
+import { hyphenate, random, unique, randomTimestamp } from '@arxpoetica/utils'
 import { assetIds, tags } from '../js/json-helpers.js'
 
 export const compile = () => {
@@ -28,6 +24,7 @@ export const compile = () => {
 		return {
 			status: random(0, 15) === 0 ? 'DRAFT' : 'PUBLISHED',
 			title,
+			publishedDatetime: randomTimestamp(),
 			slug: random(0, 3) === 0 ? hyphenate(title).toLowerCase() : `news-item-${index + 1}`,
 			summary,
 			content,
