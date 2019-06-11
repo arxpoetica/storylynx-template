@@ -12,13 +12,16 @@
 	{:else}
 		<p>You've reached the end of the news items.</p>
 	{/if} -->
+	<div class="pagination">
+	</div>
 {:else}
 	<h2>Loading . . .</h2>
 {/if}
 
 <script context="module">
+	import { POST } from '../../server/utils/loaders'
 	export async function preload() {
-		const items = await (await this.fetch('/api/articles.json')).json()
+		const items = await POST('/api/articles/page.json', {  })
 		return { items }
 	}
 </script>
@@ -43,8 +46,9 @@
 	// }
 
 
-	// let items, pageNumber = 0, pageSize = 20;
-	// $: items = sorted.slice(pageNumber * pageSize, (pageNumber + 1) * pageSize);
+	// let page = 0
+	// let pagesize = 20
+	// $: items = sorted.slice(page * pagesize, (page + 1) * pagesize)
 </script>
 
 <style type="text/scss">

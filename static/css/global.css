@@ -613,29 +613,21 @@ a, area, button, label, summary, [tabindex] {
 html {
 	background-color: white;
 	font: 62.5%/1.2 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	/* font-size: 100%; */
 	box-sizing: border-box;
 	text-size-adjust: 100%;
+	opacity: 1;
+	transition: opacity 0.1s ease-in-out;
 }
 
-/* -ms-overflow-style: -ms-autohiding-scrollbar; */
-
-html.whiteout {
-		background-color: white;
-		pointer-events: none;
+html.preloaded {
+		opacity: 0;
 	}
-
-html.whiteout body {
-			opacity: 0;
-		}
 
 body {
 	margin: 0;
 	background-color: white;
 	color: #1e3d43;
 	font: 1.4rem/1.35 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	/* -webkit-font-smoothing: antialiased; */
-	/* -moz-osx-font-smoothing: grayscale; */
 }
 
 /*# sourceMappingURL=global.css.map */

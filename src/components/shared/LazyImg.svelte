@@ -1,7 +1,7 @@
 <div class="shell">
 	<img {src} {alt} use:lazy/>
 	{#if loaded}
-		<div class="img {show ? 'show' : ''}" style="background-image:url({src});"></div>
+		<div class="img {show ? 'show' : ''}" {style}></div>
 	{:else}
 		<p>Loading . . .</p>
 	{/if}
@@ -11,8 +11,15 @@
 	import { onMount, tick } from 'svelte'
 	export let src
 	export let alt = 'No information present about this image.'
+	export let width = 100
+	export let height = 100
 	export let loaded = false
 	let show = false
+
+	let style = ''
+	$: style =
+		`background-image:url(${src});` +
+		(width !== 100 || height !== 100 ? `padding-bottom:${height / width * 100}%;` : '')
 
 	function lazy(node) {
 		if (loaded) {
@@ -33,14 +40,14 @@
 <style type="text/scss">
 	.shell {
 		position: relative;
-		width: 100px;
-		height: 100px;
+		width: 100%;
 		background-color: $gray-6;
 		box-shadow: 0 0 2px $gray-4;
 	}
 	.img {
 		width: 100%;
-		height: 100%;
+		height: 0;
+		padding-bottom: 100%;
 		background: none no-repeat center transparent;
 		background-size: cover;
 		opacity: 0;

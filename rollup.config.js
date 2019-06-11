@@ -1,4 +1,4 @@
-import { yellow } from 'ansi-colors'
+import { yellow, magenta } from 'ansi-colors'
 import './src/server/build/config'
 
 import resolve from 'rollup-plugin-node-resolve';
@@ -99,5 +99,7 @@ function onwarn(warning) {
 	}
 	console.log()
 	console.log(yellow(warning.message))
+	console.log('in', magenta(warning.filename))
+	if (warning.frame) { console.log(warning.frame) }
 	console.log()
 }

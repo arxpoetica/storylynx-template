@@ -10,7 +10,10 @@
     "start": "node __sapper__/build",
     "debug": "sapper dev --inspect",
     "debug:build": "node --inspect --inspect-brk ./node_modules/sapper/sapper build --legacy",
-    "dev:generate:news": "node -r esm -r ./src/server/build/config.js scripts/generate-dummy-news.js",
+    "dev:articles:generate": "node -r esm -r ./src/server/build/config.js scripts/articles-generate.js",
+    "dev:externalassets-1:generate": "node -r esm -r ./src/server/build/config.js scripts/externalassets-generate-1.js",
+    "dev:externalassets-2:generate": "node -r esm -r ./src/server/build/config.js scripts/externalassets-generate-2.js",
+    "dev:resources:generate": "node -r esm -r ./src/server/build/config.js scripts/resources-generate.js",
     "watch": "trim watch --svgo --postcss --json"
   },
   "dependencies": {
@@ -31,12 +34,13 @@
     "sirv": "0.4.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
+    "@arxpoetica/utils": "0.0.2",
+    "@babel/core": "7.4.5",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
-    "@babel/plugin-transform-runtime": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/runtime": "^7.0.0",
-    "@sapper-dragon/json": "0.0.8",
+    "@babel/plugin-transform-runtime": "7.4.4",
+    "@babel/preset-env": "7.4.5",
+    "@babel/runtime": "7.4.5",
+    "@sapper-dragon/json": "0.0.9",
     "@sapper-dragon/postcss": "0.0.7",
     "@sapper-dragon/svgo": "0.0.7",
     "@sapper-dragon/trimmings": "0.0.8",
@@ -44,7 +48,7 @@
     "dotenv-extended": "2.4.0",
     "dotenv-parse-variables": "0.2.0",
     "immutable": "4.0.0-rc.12",
-    "jsdom": "15.1.1",
+    "jsdom": "14.0.0",
     "lorem-ipsum": "2.0.2",
     "npm-run-all": "^4.1.5",
     "react": "16.8.6",
@@ -57,8 +61,8 @@
     "rollup-plugin-svelte": "^5.0.1",
     "rollup-plugin-terser": "5.0.0",
     "sapper": "0.27.1",
-    "slate": "0.47.3",
-    "slate-html-serializer": "0.8.5",
+    "slate": "0.45.0",
+    "slate-html-serializer": "0.7.38",
     "svelte": "3.4.4"
   }
 }

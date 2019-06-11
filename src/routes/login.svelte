@@ -55,8 +55,6 @@
 		if (user.message) {
 			message = user.message
 		} else {
-			// NOTE: PREVENTS AUTH CHANGE FLICKER
-			document.querySelector('html').classList.add('whiteout')
 			session.set(Object.assign({}, $session, { user }))
 			// FIXME: let's get rid of reload if possible
 			window.location.reload(true)
