@@ -15,7 +15,7 @@ export async function post(req, res) {
 				title
 				content { text }
 				summary
-				cover { url attribution handle }
+				cover { url summary handle }
 				tags { tag }
 			}
 		}`)
