@@ -49,7 +49,8 @@
 		height: 0;
 		padding-bottom: 100%;
 		background: none no-repeat center transparent;
-		background-size: cover;
+		background-size: 80%;
+		// background-size: cover;
 		opacity: 0;
 		transition: opacity 0.3s ease-in-out;
 		&.show {

@@ -4,12 +4,12 @@ export async function post(req, res) {
 
 	try {
 
-		let { page, tags } = req.body
+		let { page, pagesize, tags } = req.body
 		page = page || 0
+		pagesize = pagesize || 20
 
 		let where
-		if (tags) {
-			tags = tags.split(',')
+		if (Array.isArray(tags) && tags.length) {
 			where = '{ AND: [{ status: PUBLISHED }, '
 			where += tags.map(tag => `{ tags_some: { tag: "${tag}" } }`).join(', ')
 			where += '] }'
@@ -19,7 +19,7 @@ export async function post(req, res) {
 
 		const { articles } = await cmsQuery(`{
 			articles(
-				first: 3,
+				first: ${pagesize},
 				skip: ${page},
 				where: ${where},
 				orderBy: createdAt_DESC
