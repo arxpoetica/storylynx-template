@@ -1,7 +1,7 @@
 <!-- DEV ONLY -->
-{#if Refresh}
+<!-- {#if Refresh}
 	<svelte:component this={Refresh}/>
-{/if}
+{/if} -->
 
 <div class="layout">
 	<Header segment={segment || 'home'}/>
@@ -23,11 +23,11 @@
 	const { session } = stores()
 	const { user } = $session
 
-	let Refresh = false
+	// let Refresh = false
 	onMount(async () => {
-		if (process.env.NODE_ENV === 'development') {
-			Refresh = (await import('./_refresh.svelte')).default
-		}
+		// if (process.env.NODE_ENV === 'development') {
+		// 	Refresh = (await import('./_refresh.svelte')).default
+		// }
 		// DOM ONLY STUFF ---------- >>>>
 		document.addEventListener('click', event => target.set(event.target))
 		const html = document.querySelector('html')

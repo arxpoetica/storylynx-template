@@ -4,9 +4,9 @@ export async function post(req, res) {
 
 	try {
 
-		let { page, pagesize, tags } = req.body
-		page = page || 0
-		pagesize = pagesize || 20
+		let { page, pageSize, tags } = req.body
+		page = parseInt(page || 1)
+		pageSize = parseInt(pageSize || 3) // just hard coding for now
 
 		let where
 		if (Array.isArray(tags) && tags.length) {
@@ -17,24 +17,32 @@ export async function post(req, res) {
 			where = '{ status: PUBLISHED }'
 		}
 
-		const { articles } = await cmsQuery(`{
+		const { articles, articlesConnection } = await cmsQuery(`{
 			articles(
-				first: ${pagesize},
-				skip: ${page},
+				first: ${pageSize},
+				skip: ${(page - 1) * pageSize},
 				where: ${where},
-				orderBy: createdAt_DESC
+				orderBy: publishedDatetime_DESC
 			) {
 				id
-				createdAt
+				publishedDatetime
 				title
 				content { text }
 				summary
 				cover { url summary handle }
 				tags { tag }
 			}
+
+			articlesConnection(where: {
+				status: PUBLISHED
+			}) { aggregate { count } }
 		}`)
 
-		res.json(articles)
+		res.json({
+			pageSize,
+			items: articles,
+			itemsCount: articlesConnection.aggregate.count,
+		})
 
 	} catch (error) {
 		console.log(error)

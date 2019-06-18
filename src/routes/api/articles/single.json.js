@@ -6,10 +6,10 @@ export async function post(req, res) {
 
 		const { article } = await cmsQuery(`{
 			article(where: { id: "${req.body.id}" }) {
-				createdAt
+				publishedDatetime
 				title
 				content { html }
-				cover { url attribution }
+				cover { url summary handle }
 				tags { tag }
 			}
 		}`)

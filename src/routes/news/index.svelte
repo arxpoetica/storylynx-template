@@ -3,17 +3,11 @@
 <h1>News</h1>
 
 <ul>
-	<li><a href="/news">nuthin'</a></li>
-	<li><a href="/news?page=0">page: 0</a></li>
-	<li><a href="/news?page=1">page: 1</a></li>
-	<li><a href="/news?page=2">page: 2</a></li>
-	<li><a href="/news?page=3">page: 3</a></li>
-	<li><a href="/news?page=300">page: 300</a></li>
-	<li><a href="/news?page=0&tags=family&tags=awards">page: 0, tag: family, awards</a></li>
+	<li><a href="/news?page=1&tags=family&tags=awards">page: 1, tag: family, awards</a></li>
 </ul>
 
-<p>params: {JSON.stringify($page.params)}</p>
-<p>query: {JSON.stringify($page.query)}</p>
+<p>params: {JSON.stringify($pageStore.params)}</p>
+<p>query: {JSON.stringify($pageStore.query)}</p>
 
 {#if items && items.length}
 	<div class="news-items">
@@ -21,13 +15,7 @@
 			<NewsItem {item}/>
 		{/each}
 	</div>
-	<!-- {#if showLoadMore}
-		<button on:click={loadMore}>Load more</button>
-	{:else}
-		<p>You've reached the end of the news items.</p>
-	{/if} -->
-	<div class="pagination">
-	</div>
+	<Pagination {page} {pageSize} {items} {itemsCount}/>
 {:else}
 	<h2>Loading . . .</h2>
 {/if}
@@ -36,33 +24,24 @@
 	import { POST } from '../../server/utils/loaders'
 	export async function preload({ query }) {
 		if (typeof query.page === 'undefined') {
-			return this.redirect(302, 'news?page=0')
+			return this.redirect(302, 'news?page=1')
 		}
-		const items = await POST('/api/articles/page.json', Object.assign({ pagesize: 3 }, query))
-		return { items }
+		const { pageSize, items, itemsCount } = await POST('/api/articles/page.json', query)
+		return { pageSize, items, itemsCount }
 	}
 </script>
 
 <script>
-	export let items = []
+	import Pagination from '../_components/page-lists/Pagination.svelte'
 	import NewsItem from './_news-item.svelte'
 	import { stores } from '@sapper/app'
-	const { page } = stores()
+	const { page: pageStore } = stores()
 
-	// let showLoadMore = true
-	// let start = 0
-	// async function loadMore() {
-	// 	// FIXME: drop in native fetch polyfill
-	// 	// FIXME: drop in native fetch polyfill
-	// 	// FIXME: drop in native fetch polyfill
-	// 	// FIXME: drop in native fetch polyfill
-	// 	// FIXME: drop in native fetch polyfill
-	// 	start += 3
-	// 	const res = await fetch(`http://localhost:1337/news?published=true&_sort=createdAt:DESC&_limit=3&_start=${start}`)
-	// 	const olderItems = await res.json()
-	// 	if (olderItems.length < 3) { showLoadMore = false }
-	// 	items = [...items, ...olderItems]
-	// }
+	// export let segment
+	export let items = []
+	export let itemsCount = 0
+	export let pageSize = 0
+	$: page = parseInt($pageStore.query.page)
 </script>
 
 <style type="text/scss">

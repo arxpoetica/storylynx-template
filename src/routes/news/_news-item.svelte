@@ -4,7 +4,7 @@
 <a class="news-item" href="/news/{item.id}">
 	<LazyImg {src} {alt}/>
 	<h2>{item.title}</h2>
-	<h3>{formattedstamp(item.createdAt)}</h3>
+	<h3>{formattedstamp(item.publishedDatetime)}</h3>
 	<p>{summary}</p>
 	<!-- <a href="/archive/{item.id}" rel=prefetch>Explore</a> -->
 	<h4>Tags:</h4>
