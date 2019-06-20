@@ -1,23 +1,23 @@
 <!-- <p>{JSON.stringify(item)}</p> -->
 
 <!-- <a class="news-item" href="/news/{item.id}" rel=prefetch> -->
-<a class="news-item" href="/news/{item.id}">
-	<LazyImg {src} {alt}/>
-	<h2>{item.title}</h2>
+<div class="news-item">
+	<a href="/news/{item.id}">
+		<div class="img">
+			<LazyImg {src} {alt}/>
+		</div>
+		<h2>{item.title}</h2>
+	</a>
 	<h3>{formattedstamp(item.publishedDatetime)}</h3>
 	<p>{summary}</p>
 	<!-- <a href="/archive/{item.id}" rel=prefetch>Explore</a> -->
-	<h4>Tags:</h4>
-	<div class="tags">
-		{#each tags as tag, index}
-			<strong>{tag}</strong>
-		{/each}
-	</div>
-</a>
+	<Tags {tags}/>
+</div>
 
 <script>
 	import { formattedstamp } from '../../server/utils/basic-utils'
 	import LazyImg from '../../components/shared/LazyImg.svelte'
+	import Tags from './_tags.svelte'
 	export let item
 
 	$: src = item.cover ?
@@ -48,17 +48,7 @@
 		background-color: $gray-7;
 		box-shadow: 0 0 2px $gray-5;
 	}
-	h4 {
-		margin: 0 0 0.4rem;
-	}
-	.tags {
-		display: flex;
-		strong {
-			margin-right: 0.4rem;
-			padding: 0 0.4rem;
-			background-color: $gray-6;
-			border: 1px solid $gray-4;
-			cursor: pointer;
-		}
+	.img {
+		margin: 0 0 1.2rem;
 	}
 </style>
