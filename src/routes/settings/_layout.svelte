@@ -3,14 +3,14 @@
 		<nav class="menu">
 			{#if $session.user && $session.user.plan === 'admin'}
 				<h2>Admin</h2>
-				<a href="settings/admin/users" data-on="{section === 'users'}">Users</a>
+				<a href="/account/admin/users" data-on="{section === 'users'}">Users</a>
 				{#if $session.env === 'development'}
-					<a href="settings/admin/collections" data-on="{section === 'collections'}">Collections</a>
+					<a href="/account/admin/collections" data-on="{section === 'collections'}">Collections</a>
 				{/if}
 			{/if}
 			<h2>Settings</h2>
-			<a href="settings/account/profile" data-on="{section === 'profile'}">Profile</a>
-			<a href="settings/account/notifications" data-on="{section === 'notifications'}">Notifications</a>
+			<a href="/account/account/profile" data-on="{section === 'profile'}">Profile</a>
+			<a href="/account/account/notifications" data-on="{section === 'notifications'}">Notifications</a>
 			<!-- <span>{child.props.path}</span> -->
 			<!-- <span>{section}</span> -->
 		</nav>

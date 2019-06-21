@@ -7,9 +7,9 @@
 		<ul>
 			{#if $session.user && $session.user.plan === 'admin'}
 				<li><h2>Admin</h2></li>
-				<li><a href="/settings/admin/users">Users</a></li>
+				<li><a href="/account/admin/users">Users</a></li>
 				{#if $session.env === 'development'}
-					<li><a href="/settings/admin/collections">Collections</a></li>
+					<li><a href="/account/admin/collections">Collections</a></li>
 				{/if}
 				<li class="div"></li>
 			{/if}
@@ -17,7 +17,7 @@
 				<li><h2>User</h2></li>
 			{/if}
 			<li><a href="/st/{$session.user.username}">Profile</a></li>
-			<li><a href="/settings/account/profile">Settings</a></li>
+			<li><a href="/account/account/profile">Settings</a></li>
 			<li class="div"></li>
 			<li><a href="/auth/logout" on:click={logout}>Log Out</a></li>
 		</ul>

@@ -5,14 +5,14 @@
 <h2>Node Collections</h2>
 <ul>
 	{#each collections.nodes as node}
-		<li><a href="/settings/admin/collections/{node.name}">{node.name}</a></li>
+		<li><a href="/account/admin/collections/{node.name}">{node.name}</a></li>
 	{/each}
 </ul>
 
 <h2>Edge Collections</h2>
 <ul>
 	{#each collections.edges as edge}
-		<li><a href="/settings/admin/collections/{edge.name}">{edge.name}</a></li>
+		<li><a href="/account/admin/collections/{edge.name}">{edge.name}</a></li>
 	{/each}
 </ul>
 

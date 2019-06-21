@@ -1,5 +1,3 @@
-// FIXME: config should work
-// import config from './server/build/config'
 import { green, yellow, red } from 'ansi-colors'
 import express from 'express'
 import morgan from 'morgan'
@@ -8,8 +6,8 @@ import compression from 'compression'
 import sirv from 'sirv'
 import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
-// import { authSetup } from './server/services/auth-setup.js'
-// import { validate } from './routes/_services/auth-check.js'
+// import { authSetup } from './server/services/auth-setup'
+// import { validate } from './server/services/auth-check'
 import * as sapper from '@sapper/server'
 
 const { PORT, NODE_ENV } = process.env

@@ -1,7 +1,7 @@
 // FIXME: these mutations might be more easily
 // handled with GraphQL mutations????
 
-import { validate } from '../../_services/auth-check'
+import { validate } from '../../../server/services/auth-check'
 import collections from './_actions/collections'
 
 export async function post(req, res) {

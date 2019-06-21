@@ -17,8 +17,8 @@
 	import { afterUpdate, onMount } from 'svelte'
 	import { stores } from '@sapper/app'
 	import { target } from '../stores/app-store.js'
-	import Header from '../components/layout/Header.svelte'
-	import Footer from '../components/layout/Footer.svelte'
+	import Header from './_layout/Header.svelte'
+	import Footer from './_layout/Footer.svelte'
 
 	const { session } = stores()
 	const { user } = $session
