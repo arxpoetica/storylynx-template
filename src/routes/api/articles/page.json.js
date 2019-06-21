@@ -7,9 +7,10 @@ export async function post(req, res) {
 		let { page, pageSize, tags } = req.body
 		page = parseInt(page || 1)
 		pageSize = parseInt(pageSize || 3) // just hard coding for now
+		tags = typeof tags === 'string' ? [tags] : tags
 
 		let where
-		if (Array.isArray(tags) && tags.length) {
+		if (tags && tags.length) {
 			where = '{ AND: [{ status: PUBLISHED }, '
 			where += tags.map(tag => `{ tags_some: { tag: "${tag}" } }`).join(', ')
 			where += '] }'
@@ -33,9 +34,7 @@ export async function post(req, res) {
 				tags { tag }
 			}
 
-			articlesConnection(where: {
-				status: PUBLISHED
-			}) { aggregate { count } }
+			articlesConnection(where: ${where}) { aggregate { count } }
 		}`)
 
 		res.json({

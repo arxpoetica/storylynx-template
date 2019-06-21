@@ -2,12 +2,16 @@
 
 <h1>News</h1>
 
-<ul>
+<!-- <ul>
 	<li><a href="/news?page=1&tags=family&tags=awards">page: 1, tag: family, awards</a></li>
+	<li><a href="/news?page=1&tags=1950s">tag: 1950s</a></li>
+	<li><a href="/news?page=1&tags=1970s">tag: 1970s</a></li>
+	<li><a href="/news?page=1&tags=1980s">tag: 1980s</a></li>
 </ul>
-
-<p>params: {JSON.stringify($pageStore.params)}</p>
 <p>query: {JSON.stringify($pageStore.query)}</p>
+<p>page: {page}</p>
+<p>pageSize: {pageSize}</p>
+<p>itemsCount: {itemsCount}</p> -->
 
 {#if items && items.length}
 	<div class="news-items">
@@ -15,7 +19,9 @@
 			<NewsItem {item}/>
 		{/each}
 	</div>
-	<Pagination {page} {pageSize} {items} {itemsCount}/>
+	{#if itemsCount > pageSize}
+		<Pagination {page} {pageSize} {items} {itemsCount}/>
+	{/if}
 {:else}
 	<h2>Loading . . .</h2>
 {/if}

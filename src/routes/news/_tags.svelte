@@ -1,7 +1,7 @@
 <h4>Tags:</h4>
 <div class="tags">
-	{#each tags as tag, index}
-		<a href="/news">{tag}</a>
+	{#each tags as tag}
+		<a href="/news?page=1&tags={tag}">{tag}</a>
 	{/each}
 </div>
 
@@ -15,9 +15,10 @@
 	}
 	.tags {
 		display: flex;
+		flex-wrap: wrap;
 	}
 	a {
-		margin-right: 0.4rem;
+		margin: 0.4rem 0.4rem 0 0;
 		padding: 0 0.4rem;
 		background-color: $gray-6;
 		border: 1px solid $gray-4;
