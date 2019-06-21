@@ -3,27 +3,49 @@ import { cmsQuery } from '../../../server/utils/loaders'
 export async function post(req, res) {
 
 	try {
-		const { articles } = await cmsQuery(`{
+
+		let { page, pageSize, tags } = req.body
+		page = parseInt(page || 1)
+		pageSize = parseInt(pageSize || 3) // just hard coding for now
+		tags = typeof tags === 'string' ? [tags] : tags
+
+		let where
+		if (tags && tags.length) {
+			where = '{ AND: [{ status: PUBLISHED }, '
+			where += tags.map(tag => `{ tags_some: { tag: "${tag}" } }`).join(', ')
+			where += '] }'
+		} else {
+			where = '{ status: PUBLISHED }'
+		}
+
+		const { articles, articlesConnection } = await cmsQuery(`{
 			articles(
-				first: 3,
-				# skip: 0,
-				where: { status: PUBLISHED },
-				orderBy: createdAt_DESC
+				first: ${pageSize},
+				skip: ${(page - 1) * pageSize},
+				where: ${where},
+				orderBy: publishedDatetime_DESC
 			) {
 				id
-				createdAt
+				publishedDatetime
 				title
 				content { text }
 				summary
 				cover { url summary handle }
 				tags { tag }
 			}
+
+			articlesConnection(where: ${where}) { aggregate { count } }
 		}`)
-		return res.json(articles)
+
+		res.json({
+			pageSize,
+			items: articles,
+			itemsCount: articlesConnection.aggregate.count,
+		})
 
 	} catch (error) {
 		console.log(error)
-		return res.json({ error: 1, message: error.message })
+		res.json({ error: 1, message: error.message })
 	}
 
 }

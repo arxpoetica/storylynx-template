@@ -1,5 +1,4 @@
 .DS_Store
-node_modules
 /__sapper__/
 .esm-cache
 .env
@@ -7,3 +6,7 @@ node_modules
 !.env.defaults
 /_hidden
 /src/routes/_refresh.svelte
+
+/node_modules
+!/src/node_modules
+/src/node_modules/@sapper
