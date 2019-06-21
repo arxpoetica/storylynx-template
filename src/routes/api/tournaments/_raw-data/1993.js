@@ -1,4 +1,4 @@
-export const tournaments [
+export const tournaments = [
     {
       "id": 1,
       "date": "1993-02-07T08:00:00.000Z",
