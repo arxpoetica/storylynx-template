@@ -85,7 +85,7 @@ export async function authSetup(app) {
 			// generate a signed son web token with the contents of user object and return it in the response
 			const month = 60 * 60 * 24 * 30
 			const token = jwt.sign(user, config.JM_JWT_SECRET, { expiresIn: month })
-			res.cookie('cm', token, {
+			res.cookie('jm', token, {
 				httpOnly: prod,
 				secure: prod,
 				maxAge: 1000 * month,
@@ -113,7 +113,7 @@ export async function authSetup(app) {
 				// generate a signed son web token with the contents of user object and return it in the response
 				const month = 60 * 60 * 24 * 30
 				const token = jwt.sign(user, config.JM_JWT_SECRET, { expiresIn: month })
-				return res.cookie('cm', token, {
+				return res.cookie('jm', token, {
 					httpOnly: prod,
 					secure: prod,
 					maxAge: 1000 * month,
@@ -123,7 +123,7 @@ export async function authSetup(app) {
 	})
 
 	app.post('/auth/logout', (req, res) => {
-		res.clearCookie('cm')
+		res.clearCookie('jm')
 		req.logout()
 		res.end('ok')
 	})
