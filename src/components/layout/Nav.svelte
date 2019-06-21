@@ -2,6 +2,7 @@
 	<ul>
 		<li data-on="{segment === ''}"><a href="/" rel=prefetch>Home</a></li>
 		<li data-on="{segment === 'experience'}"><a href="/experience" rel=prefetch>Experience</a></li>
+		<li data-on="{segment === 'tournaments'}"><a href="/tournaments" rel=prefetch>Tournaments</a></li>
 		<li data-on="{segment === 'archive'}"><a href="/archive" rel=prefetch>Archive</a></li>
 		<li data-on="{segment === 'about'}"><a href="/about" rel=prefetch>About</a></li>
 		<li data-on="{segment === 'news'}"><a href="/news" rel=prefetch>News</a></li>
