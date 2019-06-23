@@ -1,33 +1,29 @@
-<li bind:this={menu} class="menu {open ? 'open' : 'shut'}">
+<div bind:this={menu} class="menu {open ? 'open' : 'shut'}">
 	<div class="target" on:click={openMenu}>
-		<div class="avatar" style="background-image: url({$session.user.avatar});"></div>
-		<div class="arrow"></div>
+		<Gear/>
 	</div>
 	<div class="dropdown">
 		<ul>
-			{#if $session.user && $session.user.plan === 'admin'}
+			{#if $session.user}
 				<li><h2>Admin</h2></li>
-				<li><a href="/settings/admin/users">Users</a></li>
-				{#if $session.env === 'development'}
-					<li><a href="/settings/admin/collections">Collections</a></li>
+				{#if $session.user.admin}
+					<li><a href="/admin/collections">Collections</a></li>
 				{/if}
 				<li class="div"></li>
+				<li><a href="/auth/logout" on:click={logout}>Log Out</a></li>
+			{:else}
+				<li><a href="/auth/login">Log In</a></li>
 			{/if}
-			{#if $session.user && $session.user.plan === 'admin'}
-				<li><h2>User</h2></li>
-			{/if}
-			<li><a href="/st/{$session.user.username}">Profile</a></li>
-			<li><a href="/settings/account/profile">Settings</a></li>
-			<li class="div"></li>
-			<li><a href="/auth/logout" on:click={logout}>Log Out</a></li>
 		</ul>
 	</div>
-</li>
+</div>
 
 <script>
 	import { beforeUpdate, onMount } from 'svelte'
 	import { stores } from '@sapper/app'
 	const { page, session } = stores()
+	import Gear from '../_svg/icon-gear.svelte'
+	import { POST } from '../../server/utils/loaders'
 
 	let open = false
 	let priorPath = $page.path
@@ -56,7 +52,7 @@
 	}
 	async function logout(event) {
 		event.preventDefault()
-		await fetch('auth/logout', { method: 'POST' })
+		await POST('/api/auth/logout.json')
 		window.location.reload(true)
 	}
 </script>
@@ -67,33 +63,12 @@
 		margin: 0 0 0 10px;
 		font: 1.5rem/1 $font;
 		cursor: pointer;
-		&:hover,
-		&:focus {
-			.arrow {
-				opacity: 1;
-			}
-		}
 	}
 	.target {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-	}
-	.avatar {
-		width: 40px;
-		height: 40px;
-		background: none no-repeat center gray;
-		background-size: cover; // border-radius: 100%;
-		// clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-		/* clip-path: url('/svg/logo-header.svg'); */
-		border-radius: 100%;
-	}
-	.arrow {
-		width: 12px;
-		height: 6px;
-		background: url('/svg/arrow-down.svg') no-repeat center transparent;
-		opacity: 0.7;
-		z-index: 1;
+		width: 2.2rem;
 	}
 	.dropdown {
 		position: absolute;
@@ -109,9 +84,6 @@
 		z-index: $z-front;
 	}
 	.open {
-		.arrow {
-			opacity: 1;
-		}
 		.dropdown {
 			top: 100%;
 			right: 0;
