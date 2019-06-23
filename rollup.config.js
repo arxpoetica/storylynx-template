@@ -4,8 +4,7 @@ import './src/server/build/config'
 import resolve from 'rollup-plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
 import commonjs from 'rollup-plugin-commonjs';
-// import builtins from 'rollup-plugin-node-builtins'
-// import globals from 'rollup-plugin-node-globals'
+import json from 'rollup-plugin-json'
 import svelte from 'rollup-plugin-svelte';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
@@ -36,8 +35,7 @@ export default {
 				emitCss: true,
 				preprocess: preprocess('client'),
 			}),
-			// globals(),
-			// builtins(),
+			json(),
 			resolve({ browser: true }),
 			commonjs(),
 
@@ -79,6 +77,7 @@ export default {
 				generate: 'ssr',
 				preprocess: preprocess('server'),
 			}),
+			json(),
 			resolve(),
 			commonjs(),
 		],

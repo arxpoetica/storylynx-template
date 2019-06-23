@@ -7,10 +7,10 @@
 	<div class="border">
 		<label>Username
 			<!-- autofocus="autofocus" -->
-			<input bind:this={username} type="text" name="username" required="required">
+			<input bind:value={username} type="text" name="username" required="required">
 		</label>
 		<label>Password
-			<input bind:this={password} type="password" name="password" required="required">
+			<input bind:value={password} type="password" name="password" required="required">
 		</label>
 	</div>
 	<button type="submit" class="button">Log In</button>
@@ -26,32 +26,16 @@
 <script>
 	import { stores } from '@sapper/app'
 	const { session } = stores()
+	import { POST } from '../../server/utils/loaders'
 
 	let message
-	let username
-	let password
+	let username = ''
+	let password = ''
 
 	export async function submit(event) {
 		event.preventDefault()
-
-		const formData = {
-			// username: encodeURIComponent(this.refs.username.value),
-			// password: encodeURIComponent(this.refs.password.value),
-			username: username.value,
-			password: password.value,
-		}
-
-		const response = await fetch('/auth/local/login', {
-			method: 'POST',
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json',
-			},
-			credentials: 'same-origin',
-			body: JSON.stringify(formData)
-		})
-		const user = await response.json()
-
+		const formData = { username, password }
+		const user = await POST('/api/auth/login.json', formData)
 		if (user.message) {
 			message = user.message
 		} else {

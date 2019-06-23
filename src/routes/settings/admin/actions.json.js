@@ -1,12 +1,12 @@
 // FIXME: these mutations might be more easily
 // handled with GraphQL mutations????
 
-import { validate } from '../../../server/services/auth-check'
+import { getToken } from '../../../server/services/auth-helpers'
 import collections from './_actions/collections'
 
 export async function post(req, res) {
 
-	const user = validate(req)
+	const user = getToken(req)
 	if (user.plan === 'admin') {
 		const action = req.body.action
 		const key = req.body.key
