@@ -5,10 +5,15 @@
 	<div class="dropdown">
 		<ul>
 			{#if $session.user}
-				<li><h2>Admin</h2></li>
+				<li><h2>Create / New</h2></li>
 				{#if $session.user.admin}
-					<li><a href="/admin/collections">Collections</a></li>
+					<li><a href="/admin/articles/new">News Article</a></li>
+					<li><a href="/admin/resources/new">Archival Resource</a></li>
 				{/if}
+				<li class="div"></li>
+				<li><h2>View / Edit</h2></li>
+				<li><a href="/admin/articles">News Articles</a></li>
+				<li><a href="/admin/resources">Archival Resources</a></li>
 				<li class="div"></li>
 				<li><a href="/auth/logout" on:click={logout}>Log Out</a></li>
 			{:else}
