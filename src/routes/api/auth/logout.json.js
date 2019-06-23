@@ -1,4 +1,4 @@
-export async function get(req, res) {
+export async function post(req, res) {
 	try {
 		// const firebaseSetup = (await import('../../../server/services/firebase-setup')).default
 		// const auth = await firebaseSetup()

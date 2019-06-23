@@ -7,19 +7,25 @@
 		<li data-on="{segment === 'about'}"><a href="/about" rel=prefetch>About</a></li>
 		<li data-on="{segment === 'news'}"><a href="/news" rel=prefetch>News</a></li>
 		<li data-on="{segment === 'contact'}"><a href="/contact" rel=prefetch>Contact</a></li>
-		<!-- <NavMenu {segment}/> -->
 	</ul>
+	{#if $session.user || process.env.NODE_ENV === 'development'}
+		<NavMenu {segment}/>
+	{/if}
 </nav>
 
 <script>
 	export let segment
-	// import NavMenu from './NavMenu.svelte'
+	import { stores } from '@sapper/app'
+	const { session } = stores()
+	import NavMenu from './NavMenu.svelte'
 </script>
 
 <style type="text/scss">
 	nav {
 		display: flex;
+		justify-content: space-between;
 		align-items: center;
+		width: 100%;
 	}
 	ul {
 		display: flex;
