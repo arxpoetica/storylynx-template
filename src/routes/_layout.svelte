@@ -4,11 +4,16 @@
 {/if} -->
 
 <div class="layout">
-	<Header segment={segment || 'home'}/>
-	<main>
-		<slot></slot>
-	</main>
-	<Footer segment={segment || 'home'}/>
+	{#if $session.user || process.env.NODE_ENV === 'development'}
+		<AdminBar/>
+	{/if}
+	<div class="site">
+		<Header segment={segment || 'home'}/>
+		<main>
+			<slot></slot>
+		</main>
+		<Footer segment={segment || 'home'}/>
+	</div>
 </div>
 
 <script>
@@ -16,12 +21,12 @@
 
 	import { afterUpdate, onMount } from 'svelte'
 	import { stores } from '@sapper/app'
-	import { target } from '../stores/app-store.js'
-	import Header from './_layout/Header.svelte'
-	import Footer from './_layout/Footer.svelte'
-
 	const { session } = stores()
-	const { user } = $session
+	import { target } from '../stores/app-store.js'
+
+	import Header from './_layout/Header.svelte'
+	import AdminBar from './_layout/AdminBar.svelte'
+	import Footer from './_layout/Footer.svelte'
 
 	// let Refresh = false
 	onMount(async () => {
@@ -31,14 +36,18 @@
 		// DOM ONLY STUFF ---------- >>>>
 		document.addEventListener('click', event => target.set(event.target))
 		const html = document.querySelector('html')
-		html.classList.add(user ? 'auth' : 'no-auth')
+		html.classList.add($session.user ? 'auth' : 'no-auth')
 		setTimeout(() => html.classList.remove('preloaded'), 150)
 	})
 </script>
 
 <style type="text/scss">
 	.layout {
+		display: flex;
 		position: relative;
+	}
+	.site {
+		flex: 1;
 	}
 	main {
 		margin: 0 auto;
