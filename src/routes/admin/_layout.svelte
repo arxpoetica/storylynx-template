@@ -1,24 +1,4 @@
-<div class="settings settings-{section}">
-	<div class="side">
-		<nav class="menu">
-			{#if $session.user && $session.user.plan === 'admin'}
-				<h2>Admin</h2>
-				<a href="/account/admin/users" data-on="{section === 'users'}">Users</a>
-				{#if $session.env === 'development'}
-					<a href="/account/admin/collections" data-on="{section === 'collections'}">Collections</a>
-				{/if}
-			{/if}
-			<h2>Settings</h2>
-			<a href="/account/account/profile" data-on="{section === 'profile'}">Profile</a>
-			<a href="/account/account/notifications" data-on="{section === 'notifications'}">Notifications</a>
-			<!-- <span>{child.props.path}</span> -->
-			<!-- <span>{section}</span> -->
-		</nav>
-	</div>
-	<div class="content">
-		<slot></slot>
-	</div>
-</div>
+<slot></slot>
 
 <script context="module">
 	export function preload(page, session) {
@@ -28,65 +8,17 @@
 </script>
 
 <script>
+	import { beforeUpdate } from 'svelte'
 	import { stores } from '@sapper/app'
-	const { page, session } = stores()
-	$: paths = $page.path.split('/')
-	$: section = paths[paths.length - 1]
+	const { session } = stores()
+
+	import { Quill } from '../../stores/admin-store'
+	beforeUpdate(async() => {
+		if (!$Quill) {
+			const ImportedQuill = (await import('quill/dist/quill.js')).default
+			Quill.set(ImportedQuill)
+		}
+	})
 </script>
 
-<style type="text/scss">
-	$menu-width: 22.0rem;
-	.settings {
-		display: flex;
-	}
-	.side {
-		position: relative;
-		flex: 0 0 $menu-width;
-		margin: 0 2rem 0 0;
-	}
-	.content {
-		flex: 1 0 calc(100% - 24.0rem);
-		min-width: 0;
-	}
-	.menu {
-		position: fixed;
-		width: $menu-width;
-		font: 1.4rem/1 $font;
-		background-color: white;
-		border: 1px solid $gray-6;
-	}
-	h2 {
-		margin: 0;
-		padding: 1rem 1.2rem;
-		border-bottom: 1px solid $gray-6;
-		background-color: $gray-light;
-		font: $bold 1.3rem/1 $font;
-		cursor: default;
-	}
-	a {
-		display: block;
-		padding: 1rem 1.2rem;
-		border-bottom: 1px solid $gray-6;
-		color: $black;
-		text-decoration: none;
-		&:last-child {
-			border: 0;
-		}
-		&:hover {
-			background-color: $green-l5;
-		}
-		&[data-on="true"] {
-			padding-left: 1rem;
-			border-left: 2px solid $green-main;
-			font-weight: $bold;
-		}
-	}
-	// span {
-	// 	display: block;
-	// 	padding: 1rem 1.2rem;
-	// 	border-bottom: 1px solid $gray-6;
-	// 	&:last-child {
-	// 		border: 0;
-	// 	}
-	// // }
-</style>
+<!-- <style type="text/scss"></style> -->
