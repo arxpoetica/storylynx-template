@@ -1,18 +1,19 @@
 <div class="quill-component">
 	<div class="toolbar">
-		<button on:click={toggleHTML}>View HTML</button>
+		<button on:click={toggleHTML}>Edit {htmlmode ? 'as Content' : 'as HTML'}</button>
 	</div>
 	<div class="main-editor" class:htmlmode>
 		<div bind:this={editor}></div>
 	</div>
 	<div class="html-editor" class:htmlmode>
-		<textarea bind:value={htmltext}></textarea>
+		<TextArea bind:value={htmltext}/>
 	</div>
 </div>
 
 <script>
 	import { onMount } from 'svelte'
 	import { Quill } from '../../../stores/admin-store'
+	import TextArea from './TextArea.svelte'
 	let editor
 	let quill
 	let quillReady = false
@@ -75,8 +76,5 @@
 		&.htmlmode {
 			display: block;
 		}
-	}
-	textarea {
-		height: 40rem;
 	}
 </style>
