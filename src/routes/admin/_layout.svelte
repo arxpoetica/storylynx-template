@@ -18,6 +18,12 @@
 	beforeUpdate(async() => {
 		if (!$Quill) {
 			const ImportedQuill = (await import('quill/dist/quill.js')).default
+			ImportedQuill.prototype.setHTML = function(html) {
+				this.root.innerHTML = html
+			}
+			ImportedQuill.prototype.getHTML = function() {
+				return this.root.innerHTML
+			}
 			Quill.set(ImportedQuill)
 		}
 	})
