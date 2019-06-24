@@ -1,4 +1,6 @@
-<div bind:this={editor}></div>
+<div class="editor">
+	<div bind:this={editor}></div>
+</div>
 
 <script>
 	import { onMount } from 'svelte'
