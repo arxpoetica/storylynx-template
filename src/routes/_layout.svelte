@@ -25,7 +25,7 @@
 	import { target } from '../stores/app-store.js'
 
 	import Header from './_layout/Header.svelte'
-	import AdminBar from './_layout/AdminBar.svelte'
+	import AdminBar from './admin/_components/AdminBar.svelte'
 	import Footer from './_layout/Footer.svelte'
 
 	// let Refresh = false

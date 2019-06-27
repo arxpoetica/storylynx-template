@@ -26,8 +26,4 @@
 	// $: page = parseInt($pageStore.query.page)
 </script>
 
-<style type="text/scss">
-	section {
-		display: flex;
-	}
-</style>
+<!-- <style type="text/scss"></style> -->

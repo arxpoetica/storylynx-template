@@ -6,7 +6,6 @@
 </div>
 
 <script>
-	export let url = '/'
 	export let tags = []
 </script>
 
