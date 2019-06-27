@@ -11,13 +11,13 @@
 	<h3>{formattedstamp(item.publishedDatetime)}</h3>
 	<p>{summary}</p>
 	<!-- <a href="/archive/{item.id}" rel=prefetch>Explore</a> -->
-	<Tags {tags}/>
+	<Tags url="/news" {tags}/>
 </div>
 
 <script>
 	import { formattedstamp } from '../../server/utils/basic-utils'
 	import LazyImg from '../../components/shared/LazyImg.svelte'
-	import Tags from './_tags.svelte'
+	import Tags from '../_components/Tags.svelte'
 	export let item
 
 	$: src = item.cover ?

@@ -2,6 +2,9 @@
 	<div class="toolbar">
 		<button on:click={toggleHTML}>Edit {htmlmode ? 'as Content' : 'as HTML'}</button>
 	</div>
+	{#if title}
+		<h2>{title}</h2>
+	{/if}
 	<div class="main-editor" class:htmlmode>
 		<div bind:this={editor}></div>
 	</div>
@@ -14,6 +17,8 @@
 	import { onMount } from 'svelte'
 	import { Quill } from '../../../stores/admin-store'
 	import TextArea from './TextArea.svelte'
+	export let title
+
 	let editor
 	let quill
 	let quillReady = false
@@ -52,12 +57,19 @@
 </script>
 
 <style type="text/scss">
+	.quill-component {
+		margin: 0 0 2rem;
+	}
 	.toolbar {
 		display: flex;
 		margin: 0 0 0.8rem;
 	}
 	button {
 		margin-right: 1rem;
+	}
+	h2 {
+		margin: 0 0 0.4rem;
+		font: $bold 1.4rem $font;
 	}
 	.main-editor {
 		&.htmlmode {
