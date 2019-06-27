@@ -23,8 +23,8 @@
 		overflow: auto;
 	}
 	.item {
-		margin: 0 0 0.5rem;
-		padding: 0.6rem 1.2rem;
+		margin: 0 0 5rem;
+		padding: 6rem 12rem;
 		background-color: $gray-light;
 		border: 1px solid $gray-6;
 		border-radius: 2px;

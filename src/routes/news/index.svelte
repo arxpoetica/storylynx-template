@@ -54,6 +54,6 @@
 	.news-items {
 		display: flex;
 		flex-wrap: wrap;
-		margin: 0 -0.6rem 2rem;
+		margin: 0 -6rem 20rem;
 	}
 </style>

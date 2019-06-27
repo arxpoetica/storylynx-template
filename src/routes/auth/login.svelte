@@ -52,8 +52,8 @@
 		margin: 0 auto;
 	}
 	.error {
-		margin: 0 0 1rem;
-		padding: 1rem;
+		margin: 0 0 10rem;
+		padding: 10rem;
 		background-color: $red-l5;
 		border: 1px solid $red-main;
 		color: $red-dark;
@@ -71,18 +71,18 @@
 		}
 	}
 	// h2 {
-	// 	margin: 0 0 1.2rem;
-	// 	font: $bold 1.6rem/1.2 $font;
+	// 	margin: 0 0 12rem;
+	// 	font: $bold 16rem/1.2 $font;
 	// }
 	input[type="text"],
 	input[type="password"] {
-		padding: 0 1.2rem;
-		height: 5rem;
-		font: 1.6rem/1 $font;
+		padding: 0 12rem;
+		height: 50rem;
+		font: 16rem/1 $font;
 	}
 	.button {
 		width: 100%;
-		padding: 1.2rem;
-		font: $bold 1.6rem/1 $font;
+		padding: 12rem;
+		font: $bold 16rem/1 $font;
 	}
 </style>

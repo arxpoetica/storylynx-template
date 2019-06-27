@@ -19,13 +19,13 @@
 		width: 100%;
 		background-color: $bg2;
 		color: $black;
-		font: 1.3rem/1 $font;
+		font: 13rem/1 $font;
 		a {
 			height: 28px;
 			padding: 0 8px;
 			border-radius: 1px;
 			color: $black;
-			line-height: 2.8rem;
+			line-height: 28rem;
 			text-decoration: none;
 			transition: background-color 0.15s ease-in-out;
 			&:hover,
@@ -42,6 +42,6 @@
 		align-items: center;
 		height: $footer-height;
 		margin: 0 auto;
-		padding: 0 2rem
+		padding: 0 20rem;
 	}
 </style>

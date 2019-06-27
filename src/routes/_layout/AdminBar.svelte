@@ -42,11 +42,11 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		flex-basis: 25rem;
+		flex-basis: 250rem;
 		height: 100vh;
 		background-color: $black;
 		color: $gray-4;
-		font: 1.5rem/1 $font;
+		font: 15rem/1 $font;
 	}
 	.first,
 	.second {
@@ -54,8 +54,8 @@
 		flex-direction: column;
 	}
 	h2 {
-		margin: 0 0 1.2rem;
-		padding: 1rem;
+		margin: 0 0 12rem;
+		padding: 10rem;
 		font-size: inherit;
 		background-color: $gray-dark;
 		border-bottom: 1px solid $gray-1;
@@ -63,12 +63,12 @@
 		cursor: default;
 	}
 	a {
-		margin: 0 0 1.2rem;
-		padding: 0 1rem;
+		margin: 0 0 12rem;
+		padding: 0 10rem;
 		color: $gray-4;
 	}
 	.div {
-		margin: 0.5rem 0 1.2rem;
+		margin: 5rem 0 12rem;
 		height: 1px;
 		background-color: $gray-1;
 	}

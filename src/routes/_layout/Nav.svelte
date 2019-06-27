@@ -35,7 +35,7 @@
 			padding: 0 8px;
 			border-radius: 1px;
 			color: $black;
-			line-height: 2.8rem;
+			line-height: 28rem;
 			text-decoration: none;
 			transition: background-color 0.15s ease-in-out;
 			&:hover,
@@ -53,7 +53,7 @@
 	@media (--small) {
 		nav {
 			justify-content: center;
-			margin-bottom: 2rem;
+			margin-bottom: 20rem;
 		}
 	}
 </style>

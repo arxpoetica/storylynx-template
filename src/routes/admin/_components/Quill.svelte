@@ -58,18 +58,18 @@
 
 <style type="text/scss">
 	.quill-component {
-		margin: 0 0 2rem;
+		margin: 0 0 20rem;
 	}
 	.toolbar {
 		display: flex;
-		margin: 0 0 0.8rem;
+		margin: 0 0 8rem;
 	}
 	button {
-		margin-right: 1rem;
+		margin-right: 10rem;
 	}
 	h2 {
-		margin: 0 0 0.4rem;
-		font: $bold 1.4rem $font;
+		margin: 0 0 4rem;
+		font: $bold 14rem $font;
 	}
 	.main-editor {
 		&.htmlmode {

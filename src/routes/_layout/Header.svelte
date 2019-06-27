@@ -23,7 +23,7 @@
 	header {
 		background-color: $bg2;
 		color: $black;
-		font: $bold 1.5rem/1 $font;
+		font: $bold 15rem/1 $font;
 		z-index: $z-front;
 	}
 	.header-evil-wrap {

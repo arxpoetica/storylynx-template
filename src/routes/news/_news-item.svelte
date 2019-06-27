@@ -41,14 +41,14 @@
 <style type="text/scss">
 	.news-item {
 		flex: 1;
-		max-width: 40rem;
-		min-width: 30rem;
-		margin: 0 0.6rem 1.2rem;
-		padding: 1.2rem 2rem;
+		max-width: 400rem;
+		min-width: 300rem;
+		margin: 0 6rem 12rem;
+		padding: 12rem 20rem;
 		background-color: $gray-7;
 		box-shadow: 0 0 2px $gray-5;
 	}
 	.img {
-		margin: 0 0 1.2rem;
+		margin: 0 0 12rem;
 	}
 </style>

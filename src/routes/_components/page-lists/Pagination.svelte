@@ -36,7 +36,7 @@
 
 <style type="text/scss">
 	.info {
-		margin: 0 0 1rem;
+		margin: 0 0 10rem;
 	}
 	nav {
 		display: flex;
@@ -48,8 +48,8 @@
 		a,
 		span {
 			// display: block;
-			margin: 0 2rem 0 0;
-			padding: 1rem;
+			margin: 0 20rem 0 0;
+			padding: 10rem;
 			user-select: none;
 		}
 		a {
@@ -69,7 +69,7 @@
 	// .next {
 	// }
 	.prev {
-		margin: 0 2rem 0 0;
+		margin: 0 20rem 0 0;
 	}
 	// .next {}
 </style>

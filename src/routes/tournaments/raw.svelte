@@ -44,13 +44,13 @@
 
 <style type="text/scss">
 	.year {
-		padding: 2rem;
-		margin: 0 0 2rem;
-		border: 0.2rem solid $yellow-l4;
+		padding: 20rem;
+		margin: 0 0 20rem;
+		border: 2rem solid $yellow-l4;
 	}
 	.tournament {
-		padding: 2rem;
-		margin: 0 0 2rem;
+		padding: 20rem;
+		margin: 0 0 20rem;
 		background-color: $gray-7;
 		box-shadow: 0 0 2px $gray-5;
 		&:last-child { margin: 0; }

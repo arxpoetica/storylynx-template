@@ -62,8 +62,8 @@
 		display: flex;
 		justify-content: space-between;
 		position: relative;
-		margin: 0 0 1rem;
-		padding: 1rem;
+		margin: 0 0 10rem;
+		padding: 10rem;
 		background-color: white;
 		box-shadow: 0 0 2px rgba(0, 0, 0, 0.05);
 	}
@@ -86,27 +86,27 @@
 	}
 	h2 {
 		overflow: hidden;
-		margin: 0 0 0.2rem;
+		margin: 0 0 2rem;
 		text-overflow: ellipsis;
 	}
 	h3 {
 		margin: 0;
 		color: $gray-3;
-		font: 1.2rem/1.2 $font;
+		font: 12rem/1.2 $font;
 		text-transform: uppercase;
 	}
 	.detail {
-		margin: 1rem 0 0;
+		margin: 10rem 0 0;
 	}
 	table {
 		width: 100%;
-		margin: 1.2rem 0 0;
+		margin: 12rem 0 0;
 		background-color: white;
 		border: 0;
 		color: #777;
 		border-collapse: collapse;
 		border-spacing: 0;
-		font: 1.1rem/1.6rem $table-font;
+		font: 11rem/16rem $table-font;
 	}
 	// tr {}
 	td {
@@ -123,7 +123,7 @@
 			// display: block;
 			margin: 1px 0 0;
 			// padding: 3px 4px;
-			font: 1.1rem/1rem $table-font;
+			font: 11rem/10rem $table-font;
 			height: auto;
 			// width: calc(100% + 8px);
 			&:focus {
@@ -137,18 +137,18 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
-		padding: 5rem 8rem;
+		padding: 50rem 80rem;
 		background-color: rgba(255, 255, 255, 0.9);
 		text-align: center;
 		.warning {
-			margin: 1rem 0;
+			margin: 10rem 0;
 		}
 		.buttons {
 			display: flex;
 		}
 		.button {
 			flex: 1 0 auto;
-			margin: 3rem;
+			margin: 30rem;
 		}
 	}
 </style>

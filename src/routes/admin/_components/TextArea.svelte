@@ -12,22 +12,22 @@
 <style type="text/scss">
 	.textarea {
 		position: relative;
-		font: 1.6rem/1.4 $mono-font;
+		font: 16rem/1.4 $mono-font;
 	}
 	.measure {
 		position: absolute;
 		top: 0;
 		right: 0;
 		left: 0;
-		padding: 0.6rem;
+		padding: 6rem;
 		word-break: break-word;
 		pointer-events: none;
 		opacity: 0;
 	}
 	textarea {
-		padding: 0.6rem;
+		padding: 6rem;
 		font: inherit;
 		resize: none;
-		min-height: 3.4rem;
+		min-height: 34rem;
 	}
 </style>

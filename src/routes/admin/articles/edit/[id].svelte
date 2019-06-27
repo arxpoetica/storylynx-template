@@ -45,16 +45,16 @@
 
 <style type="text/scss">
 	label {
-		margin: 0 0 2rem;
-		font: $bold 1.4rem $font;
+		margin: 0 0 20rem;
+		font: $bold 14rem $font;
 	}
 	em {
 		font-weight: $normal;
 	}
 	input[type="text"] {
-		margin: 0.4rem 0 0;
-		padding: 0 1.2rem;
-		height: 5rem;
-		font: 1.6rem/1 $font;
+		margin: 4rem 0 0;
+		padding: 0 12rem;
+		height: 50rem;
+		font: 16rem/1 $font;
 	}
 </style>
