@@ -31,7 +31,7 @@
 {/if}
 
 <script context="module">
-	import { GET } from '../../server/utils/loaders'
+	import { GET } from '@johnny/utils/loaders'
 	export async function preload({ query }) {
 		const { years } = await GET('/api/tournaments/all.json')
 		return { years }

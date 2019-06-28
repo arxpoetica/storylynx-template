@@ -14,7 +14,7 @@
 	const { session } = stores()
 	import { QuillCss } from './_components/QuillCss'
 
-	import { Quill } from '../../stores/admin-store'
+	import { Quill } from '@johnny/stores/admin-store'
 	beforeUpdate(async() => {
 		if (!$Quill) {
 			const ImportedQuill = (await import('quill/dist/quill.js')).default

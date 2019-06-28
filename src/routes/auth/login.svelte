@@ -26,7 +26,7 @@
 <script>
 	import { stores } from '@sapper/app'
 	const { session } = stores()
-	import { POST } from '../../server/utils/loaders'
+	import { POST } from '@johnny/utils/loaders'
 
 	let message
 	let username = ''

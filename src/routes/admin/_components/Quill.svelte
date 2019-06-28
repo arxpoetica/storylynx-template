@@ -15,7 +15,7 @@
 
 <script>
 	import { onMount } from 'svelte'
-	import { Quill } from '../../../stores/admin-store'
+	import { Quill } from '@johnny/stores/admin-store'
 	import TextArea from './TextArea.svelte'
 	export let title
 

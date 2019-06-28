@@ -1,4 +1,4 @@
-<h1>New News Article</h1>
+<h1>Edit News Article</h1>
 
 <label>
 	Title

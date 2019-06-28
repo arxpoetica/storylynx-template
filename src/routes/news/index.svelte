@@ -27,7 +27,7 @@
 {/if}
 
 <script context="module">
-	import { POST } from '../../server/utils/loaders'
+	import { POST } from '@johnny/utils/loaders'
 	export async function preload({ query }) {
 		if (typeof query.page === 'undefined') {
 			return this.redirect(302, 'news?page=1')

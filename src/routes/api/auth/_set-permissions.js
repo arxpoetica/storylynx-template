@@ -1,5 +1,5 @@
 import * as firebase from 'firebase-admin'
-import serviceAccount from '../../../server/build/firebase.json'
+import serviceAccount from '../../../build/firebase.json'
 firebase.initializeApp({
 	credential: firebase.credential.cert(serviceAccount),
 	databaseURL: process.env.JM_FIREBASE_ENDPOINT,

@@ -22,7 +22,7 @@
 	import { afterUpdate, onMount } from 'svelte'
 	import { stores } from '@sapper/app'
 	const { session } = stores()
-	import { target } from '../stores/app-store.js'
+	import { target } from '@johnny/stores/app-store'
 
 	import Header from './_layout/Header.svelte'
 	import AdminBar from './admin/_components/AdminBar.svelte'

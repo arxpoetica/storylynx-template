@@ -6,8 +6,8 @@ import compression from 'compression'
 import sirv from 'sirv'
 import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
-import { getToken } from './server/services/auth-helpers'
-import firebaseSetup from './server/services/firebase-setup'
+import { getToken } from '@johnny/services/auth-helpers'
+import firebaseSetup from '@johnny/services/firebase-setup'
 import * as sapper from '@sapper/server'
 
 const { PORT, NODE_ENV } = process.env

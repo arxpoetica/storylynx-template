@@ -14,7 +14,7 @@
 </div>
 
 <script context="module">
-	import { POST } from '../../server/utils/loaders'
+	import { POST } from '@johnny/utils/loaders'
 	export async function preload({ params }) {
 		const item = await POST('/api/articles/single.json', { id: params.article })
 		return { item }
@@ -22,7 +22,7 @@
 </script>
 
 <script>
-	import { formattedstamp } from '../../server/utils/basic-utils'
+	import { formattedstamp } from '@johnny/utils/basic-utils'
 	export let item
 	$: tags = item.tags.map(tag => tag.tag)
 </script>

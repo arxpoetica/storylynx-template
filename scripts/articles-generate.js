@@ -3,7 +3,7 @@ import Html from 'slate-html-serializer'
 import { JSDOM } from 'jsdom'
 const serializer = new Html({ parseHtml: JSDOM.fragment })
 import articles from '../static/json/sample-news-items.json'
-import { cmsMutate } from '../src/server/utils/loaders'
+import { cmsMutate } from '@johnny/utils/loaders'
 
 async function runMutation(article, index) {
 
