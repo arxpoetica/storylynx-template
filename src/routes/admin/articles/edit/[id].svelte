@@ -1,5 +1,9 @@
 <h1>Edit News Article</h1>
 
+<p>
+	{JSON.stringify(article)}
+</p>
+
 <label>
 	Title
 	<input bind:value={title} type="text" required="required">
@@ -29,8 +33,21 @@
 	<input bind:value={tags} type="text" required="required">
 </label>
 
+<script context="module">
+	import { POST } from '@johnny/utils/loaders'
+	export async function preload({ params }, session) {
+		const { article } = await POST('/admin/api/articles/single.json', {
+			id: params.id,
+			cookie: session.cookie,
+		})
+		return { article }
+	}
+</script>
+
 <script>
 	import Quill from '../../_components/Quill.svelte'
+
+	export let article
 
 	let title = ''
 	let slug = ''
