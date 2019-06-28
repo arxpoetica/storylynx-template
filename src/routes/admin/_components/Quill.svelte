@@ -8,9 +8,9 @@
 	<div class="main-editor" class:htmlmode>
 		<div bind:this={editor}></div>
 	</div>
-	<div class="html-editor" class:htmlmode>
+	{#if htmlmode}
 		<TextArea bind:value={html}/>
-	</div>
+	{/if}
 </div>
 
 <script>
@@ -37,6 +37,7 @@
 					theme: 'snow',
 				})
 				quill.setHTML(html)
+				setTimeout(() => quill.on('text-change', () => html = quill.getHTML()), 0)
 			} else {
 				setTimeout(registerQuill, 100)
 			}
@@ -82,12 +83,6 @@
 			clip-path: inset(0 100% 100% 0);
 			opacity: 0;
 			pointer-events: none;
-		}
-	}
-	.html-editor {
-		display: none;
-		&.htmlmode {
-			display: block;
 		}
 	}
 </style>

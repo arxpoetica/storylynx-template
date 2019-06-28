@@ -16,13 +16,16 @@
 	}
 	.measure {
 		position: absolute;
-		top: 0;
-		right: 0;
-		left: 0;
+		top: 1px;
+		right: 1px;
+		left: 1px;
 		padding: 6rem;
 		word-break: break-word;
+		white-space: pre-wrap;
 		pointer-events: none;
 		opacity: 0;
+		// opacity: 0.5;
+		// background-color: pink;
 	}
 	textarea {
 		padding: 6rem;

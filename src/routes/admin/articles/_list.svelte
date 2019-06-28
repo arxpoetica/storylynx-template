@@ -10,7 +10,7 @@
 				<h2>{item.title}</h2>
 				<h3>Posted: {dayjs(item.publishedDatetime).format('MMMM DD, YYYY, h:mma')}</h3>
 				<p>{item.summary}</p>
-				<AdminTags tags={item.tags.map(tag => tag.tag)}/>
+				<ListTags tags={item.tags.map(tag => tag.tag)}/>
 			</div>
 		</a>
 	{/each}
@@ -18,7 +18,7 @@
 
 <script>
 	import dayjs from 'dayjs'
-	import AdminTags from '../_components/AdminTags.svelte'
+	import ListTags from '../_components/ListTags.svelte'
 	export let items
 </script>
 
