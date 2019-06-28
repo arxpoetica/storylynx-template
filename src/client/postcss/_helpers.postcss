@@ -1,3 +1,100 @@
+
+.buttons {
+	display: grid;
+	grid-gap: 10rem;
+	grid-template-columns: repeat(auto-fill, minmax(150rem, 1fr));
+}
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 0 10rem;
+	padding: 8rem 16rem;
+	background-color: $green-l2;
+	border: 1px solid transparent;
+	border-radius: 1px;
+	color: $black;
+	font: $bold 14rem/1 $font;
+	text-align: center;
+	transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+	cursor: pointer;
+	-webkit-appearance: none;
+	&:hover,
+	&:focus {
+		background-color: $green-l1;
+	}
+	.icon {
+		width: 22px;
+		height: 22px;
+	}
+	.icon-text {
+		margin: 0 0 0 12px;
+		width: 75%;
+		text-align: center;
+	}
+	&.tiny {
+		padding: 4rem 8rem;
+		font-size: 9rem;
+		text-transform: uppercase;
+	}
+	&.small {
+		padding: 6rem 10rem;
+		font-size: 11rem;
+		text-transform: uppercase;
+	}
+	&.large {
+		padding: 10rem 30rem;
+		font-size: 22rem;
+	}
+	&.huge {
+		padding: 20rem 50rem;
+		font-size: 34rem;
+	}
+	&.success {
+		background-color: #3adb76;
+		color: inherit;
+		&:hover,
+		&:focus {
+			background-color: #22bb5b;
+			color: inherit;
+		}
+	}
+	&.warning {
+		background-color: $orange-l2;
+		color: $black;
+		&:hover,
+		&:focus {
+			background-color: $orange-d1;
+			color: $white;
+		}
+	}
+	&.alert {
+		background-color: $alert;
+		color: #fefefe;
+		&:hover,
+		&:focus {
+			background-color: $alert-light;
+			color: #fefefe;
+		}
+	}
+	&[disabled] {
+		cursor: not-allowed;
+		// pointer-events: none;
+		background-color: $gray-5;
+		color: white;
+		&:hover,
+		&:focus {
+			background-color: $gray-5;
+			color: white;
+		}
+	}
+}
+
+
+
+
+
+
 /** >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
  * `.ghost` helper to visually hide elements on the page
  * mostly used for accessibility purposes
@@ -27,3 +124,4 @@
 .hidden-js {
 	visibility: hidden;
 }
+

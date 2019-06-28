@@ -1,6 +1,6 @@
 <div class="quill-component">
 	<div class="toolbar">
-		<button on:click={toggleHTML}>Edit {htmlmode ? 'as Content' : 'as HTML'}</button>
+		<button class="button" on:click={toggleHTML}>Edit {htmlmode ? 'as Content' : 'as HTML'}</button>
 	</div>
 	{#if title}
 		<h2>{title}</h2>
@@ -9,7 +9,7 @@
 		<div bind:this={editor}></div>
 	</div>
 	<div class="html-editor" class:htmlmode>
-		<TextArea bind:value={htmltext}/>
+		<TextArea bind:value={html}/>
 	</div>
 </div>
 
@@ -36,6 +36,7 @@
 					// readOnly: true,
 					theme: 'snow',
 				})
+				quill.setHTML(html)
 			} else {
 				setTimeout(registerQuill, 100)
 			}
@@ -43,14 +44,14 @@
 	}
 
 	let htmlmode = false
-	let htmltext = ''
+	export let html = ''
 	function toggleHTML() {
 		if (htmlmode) {
-			quill.setHTML(htmltext)
+			quill.setHTML(html)
 			htmlmode = false
 		} else {
-			htmltext = quill.getHTML()
-			htmltext = htmltext === '<p><br></p>' ? '' : htmltext
+			html = quill.getHTML()
+			html = html === '<p><br></p>' ? '' : html
 			htmlmode = true
 		}
 	}
