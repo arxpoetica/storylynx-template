@@ -1,7 +1,4 @@
 <div class="quill-component">
-	<div class="toolbar">
-		<div class="button" on:click={toggleHTML}>Edit {htmlmode ? 'as Content' : 'as HTML'}</div>
-	</div>
 	{#if title}
 		<h2>{title}</h2>
 	{/if}
@@ -11,6 +8,9 @@
 	{#if htmlmode}
 		<TextArea bind:value={html}/>
 	{/if}
+	<div class="toolbar">
+		<div class="button small" on:click={toggleHTML}>Edit {htmlmode ? 'as Content' : 'as HTML'}</div>
+	</div>
 </div>
 
 <script>
@@ -59,15 +59,16 @@
 </script>
 
 <style type="text/scss">
-	.quill-component {
-		margin: 0 0 20rem;
-	}
+	// .quill-component {
+	// 	margin: 0 0 10rem;
+	// }
 	.toolbar {
 		display: flex;
-		margin: 0 0 8rem;
+		justify-content: flex-end;
+		margin: 4rem 0 0;
 	}
-	button {
-		margin-right: 10rem;
+	.button {
+		margin: 0;
 	}
 	h2 {
 		margin: 0 0 4rem;
