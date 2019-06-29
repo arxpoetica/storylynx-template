@@ -1,14 +1,23 @@
+<!-- {#if $session.user.admin}{/if} -->
 <nav class="admin-bar">
 	{#if $session.user}
 		<div class="first">
-			<h2>Create / New</h2>
-			{#if $session.user.admin}
-				<a href="/admin/articles/new">News Article</a>
-				<a href="/admin/resources/new">Archival Resource</a>
-			{/if}
-			<h2>View / Edit</h2>
-			<a href="/admin/articles">News Articles</a>
-			<a href="/admin/resources">Archival Resources</a>
+			<h2>
+				<div class="svg"><Article/></div>
+				News Articles
+			</h2>
+			<div class="links">
+				<a href="/admin/articles">All Articles</a>
+				<a href="/admin/articles/new">Create Article</a>
+			</div>
+			<h2>
+				<div class="svg"><Asset/></div>
+				Archive Assets
+			</h2>
+			<div class="links">
+				<a href="/admin/resources">All Assets</a>
+				<a href="/admin/resources/new">Create Asset</a>
+			</div>
 		</div>
 		<div class="second">
 			<div class="div"></div>
@@ -27,6 +36,8 @@
 	import { stores } from '@sapper/app'
 	const { session } = stores()
 	import { POST } from '@johnny/utils/loaders'
+	import Article from '../../_svg/admin-article.svelte'
+	import Asset from '../../_svg/admin-asset.svelte'
 
 	async function logout(event) {
 		event.preventDefault()
@@ -54,7 +65,9 @@
 		flex-direction: column;
 	}
 	h2 {
-		margin: 0 0 12rem;
+		display: flex;
+		align-items: center;
+		margin: 0;
 		padding: 10rem;
 		font-size: inherit;
 		background-color: $gray-dark;
@@ -62,10 +75,22 @@
 		color: $gray-6;
 		cursor: default;
 	}
+	.svg {
+		flex-basis: 20rem;
+		margin: 0 8rem 0 0;
+	}
+	.links {
+		display: flex;
+		flex-direction: column;
+		padding: 8rem 10rem;
+	}
 	a {
-		margin: 0 0 12rem;
-		padding: 0 10rem;
+		padding: 6rem 0;
 		color: $gray-4;
+		text-decoration: none;
+		&:hover {
+			color: $red-l1;
+		}
 	}
 	.div {
 		margin: 5rem 0 12rem;

@@ -14,7 +14,7 @@
 </script>
 
 <script>
-	import List from './_list.svelte'
+	import List from './_list/List.svelte'
 	// import Pagination from '../_components/page-lists/Pagination.svelte'
 	// import { stores } from '@sapper/app'
 	// const { page: pageStore } = stores()

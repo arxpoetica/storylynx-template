@@ -146,6 +146,34 @@ a img {
 		border: 0;
 	}
 
+table {
+	width: 100%;
+	background-color: white;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 1px solid #e1e5e6;
+	font: 13rem/1 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+thead tr, tfoot tr {
+		border: 1px solid #e1e5e6;
+	}
+
+tbody tr:nth-child(odd) {
+			background-color: #f0f4f5;
+		}
+
+th, td {
+	padding: 8rem;
+	text-align: left;
+	vertical-align: top;
+	line-height: 1;
+}
+
+th {
+	vertical-align: middle;
+}
+
 svg {
 	vertical-align: middle;
 	fill: currentColor;
