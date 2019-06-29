@@ -3,8 +3,6 @@ import { getToken } from '@johnny/services/auth-helpers'
 
 export async function post(req, res) {
 
-	debugger
-
 	try {
 		const token = getToken(req.cookies.jm || req.body.cookie)
 		if (token.unauthorized) { throw Error() }
@@ -16,10 +14,10 @@ export async function post(req, res) {
 		data += changes.slug ? `slug: "${changes.slug}" ` : ''
 		data += changes.html ? `html: "${changes.html}" ` : ''
 		data += changes.summary ? `summary: "${changes.summary}" ` : ''
-		// data += changes.tags ? `tags: "${changes.tags}" ` : ''
+		data += changes.tags ? 'tags: { set: $set } ' : ''
 
-		const { updateArticle } = await cmsMutate(`
-			mutation {
+		const mutation = `
+			mutation update( $set: [TagWhereUniqueInput!] ) {
 				updateArticle(
 					where: { id: "${id}" }
 					data: { ${data} }
@@ -34,8 +32,13 @@ export async function post(req, res) {
 					tags { id tag }
 				}
 			}
-		`)
+		`
+		const variables = {}
+		if (changes.tags) {
+			variables.set = changes.tags.map(tag => ({ id: tag.id }))
+		}
 
+		const { updateArticle } = await cmsMutate(mutation, variables)
 		return res.json(updateArticle)
 	} catch (error) {
 		console.log(error)
