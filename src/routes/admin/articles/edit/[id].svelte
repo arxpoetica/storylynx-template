@@ -1,10 +1,7 @@
 <h1>Edit News Article</h1>
 
-<!-- {console.log(article)} -->
-<!-- {console.log(tags)} -->
-
 {#if articleCopy}
-	<form on:submit={event => submit(event)}>
+	<form on:submit={event => submitForm(event)}>
 		<label>
 			Title
 			<em> - (Required.)</em>
@@ -19,9 +16,7 @@
 			Published Date and Time
 			<input bind:value={articleCopy.datetime} type="text" required>
 		</label> -->
-
-		<Quill title="Content" bind:html={articleCopy.content.html}/>
-
+		<Quill title="Content" bind:html={articleCopy.html}/>
 		<label>
 			Summary
 			<input bind:value={articleCopy.summary} type="text">
@@ -30,13 +25,7 @@
 			Cover
 			<input bind:value={articleCopy.cover} type="text" required>
 		</label> -->
-		<!-- <label>
-			Tags
-			<input bind:value={articleCopy.tags} type="text" required>
-		</label> -->
-
 		<FormTags bind:tags bind:articleCopy/>
-
 		<button class="button warning" type="submit" {disabled}>Save</button>
 	</form>
 {/if}
@@ -54,6 +43,7 @@
 
 <script>
 	import { onMount } from 'svelte'
+	import { cleanObject } from '@johnny/utils/basic-utils'
 	import Quill from '../../_components/Quill.svelte'
 	import FormTags from '../../_components/FormTags.svelte'
 	export let article
@@ -69,9 +59,34 @@
 		disabled = JSON.stringify(article) === JSON.stringify(articleCopy)
 	}
 
-	function submit(event) {
+	async function submitForm(event) {
 		event.preventDefault()
-		console.log('SUBMIT THIS!')
+		if (!disabled) {
+
+			const changes = {
+				title: articleCopy.title !== article.title ? articleCopy.title : null,
+				slug: articleCopy.slug !== article.slug ? articleCopy.slug : null,
+				// datetime: articleCopy.datetime,
+				html: articleCopy.html !== article.html ? articleCopy.html : null,
+				summary: articleCopy.summary !== article.summary ? articleCopy.summary : null,
+				// cover: articleCopy.cover,
+				tags: JSON.stringify(article.tags) !== JSON.stringify(articleCopy.tags) ? articleCopy.tags : null,
+			}
+			cleanObject(changes)
+
+			const savedArticle = await POST('/admin/api/articles/update.json', {
+				id: article.id,
+				changes,
+			})
+
+			if (savedArticle.message) {
+				console.log('FIXME:')
+				// message = user.message
+			} else {
+				article = savedArticle
+				disabled = true
+			}
+		}
 	}
 </script>
 

@@ -1,6 +1,6 @@
 <div class="quill-component">
 	<div class="toolbar">
-		<button class="button" on:click={toggleHTML}>Edit {htmlmode ? 'as Content' : 'as HTML'}</button>
+		<div class="button" on:click={toggleHTML}>Edit {htmlmode ? 'as Content' : 'as HTML'}</div>
 	</div>
 	{#if title}
 		<h2>{title}</h2>

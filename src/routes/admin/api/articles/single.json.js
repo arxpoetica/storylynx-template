@@ -9,15 +9,15 @@ export async function post(req, res) {
 
 		const { article, tags } = await cmsQuery(`{
 			article(where: { id: "${req.body.id}" }) {
+				id
 				publishedDatetime
 				title
 				slug
-				content { html }
+				html
 				summary
 				cover { url summary handle }
 				tags { id tag }
 			}
-
 			tags { id tag }
 		}`)
 
@@ -50,10 +50,10 @@ export async function post(req, res) {
 		// }
 
 
-		res.json({ article, tags })
+		return res.json({ article, tags })
 	} catch (error) {
 		console.log(error)
-		res.status(401).json({ error: 1, message: 'Unauthorized' })
+		return res.status(401).json({ error: 1, message: 'Unauthorized' })
 	}
 
 }

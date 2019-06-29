@@ -674,9 +674,10 @@ a, area, button, label, summary, [tabindex] {
 		}
 
 .button[disabled] {
-		cursor: not-allowed;
 		background-color: #cbd0d1;
 		color: white;
+		cursor: default;
+		pointer-events: none;
 	}
 
 .button[disabled]:hover, .button[disabled]:focus {

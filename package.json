@@ -11,6 +11,7 @@
     "debug": "sapper dev --inspect",
     "debug:build": "node --inspect --inspect-brk ./node_modules/sapper/sapper build --legacy",
     "dev:articles:generate": "node -r esm -r ./src/build/config.js scripts/articles-generate.js",
+    "dev:articles:fix": "node -r esm -r ./src/build/config.js scripts/articles-fix.js",
     "dev:externalassets-1:generate": "node -r esm -r ./src/build/config.js scripts/externalassets-generate-1.js",
     "dev:externalassets-2:generate": "node -r esm -r ./src/build/config.js scripts/externalassets-generate-2.js",
     "dev:resources:generate": "node -r esm -r ./src/build/config.js scripts/resources-generate.js",
