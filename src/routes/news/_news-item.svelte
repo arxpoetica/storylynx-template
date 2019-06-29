@@ -28,9 +28,13 @@
 	let summary = ''
 	$: if (item.summary) {
 		summary = item.summary
-	} else if (item.content.text) {
-		const text = item.content.text
-		summary = text.length > 100 ? text.slice(0, 99).trim() + '...' : text
+	// FIXME:
+	// FIXME:
+	// FIXME:
+	// FIXME:
+	// } else if (item.content.text) {
+	// 	const text = item.content.text
+	// 	summary = text.length > 100 ? text.slice(0, 99).trim() + '...' : text
 	} else {
 		summary = 'No summary.'
 	}

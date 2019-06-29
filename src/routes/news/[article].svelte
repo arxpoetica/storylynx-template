@@ -14,7 +14,7 @@
 </div>
 
 <div class="content">
-	{@html article.content.html}
+	{@html article.html}
 </div>
 
 <script context="module">

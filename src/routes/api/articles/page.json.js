@@ -28,7 +28,6 @@ export async function post(req, res) {
 				id
 				publishedDatetime
 				title
-				content { text }
 				summary
 				cover { url summary handle }
 				tags { tag }
