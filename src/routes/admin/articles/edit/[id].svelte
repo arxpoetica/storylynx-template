@@ -1,6 +1,6 @@
-<div class="admin-header">
-	<h1>Edit News Article</h1>
-	{#if articleCopy}
+{#if articleCopy}
+	<div class="admin-header">
+		<h1>Edit News Article</h1>
 		<div class="buttons">
 			{#if articleCopy.status === 'PUBLISHED'}
 				<button class="draft button warning" {disabled}
@@ -11,10 +11,8 @@
 				on:click={event => save(event, 'PUBLISHED')}
 			>{article.status === 'PUBLISHED' ? 'Update' : 'Publish'}</button>
 		</div>
-	{/if}
-</div>
-<div class="admin-main">
-	{#if articleCopy}
+	</div>
+	<div class="admin-main">
 		<form on:submit={event => save(event)}>
 			<label>
 				Title
@@ -26,25 +24,30 @@
 				<em> - (Must be unique. If empty, article url will derive from title.)</em>
 				<input bind:value={articleCopy.slug} type="text">
 			</label>
-			<!-- <label>
-				Published Date and Time
-				<input bind:value={articleCopy.datetime} type="text" required>
-			</label> -->
 			<Quill title="Content" bind:html={articleCopy.html}/>
 			<label>
 				Summary
 				<input bind:value={articleCopy.summary} type="text">
 			</label>
-			<!-- <label>
-				Cover
-				<input bind:value={articleCopy.cover} type="text" required>
-			</label> -->
-			<FormTags bind:tags bind:articleCopy/>
 		</form>
-	{/if}
-</div>
-<div class="admin-side">
-</div>
+	</div>
+	<div class="admin-side">
+		<div class="accordion">
+			<Panel title="Details" type="details">
+				<ul>
+					<li><strong>Visibility:</strong> {articleCopy.status}</li>
+					<li><strong>Date & Time:</strong> {dayjs(articleCopy.publishedDatetime).format('MMM D, YYYY @ h:mma')}</li>
+				</ul>
+			</Panel>
+			<Panel title="Cover" type="cover">
+				<img src={articleCopy.cover.url} alt={articleCopy.cover.summary || 'No alt information.'}/>
+			</Panel>
+			<Panel title="Tags" type="tags">
+				<FormTags bind:tags bind:articleCopy/>
+			</Panel>
+		</div>
+	</div>
+{/if}
 
 <script context="module">
 	import { POST } from '@johnny/utils/loaders'
@@ -59,9 +62,12 @@
 
 <script>
 	import { onMount } from 'svelte'
+	import dayjs from 'dayjs'
 	import { cleanObject } from '@johnny/utils/basic-utils'
 	import Quill from '../../_components/Quill.svelte'
 	import FormTags from '../../_components/FormTags.svelte'
+	import Panel from '../../../_components/accordion/Panel.svelte'
+
 	export let article
 	export let tags
 

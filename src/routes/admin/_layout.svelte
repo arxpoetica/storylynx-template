@@ -58,7 +58,7 @@
 			padding: 20rem;
 		}
 		& :global(.admin-side) {
-			flex-basis: 250rem;
+			flex-basis: 300rem;
 			border-left: 1px solid $gray-6;
 		}
 	}
