@@ -612,10 +612,14 @@ a, area, button, label, summary, [tabindex] {
 }
 
 .buttons {
-	display: grid;
-	grid-gap: 10rem;
-	grid-template-columns: repeat(auto-fill, minmax(150rem, 1fr));
+	display: flex;
+	align-items: center;
+	margin: 0 -6rem;
 }
+
+.buttons .button {
+		margin: 0 6rem;
+	}
 
 .button {
 	display: inline-flex;
@@ -623,10 +627,10 @@ a, area, button, label, summary, [tabindex] {
 	justify-content: center;
 	margin: 0 0 10rem;
 	padding: 8rem 16rem;
-	background-color: #a5cd94;
+	background-color: #5ab2ba;
 	border: 1px solid transparent;
 	border-radius: 1px;
-	color: #1e3d43;
+	color: white;
 	font: 600 14rem/1 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	text-align: center;
 	transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
@@ -635,18 +639,7 @@ a, area, button, label, summary, [tabindex] {
 }
 
 .button:hover, .button:focus {
-		background-color: #8cbf77;
-	}
-
-.button .icon {
-		width: 22px;
-		height: 22px;
-	}
-
-.button .icon-text {
-		margin: 0 0 0 12px;
-		width: 75%;
-		text-align: center;
+		background-color: #2c8f99;
 	}
 
 .button.tiny {
@@ -672,23 +665,23 @@ a, area, button, label, summary, [tabindex] {
 	}
 
 .button.success {
-		background-color: #3adb76;
-		color: inherit;
+		background-color: #71b256;
+		color: white;
 	}
 
 .button.success:hover, .button.success:focus {
-			background-color: #22bb5b;
-			color: inherit;
+			background-color: #408424;
+			color: white;
 		}
 
 .button.warning {
-		background-color: #f4994e;
+		background-color: #fbc90d;
 		color: #1e3d43;
 	}
 
 .button.warning:hover, .button.warning:focus {
-			background-color: #e06400;
-			color: white;
+			background-color: #f4e4a6;
+			color: #1e3d43;
 		}
 
 .button.alert {
@@ -699,6 +692,15 @@ a, area, button, label, summary, [tabindex] {
 .button.alert:hover, .button.alert:focus {
 			background-color: #f36c9f;
 			color: #fefefe;
+		}
+
+.button.blank {
+		background-color: transparent;
+		color: #e53c34;
+	}
+
+.button.blank:hover, .button.blank:focus {
+			text-decoration: underline;
 		}
 
 .button[disabled] {

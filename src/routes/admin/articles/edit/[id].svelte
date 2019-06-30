@@ -1,14 +1,21 @@
 <div class="admin-header">
 	<h1>Edit News Article</h1>
+	{#if articleCopy}
+		<div class="buttons">
+			{#if articleCopy.status === 'PUBLISHED'}
+				<button class="draft button warning" {disabled}
+					on:click={event => save(event, 'DRAFT')}
+				>Switch to Draft</button>
+			{/if}
+			<button class="publish button success" {disabled}
+				on:click={event => save(event, 'PUBLISHED')}
+			>{article.status === 'PUBLISHED' ? 'Update' : 'Publish'}</button>
+		</div>
+	{/if}
 </div>
 <div class="admin-main">
 	{#if articleCopy}
-		<form on:submit={event => submitForm(event)}>
-			<label>
-				Status
-				<em> - (Required.)</em>
-				<input bind:value={articleCopy.status} type="text" required>
-			</label>
+		<form on:submit={event => save(event)}>
 			<label>
 				Title
 				<em> - (Required.)</em>
@@ -33,7 +40,6 @@
 				<input bind:value={articleCopy.cover} type="text" required>
 			</label> -->
 			<FormTags bind:tags bind:articleCopy/>
-			<button class="button warning" type="submit" {disabled}>Save</button>
 		</form>
 	{/if}
 </div>
@@ -69,9 +75,12 @@
 		disabled = JSON.stringify(article) === JSON.stringify(articleCopy)
 	}
 
-	async function submitForm(event) {
+	async function save(event, status) {
 		event.preventDefault()
 		if (!disabled) {
+			if (status) {
+				articleCopy.status = status
+			}
 
 			const changes = {
 				status: articleCopy.status !== article.status ? articleCopy.status : null,
@@ -95,6 +104,7 @@
 				// message = user.message
 			} else {
 				article = savedArticle
+				articleCopy = JSON.parse(JSON.stringify(article))
 				disabled = true
 			}
 		}

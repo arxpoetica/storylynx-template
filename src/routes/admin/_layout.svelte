@@ -42,6 +42,9 @@
 		display: flex;
 		flex-wrap: wrap;
 		& :global(.admin-header) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
 			flex-basis: 100%;
 			padding: 20rem;
 			border-bottom: 1px solid $gray-6;

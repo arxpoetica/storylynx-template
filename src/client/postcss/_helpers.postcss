@@ -1,8 +1,14 @@
 
 .buttons {
-	display: grid;
-	grid-gap: 10rem;
-	grid-template-columns: repeat(auto-fill, minmax(150rem, 1fr));
+	// display: grid;
+	// grid-gap: 10rem;
+	// grid-template-columns: repeat(auto-fill, minmax(150rem, 1fr));
+	display: flex;
+	align-items: center;
+	margin: 0 -6rem;
+	.button {
+		margin: 0 6rem;
+	}
 }
 .button {
 	display: inline-flex;
@@ -10,10 +16,10 @@
 	justify-content: center;
 	margin: 0 0 10rem;
 	padding: 8rem 16rem;
-	background-color: $green-l2;
+	background-color: $teal-d1;
 	border: 1px solid transparent;
 	border-radius: 1px;
-	color: $black;
+	color: $white;
 	font: $bold 14rem/1 $font;
 	text-align: center;
 	transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
@@ -21,16 +27,7 @@
 	-webkit-appearance: none;
 	&:hover,
 	&:focus {
-		background-color: $green-l1;
-	}
-	.icon {
-		width: 22px;
-		height: 22px;
-	}
-	.icon-text {
-		margin: 0 0 0 12px;
-		width: 75%;
-		text-align: center;
+		background-color: $teal-d2;
 	}
 	&.tiny {
 		padding: 4rem 8rem;
@@ -51,21 +48,21 @@
 		font-size: 34rem;
 	}
 	&.success {
-		background-color: #3adb76;
-		color: inherit;
+		background-color: $green-main;
+		color: $white;
 		&:hover,
 		&:focus {
-			background-color: #22bb5b;
-			color: inherit;
+			background-color: $green-d2;
+			color: $white;
 		}
 	}
 	&.warning {
-		background-color: $orange-l2;
+		background-color: $yellow-main;
 		color: $black;
 		&:hover,
 		&:focus {
-			background-color: $orange-d1;
-			color: $white;
+			background-color: $yellow-l3;
+			color: $black;
 		}
 	}
 	&.alert {
@@ -75,6 +72,14 @@
 		&:focus {
 			background-color: $alert-light;
 			color: #fefefe;
+		}
+	}
+	&.blank {
+		background-color: transparent;
+		color: $links;
+		&:hover,
+		&:focus {
+			text-decoration: underline;
 		}
 	}
 	&[disabled] {

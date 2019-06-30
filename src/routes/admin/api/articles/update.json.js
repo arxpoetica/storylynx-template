@@ -24,6 +24,7 @@ export async function post(req, res) {
 					data: { ${data} }
 				) {
 					id
+					status
 					publishedDatetime
 					title
 					slug
