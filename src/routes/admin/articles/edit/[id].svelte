@@ -3,6 +3,11 @@
 {#if articleCopy}
 	<form on:submit={event => submitForm(event)}>
 		<label>
+			Status
+			<em> - (Required.)</em>
+			<input bind:value={articleCopy.status} type="text" required>
+		</label>
+		<label>
 			Title
 			<em> - (Required.)</em>
 			<input bind:value={articleCopy.title} type="text" required>
@@ -64,6 +69,7 @@
 		if (!disabled) {
 
 			const changes = {
+				status: articleCopy.status !== article.status ? articleCopy.status : null,
 				title: articleCopy.title !== article.title ? articleCopy.title : null,
 				slug: articleCopy.slug !== article.slug ? articleCopy.slug : null,
 				// datetime: articleCopy.datetime,

@@ -10,6 +10,7 @@ export async function post(req, res) {
 		const { article, tags } = await cmsQuery(`{
 			article(where: { id: "${req.body.id}" }) {
 				id
+				status
 				publishedDatetime
 				title
 				slug

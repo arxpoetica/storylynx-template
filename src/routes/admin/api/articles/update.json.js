@@ -10,6 +10,7 @@ export async function post(req, res) {
 		const { id, changes } = req.body
 
 		let data = ''
+		data += changes.status ? `status: ${changes.status} ` : ''
 		data += changes.title ? `title: "${changes.title}" ` : ''
 		data += changes.slug ? `slug: "${changes.slug}" ` : ''
 		data += changes.html ? `html: "${changes.html}" ` : ''
@@ -17,7 +18,7 @@ export async function post(req, res) {
 		data += changes.tags ? 'tags: { set: $set } ' : ''
 
 		const mutation = `
-			mutation update( $set: [TagWhereUniqueInput!] ) {
+			mutation ${changes.tags ? 'update($set: [TagWhereUniqueInput!])' : ''} {
 				updateArticle(
 					where: { id: "${id}" }
 					data: { ${data} }
