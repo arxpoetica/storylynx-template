@@ -8,12 +8,12 @@
 				<NoAuthLogo/>
 			{/if}
 		</a> -->
-		<Nav {segment}/>
+		<Nav {section}/>
 	</div>
 </header>
 
 <script>
-	export let segment
+	export let section
 	import Nav from './Nav.svelte'
 	// import AuthLogo from '../../routes/_svg/logo-header.svg'
 	// import NoAuthLogo from '../../routes/_svg/logo-header-noauth.svg'

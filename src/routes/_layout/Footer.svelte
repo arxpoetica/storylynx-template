@@ -1,14 +1,14 @@
 <footer>
 	<div class="footer-evil-wrap">
-		<a data-on="{segment === 'terms'}"href="/terms">Terms &amp; Conditions</a>
-		<a data-on="{segment === 'privacy'}"href="/privacy-policy">Privacy Policy</a>
+		<a data-on="{section === 'terms'}"href="/terms">Terms &amp; Conditions</a>
+		<a data-on="{section === 'privacy'}"href="/privacy-policy">Privacy Policy</a>
 
 		<a class="cobranding" href="https://www.johnnymillerchampfoundation.org/" target="_blank">The Champ Foundation</a>
 	</div>
 </footer>
 
 <script>
-	export let segment
+	export let section
 </script>
 
 <style type="text/scss">

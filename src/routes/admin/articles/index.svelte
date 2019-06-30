@@ -1,4 +1,6 @@
-<List {items}/>
+<div class="admin-main">
+	<List {items}/>
+</div>
 
 <script context="module">
 	import { POST } from '@johnny/utils/loaders'

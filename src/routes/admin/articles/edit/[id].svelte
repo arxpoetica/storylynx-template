@@ -1,39 +1,44 @@
-<h1>Edit News Article</h1>
-
-{#if articleCopy}
-	<form on:submit={event => submitForm(event)}>
-		<label>
-			Status
-			<em> - (Required.)</em>
-			<input bind:value={articleCopy.status} type="text" required>
-		</label>
-		<label>
-			Title
-			<em> - (Required.)</em>
-			<input bind:value={articleCopy.title} type="text" required>
-		</label>
-		<label>
-			Slug
-			<em> - (Must be unique. If empty, article url will derive from title.)</em>
-			<input bind:value={articleCopy.slug} type="text">
-		</label>
-		<!-- <label>
-			Published Date and Time
-			<input bind:value={articleCopy.datetime} type="text" required>
-		</label> -->
-		<Quill title="Content" bind:html={articleCopy.html}/>
-		<label>
-			Summary
-			<input bind:value={articleCopy.summary} type="text">
-		</label>
-		<!-- <label>
-			Cover
-			<input bind:value={articleCopy.cover} type="text" required>
-		</label> -->
-		<FormTags bind:tags bind:articleCopy/>
-		<button class="button warning" type="submit" {disabled}>Save</button>
-	</form>
-{/if}
+<div class="admin-header">
+	<h1>Edit News Article</h1>
+</div>
+<div class="admin-main">
+	{#if articleCopy}
+		<form on:submit={event => submitForm(event)}>
+			<label>
+				Status
+				<em> - (Required.)</em>
+				<input bind:value={articleCopy.status} type="text" required>
+			</label>
+			<label>
+				Title
+				<em> - (Required.)</em>
+				<input bind:value={articleCopy.title} type="text" required>
+			</label>
+			<label>
+				Slug
+				<em> - (Must be unique. If empty, article url will derive from title.)</em>
+				<input bind:value={articleCopy.slug} type="text">
+			</label>
+			<!-- <label>
+				Published Date and Time
+				<input bind:value={articleCopy.datetime} type="text" required>
+			</label> -->
+			<Quill title="Content" bind:html={articleCopy.html}/>
+			<label>
+				Summary
+				<input bind:value={articleCopy.summary} type="text">
+			</label>
+			<!-- <label>
+				Cover
+				<input bind:value={articleCopy.cover} type="text" required>
+			</label> -->
+			<FormTags bind:tags bind:articleCopy/>
+			<button class="button warning" type="submit" {disabled}>Save</button>
+		</form>
+	{/if}
+</div>
+<div class="admin-side">
+</div>
 
 <script context="module">
 	import { POST } from '@johnny/utils/loaders'
