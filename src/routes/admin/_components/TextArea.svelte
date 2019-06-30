@@ -32,5 +32,6 @@
 		font: inherit;
 		resize: none;
 		min-height: 34rem;
+		max-height: 50vh;
 	}
 </style>

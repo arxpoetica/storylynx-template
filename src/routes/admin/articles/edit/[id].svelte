@@ -2,14 +2,20 @@
 	<div class="admin-header">
 		<h1>Edit News Article</h1>
 		<div class="buttons">
-			{#if articleCopy.status === 'PUBLISHED'}
-				<button class="draft button warning" {disabled}
-					on:click={event => save(event, 'DRAFT')}
-				>Switch to Draft</button>
+
+			{#if !disabled}
+				<button class="button blank" on:click={event => discard()}>
+					Discard Changes
+				</button>
 			{/if}
-			<button class="publish button success" {disabled}
-				on:click={event => save(event, 'PUBLISHED')}
-			>{article.status === 'PUBLISHED' ? 'Update' : 'Publish'}</button>
+			{#if articleCopy.status === 'PUBLISHED'}
+				<button class="button warning" {disabled} on:click={event => save(event, 'DRAFT')}>
+					Switch to Draft
+				</button>
+			{/if}
+			<button class="button success" {disabled} on:click={event => save(event, 'PUBLISHED')}>
+				{article.status === 'PUBLISHED' ? 'Update' : 'Publish'}
+			</button>
 		</div>
 	</div>
 	<div class="admin-main">
@@ -20,15 +26,10 @@
 				<input bind:value={articleCopy.title} type="text" required>
 			</label>
 			<label>
-				Slug
-				<em> - (Must be unique. If empty, article url will derive from title.)</em>
-				<input bind:value={articleCopy.slug} type="text">
-			</label>
-			<Quill title="Content" bind:html={articleCopy.html}/>
-			<label>
 				Summary
 				<input bind:value={articleCopy.summary} type="text">
 			</label>
+			<Quill title="Content" bind:html={articleCopy.html}/>
 		</form>
 	</div>
 	<div class="admin-side">
@@ -37,6 +38,20 @@
 				<ul>
 					<li><strong>Visibility:</strong> {articleCopy.status}</li>
 					<li><strong>Date & Time:</strong> {dayjs(articleCopy.publishedDatetime).format('MMM D, YYYY @ h:mma')}</li>
+				</ul>
+			</Panel>
+			<Panel title="Permalink" type="permalink">
+				<label>
+					<em>(Must be unique. If empty, url will derive from article title.)</em>
+					<input bind:value={articleCopy.slug} type="text">
+				</label>
+				<ul>
+					<li>
+						<strong>Preview:</strong>
+						<a href="{process.env.JM_HOST}/news/{articleCopy.slug}" target="_blank">
+							{process.env.JM_HOST}/news/{articleCopy.slug}
+						</a>
+					</li>
 				</ul>
 			</Panel>
 			<Panel title="Cover" type="cover">
@@ -113,6 +128,12 @@
 				articleCopy = JSON.parse(JSON.stringify(article))
 				disabled = true
 			}
+		}
+	}
+	function discard() {
+		if (window.confirm('Discard all changes? Careful: This is permanent and cannot be reversed.')) {
+			articleCopy = JSON.parse(JSON.stringify(article))
+			disabled = true
 		}
 	}
 </script>
