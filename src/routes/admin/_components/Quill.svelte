@@ -1,23 +1,21 @@
 <div class="quill-component">
-	{#if title}
+	<div class="toolbar">
 		<h2>{title}</h2>
-	{/if}
+		<div class="button warning tiny" on:click={toggleHTML}>Edit {htmlmode ? 'as Content' : 'as HTML'}</div>
+	</div>
 	<div class="main-editor" class:htmlmode>
 		<div bind:this={editor}></div>
 	</div>
 	{#if htmlmode}
 		<TextArea bind:value={html}/>
 	{/if}
-	<div class="toolbar">
-		<div class="button small" on:click={toggleHTML}>Edit {htmlmode ? 'as Content' : 'as HTML'}</div>
-	</div>
 </div>
 
 <script>
 	import { onMount } from 'svelte'
 	import { Quill } from '@johnny/stores/admin-store'
 	import TextArea from './TextArea.svelte'
-	export let title
+	export let title = ''
 
 	let editor
 	let quill
@@ -59,19 +57,20 @@
 </script>
 
 <style type="text/scss">
-	// .quill-component {
-	// 	margin: 0 0 10rem;
-	// }
+	.quill-component {
+		margin: 0 0 20rem;
+	}
 	.toolbar {
 		display: flex;
-		justify-content: flex-end;
-		margin: 4rem 0 0;
+		justify-content: space-between;
+		align-items: flex-end;
+		padding: 0 0 4rem;
 	}
 	.button {
 		margin: 0;
 	}
 	h2 {
-		margin: 0 0 4rem;
+		margin: 0;
 		font: $bold 14rem $font;
 	}
 	.main-editor {

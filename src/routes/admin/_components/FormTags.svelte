@@ -1,7 +1,7 @@
 {#if tagsCopy && tagsCopy.length}
 	<div class="tags">
 		{#each tagsCopy as tagObj, i (tagObj.id)}
-			<div class="tag" class:on={tagObj.on} on:click={() => toggleTag(tagObj)}>{tagObj.tag}</div>
+			<div class="tag button tiny {tagObj.on ? 'success' : 'dull'}" on:click={() => toggleTag(tagObj)}>{tagObj.tag}</div>
 		{/each}
 	</div>
 {/if}
@@ -49,12 +49,7 @@
 	}
 	.tag {
 		margin: 4rem 4rem 0 0;
-		padding: 0 4rem;
-		background-color: $gray-6;
-		border: 1px solid $gray-4;
-		cursor: pointer;
-		&.on {
-			background-color: $green-l2;
-		}
+		text-transform: none;
+		font: 13rem/1 $font;
 	}
 </style>
