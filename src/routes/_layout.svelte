@@ -3,17 +3,16 @@
 	<svelte:component this={Refresh}/>
 {/if} -->
 
-<div class="layout">
-	{#if $session.user || process.env.NODE_ENV === 'development'}
+
+<div class="site" class:admin>
+	{#if admin}
 		<AdminBar/>
 	{/if}
-	<div class="site">
-		<Header {section}/>
-		<main>
-			<slot></slot>
-		</main>
-		<Footer {section}/>
-	</div>
+	<Header {section}/>
+	<main>
+		<slot></slot>
+	</main>
+	<Footer {section}/>
 </div>
 
 <script>
@@ -26,6 +25,8 @@
 	import Header from './_layout/Header.svelte'
 	import AdminBar from './admin/_components/AdminBar.svelte'
 	import Footer from './_layout/Footer.svelte'
+
+	$: admin = $session.user || process.env.NODE_ENV === 'development'
 
 	// DOM ONLY STUFF ---------- >>>>
 	let html
@@ -53,19 +54,45 @@
 </script>
 
 <style type="text/scss">
-	.layout {
-		display: flex;
-		position: relative;
-	}
 	.site {
+		display: grid;
+		grid-template-areas:
+			"header"
+			"main"
+			"footer"
+		;
+		grid-template-rows: auto 1fr auto;
+		grid-template-columns: 1fr;
 		flex: 1;
+		&.admin {
+			grid-template-areas:
+				"admin header"
+				"admin main"
+				"admin footer"
+			;
+			grid-template-columns: 250rem 1fr;
+		}
+		& :global(> header) {
+			grid-row: header;
+			grid-column: header;
+		}
+		& :global(> footer) {
+			grid-row: footer;
+			grid-column: footer;
+		}
+		& :global(> .admin-bar) {
+			grid-row: admin;
+			grid-column: admin;
+		}
 	}
 	main {
+		grid-row: main;
+		grid-column: main;
 		margin: 0 auto;
 		width: 100%;
 		max-width: $max;
 		padding: 40rem 20rem 20rem;
-		:global(.admin-section) & {
+		.admin & {
 			max-width: none;
 			padding: 0;
 		}

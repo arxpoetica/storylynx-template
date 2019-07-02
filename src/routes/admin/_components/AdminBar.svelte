@@ -9,14 +9,18 @@
 			<div class="links">
 				<a href="/admin/articles">All Articles</a>
 				<a href="/admin/articles/new">Create Article</a>
+				<a href="/admin/articles/categories">Article Categories</a>
+				<a href="/admin/articles/tags">Article Tags</a>
 			</div>
 			<h2>
 				<div class="svg"><Asset/></div>
 				Archive Assets
 			</h2>
 			<div class="links">
-				<a href="/admin/resources">All Assets</a>
-				<a href="/admin/resources/new">Create Asset</a>
+				<a href="/admin/assets">All Assets</a>
+				<a href="/admin/assets/new">Create Asset</a>
+				<a href="/admin/assets/categories">Asset Categories</a>
+				<a href="/admin/assets/tags">Asset Tags</a>
 			</div>
 		</div>
 		<div class="second">

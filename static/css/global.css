@@ -753,6 +753,7 @@ a, area, button, label, summary, [tabindex] {
 }
 
 html {
+	height: 100%;
 	background-color: white;
 	font: 1px/1.2 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	box-sizing: border-box;
@@ -766,10 +767,22 @@ html.preloaded {
 	}
 
 body {
+	display: flex;
+	min-height: 100%;
 	margin: 0;
 	background-color: white;
 	color: #1e3d43;
 	font: 14rem/1.35 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.yavascript {
+	overflow: hidden;
+	position: absolute;
+	width: 0;
+	height: 0;
+	top: -1px;
+	left: -1px;
+	pointer-events: none;
 }
 
 /*# sourceMappingURL=global.css.map */

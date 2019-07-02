@@ -41,6 +41,9 @@
 				padding: 4rem 0;
 			}
 		}
+		:global(&):last-child {
+			border: 0;
+		}
 	}
 	h2 {
 		display: flex;

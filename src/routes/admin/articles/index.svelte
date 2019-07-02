@@ -1,4 +1,7 @@
-<div class="admin-main">
+<div class="admin-header">
+	<h1>Article</h1>
+</div>
+<div class="admin-full">
 	<List {items}/>
 </div>
 

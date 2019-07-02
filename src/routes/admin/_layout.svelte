@@ -1,11 +1,5 @@
 <div class="admin">
-	<!-- <div class="admin-header"></div> -->
 	<slot></slot>
-	<!-- <div class="admin-section">
-	</div>
-	<div class="admin-side">
-		<slot name="side">yup it workddd</slot>
-	</div> -->
 </div>
 {@html `<${'style'}>${QuillCss}</${'style'}>`}
 
@@ -39,13 +33,20 @@
 
 <style type="text/scss">
 	.admin {
-		display: flex;
-		flex-wrap: wrap;
+		display: grid;
+		grid-template-areas:
+			"header header"
+			"main side"
+		;
+		grid-template-rows: auto 1fr;
+		grid-template-columns: 1fr 300rem;
+		min-height: 100%;
 		& :global(.admin-header) {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			flex-basis: 100%;
+			grid-row: header;
+			grid-column: header;
 			padding: 20rem;
 			border-bottom: 1px solid $gray-6;
 			:global(h1) {
@@ -53,12 +54,25 @@
 				font: $bold 18rem/1.2 $font;
 			}
 		}
+		& :global(.admin-all) {
+			grid-row: header / main;
+			grid-column: main / side;
+			padding: 20rem;
+		}
+		& :global(.admin-full) {
+			grid-row: main;
+			grid-column: main / side;
+			padding: 20rem;
+		}
 		& :global(.admin-main) {
-			flex: 1;
+			grid-row: main;
+			grid-column: main;
 			padding: 20rem;
 		}
 		& :global(.admin-side) {
-			flex-basis: 300rem;
+			// grid-row: header / side;
+			grid-row: side;
+			grid-column: side;
 			border-left: 1px solid $gray-6;
 		}
 	}
