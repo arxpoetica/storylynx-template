@@ -2,7 +2,6 @@
 	<div class="admin-header">
 		<h1>Edit News Article</h1>
 		<div class="buttons">
-
 			{#if !disabled}
 				<button class="button blank" on:click={event => discard()}>
 					Discard Changes
@@ -39,6 +38,9 @@
 					<li><strong>Visibility:</strong> {articleCopy.status}</li>
 					<li><strong>Date & Time:</strong> {dayjs(articleCopy.publishedDatetime).format('MMM D, YYYY @ h:mma')}</li>
 				</ul>
+
+				<DateTimePicker bind:datetime={articleCopy.publishedDatetime}/>
+
 			</Panel>
 			<Panel title="Permalink" type="permalink">
 				<label>
@@ -80,6 +82,7 @@
 	import dayjs from 'dayjs'
 	import { cleanObject } from '@johnny/utils/basic-utils'
 	import Quill from '../../_components/Quill.svelte'
+	import DateTimePicker from '../../_components/DateTimePicker.svelte'
 	import FormTags from '../../_components/FormTags.svelte'
 	import Panel from '../../../_components/accordion/Panel.svelte'
 

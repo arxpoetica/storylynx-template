@@ -45,21 +45,21 @@
 </script>
 
 <style type="text/scss">
-	table {
-		// label {
-		// }
-		input {
-			margin: 0;
-		}
-	}
+	// table {
+	// 	// label {
+	// 	// }
+	// 	input {
+	// 		margin: 0;
+	// 	}
+	// }
 
-	.list {
-		overflow: auto;
-	}
-	a {
-		&:hover {
-		}
-	}
+	// .list {
+	// 	overflow: auto;
+	// }
+	// a {
+	// 	&:hover {
+	// 	}
+	// }
 	.cover {
 		min-width: 59rem;
 		height: 59rem;
@@ -70,8 +70,8 @@
 		font: inherit;
 		font-weight: $bold;
 	}
-	h3,
-	p {
-		margin: 0;
-	}
+	// h3,
+	// p {
+	// 	margin: 0;
+	// }
 </style>
