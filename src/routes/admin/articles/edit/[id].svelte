@@ -33,35 +33,10 @@
 	</div>
 	<div class="admin-side">
 		<div class="accordion">
-			<Panel title="Details" type="details">
-				<ul>
-					<li><strong>Visibility:</strong> {articleCopy.status}</li>
-					<li><strong>Date & Time:</strong> {dayjs(articleCopy.publishedDatetime).format('MMM D, YYYY @ h:mma')}</li>
-				</ul>
-
-				<DateTimePicker bind:datetime={articleCopy.publishedDatetime}/>
-
-			</Panel>
-			<Panel title="Permalink" type="permalink">
-				<label>
-					<em>(Must be unique. If empty, url will derive from article title.)</em>
-					<input bind:value={articleCopy.slug} type="text">
-				</label>
-				<ul>
-					<li>
-						<strong>Preview:</strong>
-						<a href="{process.env.JM_HOST}/news/{articleCopy.slug}" target="_blank">
-							{process.env.JM_HOST}/news/{articleCopy.slug}
-						</a>
-					</li>
-				</ul>
-			</Panel>
-			<Panel title="Cover" type="cover">
-				<img src={articleCopy.cover.url} alt={articleCopy.cover.summary || 'No alt information.'}/>
-			</Panel>
-			<Panel title="Tags" type="tags">
-				<FormTags bind:tags bind:articleCopy/>
-			</Panel>
+			<DetailsPanel bind:status={articleCopy.status} bind:datetime={articleCopy.publishedDatetime}/>
+			<PermalinkPanel bind:slug={articleCopy.slug}/>
+			<AssetsPanel bind:articleCopy/>
+			<TagsPanel bind:tags bind:articleCopy/>
 		</div>
 	</div>
 {/if}
@@ -79,12 +54,13 @@
 
 <script>
 	import { onMount } from 'svelte'
-	import dayjs from 'dayjs'
 	import { cleanObject } from '@johnny/utils/basic-utils'
 	import Quill from '../../_components/Quill.svelte'
-	import DateTimePicker from '../../_components/DateTimePicker.svelte'
-	import FormTags from '../../_components/FormTags.svelte'
-	import Panel from '../../../_components/accordion/Panel.svelte'
+	import Panel from '../../_components/panels/Panel.svelte'
+	import DetailsPanel from '../../_components/panels/DetailsPanel.svelte'
+	import PermalinkPanel from '../../_components/panels/PermalinkPanel.svelte'
+	import AssetsPanel from '../../_components/panels/AssetsPanel.svelte'
+	import TagsPanel from '../../_components/panels/TagsPanel.svelte'
 
 	export let article
 	export let tags

@@ -15,12 +15,20 @@
 </div>
 
 <script>
-	import CaretUp from '../../_svg/caret-up.svelte'
-	import CaretDown from '../../_svg/caret-down.svelte'
-	let state = 'open'
+	import { storable } from '@johnny/stores/local-store'
+	import CaretUp from '../../../_svg/caret-up.svelte'
+	import CaretDown from '../../../_svg/caret-down.svelte'
+	export let state = 'shut'
 	export let type = 'default'
 	export let title = 'Panel'
 	function togglePanel() { state = state === 'open' ? 'shut' : 'open' }
+
+	const stateStorable = storable(`admin.panel-${type}.state`, state)
+	let priorState = state = $stateStorable
+	$: if (priorState !== state) {
+		stateStorable.set(state)
+		priorState = state
+	}
 </script>
 
 <style type="text/scss">
