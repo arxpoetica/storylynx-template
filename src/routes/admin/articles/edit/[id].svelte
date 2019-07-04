@@ -135,8 +135,11 @@
 	}
 	function discard() {
 		if (window.confirm('Discard all changes? Careful: This is permanent and cannot be reversed.')) {
-			articleCopy = JSON.parse(JSON.stringify(article))
-			disabled = true
+			articleCopy = false // unfortunate rejiggering
+			setTimeout(() => {
+				articleCopy = JSON.parse(JSON.stringify(article))
+				disabled = true
+			}, 0)
 		}
 	}
 </script>
