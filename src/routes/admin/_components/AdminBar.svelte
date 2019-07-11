@@ -22,6 +22,14 @@
 				<a href="/admin/assets/categories">Asset Categories</a>
 				<a href="/admin/assets/tags">Asset Tags</a>
 			</div>
+			<h2>
+				<div class="svg"><Media/></div>
+				Media
+			</h2>
+			<div class="links">
+				<a href="/admin/media">All Media</a>
+				<a href="/admin/media/upload">Upload Media</a>
+			</div>
 		</div>
 		<div class="second">
 			<div class="div"></div>
@@ -42,6 +50,7 @@
 	import { POST } from '@johnny/utils/loaders'
 	import Article from '../../_svg/admin-article.svelte'
 	import Asset from '../../_svg/admin-asset.svelte'
+	import Media from '../../_svg/admin-media.svelte'
 
 	async function logout(event) {
 		event.preventDefault()
