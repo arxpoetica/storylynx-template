@@ -21,19 +21,4 @@
 		background-color: $gray-7;
 		border-radius: 12rem;
 	}
-	label {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding: 24rem 12rem;
-		font-weight: $bold;
-		cursor: pointer;
-	}
-	em {
-		text-decoration: underline;
-		font-style: normal;
-	}
-	input[type="file"] {
-		display: none;
-	}
 </style>

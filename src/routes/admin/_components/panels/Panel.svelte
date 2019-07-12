@@ -16,8 +16,8 @@
 
 <script>
 	import { storable } from '@johnny/stores/local-store'
-	import CaretUp from '../../../_svg/caret-up.svelte'
-	import CaretDown from '../../../_svg/caret-down.svelte'
+	import CaretUp from '@johnny/svg/caret-up.svelte'
+	import CaretDown from '@johnny/svg/caret-down.svelte'
 	export let state = 'shut'
 	export let type = 'default'
 	export let title = 'Panel'

@@ -48,9 +48,9 @@
 	import { stores } from '@sapper/app'
 	const { session } = stores()
 	import { POST } from '@johnny/utils/loaders'
-	import Article from '../../_svg/admin-article.svelte'
-	import Asset from '../../_svg/admin-asset.svelte'
-	import Media from '../../_svg/admin-media.svelte'
+	import Article from '@johnny/svg/admin-article.svelte'
+	import Asset from '@johnny/svg/admin-asset.svelte'
+	import Media from '@johnny/svg/admin-media.svelte'
 
 	async function logout(event) {
 		event.preventDefault()
