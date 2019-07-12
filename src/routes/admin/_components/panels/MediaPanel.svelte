@@ -15,7 +15,7 @@
 </Panel>
 
 {#if open}
-	<MediaModal bind:open {tab}/>
+	<MediaModal bind:open bind:tab/>
 {/if}
 
 <script>

@@ -1,11 +1,11 @@
-import { cmsMutate } from '@johnny/utils/loaders'
 import { getToken } from '@johnny/services/auth-helpers'
+import { handleError, cmsMutate } from '@johnny/utils/loaders'
 
 export async function post(req, res) {
 
 	try {
 		const token = getToken(req)
-		if (token.unauthorized) { throw Error() }
+		if (token.unauthorized) { throw Error('Unauthorized') }
 
 		const { id, changes } = req.body
 
@@ -43,8 +43,7 @@ export async function post(req, res) {
 		const { updateArticle } = await cmsMutate(mutation, variables)
 		return res.json(updateArticle)
 	} catch (error) {
-		console.log(error)
-		return res.status(401).json({ error: 1, message: 'Unauthorized' })
+		return handleError(error, res)
 	}
 
 }

@@ -1,3 +1,5 @@
+<svelte:window on:keydown={keydown}/>
+
 <div class="modal">
 	<div class="bg" on:click={() => open = false}>
 		<div class="close"><IconClose/></div>
@@ -11,9 +13,11 @@
 		</div>
 		<div class="body">
 			{#if tab === 'select'}
-				<MediaSelect/>
+				<MediaSelect bind:selected/>
 			{:else}
-				<FileStackPicker/>
+				<div class="picker">
+					<FileStackPicker bind:tab/>
+				</div>
 			{/if}
 		</div>
 		<!-- <div class="foot"></div> -->
@@ -26,8 +30,14 @@
 	import FileStackPicker from './FileStackPicker.svelte'
 	export let open
 	export let tab = 'select'
+	export let selected = []
 	function select(which) {
 		tab = which
+	}
+	function keydown(event) {
+		if (event.key === 'Escape') {
+			open = false
+		}
 	}
 </script>
 
@@ -56,7 +66,7 @@
 	}
 	.close {
 		flex-basis: 40rem;
-		margin: 12rem;
+		margin: 8rem;
 		color: $white;
 		cursor: pointer;
 	}
@@ -65,7 +75,7 @@
 		flex-direction: column;
 		flex: 1;
 		position: relative;
-		margin: 100rem;
+		margin: 50rem;
 		background-color: $white;
 	}
 	.head {
@@ -89,8 +99,9 @@
 		}
 	}
 	.body {
-		overflow: auto;
 		flex: 1;
+	}
+	.picker {
 		padding: 20rem;
 	}
 </style>

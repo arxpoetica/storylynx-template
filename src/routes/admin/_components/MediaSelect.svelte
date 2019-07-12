@@ -7,7 +7,7 @@
 	<div class="items">
 		{#each items as item, index (item.id)}
 			<div on:click={() => item.on = !item.on} class:on={item.on} class="item">
-				<div class="img" style="background-image:url({src(item)})"></div>
+				<div class="img" style="background-image:url({src(item, { width: '300', height: '300' })})"></div>
 			</div>
 			<!-- <img src={src(item)} alt={item.fileName}/> -->
 		{/each}
@@ -17,7 +17,10 @@
 <script>
 	import { beforeUpdate } from 'svelte'
 	import { POST } from '@johnny/utils/loaders'
+	import { src } from '@johnny/utils/basic-utils'
 	import Pagination from '../../_components/page-lists/Pagination.svelte'
+
+	export let selected = []
 
 	let page = 1
 	let priorPage
@@ -34,11 +37,6 @@
 			pageSize = res.pageSize
 		}
 	})
-
-	// FIXME: put this in a utility
-	function src(item) {
-		return `${item.url.split(item.handle)[0]}resize=w:400,h:400/${item.handle}`
-	}
 </script>
 
 <style type="text/scss">
@@ -49,7 +47,8 @@
 	}
 	.items {
 		display: grid;
-		grid-template-columns: repeat(6, 1fr);
+		// this ridiculous number is the equivalent of 170rem max
+		grid-template-columns: repeat(auto-fill, minmax(122.7rem, 1fr));
 		grid-gap: 20rem;
 	}
 	.item {

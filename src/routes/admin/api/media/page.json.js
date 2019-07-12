@@ -1,15 +1,15 @@
 import { getToken } from '@johnny/services/auth-helpers'
-import { cmsQuery } from '@johnny/utils/loaders'
+import { handleError, cmsQuery } from '@johnny/utils/loaders'
 
 export async function post(req, res) {
 
 	try {
 		const token = getToken(req)
-		if (token.unauthorized) { throw Error() }
+		if (token.unauthorized) { throw Error('Unauthorized') }
 
 		let { page, pageSize, tags } = req.body
 		page = parseInt(page || 1)
-		pageSize = parseInt(pageSize || 3) // just hard coding for now
+		pageSize = parseInt(pageSize || 20) // just hard coding for now
 		tags = typeof tags === 'string' ? [tags] : tags
 
 		let where = 'where:'
@@ -44,8 +44,7 @@ export async function post(req, res) {
 		})
 
 	} catch (error) {
-		console.log(error)
-		return res.status(401).json({ error: 1, message: 'Unauthorized' })
+		return handleError(error, res)
 	}
 
 }

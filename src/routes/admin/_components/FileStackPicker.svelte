@@ -8,10 +8,10 @@
 	import { POST } from '@johnny/utils/loaders'
 	import { FileStackLoaded } from '@johnny/stores/admin-store'
 
+	export let tab
+
 	let key
 	let token
-	let client
-	let picker
 	onMount(async() => {
 		key = uid(50)
 		const ciphertext = await POST('/admin/api/media/token.json', { key })
@@ -25,13 +25,14 @@
 			initPicker()
 		}
 	})
-	function initPicker() {
+	async function initPicker() {
 		FileStackLoaded.set(true)
-		client = filestack.init(token)
-		picker = client.picker({
+		const client = filestack.init(token)
+		const picker = client.picker({
 			accept: ['image/*', 'video/*', 'audio/*'],
 			displayMode: 'inline',
 			container: '#filestack-picker',
+			// exposeOriginalFile: true,
 			fromSources: [
 				'local_file_system',
 				'url',
@@ -45,14 +46,20 @@
 			maxSize: 10 * 1024 * 1024, // 10MB
 			// modalSize: [20, 20],
 			uploadInBackground: false,
-			onUploadDone: res => {
-				console.log('TODO:!!!')
-				console.log(res)
+			// onFileSelected: file => {},
+			onUploadDone: async(res) => {
+				const assets = res.filesUploaded.map(file => ({
+					handle: file.handle,
+					fileName: file.filename, // note the case difference
+					size: file.size,
+					mimeType: file.mimetype, // note the case difference
+				}))
+				// TODO: tag as recent uploads
+				const { items, itemsCount } = await POST('/admin/api/media/attach.json', { assets })
+				tab = 'select'
 			},
 		})
 		picker.open()
-		// const res = await client.retrieve('Pa3RX8PSR5272pOFl9kI', { metadata: true })
-		// console.log(res)
 	}
 </script>
 

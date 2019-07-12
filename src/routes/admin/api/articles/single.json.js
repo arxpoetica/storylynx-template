@@ -1,11 +1,11 @@
-import { cmsQuery } from '@johnny/utils/loaders'
 import { getToken } from '@johnny/services/auth-helpers'
+import { handleError, cmsQuery } from '@johnny/utils/loaders'
 
 export async function post(req, res) {
 
 	try {
 		const token = getToken(req)
-		if (token.unauthorized) { throw Error() }
+		if (token.unauthorized) { throw Error('Unauthorized') }
 
 		const { article, tags } = await cmsQuery(`{
 			article(where: { id: "${req.body.id}" }) {
@@ -77,8 +77,7 @@ export async function post(req, res) {
 
 		return res.json({ article, tags })
 	} catch (error) {
-		console.log(error)
-		return res.status(401).json({ error: 1, message: 'Unauthorized' })
+		return handleError(error, res)
 	}
 
 }
