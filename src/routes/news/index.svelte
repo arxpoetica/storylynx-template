@@ -20,7 +20,7 @@
 		{/each}
 	</div>
 	{#if itemsCount > pageSize}
-		<Pagination {page} {pageSize} {items} {itemsCount}/>
+		<Pagination href="/news" {page} {pageSize} {items} {itemsCount}/>
 	{/if}
 {:else}
 	<h2>Loading . . .</h2>

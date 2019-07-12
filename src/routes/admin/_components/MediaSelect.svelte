@@ -1,24 +1,38 @@
 <div class="media-select">
-	{#each items as item, index (item.id)}
-		<div on:click={() => item.on = !item.on} class:on={item.on} class="item">
-			<div class="img" style="background-image:url({src(item)})"></div>
+	{#if itemsCount > pageSize}
+		<div class="pagination">
+			<Pagination bind:page {pageSize} {items} {itemsCount}/>
 		</div>
-		<!-- <img src={src(item)} alt={item.fileName}/> -->
-	{/each}
+	{/if}
+	<div class="items">
+		{#each items as item, index (item.id)}
+			<div on:click={() => item.on = !item.on} class:on={item.on} class="item">
+				<div class="img" style="background-image:url({src(item)})"></div>
+			</div>
+			<!-- <img src={src(item)} alt={item.fileName}/> -->
+		{/each}
+	</div>
 </div>
 
 <script>
-	import { onMount } from 'svelte'
+	import { beforeUpdate } from 'svelte'
 	import { POST } from '@johnny/utils/loaders'
+	import Pagination from '../../_components/page-lists/Pagination.svelte'
 
+	let page = 1
+	let priorPage
 	let items = []
 	let itemsCount = 0
 	let pageSize = 0
-	onMount(async() => {
-		const res = await POST('/admin/api/media/page.json')
-		items = res.items
-		itemsCount = res.itemsCount
-		pageSize = res.pageSize
+	beforeUpdate(async() => {
+		if (page !== priorPage) {
+			priorPage = page
+			items = []
+			const res = await POST('/admin/api/media/page.json', { page })
+			items = res.items
+			itemsCount = res.itemsCount
+			pageSize = res.pageSize
+		}
 	})
 
 	// FIXME: put this in a utility
@@ -28,7 +42,12 @@
 </script>
 
 <style type="text/scss">
-	.media-select {
+	// .media-select {
+	// }
+	.pagination {
+		margin: 0 0 20rem;
+	}
+	.items {
 		display: grid;
 		grid-template-columns: repeat(6, 1fr);
 		grid-gap: 20rem;

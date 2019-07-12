@@ -9,7 +9,7 @@ export async function post(req, res) {
 
 		let { page, pageSize, tags } = req.body
 		page = parseInt(page || 1)
-		pageSize = parseInt(pageSize || 10) // just hard coding for now
+		pageSize = parseInt(pageSize || 3) // just hard coding for now
 		tags = typeof tags === 'string' ? [tags] : tags
 
 		let where = 'where:'

@@ -1,7 +1,11 @@
 <div class="info">Page {page} of {itemsCount}</div>
 <nav>
 	{#if page > 1}
-		<a href="/news?{createQuery(page - 1)}" class="prev">Previous</a>
+		{#if href}
+			<a href="{href}?{createQuery(page - 1)}" class="prev">Previous</a>
+		{:else}
+			<button on:click={() => page -= 1} class="prev">Previous</button>
+		{/if}
 	{/if}
 	<div class="pages">
 		{#each range as rangeNumber}
@@ -10,19 +14,28 @@
 			{:else if rangeNumber === '...'}
 				<span class="etc">{rangeNumber}</span>
 			{:else}
-				<a href="/news?{createQuery(rangeNumber)}">{rangeNumber}</a>
+				{#if href}
+					<a href="{href}?{createQuery(rangeNumber)}">{rangeNumber}</a>
+				{:else}
+					<button on:click={() => page = rangeNumber}>{rangeNumber}</button>
+				{/if}
 			{/if}
 		{/each}
 	</div>
 	{#if page < pagesCount}
-		<a href="/news?{createQuery(page + 1)}" class="next">Next</a>
+		{#if href}
+			<a href="{href}?{createQuery(page + 1)}" class="next">Next</a>
+		{:else}
+			<button on:click={() => page += 1} class="next">Next</button>
+		{/if}
 	{/if}
 </nav>
 
 <script>
 	import { createPaginationRange, createQuery } from './page-helpers'
 
-	export let page
+	export let href = ''
+	export let page = 1
 	export let pageSize
 	export let items
 	export let itemsCount
@@ -46,14 +59,18 @@
 		display: flex;
 		line-height: 1;
 		a,
-		span {
-			// display: block;
+		span,
+		button {
 			margin: 0 20rem 0 0;
 			padding: 10rem;
+			border: 0;
 			user-select: none;
 		}
-		a {
+		a,
+		button {
 			background-color: $yellow-l4;
+			outline: 0;
+			cursor: pointer;
 		}
 		.current {
 			background-color: $green-main;
@@ -65,9 +82,17 @@
 			cursor: default;
 		}
 	}
-	// .prev,
-	// .next {
-	// }
+	.prev,
+	.next {
+		padding: 0;
+		border: 0;
+		color: $links;
+		outline: 0;
+		cursor: pointer;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 	.prev {
 		margin: 0 20rem 0 0;
 	}
