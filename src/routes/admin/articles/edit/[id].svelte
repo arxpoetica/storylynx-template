@@ -35,7 +35,7 @@
 		<div class="accordion">
 			<DetailsPanel bind:status={articleCopy.status} bind:datetime={articleCopy.publishedDatetime}/>
 			<PermalinkPanel bind:slug={articleCopy.slug}/>
-			<AssetsPanel bind:articleCopy/>
+			<MediaPanel bind:articleCopy/>
 			<TagsPanel bind:tags bind:articleCopy/>
 		</div>
 	</div>
@@ -59,7 +59,7 @@
 	import Panel from '../../_components/panels/Panel.svelte'
 	import DetailsPanel from '../../_components/panels/DetailsPanel.svelte'
 	import PermalinkPanel from '../../_components/panels/PermalinkPanel.svelte'
-	import AssetsPanel from '../../_components/panels/AssetsPanel.svelte'
+	import MediaPanel from '../../_components/panels/MediaPanel.svelte'
 	import TagsPanel from '../../_components/panels/TagsPanel.svelte'
 
 	export let article

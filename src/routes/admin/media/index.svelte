@@ -34,7 +34,7 @@
 	<!-- <div class="accordion">
 		<DetailsPanel bind:status={articleCopy.status} bind:datetime={articleCopy.publishedDatetime}/>
 		<PermalinkPanel bind:slug={articleCopy.slug}/>
-		<AssetsPanel bind:articleCopy/>
+		<MediaPanel bind:articleCopy/>
 		<TagsPanel bind:tags bind:articleCopy/>
 	</div> -->
 </div>

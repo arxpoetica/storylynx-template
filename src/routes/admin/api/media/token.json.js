@@ -3,7 +3,7 @@ import { getToken } from '@johnny/services/auth-helpers'
 
 export async function post(req, res) {
 	try {
-		const token = getToken(req.cookies.jm || req.body.cookie)
+		const token = getToken(req)
 		if (token.unauthorized) { throw Error() }
 
 		const { key } = req.body
