@@ -99,9 +99,12 @@
 		}
 	}
 	.body {
+		display: flex;
+		flex-direction: column;
 		flex: 1;
 	}
 	.picker {
+		flex: 1;
 		padding: 20rem;
 	}
 </style>
