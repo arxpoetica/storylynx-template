@@ -13,7 +13,7 @@
 		</div>
 		<div class="body">
 			{#if tab === 'select'}
-				<MediaSelect bind:selected/>
+				<MediaSelect bind:selected bind:open/>
 			{:else}
 				<div class="picker">
 					<FileStackPicker bind:tab/>

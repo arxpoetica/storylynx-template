@@ -1,11 +1,16 @@
 <div class="media-select">
-	{#if itemsCount > pageSize}
-		<div class="tools">
-			<div class="pagination">
+	<div class="tools">
+		<div class="pagination">
+			{#if itemsCount > pageSize}
 				<Pagination bind:page {pageSize} {items} {itemsCount}/>
-			</div>
+			{/if}
 		</div>
-	{/if}
+		<div class="buttons">
+			<button class="button success" {disabled} on:click={() => open = false}>
+				Select
+			</button>
+		</div>
+	</div>
 	{#if selected.length}
 		<div bind:this={selectedDiv} class="selected">
 			<h2>Selected Items</h2>
@@ -48,6 +53,9 @@
 	import Pagination from '../../_components/page-lists/Pagination.svelte'
 	import Star from '@johnny/svg/icon-star.svelte'
 	import Close from '@johnny/svg/icon-close.svelte'
+
+	export let open
+	$: disabled = !selected.length
 
 	export let selected = []
 	let selectedDiv
@@ -98,6 +106,9 @@
 		height: 100%;
 	}
 	.tools {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 		padding: 20rem;
 		border-bottom: 1px solid $gray-6;
 	}
