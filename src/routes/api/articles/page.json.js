@@ -29,7 +29,7 @@ export async function post(req, res) {
 				publishedDatetime
 				title
 				summary
-				assets { id url summary handle }
+				assets { id url summary handle fileName }
 				tags { tag }
 			}
 

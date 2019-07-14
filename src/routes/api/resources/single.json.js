@@ -9,7 +9,7 @@ export async function post(req, res) {
 				createdAt
 				title
 				content { html }
-				assets { url attribution }
+				assets { id url summary handle fileName }
 				tags { tag }
 			}
 		}`)

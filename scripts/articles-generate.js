@@ -29,7 +29,7 @@ async function runMutation(article, index) {
 					slug
 					html
 					summary
-					assets { id url handle summary }
+					assets { id url handle summary fileName }
 					tags { tag }
 				}
 			}

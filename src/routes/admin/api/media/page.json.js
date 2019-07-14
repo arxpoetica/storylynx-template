@@ -31,6 +31,7 @@ export async function post(req, res) {
 				id
 				url
 				handle
+				summary
 				fileName
 			}
 

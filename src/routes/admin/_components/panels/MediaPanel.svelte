@@ -11,10 +11,10 @@
 		</button>
 	</div>
 
-	{#if selected.length}
+	{#if articleCopy.assets.length}
 		<div class="items">
 			<div class="evil-dom">
-				{#each selected as item, index (item.id)}
+				{#each articleCopy.assets as item, index (item.id)}
 						<!-- on:click={() => remove(item)} -->
 					<div class="item">
 						<div class="img" style="background-image:url({src(item, { width: '300', height: '300' })})">
@@ -29,7 +29,7 @@
 </Panel>
 
 {#if open}
-	<MediaModal bind:open bind:tab bind:selected/>
+	<MediaModal bind:open bind:tab bind:selected={articleCopy.assets}/>
 {/if}
 
 <script>
@@ -41,15 +41,14 @@
 	export let articleCopy
 	let open = false
 	let tab
-	let selected = []
 	function openModal(which) {
 		tab = which
 		open = true
 	}
 	function remove(item) {
-		const index = selected.findIndex(sItem => sItem.id === item.id)
-		selected.splice(index, 1)
-		selected = selected
+		const index = articleCopy.assets.findIndex(sItem => sItem.id === item.id)
+		articleCopy.assets.splice(index, 1)
+		articleCopy.assets = articleCopy.assets
 	}
 </script>
 
