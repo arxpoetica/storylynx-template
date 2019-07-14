@@ -7,7 +7,7 @@ async function runMutation(article, index) {
 	console.log(magenta('------ >>>'), index)
 
 	try {
-		const cover = article.coverId ? `cover: { connect: { id: "${article.coverId}" } }` : ''
+		const assets = article.assetIds ? `assets: { connect: { id: "${article.assetIds}" } }` : ''
 		const mutation = `
 			mutation create(
 				$status: Status,
@@ -20,7 +20,7 @@ async function runMutation(article, index) {
 					slug: "${article.slug}"
 					content: "${article.content.join('\n')}"
 					summary: "${article.summary}"
-					${cover}
+					${assets}
 					tags: { connect: $connect }
 				}) {
 					id
@@ -29,7 +29,7 @@ async function runMutation(article, index) {
 					slug
 					html
 					summary
-					cover { id url handle summary }
+					assets { id url handle summary }
 					tags { tag }
 				}
 			}

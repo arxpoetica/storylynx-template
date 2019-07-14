@@ -30,7 +30,7 @@ export async function post(req, res) {
 					slug
 					html
 					summary
-					cover { url summary handle }
+					assets { id url summary handle }
 					tags { id tag }
 				}
 			}

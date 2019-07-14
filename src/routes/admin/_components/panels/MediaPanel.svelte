@@ -25,7 +25,7 @@
 			</div>
 		</div>
 	{/if}
-	<!-- <img src={articleCopy.cover.url} alt={articleCopy.cover.summary || 'No alt information.'}/> -->
+	<!-- <img src={articleCopy.assets.url} alt={articleCopy.assets.summary || 'No alt information.'}/> -->
 </Panel>
 
 {#if open}

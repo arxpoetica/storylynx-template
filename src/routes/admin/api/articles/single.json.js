@@ -16,7 +16,7 @@ export async function post(req, res) {
 				slug
 				html
 				summary
-				cover { url summary handle }
+				assets { id url summary handle }
 				tags { id tag }
 			}
 			tags { id tag }
@@ -30,11 +30,12 @@ export async function post(req, res) {
 		// 	slug: 'news-item-4',
 		// 	html: '<p>incididunt dolore laboris qui ad culpa animaliquip magna ut minim ipsum Lorem laborum ipsum anim aliqua consequat ullamco anim ut nostrud adipisicing cupidatat ut mollit laboris aute Lorem Lorem cupidatat eiusmod sit sint dolore qui sintconsectetur id labore tempor ad dolore quisest ad nulla aliquip aute duis deserunt adipisicing aute irure anim laboris exercitation minim irure quis occaecat deserunt adipisicing elitculpa sit exercitation sint nostrud adlaborum elit anim ea eiusmod consequat sint aliqua et exercitation id consequatvelit in duis mollit est adipisicing exercitation sint et nostrud sit eu cillum excepteur ex magna exercitation commodo utaliqua ex fugiat aliqua officia proident duis ad proident fugiat officia non nulla cupidatat id consequat ut qui ipsum nulla nisi nisi aliquip occaecat eu sint adipisicing ex anim ea tempor duis irure adipisicing deserunt ut</p>',
 		// 	summary: 'Lorem ipsum et ad duis fugiat veniam pariatur duis est incididunt veniam officia consequat nostrud officia cupidatat fugiat laboris Lorem qui enim aliqua ut',
-		// 	cover: {
+		// 	assets: [{
+		// 		id: 'cjwe12y3ky8mw09462na8xe7g',
 		// 		url: 'https://media.graphcms.com/KPZUYkD8RuC9GwlioGzU',
 		// 		summary: null,
 		// 		handle: 'KPZUYkD8RuC9GwlioGzU',
-		// 	},
+		// 	}],
 		// 	tags: [{
 		// 		id: 'tournament',
 		// 		tag: 'tournament',

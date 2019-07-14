@@ -7,7 +7,7 @@ export async function post(req, res) {
 				publishedDatetime
 				title
 				html
-				cover { url summary handle }
+				assets { id url summary handle }
 				tags { tag }
 			}
 		}`)

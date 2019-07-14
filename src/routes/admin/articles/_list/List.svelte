@@ -7,10 +7,10 @@
 			<tr>
 				<!-- <td><label><input type="checkbox" name="post[]" value="1"></label></td> -->
 				<td>
-					{#if item.cover}
-						<div class="cover" style="background-image:url(https://media.graphcms.com/output=format:jpg/resize=w:59,h:59,fit:crop/{item.cover.handle});"></div>
+					{#if item.assets.length}
+						<div class="assets" style="background-image:url({src(item.assets[0], { format: 'jpg', width: 59, height: 59, crop: true })});"></div>
 					{:else}
-						<div class="cover"></div>
+						<div class="assets"></div>
 					{/if}
 				</td>
 				<td>
@@ -39,6 +39,7 @@
 <!-- <p>{item.summary}</p> -->
 
 <script>
+	import { src } from '@johnny/utils/basic-utils'
 	import dayjs from 'dayjs'
 	import ListHead from './ListHead.svelte'
 	export let items
@@ -60,7 +61,7 @@
 	// 	&:hover {
 	// 	}
 	// }
-	.cover {
+	.assets {
 		min-width: 59rem;
 		height: 59rem;
 		margin-right: 12rem;

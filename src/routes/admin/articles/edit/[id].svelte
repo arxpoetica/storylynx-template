@@ -89,7 +89,7 @@
 				// datetime: articleCopy.datetime,
 				html: articleCopy.html !== article.html ? articleCopy.html : null,
 				summary: articleCopy.summary !== article.summary ? articleCopy.summary : null,
-				// cover: articleCopy.cover,
+				// assets: articleCopy.assets, // FIXME:
 				tags: JSON.stringify(article.tags) !== JSON.stringify(articleCopy.tags) ? articleCopy.tags : null,
 			}
 			cleanObject(changes)

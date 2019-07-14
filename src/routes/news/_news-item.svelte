@@ -15,15 +15,16 @@
 </div>
 
 <script>
-	import { formattedstamp } from '@johnny/utils/basic-utils'
+	import { formattedstamp, src as setSrc } from '@johnny/utils/basic-utils'
 	import LazyImg from '../../components/shared/LazyImg.svelte'
 	import Tags from '../_components/Tags.svelte'
 	export let item
 
-	$: src = item.cover ?
-		`${item.cover.url.split(item.cover.handle)[0]}resize=w:400,h:400,fit:crop/${item.cover.handle}` :
-		'https://wearehubgames-website.s3.amazonaws.com/hero/upload/775/logo-blank-big.svg'
-	$: alt = item.cover ? item.cover.attribution : 'blank'
+	$: asset = item.assets ? item.assets[0] : false
+	$: src = asset
+		? setSrc(asset, { crop: true })
+		: 'https://wearehubgames-website.s3.amazonaws.com/hero/upload/775/logo-blank-big.svg'
+	$: alt = asset ? asset.summary : 'blank'
 
 	let summary = ''
 	$: if (item.summary) {
