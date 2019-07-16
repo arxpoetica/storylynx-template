@@ -15,10 +15,19 @@ export async function post(req, res) {
 		data += changes.slug ? `slug: "${changes.slug}" ` : ''
 		data += changes.html ? `html: "${changes.html}" ` : ''
 		data += changes.summary ? `summary: "${changes.summary}" ` : ''
-		data += changes.tags ? 'tags: { set: $set } ' : ''
+		data += changes.assets ? 'assets: { set: $assets } ' : ''
+		data += changes.tags ? 'tags: { set: $tags } ' : ''
+
+		let update = ''
+		if (changes.assets || changes.tags) {
+			update += 'update('
+			update += changes.assets ? '$assets: [AssetWhereUniqueInput!] ' : ''
+			update += changes.tags ? '$tags: [TagWhereUniqueInput!] ' : ''
+			update += ')'
+		}
 
 		const mutation = `
-			mutation ${changes.tags ? 'update($set: [TagWhereUniqueInput!])' : ''} {
+			mutation ${update} {
 				updateArticle(
 					where: { id: "${id}" }
 					data: { ${data} }
@@ -36,8 +45,11 @@ export async function post(req, res) {
 			}
 		`
 		const variables = {}
+		if (changes.assets) {
+			variables.assets = changes.assets.map(asset => ({ id: asset.id }))
+		}
 		if (changes.tags) {
-			variables.set = changes.tags.map(tag => ({ id: tag.id }))
+			variables.tags = changes.tags.map(tag => ({ id: tag.id }))
 		}
 
 		const { updateArticle } = await cmsMutate(mutation, variables)

@@ -89,8 +89,8 @@
 				// datetime: articleCopy.datetime,
 				html: articleCopy.html !== article.html ? articleCopy.html : null,
 				summary: articleCopy.summary !== article.summary ? articleCopy.summary : null,
-				// assets: articleCopy.assets, // FIXME:
-				tags: JSON.stringify(article.tags) !== JSON.stringify(articleCopy.tags) ? articleCopy.tags : null,
+				assets: JSON.stringify(articleCopy.assets) !== JSON.stringify(article.assets) ? articleCopy.assets : null,
+				tags: JSON.stringify(articleCopy.tags) !== JSON.stringify(article.tags) ? articleCopy.tags : null,
 			}
 			cleanObject(changes)
 
