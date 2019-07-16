@@ -8,7 +8,7 @@
 				</button>
 			{/if}
 			{#if articleCopy.status === 'PUBLISHED'}
-				<button class="button warning" {disabled} on:click={event => save(event, 'DRAFT')}>
+				<button class="button warning" on:click={event => save(event, 'DRAFT')}>
 					Switch to Draft
 				</button>
 			{/if}
@@ -34,7 +34,7 @@
 	<div class="admin-side">
 		<div class="accordion">
 			<DetailsPanel bind:status={articleCopy.status} bind:datetime={articleCopy.publishedDatetime}/>
-			<PermalinkPanel bind:slug={articleCopy.slug}/>
+			<PermalinkPanel bind:slug={articleCopy.slug} title={articleCopy.title}/>
 			<MediaPanel bind:articleCopy/>
 			<TagsPanel bind:tags bind:articleCopy/>
 		</div>
@@ -54,7 +54,6 @@
 
 <script>
 	import { onMount } from 'svelte'
-	import { cleanObject } from '@johnny/utils/basic-utils'
 	import Quill from '../../_components/Quill.svelte'
 	import Panel from '../../_components/panels/Panel.svelte'
 	import DetailsPanel from '../../_components/panels/DetailsPanel.svelte'
@@ -77,22 +76,17 @@
 
 	async function save(event, status) {
 		event.preventDefault()
-		if (!disabled) {
+		if (!disabled || status === 'DRAFT') {
 			if (status) {
 				articleCopy.status = status
 			}
 
-			const changes = {
-				status: articleCopy.status !== article.status ? articleCopy.status : null,
-				title: articleCopy.title !== article.title ? articleCopy.title : null,
-				slug: articleCopy.slug !== article.slug ? articleCopy.slug : null,
-				// datetime: articleCopy.datetime,
-				html: articleCopy.html !== article.html ? articleCopy.html : null,
-				summary: articleCopy.summary !== article.summary ? articleCopy.summary : null,
-				assets: JSON.stringify(articleCopy.assets) !== JSON.stringify(article.assets) ? articleCopy.assets : null,
-				tags: JSON.stringify(articleCopy.tags) !== JSON.stringify(article.tags) ? articleCopy.tags : null,
+			const changes = {}
+			for (let key in articleCopy) {
+				if (JSON.stringify(articleCopy[key]) !== JSON.stringify(article[key])) {
+					changes[key] = articleCopy[key]
+				}
 			}
-			cleanObject(changes)
 
 			const savedArticle = await POST('/admin/api/articles/update.json', {
 				id: article.id,
@@ -121,6 +115,10 @@
 </script>
 
 <style type="text/scss">
+	form {
+		max-width: 800rem;
+		margin: 0 auto;
+	}
 	label {
 		margin: 0 0 20rem;
 		font: $bold 14rem $font;

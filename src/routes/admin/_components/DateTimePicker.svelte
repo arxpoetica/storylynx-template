@@ -38,6 +38,9 @@
 					{/each}
 				</div>
 			</div>
+			{#if notToday}
+				<button on:click={setToToday} class="button small warning">Jump to Today</button>
+			{/if}
 		</div>
 	</div>
 {/if}
@@ -65,6 +68,17 @@
 		year = selected.year()
 		years = [...range(year - 4, year - 1), year, ...range(year + 1, year + 4)]
 		rows = Math.ceil((daysInMonth + startOfMonth - 1) / 7)
+	}
+
+	let today = dayjs(new Date())
+	$: notToday = selected && (
+		today.date() !== selected.date()
+		|| today.month() !== selected.month()
+		|| today.year() !== selected.year()
+	)
+	function setToToday() {
+		today = dayjs(new Date()) // just updating since time always passes
+		setDate({ date: today.date(), month: today.month() + 1, year: today.year() })
 	}
 
 	function setDate(settings) {
@@ -162,5 +176,9 @@
 				pointer-events: none;
 			}
 		}
+	}
+	button {
+		display: block;
+		margin: 0 auto;
 	}
 </style>

@@ -7,13 +7,16 @@
 
 <script context="module">
 	import { POST } from '@johnny/utils/loaders'
-	export async function preload({ query }) {
+	export async function preload({ query }, session) {
 		// if (typeof query.page === 'undefined') {
 		// 	return this.redirect(302, 'news?page=1')
 		// }
 		query.page = query.page || 1
 		query.pageSize = 50
-		const { pageSize, items, itemsCount } = await POST('/api/articles/page.json', query)
+		const { pageSize, items, itemsCount } = await POST(
+			'/admin/api/articles/page.json',
+			Object.assign({ cookie: session.cookie }, query),
+		)
 		return { pageSize, items, itemsCount }
 	}
 </script>

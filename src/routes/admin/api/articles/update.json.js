@@ -13,6 +13,7 @@ export async function post(req, res) {
 		data += changes.status ? `status: ${changes.status} ` : ''
 		data += changes.title ? `title: "${changes.title}" ` : ''
 		data += changes.slug ? `slug: "${changes.slug}" ` : ''
+		data += changes.publishedDatetime ? `publishedDatetime: "${changes.publishedDatetime}" ` : ''
 		data += changes.html ? `html: "${changes.html}" ` : ''
 		data += changes.summary ? `summary: "${changes.summary}" ` : ''
 		data += changes.assets ? 'assets: { set: $assets } ' : ''

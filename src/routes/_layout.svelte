@@ -9,7 +9,7 @@
 		<AdminBar/>
 	{/if}
 	<Header {section}/>
-	<main>
+	<main class="main-{segment}">
 		<slot></slot>
 	</main>
 	<Footer {section}/>
@@ -92,7 +92,7 @@
 		width: 100%;
 		max-width: $max;
 		padding: 40rem 20rem 20rem;
-		.admin & {
+		:global(.admin-section) & {
 			max-width: none;
 			padding: 0;
 		}
