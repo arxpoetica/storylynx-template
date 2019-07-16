@@ -3,8 +3,7 @@
 	<svelte:component this={Refresh}/>
 {/if} -->
 
-
-<div class="site" class:admin>
+<div class="site">
 	{#if admin}
 		<AdminBar/>
 	{/if}
@@ -33,12 +32,11 @@
 	export let segment
 	$: section = segment ? segment : 'home'
 	let priorSection
-	$: {
-		if (process.browser && html) {
-			html.classList.remove(`${priorSection}-section`)
-			html.classList.add(`${section}-section`)
-			priorSection = section
-		}
+	$: if (process.browser && html) {
+		if (admin) { html.classList.add('admin') }
+		html.classList.remove(`${priorSection}-section`)
+		html.classList.add(`${section}-section`)
+		priorSection = section
 	}
 
 	// let Refresh = false
@@ -64,13 +62,22 @@
 		grid-template-rows: auto 1fr auto;
 		grid-template-columns: 1fr;
 		flex: 1;
-		&.admin {
+		:global(.admin) & {
 			grid-template-areas:
 				"admin header"
 				"admin main"
 				"admin footer"
 			;
 			grid-template-columns: 250rem 1fr;
+		}
+		& :global(> .admin-bar) {
+			// grid-row: admin;
+			// grid-column: admin;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: 250rem;
 		}
 		& :global(> header) {
 			grid-row: header;
@@ -79,10 +86,6 @@
 		& :global(> footer) {
 			grid-row: footer;
 			grid-column: footer;
-		}
-		& :global(> .admin-bar) {
-			grid-row: admin;
-			grid-column: admin;
 		}
 	}
 	main {
