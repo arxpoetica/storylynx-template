@@ -1,20 +1,16 @@
 import { magenta, red } from 'ansi-colors'
-import Html from 'slate-html-serializer'
-import { JSDOM } from 'jsdom'
-const serializer = new Html({ parseHtml: JSDOM.fragment })
 import articles from '../static/json/sample-news-items.json'
-import { cmsMutate } from '../src/server/utils/loaders'
+import { cmsMutate } from '@johnny/utils/loaders'
 
 async function runMutation(article, index) {
 
 	console.log(magenta('------ >>>'), index)
 
 	try {
-		const cover = article.coverId ? `cover: { connect: { id: "${article.coverId}" } }` : ''
+		const assets = article.assetIds ? `assets: { connect: { id: "${article.assetIds}" } }` : ''
 		const mutation = `
 			mutation create(
 				$status: Status,
-				$content: RichTextAST,
 				$connect: [TagWhereUniqueInput!]
 			) {
 				createArticle(data: {
@@ -22,25 +18,24 @@ async function runMutation(article, index) {
 					title: "${article.title}"
 					publishedDatetime: "${article.publishedDatetime}"
 					slug: "${article.slug}"
-					content: $content
+					content: "${article.content.join('\n')}"
 					summary: "${article.summary}"
-					${cover}
+					${assets}
 					tags: { connect: $connect }
 				}) {
 					id
 					createdAt
 					title
 					slug
-					content { html }
+					html
 					summary
-					cover { id url handle summary }
+					assets { id url handle summary fileName }
 					tags { tag }
 				}
 			}
 		`
 		const variables = {
 			status: article.status,
-			content: serializer.deserialize(article.content.join('\n')),
 			connect: article.tags,
 		}
 

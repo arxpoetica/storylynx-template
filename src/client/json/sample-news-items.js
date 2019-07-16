@@ -1,6 +1,6 @@
 import { loremIpsum } from 'lorem-ipsum'
 import { hyphenate, random, unique, randomTimestamp } from '@arxpoetica/utils'
-import { assetIds, tags } from '../js/json-helpers.js'
+import { assetIds as sourceAssetIds, tags } from '../js/json-helpers.js'
 
 export const compile = () => {
 
@@ -19,7 +19,7 @@ export const compile = () => {
 			.map(() => tags[random(0, tags.length - 1)]))
 			.map(tag => { return { tag } })
 		randomTags.push({ tag: 'delete' })
-		const coverId = random(1, 4) === 1 ? false : assetIds[random(1, assetIds.length) - 1]
+		const assetIds = random(1, 4) === 1 ? false : sourceAssetIds[random(1, sourceAssetIds.length) - 1]
 
 		return {
 			status: random(0, 15) === 0 ? 'DRAFT' : 'PUBLISHED',
@@ -28,7 +28,7 @@ export const compile = () => {
 			slug: random(0, 3) === 0 ? hyphenate(title).toLowerCase() : `news-item-${index + 1}`,
 			summary,
 			content,
-			coverId,
+			assetIds,
 			tags: randomTags,
 		}
 	})

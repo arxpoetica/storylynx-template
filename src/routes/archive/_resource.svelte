@@ -16,7 +16,7 @@
 </div>
 
 <script>
-	import { formattedstamp } from '../../server/utils/basic-utils'
+	import { formattedstamp } from '@johnny/utils/basic-utils'
 	import LazyImg from '../../components/shared/LazyImg.svelte'
 	export let resource
 
@@ -38,21 +38,21 @@
 <style type="text/scss">
 	.resource {
 		flex: 1;
-		max-width: 40rem;
-		min-width: 30rem;
-		margin: 0 0.6rem 1.2rem;
-		padding: 1.2rem 2rem;
+		max-width: 400rem;
+		min-width: 300rem;
+		margin: 0 6rem 12rem;
+		padding: 12rem 20rem;
 		background-color: $gray-7;
 		box-shadow: 0 0 2px $gray-5;
 	}
 	h4 {
-		margin: 0 0 0.4rem;
+		margin: 0 0 4rem;
 	}
 	.tags {
 		display: flex;
 		strong {
-			margin-right: 0.4rem;
-			padding: 0 0.4rem;
+			margin-right: 4rem;
+			padding: 0 4rem;
 			background-color: $gray-6;
 			border: 1px solid $gray-4;
 			cursor: pointer;

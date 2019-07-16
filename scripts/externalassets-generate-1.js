@@ -1,7 +1,7 @@
 import { magenta } from 'ansi-colors'
 import { loremIpsum } from 'lorem-ipsum'
-import { cmsMutate } from '../src/server/utils/loaders'
-import { random, unique } from '../src/server/utils/basic-utils'
+import { cmsMutate } from '@johnny/utils/loaders'
+import { random, unique } from '@johnny/utils/basic-utils'
 import { tags/* , mimeTypeEnums */ } from '../src/client/js/json-helpers'
 
 const arr = [...Array(49).keys()]

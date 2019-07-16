@@ -1,8 +1,8 @@
-import { setToken } from '../../../server/services/auth-helpers'
+import { setToken } from '@johnny/services/auth-helpers'
 
 export async function post(req, res) {
 	try {
-		const firebaseSetup = (await import('../../../server/services/firebase-setup')).default
+		const firebaseSetup = (await import('@johnny/services/firebase-setup')).default
 		const auth = await firebaseSetup()
 
 		const { username, password } = req.body

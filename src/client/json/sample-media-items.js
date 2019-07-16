@@ -2,7 +2,7 @@ import { loremIpsum } from 'lorem-ipsum'
 import dayjs from 'dayjs'
 import advancedFormat from 'dayjs/plugin/advancedFormat'
 dayjs.extend(advancedFormat)
-import { hyphenate, random, unique } from '../../server/utils/basic-utils.js'
+import { hyphenate, random, unique } from '@johnny/utils/basic-utils'
 
 import { youtubes, videos, tags } from '../js/json-helpers.js'
 

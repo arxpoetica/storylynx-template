@@ -68,35 +68,35 @@ strong {
 
 h1,
 .h1 {
-	margin: 0 0 2rem;
+	margin: 0 0 20rem;
 	color: inherit;
-	font: 2.8rem/1.2 $font;
+	font: 28rem/1.2 $font;
 }
 h2,
 .h2 {
-	margin: 0 0 0.6rem;
+	margin: 0 0 6rem;
 	color: inherit;
-	font: $bold 2rem/1.2 $font;
+	font: $bold 20rem/1.2 $font;
 	+ h3,
 	+ .h3 {
-		margin-top: -0.6rem;
+		margin-top: -6rem;
 	}
 }
 h3,
 .h3 {
-	margin: 0 0 0.6rem;
+	margin: 0 0 6rem;
 	color: inherit;
-	font: $bold 1.6rem/1.2 $font;
+	font: $bold 16rem/1.2 $font;
 	+ h4,
 	+ .h4 {
-		margin-top: -0.6rem;
+		margin-top: -6rem;
 	}
 }
 h4,
 .h4 {
 	margin: 0;
 	color: $gray-3;
-	font: $bold 1.5rem/1.2 $font;
+	font: $bold 15rem/1.2 $font;
 }
 h5,
 .h5 {
@@ -104,7 +104,7 @@ h5,
 	color: inherit;
 	font-family: $font;
 	font-size: 20px;
-	font-size: 1.8rem; // scss-lint:disable DuplicateProperty
+	font-size: 18rem; // scss-lint:disable DuplicateProperty
 	font-weight: $bold;
 	line-height: lh(18, 24);
 }
@@ -114,39 +114,10 @@ h6,
 	color: inherit;
 	font-family: $font;
 	font-size: 17px;
-	font-size: 1.6rem; // scss-lint:disable DuplicateProperty
+	font-size: 16rem; // scss-lint:disable DuplicateProperty
 	font-weight: $bold;
 	line-height: lh(16, 22);
 }
-
-
-// @media print,
-// screen and (min-width: 40em) {
-// 	h1,
-// 	.h1 {
-// 		font-size: 3rem;
-// 	}
-// 	h2,
-// 	.h2 {
-// 		font-size: 2.5rem;
-// 	}
-// 	h3,
-// 	.h3 {
-// 		font-size: 1.9375rem;
-// 	}
-// 	h4,
-// 	.h4 {
-// 		font-size: 1.5625rem;
-// 	}
-// 	h5,
-// 	.h5 {
-// 		font-size: 1.25rem;
-// 	}
-// 	h6,
-// 	.h6 {
-// 		font-size: 1rem;
-// 	}
-// }
 
 p {
 	margin: 0 0 1em;
@@ -155,7 +126,7 @@ p {
 ul,
 ol,
 dl {
-	margin-bottom: 1rem;
+	margin-bottom: 10rem;
 	list-style-position: outside;
 	line-height: 1.6;
 }
@@ -165,28 +136,28 @@ li {
 }
 
 ul {
-	margin-left: 1.25rem;
+	margin-left: 12.5rem;
 	list-style-type: disc;
 }
 
 ol {
-	margin-left: 1.25rem;
+	margin-left: 12.5rem;
 }
 
 ul ul,
 ol ul,
 ul ol,
 ol ol {
-	margin-left: 1.25rem;
+	margin-left: 12.5rem;
 	margin-bottom: 0;
 }
 
 dl {
-	margin-bottom: 1rem;
+	margin-bottom: 10rem;
 }
 
 dl dt {
-	margin-bottom: 0.3rem;
+	margin-bottom: 3rem;
 	font-weight: bold;
 }
 
@@ -213,7 +184,40 @@ img {
 	}
 }
 
+table {
+	width: 100%;
+	background-color: $white;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 1px solid $gray-6;
+	font: 13rem/1 $font;
+}
+thead,
+tfoot {
+	tr {
+		border: 1px solid $gray-6;
+	}
+}
+tbody {
+	tr {
+		&:nth-child(odd) {
+			background-color: $gray-7;
+		}
+	}
+}
+th,
+td {
+	padding: 8rem;
+	text-align: left;
+	vertical-align: top;
+	line-height: 1;
+}
+th {
+	vertical-align: middle;
+}
+
 svg {
+	flex: 1;
 	vertical-align: middle;
 	fill: currentColor;
 	&:not(:root) {
@@ -224,9 +228,9 @@ svg {
 hr {
 	clear: both;
 	overflow: visible;
-	max-width: 75rem;
+	max-width: 750rem;
 	height: 0;
-	margin: 1.25rem auto;
+	margin: 12.5rem auto;
 	border-top: 0;
 	border-right: 0;
 	border-bottom: 1px solid #cacaca;
@@ -244,9 +248,9 @@ abbr[title] {
 pre {
 	overflow: auto;
 	margin: 0;
-	padding: 0.6rem;
+	padding: 6rem;
 	max-height: 400px;
-	font: 1.3rem $mono-font;
+	font: 13rem $mono-font;
 	background-color: $gray-light;
 	border: 1px solid $gray-6;
 }
@@ -254,12 +258,12 @@ pre {
 code {
 	padding: 0;
 	color: $black;
-	font: 1.3rem $mono-font;
+	font: 13rem $mono-font;
 }
 
 kbd {
 	margin: 0;
-	padding: 0.125rem 0.25rem 0;
+	padding: 1.25rem 2.5rem 0;
 	background-color: #e6e6e6;
 	color: #0a0a0a;
 	font-family: $mono-font;
@@ -365,15 +369,15 @@ textarea {
 	display: block;
 	box-sizing: border-box;
 	width: 100%;
-	height: 3rem;
-	margin: 0 0 1rem;
-	padding: 0.5rem;
+	height: 30rem;
+	margin: 0 0 10rem;
+	padding: 5rem;
 	border: 1px solid $gray-5;
 	border-radius: 2px;
 	background-color: white;
 	box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
 	font-family: inherit;
-	font-size: 1.3rem;
+	font-size: 13rem;
 	font-weight: normal;
 	line-height: 1.5;
 	color: inherit;
@@ -415,15 +419,15 @@ input[type='search'] {
 [type='file'],
 [type='checkbox'],
 [type='radio'] {
-	margin: 0 0 1rem;
+	margin: 0 0 10rem;
 }
 
 [type='checkbox'] + label,
 [type='radio'] + label {
 	display: inline-block;
 	vertical-align: baseline;
-	margin-left: 0.5rem;
-	margin-right: 1rem;
+	margin-left: 5rem;
+	margin-right: 10rem;
 	margin-bottom: 0;
 }
 
@@ -441,16 +445,16 @@ label {
 	margin: 0;
 	> [type='checkbox'],
 	> [type='radio'] {
-		margin-right: 0.5rem;
+		margin-right: 5rem;
 	}
 }
 
 select {
 	width: 100%;
-	padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+	padding: 5rem 15rem 5rem 5rem;
 	font: inherit;
 	color: inherit;
-	background: url('/svg/select-handle-off.svg') no-repeat right -1rem center white;
+	background: url('/svg/select-handle-off.svg') no-repeat right -10rem center white;
 	background-origin: content-box;
 	background-size: 8px 11px;
 	border: 1px solid $gray-5;

@@ -8,22 +8,22 @@
 				<NoAuthLogo/>
 			{/if}
 		</a> -->
-		<Nav {segment}/>
+		<Nav {section}/>
 	</div>
 </header>
 
 <script>
-	export let segment
+	export let section
 	import Nav from './Nav.svelte'
-	// import AuthLogo from '../../routes/_svg/logo-header.svg'
-	// import NoAuthLogo from '../../routes/_svg/logo-header-noauth.svg'
+	// import AuthLogo from '@johnny/svg/logo-header.svg'
+	// import NoAuthLogo from '@johnny/svg/logo-header-noauth.svg'
 </script>
 
 <style type="text/scss">
 	header {
 		background-color: $bg2;
 		color: $black;
-		font: $bold 1.5rem/1 $font;
+		font: $bold 15rem/1 $font;
 		z-index: $z-front;
 	}
 	.header-evil-wrap {

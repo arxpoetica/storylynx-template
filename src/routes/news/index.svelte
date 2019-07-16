@@ -20,14 +20,14 @@
 		{/each}
 	</div>
 	{#if itemsCount > pageSize}
-		<Pagination {page} {pageSize} {items} {itemsCount}/>
+		<Pagination href="/news" {page} {pageSize} {items} {itemsCount}/>
 	{/if}
 {:else}
 	<h2>Loading . . .</h2>
 {/if}
 
 <script context="module">
-	import { POST } from '../../server/utils/loaders'
+	import { POST } from '@johnny/utils/loaders'
 	export async function preload({ query }) {
 		if (typeof query.page === 'undefined') {
 			return this.redirect(302, 'news?page=1')
@@ -54,6 +54,6 @@
 	.news-items {
 		display: flex;
 		flex-wrap: wrap;
-		margin: 0 -0.6rem 2rem;
+		margin: 0 -6rem 20rem;
 	}
 </style>

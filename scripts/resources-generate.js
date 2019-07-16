@@ -1,9 +1,9 @@
 import { magenta } from 'ansi-colors'
 import { loremIpsum } from 'lorem-ipsum'
-import { random } from '../src/server/utils/basic-utils'
 import { resources } from './resources-sample-data'
 import { assetIds } from '../src/client/js/json-helpers'
-import { cmsMutate } from '../src/server/utils/loaders'
+import { random } from '@johnny/utils/basic-utils'
+import { cmsMutate } from '@johnny/utils/loaders'
 
 resources.forEach(async(source, index) => {
 	// if (index < 1) {

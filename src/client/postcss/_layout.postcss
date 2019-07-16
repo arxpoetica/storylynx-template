@@ -1,6 +1,7 @@
 html {
+	height: 100%;
 	background-color: $white;
-	font: 62.5%/1.2 $font;
+	font: 1px/1.2 $font; // 1rem === 1px in this scenario
 	box-sizing: border-box;
 	text-size-adjust: 100%;
 	opacity: 1;
@@ -10,8 +11,19 @@ html {
 	}
 }
 body {
+	display: flex;
+	min-height: 100%;
 	margin: 0;
 	background-color: $white;
 	color: $black;
-	font: 1.4rem/1.35 $font;
+	font: 14rem/1.35 $font;
+}
+.yavascript {
+	overflow: hidden;
+	position: absolute;
+	width: 0;
+	height: 0;
+	top: -1px;
+	left: -1px;
+	pointer-events: none;
 }

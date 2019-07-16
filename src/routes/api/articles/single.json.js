@@ -1,24 +1,19 @@
-import { cmsQuery } from '../../../server/utils/loaders'
+import { cmsQuery } from '@johnny/utils/loaders'
 
 export async function post(req, res) {
-
 	try {
-
 		const { article } = await cmsQuery(`{
 			article(where: { id: "${req.body.id}" }) {
 				publishedDatetime
 				title
-				content { html }
-				cover { url summary handle }
+				html
+				assets { id url summary handle fileName }
 				tags { tag }
 			}
 		}`)
-		res.json(article)
-
+		return res.json(article)
 	} catch (error) {
 		// console.log(error)
-		res.json({ error: 1, message: error.message })
+		return res.json({ error: 1, message: error.message })
 	}
-	res.json({ error: 1, message: 'Something went wrong.' })
-
 }

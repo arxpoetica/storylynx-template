@@ -27,10 +27,10 @@
 	// 	justify-content: center;
 	// 	align-items: center;
 	// 	letter-spacing: 5px;
-	// 	font: $heavy 3rem/1 $font;
+	// 	font: $heavy 30rem/1 $font;
 	// }
 	// svg {
-	// 	margin: 0 0.8rem 0 0.4rem;
+	// 	margin: 0 8rem 0 4rem;
 	// }
 	// .path-1 {
 	// 	transform-origin: 50% 50%;

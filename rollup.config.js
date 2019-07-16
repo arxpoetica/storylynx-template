@@ -1,5 +1,5 @@
 import { yellow, magenta } from 'ansi-colors'
-import './src/server/build/config'
+import './src/build/config'
 
 import resolve from 'rollup-plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
@@ -12,7 +12,7 @@ import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 import { preprocess } from '@sapper-dragon/postcss/tools'
 
-import sharedVars from './src/server/build/rollup.vars'
+import sharedVars from './src/build/rollup.vars'
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';

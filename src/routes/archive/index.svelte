@@ -12,7 +12,7 @@
 {/if}
 
 <script context="module">
-	import { POST } from '../../server/utils/loaders'
+	import { POST } from '@johnny/utils/loaders'
 	export async function preload({ query }) {
 		const { resources, count } = await POST('/api/resources/page.json', Object.assign({ pageSize: 4 }, query))
 		return { resources, count }
@@ -49,6 +49,6 @@
 	.resources {
 		display: flex;
 		flex-wrap: wrap;
-		margin: 0 -0.6rem 2rem;
+		margin: 0 -6rem 20rem;
 	}
 </style>

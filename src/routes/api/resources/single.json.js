@@ -1,4 +1,4 @@
-import { cmsQuery } from '../../../server/utils/loaders'
+import { cmsQuery } from '@johnny/utils/loaders'
 
 export async function post(req, res) {
 
@@ -9,7 +9,7 @@ export async function post(req, res) {
 				createdAt
 				title
 				content { html }
-				cover { url attribution }
+				assets { id url summary handle fileName }
 				tags { tag }
 			}
 		}`)
