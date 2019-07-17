@@ -1,11 +1,11 @@
 <table>
 	<thead>
-		<ListHead/>
+		<ListHead bind:checked bind:checkedItems {items}/>
 	</thead>
 	<tbody>
-		{#each items as item}
+		{#each items as item, index}
 			<tr>
-				<!-- <td><label><input type="checkbox" name="post[]" value="1"></label></td> -->
+				<td><input bind:checked={checkedItems[index]} type="checkbox"></td>
 				<td>
 					{#if item.assets.length}
 						<div class="assets" style="background-image:url({src(item.assets[0], { format: 'jpg', width: 59, height: 59, crop: true })});"></div>
@@ -27,22 +27,35 @@
 						{/if}
 					</div>
 				</td>
-				<td>Published <br>{dayjs(item.publishedDatetime).format('M/D/YYYY')}</td>
+				<td>
+					<strong>{item.status.toLowerCase()}</strong> <br>
+					{dayjs(item.publishedDatetime).format('M/D/YYYY')}
+				</td>
 			</tr>
 		{/each}
 	</tbody>
 	<tfoot>
-		<ListHead/>
+		<ListHead bind:checked bind:checkedItems {items}/>
 	</tfoot>
 </table>
 
 <!-- <p>{item.summary}</p> -->
 
 <script>
+	import { stores } from '@sapper/app'
 	import { src } from '@johnny/utils/basic-utils'
 	import dayjs from 'dayjs'
 	import ListHead from './ListHead.svelte'
 	export let items
+	export let checkedItems
+	$: checked = items.length === checkedItems.filter(val => val).length
+
+	const { page } = stores()
+	let priorQuery
+	$: if (JSON.stringify(priorQuery) !== JSON.stringify($page.query)) {
+		priorQuery = $page.query
+		checkedItems = []
+	}
 </script>
 
 <style type="text/scss">
@@ -70,6 +83,17 @@
 	h2 {
 		font: inherit;
 		font-weight: $bold;
+	}
+	td {
+		&:first-child {
+			vertical-align: middle;
+		}
+		&:last-child {
+			text-transform: capitalize;
+		}
+	}
+	[type="checkbox"] {
+		margin: 0;
 	}
 	// h3,
 	// p {

@@ -9,20 +9,25 @@ export async function post(req, res) {
 
 		let {
 			page = 1,
-			pageSize = 20,
+			pageSize = 10,
 			tags = [],
-			status, // no default pls
-			orderBy = 'publishedDatetime',
-			order = 'DESC',
+			// FIXME: will this ever be passed from a query? We need to do the same on ALL passed admin POST pages.
+			status = ['PUBLISHED', 'DRAFT'],
+			column = 'publishedDatetime',
+			sort = 'DESC',
 		} = req.body
 
 		page = parseInt(page)
 		pageSize = parseInt(pageSize)
 		tags = typeof tags === 'string' ? [tags] : tags
 		let where = ''
-		if (status || tags.length) {
+		if (status.length || tags.length) {
 			where = 'where: { AND: ['
-			where += status ? `{ status: ${status} } ` : ''
+			if (status.length) {
+				where += '{ OR: ['
+				where += status.map(stat => `{ status: ${stat} }`).join(' ')
+				where += '] }'
+			}
 			where += tags.length ? tags.map(tag => `{ tags_some: { tag: "${tag}" } }`).join(' ') : ''
 			where += '] }'
 		}
@@ -32,9 +37,10 @@ export async function post(req, res) {
 				first: ${pageSize}
 				skip: ${(page - 1) * pageSize}
 				${where}
-				orderBy: ${orderBy}_${order}
+				orderBy: ${column}_${sort.toUpperCase()}
 			) {
 				id
+				status
 				publishedDatetime
 				title
 				summary

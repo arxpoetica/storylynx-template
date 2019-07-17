@@ -1,6 +1,3 @@
-import { get } from 'svelte/store'
-import { stores } from '@sapper/app'
-
 // SEE: https://gist.github.com/kottenator/9d936eb3e4e3c3e02598#gistcomment-2664601
 export const createPaginationRange = (currentPage, pagesCount) => {
 	const delta = 2
@@ -25,9 +22,7 @@ export const createPaginationRange = (currentPage, pagesCount) => {
 	return range
 }
 
-export const createQuery = newPage => {
-	const { page } = stores()
-	const { query } = get(page)
+export const createQuery = (newPage, query) => {
 	const keys = Object.keys(query)
 	const params = new URLSearchParams()
 	for (let key of keys) {

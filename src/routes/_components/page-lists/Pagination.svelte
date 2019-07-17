@@ -2,7 +2,7 @@
 <nav>
 	{#if page > 1}
 		{#if href}
-			<a href="{href}?{createQuery(page - 1)}" class="prev">Previous</a>
+			<a href="{href}?{createQuery(page - 1, query)}" class="prev">Previous</a>
 		{:else}
 			<button on:click={() => page -= 1} class="prev">Previous</button>
 		{/if}
@@ -15,7 +15,7 @@
 				<span class="etc">{rangeNumber}</span>
 			{:else}
 				{#if href}
-					<a href="{href}?{createQuery(rangeNumber)}">{rangeNumber}</a>
+					<a href="{href}?{createQuery(rangeNumber, query)}">{rangeNumber}</a>
 				{:else}
 					<button on:click={() => page = rangeNumber}>{rangeNumber}</button>
 				{/if}
@@ -24,7 +24,7 @@
 	</div>
 	{#if page < pagesCount}
 		{#if href}
-			<a href="{href}?{createQuery(page + 1)}" class="next">Next</a>
+			<a href="{href}?{createQuery(page + 1, query)}" class="next">Next</a>
 		{:else}
 			<button on:click={() => page += 1} class="next">Next</button>
 		{/if}
@@ -32,6 +32,8 @@
 </nav>
 
 <script>
+	import { stores } from '@sapper/app'
+	const { page: pageStore } = stores()
 	import { createPaginationRange, createQuery } from './page-helpers'
 
 	export let href = ''
@@ -45,6 +47,7 @@
 	// ALSO: `page` is the current number
 	$: pagesCount = Math.ceil(itemsCount / pageSize)
 	$: range = createPaginationRange(page, pagesCount)
+	$: query = $pageStore.query
 </script>
 
 <style type="text/scss">
