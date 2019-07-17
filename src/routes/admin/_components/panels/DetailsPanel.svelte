@@ -1,6 +1,8 @@
 <Panel title="Details" type="details" state="open">
 	<ul>
-		<li><strong>Visibility:</strong> {status}</li>
+		{#if $page.params.id !== 'new'}
+			<li><strong>Visibility:</strong> {status}</li>
+		{/if}
 		<li>
 			<strong>Date & Time:</strong>
 			<span class="datetime" on:click={() => open = !open}>
@@ -14,6 +16,8 @@
 </Panel>
 
 <script>
+	import { stores } from '@sapper/app'
+	const { page } = stores()
 	import dayjs from 'dayjs'
 	import Panel from './Panel.svelte'
 	import DateTimePicker from '../DateTimePicker.svelte'

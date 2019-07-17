@@ -1,5 +1,10 @@
 <div class="admin-header">
 	<h1>Article</h1>
+	<div class="buttons">
+		<a href="/admin/articles/new" class="button success">
+			Create Article
+		</a>
+	</div>
 </div>
 <div class="admin-full">
 	<List {items}/>

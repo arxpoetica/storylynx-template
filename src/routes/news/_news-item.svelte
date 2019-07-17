@@ -2,7 +2,7 @@
 
 <!-- <a class="news-item" href="/news/{item.id}" rel=prefetch> -->
 <div class="news-item">
-	<a href="/news/{item.id}">
+	<a href="/news/{item.slug}">
 		<div class="img">
 			<LazyImg {src} {alt}/>
 		</div>

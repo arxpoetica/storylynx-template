@@ -14,7 +14,7 @@
 					{/if}
 				</td>
 				<td>
-					<a href="/admin/articles/edit/{item.id}">
+					<a href="/admin/articles/{item.id}">
 						<h2>{item.title}</h2>
 					</a>
 				</td>
