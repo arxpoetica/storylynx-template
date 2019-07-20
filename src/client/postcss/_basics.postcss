@@ -34,9 +34,6 @@ a {
 		// color: #1468a0;
 		text-decoration: underline;
 	}
-	* {
-		color: $black;
-	}
 }
 
 b,
@@ -223,6 +220,10 @@ svg {
 	&:not(:root) {
 		overflow: hidden;
 	}
+}
+.svg * {
+	color: currentColor;
+	fill: currentColor;
 }
 
 hr {
