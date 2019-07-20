@@ -740,6 +740,19 @@ a, area, button, label, summary, [tabindex] {
 			text-decoration: underline;
 		}
 
+.button.off {
+		padding: 0;
+		background-color: transparent;
+		color: #1e3d43;
+		cursor: default;
+		pointer-events: none;
+	}
+
+.button.off:hover, .button.off:focus {
+			background-color: transparent;
+			color: #1e3d43;
+		}
+
 .button[disabled] {
 		background-color: #cbd0d1;
 		color: white;

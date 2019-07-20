@@ -7,11 +7,11 @@
 	</div>
 </div>
 <div class="admin-full">
-	<ToolBar on:trashItems={trashItems} bind:checkedItems {page} {pageSize} {items} {itemsCount}/>
+	<ToolBar on:trashItems={trashItems} bind:checkedItems {...$$props}/>
 	<div class="list">
 		<List bind:checkedItems {items}/>
 	</div>
-	<ToolBar on:trashItems={trashItems} bind:checkedItems {page} {pageSize} {items} {itemsCount}/>
+	<ToolBar on:trashItems={trashItems} bind:checkedItems {...$$props}/>
 </div>
 
 <script context="module">
@@ -25,11 +25,11 @@
 			return this.redirect(302, url)
 		}
 		query.page = query.page || 1
-		const { pageSize, items, itemsCount } = await POST(
+		const { pageSize, items, itemsCount, draftsCount, publishedCount, archivedCount } = await POST(
 			'/admin/api/articles/page.json',
 			Object.assign({ cookie: session.cookie }, query),
 		)
-		return { pageSize, items, itemsCount }
+		return { pageSize, items, itemsCount, draftsCount, publishedCount, archivedCount }
 	}
 </script>
 
@@ -43,6 +43,9 @@
 	export let pageSize = 0
 	export let items = []
 	export let itemsCount = 0
+	export let draftsCount = 0
+	export let publishedCount = 0
+	export let archivedCount = 0
 	let checkedItems = []
 	$: page = parseInt($pageStore.query.page)
 

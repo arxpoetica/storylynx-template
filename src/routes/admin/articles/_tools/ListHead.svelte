@@ -29,8 +29,10 @@
 </tr>
 
 <script>
-	import { stores, get, goto } from '@sapper/app'
+	import { get } from 'svelte/store'
+	import { stores, goto } from '@sapper/app'
 	const { page } = stores()
+
 	// import { createQuery }
 	import CaretDown from '@johnny/svg/caret-down.svelte'
 	import CaretUp from '@johnny/svg/caret-up.svelte'

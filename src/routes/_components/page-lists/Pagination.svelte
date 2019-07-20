@@ -67,7 +67,6 @@
 	.pagination {
 		display: flex;
 		align-items: center;
-		margin: 0 0 10rem;
 	}
 	.info {
 		margin: 0 10rem 0 0;

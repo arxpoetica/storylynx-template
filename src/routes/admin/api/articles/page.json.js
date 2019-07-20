@@ -1,5 +1,6 @@
 import { getToken } from '@johnny/services/auth-helpers'
 import { handleError, cmsQuery } from '@johnny/utils/loaders'
+import { createWhere } from '@johnny/utils/api-utils'
 
 export async function post(req, res) {
 
@@ -20,23 +21,17 @@ export async function post(req, res) {
 		page = parseInt(page)
 		pageSize = parseInt(pageSize)
 		tags = typeof tags === 'string' ? [tags] : tags
-		let where = ''
-		if (status.length || tags.length) {
-			where = 'where: { AND: ['
-			if (status.length) {
-				where += '{ OR: ['
-				where += status.map(stat => `{ status: ${stat} }`).join(' ')
-				where += '] }'
-			}
-			where += tags.length ? tags.map(tag => `{ tags_some: { tag: "${tag}" } }`).join(' ') : ''
-			where += '] }'
-		}
+
+		const articlesWhere = createWhere({ status, tags })
+		const draftWhere = createWhere({ status: ['DRAFT'] })
+		const publishedWhere = createWhere({ status: ['PUBLISHED'] })
+		const archivedWhere = createWhere({ status: ['ARCHIVED'] })
 
 		const query = `{
 			articles(
 				first: ${pageSize}
 				skip: ${(page - 1) * pageSize}
-				${where}
+				${articlesWhere}
 				orderBy: ${column}_${sort.toUpperCase()}
 			) {
 				id
@@ -48,15 +43,20 @@ export async function post(req, res) {
 				tags { tag }
 			}
 
-			articlesConnection${where ? '(' + where + ')' : ''} { aggregate { count } }
+			drafts: articlesConnection(${draftWhere}) { aggregate {count} }
+			published: articlesConnection(${publishedWhere}) { aggregate {count} }
+			archived: articlesConnection(${archivedWhere}) { aggregate {count} }
 		}`
 		// console.log(query)
-		const { articles, articlesConnection } = await cmsQuery(query)
+		const { articles, drafts, published, archived } = await cmsQuery(query)
 
 		res.json({
 			pageSize,
 			items: articles,
-			itemsCount: articlesConnection.aggregate.count,
+			itemsCount: drafts.aggregate.count + published.aggregate.count + archived.aggregate.count,
+			draftsCount: drafts.aggregate.count,
+			publishedCount: published.aggregate.count,
+			archivedCount: archived.aggregate.count,
 		})
 
 	} catch (error) {

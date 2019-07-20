@@ -1,7 +1,10 @@
 <div class="toolbar">
 	<div class="tools">
+
+		<StatusSelect {...$$props}/>
+
 		{#if checkedItems.filter(checked => checked).length}
-			<button on:click={sendDispatch} class="button alert">
+			<button on:click={sendDispatch} class="button alert small">
 				Move Selected Items to Trash
 			</button>
 		{/if}
@@ -16,10 +19,8 @@
 <script>
 	import { createEventDispatcher } from 'svelte'
 	import Pagination from '../../../_components/page-lists/Pagination.svelte'
-	export let page
-	export let pageSize
-	export let items
-	export let itemsCount
+	import StatusSelect from './StatusSelect.svelte'
+	const { page, pageSize, items, itemsCount, draftsCount, publishedCount, archivedCount } = $$props
 	export let checkedItems
 
 	const dispatch = createEventDispatcher()
@@ -33,7 +34,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
-		margin: 0 0 20rem;
+		margin: 0 0 10rem;
 	}
 	.pagination {
 		display: flex;
