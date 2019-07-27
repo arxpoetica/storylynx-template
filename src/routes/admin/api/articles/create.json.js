@@ -2,37 +2,33 @@ import { getToken } from '@johnny/services/auth-helpers'
 import { handleError, cmsMutate } from '@johnny/utils/loaders'
 
 export async function post(req, res) {
-
 	try {
 		const token = getToken(req)
 		if (token.unauthorized) { throw Error('Unauthorized') }
 
-		const { id, changes } = req.body
+		const { changes } = req.body
 
 		let data = ''
 		data += changes.status ? `status: ${changes.status} ` : ''
 		data += changes.title ? `title: "${changes.title}" ` : ''
 		data += changes.slug ? `slug: "${changes.slug}" ` : ''
-		data += changes.publishedDatetime ? `publishedDatetime: "${changes.publishedDatetime}" ` : ''
+		data += `publishedDatetime: "${changes.publishedDatetime ? changes.publishedDatetime : (new Date()).toISOString()}" `
 		data += changes.html ? `html: "${changes.html}" ` : ''
 		data += changes.summary ? `summary: "${changes.summary}" ` : ''
-		data += changes.assets ? 'assets: { set: $assets } ' : ''
-		data += changes.tags ? 'tags: { set: $tags } ' : ''
+		data += changes.assets ? 'assets: { connect: $assets } ' : ''
+		data += changes.tags ? 'tags: { connect: $tags } ' : ''
 
-		let update = ''
+		let create = ''
 		if (changes.assets || changes.tags) {
-			update += 'update('
-			update += changes.assets ? '$assets: [AssetWhereUniqueInput!] ' : ''
-			update += changes.tags ? '$tags: [TagWhereUniqueInput!] ' : ''
-			update += ')'
+			create += 'create('
+			create += changes.assets ? '$assets: [AssetWhereUniqueInput!] ' : ''
+			create += changes.tags ? '$tags: [TagWhereUniqueInput!] ' : ''
+			create += ')'
 		}
 
 		const mutation = `
-			mutation ${update} {
-				updateArticle(
-					where: { id: "${id}" }
-					data: { ${data} }
-				) {
+			mutation ${create} {
+				createArticle( data: { ${data} } ) {
 					id
 					status
 					publishedDatetime
@@ -54,7 +50,7 @@ export async function post(req, res) {
 		}
 
 		const answer = await cmsMutate(mutation, variables)
-		return res.json(answer.error ? answer : answer.updateArticle)
+		return res.json(answer.error ? answer : answer.createArticle)
 	} catch (error) {
 		return handleError(error, res)
 	}

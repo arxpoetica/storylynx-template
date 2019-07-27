@@ -3,7 +3,7 @@ import { cmsQuery } from '@johnny/utils/loaders'
 export async function post(req, res) {
 	try {
 		const { article } = await cmsQuery(`{
-			article(where: { id: "${req.body.id}" }) {
+			article(where: { slug: "${req.body.slug}" }) {
 				publishedDatetime
 				title
 				html

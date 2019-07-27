@@ -1,6 +1,6 @@
-<!-- <svelte:head>
-	<title>{user && user.username ? user.username : 'Loading...'} Profile</title>
-</svelte:head> -->
+<svelte:head>
+	<title>{article.title} | News | Johnny Miller</title>
+</svelte:head>
 
 <!-- {JSON.stringify(article)} -->
 
@@ -20,12 +20,13 @@
 <script context="module">
 	import { POST } from '@johnny/utils/loaders'
 	export async function preload({ params }) {
-		const article = await POST('/api/articles/single.json', { id: params.article })
+		const article = await POST('/api/articles/single.json', { slug: params.slug })
 		return { article }
 	}
 </script>
 
 <script>
+	// export let segment
 	import { formattedstamp } from '@johnny/utils/basic-utils'
 	export let article
 	$: tags = article.tags.map(tag => tag.tag)

@@ -1,5 +1,6 @@
 import { getToken } from '@johnny/services/auth-helpers'
 import { handleError, cmsQuery } from '@johnny/utils/loaders'
+import { createWhere } from '@johnny/utils/api-utils'
 
 export async function post(req, res) {
 
@@ -9,32 +10,32 @@ export async function post(req, res) {
 
 		let {
 			page = 1,
-			pageSize = 20,
+			pageSize = 10,
 			tags = [],
-			status, // no default pls
-			orderBy = 'publishedDatetime',
-			order = 'DESC',
+			// FIXME: will this ever be passed from a query? We need to do the same on ALL passed admin POST pages.
+			status = ['PUBLISHED', 'DRAFT'],
+			column = 'publishedDatetime',
+			sort = 'DESC',
 		} = req.body
 
 		page = parseInt(page)
 		pageSize = parseInt(pageSize)
 		tags = typeof tags === 'string' ? [tags] : tags
-		let where = ''
-		if (status || tags.length) {
-			where = 'where: { AND: ['
-			where += status ? `{ status: ${status} } ` : ''
-			where += tags.length ? tags.map(tag => `{ tags_some: { tag: "${tag}" } }`).join(' ') : ''
-			where += '] }'
-		}
+
+		const articlesWhere = createWhere({ status, tags })
+		const draftWhere = createWhere({ status: ['DRAFT'] })
+		const publishedWhere = createWhere({ status: ['PUBLISHED'] })
+		const archivedWhere = createWhere({ status: ['ARCHIVED'] })
 
 		const query = `{
 			articles(
 				first: ${pageSize}
 				skip: ${(page - 1) * pageSize}
-				${where}
-				orderBy: ${orderBy}_${order}
+				${articlesWhere}
+				orderBy: ${column}_${sort.toUpperCase()}
 			) {
 				id
+				status
 				publishedDatetime
 				title
 				summary
@@ -42,15 +43,20 @@ export async function post(req, res) {
 				tags { tag }
 			}
 
-			articlesConnection${where ? '(' + where + ')' : ''} { aggregate { count } }
+			drafts: articlesConnection(${draftWhere}) { aggregate {count} }
+			published: articlesConnection(${publishedWhere}) { aggregate {count} }
+			archived: articlesConnection(${archivedWhere}) { aggregate {count} }
 		}`
 		// console.log(query)
-		const { articles, articlesConnection } = await cmsQuery(query)
+		const { articles, drafts, published, archived } = await cmsQuery(query)
 
 		res.json({
 			pageSize,
 			items: articles,
-			itemsCount: articlesConnection.aggregate.count,
+			itemsCount: drafts.aggregate.count + published.aggregate.count + archived.aggregate.count,
+			draftsCount: drafts.aggregate.count,
+			publishedCount: published.aggregate.count,
+			archivedCount: archived.aggregate.count,
 		})
 
 	} catch (error) {
