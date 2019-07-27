@@ -1,8 +1,5 @@
 export async function post(req, res) {
 	try {
-		// const firebaseSetup = (await import('@johnny/services/firebase-setup')).default
-		// const auth = await firebaseSetup()
-		// auth.signOut()
 		res.clearCookie('jm')
 		res.json({ loggedOut: true })
 	} catch (error) {

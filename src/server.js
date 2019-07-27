@@ -7,7 +7,6 @@ import sirv from 'sirv'
 import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
 import { getToken } from '@johnny/services/auth-helpers'
-import firebaseSetup from '@johnny/services/firebase-setup'
 import * as sapper from '@sapper/server'
 
 const { PORT, NODE_ENV } = process.env
@@ -44,9 +43,6 @@ async function start() {
 	app.use(bodyParser.json())
 	app.use(bodyParser.urlencoded({ extended: true }))
 	app.use(cookieParser())
-
-	await firebaseSetup()
-	// await authSetup(app)
 
 	app.use(sapper.middleware({
 		session: req => {
