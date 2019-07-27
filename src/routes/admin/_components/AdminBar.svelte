@@ -1,4 +1,4 @@
-<!-- {#if $session.user.admin}{/if} -->
+<!-- {#if $session.user.role}{/if} -->
 <nav class="admin-bar">
 	{#if $session.user}
 		<div class="first">
@@ -47,14 +47,14 @@
 <script>
 	import { stores } from '@sapper/app'
 	const { session } = stores()
-	import { POST } from '@johnny/utils/loaders'
+	import { GET } from '@johnny/utils/loaders'
 	import Article from '@johnny/svg/admin-article.svelte'
 	import Asset from '@johnny/svg/admin-asset.svelte'
 	import Media from '@johnny/svg/admin-media.svelte'
 
 	async function logout(event) {
 		event.preventDefault()
-		await POST('/api/auth/logout.json')
+		await GET('/api/auth/logout.json')
 		window.location.reload(true)
 	}
 </script>

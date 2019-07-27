@@ -1,10 +1,10 @@
-export async function post(req, res) {
+import { handleError } from '@johnny/utils/loaders.js'
+
+export async function get(req, res) {
 	try {
 		res.clearCookie('jm')
-		res.json({ loggedOut: true })
+		return res.json({ loggedOut: true })
 	} catch (error) {
-		console.log(error)
-		res.json({ error: 1, message: error.message })
+		return handleError(error, res)
 	}
-	res.json({ error: 1, message: 'Something went wrong.' })
 }
