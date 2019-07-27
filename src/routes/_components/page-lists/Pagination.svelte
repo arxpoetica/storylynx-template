@@ -44,7 +44,7 @@
 <script>
 	import { stores } from '@sapper/app'
 	const { page: pageStore } = stores()
-	import { createPaginationRange, createQuery } from './page-helpers'
+	import { createPaginationRange, createQuery } from '@johnny/utils/page-helpers'
 
 	import Prev from '@johnny/svg/prev.svelte'
 	import Next from '@johnny/svg/next.svelte'
