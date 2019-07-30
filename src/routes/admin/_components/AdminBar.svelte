@@ -32,14 +32,23 @@
 			</div>
 		</div>
 		<div class="second">
-			<div class="div"></div>
-			<a href="/auth/logout" class="auth" on:click={logout}>Log Out</a>
+			<h2>
+				<div class="svg"><Settings/></div>
+				Settings
+			</h2>
+			<div class="links">
+				<a href="/admin/accounts/{$session.user.username}">Edit Account</a>
+				<a href="/admin/accounts">Manage Accounts</a>
+				<div class="div"></div>
+				<a href="/auth/logout" on:click={logout}>Log Out</a>
+			</div>
 		</div>
 	{:else}
 		<div class="first">
-			<div class="div"></div>
-			<a href="/auth/login" class="auth">Log In</a>
-			<div class="div"></div>
+			<h2>
+				<div class="svg"><Settings/></div>
+				<a href="/auth/login" class="auth">Log In</a>
+			</h2>
 		</div>
 	{/if}
 </nav>
@@ -48,6 +57,7 @@
 	import { stores } from '@sapper/app'
 	const { session } = stores()
 	import { GET } from '@johnny/utils/loaders'
+	import Settings from '@johnny/svg/admin-settings.svelte'
 	import Article from '@johnny/svg/admin-article.svelte'
 	import Asset from '@johnny/svg/admin-asset.svelte'
 	import Media from '@johnny/svg/admin-media.svelte'
@@ -106,11 +116,8 @@
 		}
 	}
 	.div {
-		margin: 5rem 0 12rem;
+		margin: 5rem 0;
 		height: 1px;
 		background-color: $gray-1;
-	}
-	.auth {
-		text-align: center;
 	}
 </style>
