@@ -1,31 +1,26 @@
 <tr>
-	<th><input on:click={uncheck} bind:checked type="checkbox"></th>
-	<th>Cover</th>
-	<th class="action">
-		<div on:click={() => resort('title')} class="sort">
-			Title
-			{#if column === 'title'}
-				{#if sort === 'asc'}
-					<div class="svg"><CaretUp/></div>
-				{:else}
-					<div class="svg"><CaretDown/></div>
-				{/if}
-			{/if}
-		</div>
-	</th>
-	<th>Tags</th>
-	<th class="action">
-		<div on:click={() => resort('publishedDatetime')} class="sort">
-			Date
-			{#if column === 'publishedDatetime'}
-				{#if sort === 'asc'}
-					<div class="svg"><CaretUp/></div>
-				{:else}
-					<div class="svg"><CaretDown/></div>
-				{/if}
-			{/if}
-		</div>
-	</th>
+	<th class="col-checkbox"><input on:click={uncheck} bind:checked type="checkbox"></th>
+
+	{#each cols as col}
+		{#if col.sort}
+			<th class="action col-{col.type}">
+				<div on:click={() => resort(col.col)} class="sort">
+					{col.title}
+					{#if column === col.col}
+						{#if sort === 'asc'}
+							<div class="svg"><CaretUp/></div>
+						{:else}
+							<div class="svg"><CaretDown/></div>
+						{/if}
+					{/if}
+				</div>
+			</th>
+		{:else}
+			<th class="col-{col.type}">
+				{col.title}
+			</th>
+		{/if}
+	{/each}
 </tr>
 
 <script>
@@ -40,6 +35,7 @@
 	export let checked
 	export let checkedItems
 	export let items
+	export let cols
 	function uncheck() {
 		checkedItems = checked ? [] : [...Array(items.length)].map(item => true)
 	}
@@ -64,7 +60,7 @@
 				params.set(key, value)
 			}
 		}
-		goto(`/admin/articles?${params.toString()}`, { replaceState: true })
+		goto(`${window.location.pathname}?${params.toString()}`, { replaceState: true })
 	}
 </script>
 
@@ -80,6 +76,10 @@
 			&:hover {
 				text-decoration: underline;
 			}
+		}
+		&.col-checkbox,
+		&.col-asset {
+			width: 1rem;
 		}
 	}
 	[type="checkbox"] {

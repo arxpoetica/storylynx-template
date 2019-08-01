@@ -9,7 +9,7 @@
 <div class="admin-full">
 	<ToolBar on:trashItems={trashItems} bind:checkedItems {...$$props}/>
 	<div class="list">
-		<List bind:checkedItems {items}/>
+		<List bind:checkedItems {items} {cols}/>
 	</div>
 	<ToolBar on:trashItems={trashItems} bind:checkedItems {...$$props}/>
 </div>
@@ -36,10 +36,17 @@
 <script>
 	import { stores } from '@sapper/app'
 	const { page: pageStore } = stores()
-	import List from './_tools/List.svelte'
+	import List from '../_components/lists/List.svelte'
 	import ToolBar from './_tools/ToolBar.svelte'
 
 	// export let segment
+	let cols = [
+		{ type: 'asset', col: 'assets', title: 'Cover' },
+		{ type: 'url', col: 'title', title: 'Title', url: '/admin/articles/', slug: 'id', sort: true },
+		{ type: 'array', col: 'tags', title: 'Tags', mapper: 'tag' },
+		{ type: 'datetime', col: 'publishedDatetime', title: 'Date', sort: true },
+	]
+
 	export let pageSize = 0
 	export let items = []
 	export let itemsCount = 0

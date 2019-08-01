@@ -37,8 +37,8 @@
 				Settings
 			</h2>
 			<div class="links">
-				<a href="/admin/accounts/{$session.user.username}">Edit Account</a>
-				<a href="/admin/accounts">Manage Accounts</a>
+				<a href="/admin/accounts">All Accounts</a>
+				<a href="/admin/accounts/{$session.user.username}">Edit Your Account</a>
 				<div class="div"></div>
 				<a href="/auth/logout" on:click={logout}>Log Out</a>
 			</div>

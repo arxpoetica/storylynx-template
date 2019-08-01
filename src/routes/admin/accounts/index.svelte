@@ -9,7 +9,7 @@
 <div class="admin-full">
 	<!-- <ToolBar on:trashItems={trashItems} bind:checkedItems {...$$props}/> -->
 	<div class="list">
-		<List bind:checkedItems {items}/>
+		<List bind:checkedItems {items} {cols}/>
 	</div>
 	<!-- <ToolBar on:trashItems={trashItems} bind:checkedItems {...$$props}/> -->
 </div>
@@ -26,10 +26,16 @@
 
 <script>
 	import List from '../_components/lists/List.svelte'
-	// import ToolBar from './_tools/ToolBar.svelte'
+	// import ToolBar from '../_tools/ToolBar.svelte'
 
 	// export let segment
-
+	let cols = [
+		{ type: 'asset', col: 'avatar', title: 'Avatar' },
+		{ type: 'url', col: 'username', title: 'Username', url: '/admin/accounts/' },
+		{ type: 'text', col: 'role', title: 'Admin Role' },
+		{ type: 'text', col: 'firstName', title: 'First' },
+		{ type: 'text', col: 'lastName', title: 'Last' },
+	]
 	export let items = []
 	export let itemsCount = 0
 
