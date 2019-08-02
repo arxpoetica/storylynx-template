@@ -6,7 +6,7 @@
 	<img src="/img/johnny-miller.jpg" alt="Johnny Miller wins an award.">
 	<div>
 		{#if $session.user}
-			{$session.user.id}
+			{$session.user.username} | {$session.user.role}
 		{:else}
 			{JSON.stringify($session)}
 		{/if}
