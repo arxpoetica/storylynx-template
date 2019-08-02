@@ -23,7 +23,7 @@ export async function post(req, res) {
 		if (changes.assets || changes.tags) {
 			update += 'update('
 			update += changes.assets ? '$assets: [AssetWhereUniqueInput!] ' : ''
-			update += changes.tags ? '$tags: [TagWhereUniqueInput!] ' : ''
+			update += changes.tags ? '$tags: [ArticleTagWhereUniqueInput!] ' : ''
 			update += ')'
 		}
 
