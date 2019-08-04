@@ -11,10 +11,10 @@
 		</button>
 	</div>
 
-	{#if articleCopy.assets.length}
+	{#if copy.assets.length}
 		<div class="items">
 			<div class="evil-dom">
-				{#each articleCopy.assets as item, index (item.id)}
+				{#each copy.assets as item, index (item.id)}
 						<!-- on:click={() => remove(item)} -->
 					<div class="item">
 						<div class="img" style="background-image:url({src(item, { width: '300', height: '300' })})">
@@ -25,11 +25,11 @@
 			</div>
 		</div>
 	{/if}
-	<!-- <img src={articleCopy.assets.url} alt={articleCopy.assets.summary || 'No alt information.'}/> -->
+	<!-- <img src={copy.assets.url} alt={copy.assets.summary || 'No alt information.'}/> -->
 </Panel>
 
 {#if open}
-	<MediaModal bind:open bind:tab bind:selected={articleCopy.assets}/>
+	<MediaModal bind:open bind:tab bind:selected={copy.assets}/>
 {/if}
 
 <script>
@@ -38,7 +38,7 @@
 	import Close from '@johnny/svg/icon-close.svelte'
 	import MediaModal from '../MediaModal.svelte'
 	import IconUpload from '@johnny/svg/icon-upload.svelte'
-	export let articleCopy
+	export let copy
 	let open = false
 	let tab
 	function openModal(which) {
@@ -46,9 +46,9 @@
 		open = true
 	}
 	function remove(item) {
-		const index = articleCopy.assets.findIndex(sItem => sItem.id === item.id)
-		articleCopy.assets.splice(index, 1)
-		articleCopy.assets = articleCopy.assets
+		const index = copy.assets.findIndex(sItem => sItem.id === item.id)
+		copy.assets.splice(index, 1)
+		copy.assets = copy.assets
 	}
 </script>
 

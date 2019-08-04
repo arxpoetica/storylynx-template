@@ -1,4 +1,4 @@
-{#if articleCopy}
+{#if copy}
 	<div class="admin-header">
 		<h1>{$page.params.id === 'new' ? 'Create' : 'Edit'} Article</h1>
 		<div class="buttons">
@@ -11,7 +11,7 @@
 						Discard Changes
 					</button>
 				{/if}
-				{#if articleCopy.status === 'PUBLISHED'}
+				{#if copy.status === 'PUBLISHED'}
 					<button class="button warning" on:click={() => save('DRAFT')}>
 						Switch to Draft
 					</button>
@@ -28,21 +28,21 @@
 			<label>
 				Title
 				<em> - (Required.)</em>
-				<input bind:value={articleCopy.title} type="text" required>
+				<input bind:value={copy.title} type="text" required>
 			</label>
-			<Quill title="Content" bind:html={articleCopy.html}/>
+			<Quill title="Content" bind:html={copy.html}/>
 			<label>
 				Summary
-				<input bind:value={articleCopy.summary} type="text">
+				<input bind:value={copy.summary} type="text">
 			</label>
 		</div>
 	</div>
 	<div class="admin-side">
 		<div class="accordion">
-			<DetailsPanel bind:status={articleCopy.status} bind:datetime={articleCopy.publishedDatetime}/>
-			<PermalinkPanel bind:slug={articleCopy.slug} title={articleCopy.title}/>
-			<MediaPanel bind:articleCopy/>
-			<TagsPanel bind:tags bind:articleCopy/>
+			<DetailsPanel bind:status={copy.status} bind:datetime={copy.publishedDatetime}/>
+			<PermalinkPanel bind:slug={copy.slug} title={copy.title}/>
+			<MediaPanel bind:copy/>
+			<TagsPanel bind:tags bind:copy/>
 		</div>
 	</div>
 {/if}
@@ -51,7 +51,7 @@
 	import { POST } from '@johnny/utils/loaders'
 	export async function preload({ params }, session) {
 		if (params.id === 'new') {
-			const { tags } = await POST('/admin/api/tags/all.json', { cookie: session.cookie })
+			const { tags } = await POST('/admin/api/tags/article-all.json', { cookie: session.cookie })
 			return { article: {
 				status: '',
 				publishedDatetime: (new Date()).toISOString(),
@@ -88,34 +88,34 @@
 	export let tags
 	export let bounce
 
-	let articleCopy
+	let copy
 	beforeUpdate(() => {
 		if (bounce) {
 			// see: https://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-deep-clone-an-object-in-javascript
-			articleCopy = JSON.parse(JSON.stringify(article))
+			copy = JSON.parse(JSON.stringify(article))
 			bounce = false
 		}
 	})
 
 	// see: https://stackoverflow.com/questions/1068834/object-comparison-in-javascript
-	$: disabled = articleCopy ? JSON.stringify(article) === JSON.stringify(articleCopy) : true
+	$: disabled = copy ? JSON.stringify(article) === JSON.stringify(copy) : true
 
 	let errors = []
 	async function save(status) {
 		if (!disabled || status === 'DRAFT') {
 			errors = []
-			if (!articleCopy.title) { return errors = ['Please include a title.'] }
+			if (!copy.title) { return errors = ['Please include a title.'] }
 
 			if (status) {
-				articleCopy.status = status
+				copy.status = status
 			}
-			if (!articleCopy.slug) {
-				articleCopy.slug = hyphenate(articleCopy.title).toLowerCase()
+			if (!copy.slug) {
+				copy.slug = hyphenate(copy.title).toLowerCase()
 			}
 			const changes = {}
-			for (let key in articleCopy) {
-				if (JSON.stringify(articleCopy[key]) !== JSON.stringify(article[key])) {
-					changes[key] = articleCopy[key]
+			for (let key in copy) {
+				if (JSON.stringify(copy[key]) !== JSON.stringify(article[key])) {
+					changes[key] = copy[key]
 				}
 			}
 
@@ -130,16 +130,16 @@
 				goto(`/admin/articles/${savedArticle.id}`, { replaceState: true })
 			} else {
 				article = savedArticle
-				articleCopy = JSON.parse(JSON.stringify(article))
+				copy = JSON.parse(JSON.stringify(article))
 				// disabled = true
 			}
 		}
 	}
 	function discard() {
 		if (window.confirm('Discard all changes? Careful: This is permanent and cannot be reversed.')) {
-			articleCopy = false // unfortunate rejiggering
+			copy = false // unfortunate rejiggering
 			setTimeout(() => {
-				articleCopy = JSON.parse(JSON.stringify(article))
+				copy = JSON.parse(JSON.stringify(article))
 				disabled = true
 			}, 0)
 		}
