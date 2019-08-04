@@ -41,8 +41,9 @@
 
 	// export let segment
 	let cols = [
-		{ type: 'asset', col: 'assets', title: 'Cover' },
+		{ type: 'asset', col: 'assets', title: 'Assets' },
 		{ type: 'url', col: 'title', title: 'Title', url: '/admin/assets/', slug: 'id', sort: true },
+		{ type: 'function', col: item => item.assets ? item.assets.length : 0, title: 'Asset Count' },
 		{ type: 'array', col: 'tags', title: 'Tags', mapper: 'tag' },
 		{ type: 'datetime', col: 'publishedDatetime', title: 'Date', sort: true },
 	]
