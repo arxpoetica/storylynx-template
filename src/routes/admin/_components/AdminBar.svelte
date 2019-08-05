@@ -22,23 +22,23 @@
 				<!-- <a href="/admin/assets/categories">Asset Categories</a> -->
 				<!-- <a href="/admin/assets/tags">Asset Tags</a> -->
 			</div>
-			<h2 class:on={path.indexOf('/admin/media') === 0}>
+			<!-- <h2 class:on={path.indexOf('/admin/media') === 0}>
 				<div class="svg"><Media/></div>
 				Media
 			</h2>
 			<div class="links">
 				<a href="/admin/media" class:on={path === '/admin/media'}>All Media</a>
 				<a href="/admin/media/upload" class:on={path === '/admin/media/upload'}>Upload Media</a>
-			</div>
+			</div> -->
 		</div>
 		<div class="second">
-			<h2>
+			<h2 class:on={path.indexOf('/admin/accounts') === 0}>
 				<div class="svg"><Settings/></div>
 				Settings
 			</h2>
 			<div class="links">
-				<a href="/admin/accounts">All Accounts</a>
-				<a href="/admin/accounts/{$session.user.username}">Edit Your Account</a>
+				<a href="/admin/accounts" class:on={path === '/admin/accounts'}>All Accounts</a>
+				<!-- <a href="/admin/accounts/{$session.user.username}">Edit Your Account</a> -->
 				<div class="div"></div>
 				<a href="/auth/logout" on:click={logout}>Log Out</a>
 			</div>

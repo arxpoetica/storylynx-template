@@ -122,14 +122,14 @@
 			const data = { changes }
 			const isNew = $page.params.id === 'new'
 			if (!isNew) { data.id = asset.id }
-			const savedArticle = await POST(`/admin/api/articles/${isNew ? 'create' : 'update'}.json`, data)
+			const savedAsset = await POST(`/admin/api/assets/${isNew ? 'create' : 'update'}.json`, data)
 
-			if (savedArticle.error) {
+			if (savedAsset.error) {
 				return errors = ['Something went wrong. Please try again or contact the site administrator if you continue to experience problems.']
 			} else if (isNew) {
-				goto(`/admin/articles/${savedArticle.id}`, { replaceState: true })
+				goto(`/admin/assets/${savedAsset.id}`, { replaceState: true })
 			} else {
-				asset = savedArticle
+				asset = savedAsset
 				copy = JSON.parse(JSON.stringify(asset))
 				// disabled = true
 			}
