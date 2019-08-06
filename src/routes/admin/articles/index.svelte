@@ -26,7 +26,7 @@
 		}
 		query.page = query.page || 1
 		const { pageSize, items, itemsCount, draftsCount, publishedCount, archivedCount } = await POST(
-			'/admin/api/articles/page.json',
+			'/api/admin/articles/page.json',
 			Object.assign({ cookie: session.cookie }, query),
 		)
 		return { pageSize, items, itemsCount, draftsCount, publishedCount, archivedCount }
@@ -61,7 +61,7 @@
 			const ids = checkedItems
 				.map((item, index) => item ? items[index].id : false)
 				.filter(id => id)
-			const answer = await POST(`/admin/api/articles/archive.json`, { ids })
+			const answer = await POST(`/api/admin/articles/archive.json`, { ids })
 			if (answer.error) {
 				return errors = ['Something went wrong. Please try again or contact the site administrator if you continue to experience problems.']
 			} else {

@@ -17,7 +17,7 @@
 <script context="module">
 	import { POST } from '@johnny/utils/loaders'
 	export async function preload(page, session) {
-		const { items, itemsCount } = await POST('/admin/api/accounts/page.json', {
+		const { items, itemsCount } = await POST('/api/admin/accounts/page.json', {
 			cookie: session.cookie
 		})
 		return { items, itemsCount }
@@ -47,7 +47,7 @@
 			// const ids = checkedItems
 			// 	.map((item, index) => item ? items[index].id : false)
 			// 	.filter(id => id)
-			// const answer = await POST(`/admin/api/articles/archive.json`, { ids })
+			// const answer = await POST(`/api/admin/articles/archive.json`, { ids })
 			// if (answer.error) {
 			// 	return errors = ['Something went wrong. Please try again or contact the site administrator if you continue to experience problems.']
 			// } else {

@@ -14,7 +14,7 @@
 	let token
 	onMount(async() => {
 		key = uid(50)
-		const ciphertext = await POST('/admin/api/media/token.json', { key })
+		const ciphertext = await POST('/api/admin/media/token.json', { key })
 		token = AES.decrypt(ciphertext, key).toString(UTF8)
 		if (!$FileStackLoaded) {
 			const script = document.createElement('script')
@@ -55,7 +55,7 @@
 					mimeType: file.mimetype, // note the case difference
 				}))
 				// TODO: tag as recent uploads
-				const { items, itemsCount } = await POST('/admin/api/media/attach.json', { assets })
+				const { items, itemsCount } = await POST('/api/admin/media/attach.json', { assets })
 				tab = 'select'
 			},
 		})

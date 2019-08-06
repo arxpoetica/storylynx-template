@@ -48,10 +48,10 @@
 {/if}
 
 <script context="module">
-	import { POST } from '@johnny/utils/loaders'
+	import { GET, POST } from '@johnny/utils/loaders'
 	export async function preload({ params }, session) {
 		if (params.id === 'new') {
-			const { tags } = await POST('/admin/api/tags/asset-all.json', { cookie: session.cookie })
+			const { tags } = await GET('/api/tags/asset-all.json')
 			return { asset: {
 				status: '',
 				publishedDatetime: (new Date()).toISOString(),
@@ -63,7 +63,7 @@
 				tags: [],
 			}, tags, bounce: true }
 		}
-		const { asset, tags } = await POST('/admin/api/assets/single.json', {
+		const { asset, tags } = await POST('/api/admin/assets/single.json', {
 			id: params.id,
 			cookie: session.cookie,
 		})
@@ -122,7 +122,7 @@
 			const data = { changes }
 			const isNew = $page.params.id === 'new'
 			if (!isNew) { data.id = asset.id }
-			const savedAsset = await POST(`/admin/api/assets/${isNew ? 'create' : 'update'}.json`, data)
+			const savedAsset = await POST(`/api/admin/assets/${isNew ? 'create' : 'update'}.json`, data)
 
 			if (savedAsset.error) {
 				return errors = ['Something went wrong. Please try again or contact the site administrator if you continue to experience problems.']

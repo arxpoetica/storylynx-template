@@ -48,10 +48,10 @@
 {/if}
 
 <script context="module">
-	import { POST } from '@johnny/utils/loaders'
+	import { GET, POST } from '@johnny/utils/loaders'
 	export async function preload({ params }, session) {
 		if (params.id === 'new') {
-			const { tags } = await POST('/admin/api/tags/article-all.json', { cookie: session.cookie })
+			const { tags } = await GET('/api/tags/article-all.json')
 			return { article: {
 				status: '',
 				publishedDatetime: (new Date()).toISOString(),
@@ -63,7 +63,7 @@
 				tags: [],
 			}, tags, bounce: true }
 		}
-		const { article, tags } = await POST('/admin/api/articles/single.json', {
+		const { article, tags } = await POST('/api/admin/articles/single.json', {
 			id: params.id,
 			cookie: session.cookie,
 		})
@@ -122,7 +122,7 @@
 			const data = { changes }
 			const isNew = $page.params.id === 'new'
 			if (!isNew) { data.id = article.id }
-			const savedArticle = await POST(`/admin/api/articles/${isNew ? 'create' : 'update'}.json`, data)
+			const savedArticle = await POST(`/api/admin/articles/${isNew ? 'create' : 'update'}.json`, data)
 
 			if (savedArticle.error) {
 				return errors = ['Something went wrong. Please try again or contact the site administrator if you continue to experience problems.']
