@@ -1,7 +1,7 @@
 <!-- <p>{JSON.stringify(resource)}</p> -->
 
 <div class="resource">
-	<a href="/archive/{resource.id}" rel=prefetch>
+	<a href="/assets/{resource.id}" rel=prefetch>
 		<LazyImg {src} {alt}/>
 		<h2>{resource.title || '[This resource has no title.]'}</h2>
 		<h3>{formattedstamp(resource.createdAt)}</h3>
