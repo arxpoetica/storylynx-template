@@ -30,7 +30,7 @@ export async function post(req, res) {
 				title
 				slug
 				summary
-				assets { id url summary handle mimeType filename }
+				assets { id url summary handle mimeType fileName }
 				externalAssets
 				tags { tag }
 			}

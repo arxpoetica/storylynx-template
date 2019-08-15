@@ -17,7 +17,7 @@
 		if (typeof query.page === 'undefined') {
 			return this.redirect(302, 'assets?page=1')
 		}
-		const { pageSize, items, itemsCount } = await POST('/api/articles/page.json', query)
+		const { pageSize, items, itemsCount } = await POST('/api/assets/page.json', query)
 		return { pageSize, items, itemsCount }
 	}
 </script>

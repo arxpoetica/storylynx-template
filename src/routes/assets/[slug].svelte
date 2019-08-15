@@ -1,7 +1,11 @@
-<!-- <svelte:head><title>...</title></svelte:head> -->
+<svelte:head>
+	<title>{asset.title} | Assets | Johnny Miller</title>
+</svelte:head>
 
-<h1>{item.title}</h1>
-<h2>{formattedstamp(item.createdAt)}</h2>
+<!-- {JSON.stringify(asset)} -->
+
+<h1>{asset.title}</h1>
+<h2>{formattedstamp(asset.createdAt)}</h2>
 <h4>Tags:</h4>
 <div class="tags">
 	{#each tags as tag, index}
@@ -10,21 +14,22 @@
 </div>
 
 <div class="content">
-	{@html item.content.html}
+	{@html asset.html}
 </div>
 
 <script context="module">
 	import { POST } from '@johnny/utils/loaders'
 	export async function preload({ params }) {
-		const item = await POST('/api/articles/single.json', { id: params.article })
-		return { item }
+		const asset = await POST('/api/assets/single.json', { slug: params.slug })
+		return { asset }
 	}
 </script>
 
 <script>
+	// export let segment
 	import { formattedstamp } from '@johnny/utils/basic-utils'
-	export let item
-	$: tags = item.tags.map(tag => tag.tag)
+	export let asset
+	$: tags = asset.tags.map(tag => tag.tag)
 </script>
 
 <!-- <style type="text/scss"></style> -->
