@@ -12,7 +12,7 @@ export async function post(req, res) {
 				tags { tag }
 			}
 		}`)
-		console.log(resource)
+		// console.log(resource)
 		return res.json(resource)
 	} catch (error) {
 		// console.log(error)
