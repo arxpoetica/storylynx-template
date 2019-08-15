@@ -1,10 +1,10 @@
 <div class="admin-header">
 	<h1>Article</h1>
-	<div class="buttons">
+	<!-- <div class="buttons">
 		<a href="/admin/articles/new" class="button success">
 			Create New User
 		</a>
-	</div>
+	</div> -->
 </div>
 <div class="admin-full">
 	<!-- <ToolBar on:trashItems={trashItems} bind:checkedItems {...$$props}/> -->
@@ -17,7 +17,7 @@
 <script context="module">
 	import { POST } from '@johnny/utils/loaders'
 	export async function preload(page, session) {
-		const { items, itemsCount } = await POST('/admin/api/accounts/page.json', {
+		const { items, itemsCount } = await POST('/api/admin/accounts/page.json', {
 			cookie: session.cookie
 		})
 		return { items, itemsCount }
@@ -30,8 +30,9 @@
 
 	// export let segment
 	let cols = [
-		{ type: 'asset', col: 'avatar', title: 'Avatar' },
-		{ type: 'url', col: 'username', title: 'Username', url: '/admin/accounts/' },
+		// { type: 'asset', col: 'avatar', title: 'Avatar' }, // FIXME: use?
+		// { type: 'url', col: 'username', title: 'Username', url: '/admin/accounts/' },
+		{ type: 'text', col: 'username', title: 'Username' }, // FIXME: replace with above
 		{ type: 'text', col: 'role', title: 'Admin Role' },
 		{ type: 'text', col: 'firstName', title: 'First' },
 		{ type: 'text', col: 'lastName', title: 'Last' },
@@ -46,7 +47,7 @@
 			// const ids = checkedItems
 			// 	.map((item, index) => item ? items[index].id : false)
 			// 	.filter(id => id)
-			// const answer = await POST(`/admin/api/articles/archive.json`, { ids })
+			// const answer = await POST(`/api/admin/articles/archive.json`, { ids })
 			// if (answer.error) {
 			// 	return errors = ['Something went wrong. Please try again or contact the site administrator if you continue to experience problems.']
 			// } else {

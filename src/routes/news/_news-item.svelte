@@ -10,7 +10,7 @@
 	</a>
 	<h3>{formattedstamp(item.publishedDatetime)}</h3>
 	<p>{summary}</p>
-	<!-- <a href="/archive/{item.id}" rel=prefetch>Explore</a> -->
+	<!-- <a href="/assets/{item.id}" rel=prefetch>Explore</a> -->
 	<Tags url="/news" {tags}/>
 </div>
 

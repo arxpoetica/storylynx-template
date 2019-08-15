@@ -7,7 +7,7 @@ export async function post(req, res) {
 		const token = getToken(req)
 		if (token.unauthorized) { throw Error('Unauthorized') }
 
-		const { article, tags } = await cmsQuery(`{
+		const { article, articleTags } = await cmsQuery(`{
 			article(where: { id: "${req.body.id}" }) {
 				id
 				status
@@ -19,7 +19,7 @@ export async function post(req, res) {
 				assets { id url summary handle fileName }
 				tags { id tag }
 			}
-			tags { id tag }
+			articleTags { id tag }
 		}`)
 
 		// const article = {
@@ -36,7 +36,7 @@ export async function post(req, res) {
 		// 		summary: null,
 		// 		handle: 'KPZUYkD8RuC9GwlioGzU',
 		// 	}],
-		// 	tags: [{
+		// 	articleTags: [{
 		// 		id: 'tournament',
 		// 		tag: 'tournament',
 		// 	}, {
@@ -76,7 +76,7 @@ export async function post(req, res) {
 		// 	tag: '1980s',
 		// }]
 
-		return res.json({ article, tags })
+		return res.json({ article, tags: articleTags })
 	} catch (error) {
 		return handleError(error, res)
 	}

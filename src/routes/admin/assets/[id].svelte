@@ -1,6 +1,6 @@
 {#if copy}
 	<div class="admin-header">
-		<h1>{$page.params.id === 'new' ? 'Create' : 'Edit'} Article</h1>
+		<h1>{$page.params.id === 'new' ? 'Create' : 'Edit'} Asset</h1>
 		<div class="buttons">
 			{#if $page.params.id === 'new'}
 				<button class="button warning" {disabled} on:click={() => save('DRAFT')}>Save as Draft</button>
@@ -17,7 +17,7 @@
 					</button>
 				{/if}
 				<button class="button success" {disabled} on:click={() => save('PUBLISHED')}>
-					{article.status === 'PUBLISHED' ? 'Update' : 'Publish'}
+					{asset.status === 'PUBLISHED' ? 'Update' : 'Publish'}
 				</button>
 			{/if}
 		</div>
@@ -40,7 +40,7 @@
 	<div class="admin-side">
 		<div class="accordion">
 			<DetailsPanel bind:status={copy.status} bind:datetime={copy.publishedDatetime}/>
-			<PermalinkPanel bind:slug={copy.slug} path="/news/" title={copy.title}/>
+			<PermalinkPanel bind:slug={copy.slug} path="/asset/" title={copy.title}/>
 			<MediaPanel bind:copy/>
 			<TagsPanel bind:tags bind:copy/>
 		</div>
@@ -51,8 +51,8 @@
 	import { GET, POST } from '@johnny/utils/loaders'
 	export async function preload({ params }, session) {
 		if (params.id === 'new') {
-			const { tags } = await GET('/api/tags/article-all.json')
-			return { article: {
+			const { tags } = await GET('/api/tags/asset-all.json')
+			return { asset: {
 				status: '',
 				publishedDatetime: (new Date()).toISOString(),
 				title: '',
@@ -63,11 +63,11 @@
 				tags: [],
 			}, tags, bounce: true }
 		}
-		const { article, tags } = await POST('/api/admin/articles/single.json', {
+		const { asset, tags } = await POST('/api/admin/assets/single.json', {
 			id: params.id,
 			cookie: session.cookie,
 		})
-		return { article, tags, bounce: true }
+		return { asset, tags, bounce: true }
 	}
 </script>
 
@@ -84,7 +84,7 @@
 	import MediaPanel from '../_components/panels/MediaPanel.svelte'
 	import TagsPanel from '../_components/panels/TagsPanel.svelte'
 
-	export let article
+	export let asset
 	export let tags
 	export let bounce
 
@@ -92,13 +92,13 @@
 	beforeUpdate(() => {
 		if (bounce) {
 			// see: https://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-deep-clone-an-object-in-javascript
-			copy = JSON.parse(JSON.stringify(article))
+			copy = JSON.parse(JSON.stringify(asset))
 			bounce = false
 		}
 	})
 
 	// see: https://stackoverflow.com/questions/1068834/object-comparison-in-javascript
-	$: disabled = copy ? JSON.stringify(article) === JSON.stringify(copy) : true
+	$: disabled = copy ? JSON.stringify(asset) === JSON.stringify(copy) : true
 
 	let errors = []
 	async function save(status) {
@@ -114,23 +114,23 @@
 			}
 			const changes = {}
 			for (let key in copy) {
-				if (JSON.stringify(copy[key]) !== JSON.stringify(article[key])) {
+				if (JSON.stringify(copy[key]) !== JSON.stringify(asset[key])) {
 					changes[key] = copy[key]
 				}
 			}
 
 			const data = { changes }
 			const isNew = $page.params.id === 'new'
-			if (!isNew) { data.id = article.id }
-			const savedArticle = await POST(`/api/admin/articles/${isNew ? 'create' : 'update'}.json`, data)
+			if (!isNew) { data.id = asset.id }
+			const savedAsset = await POST(`/api/admin/assets/${isNew ? 'create' : 'update'}.json`, data)
 
-			if (savedArticle.error) {
+			if (savedAsset.error) {
 				return errors = ['Something went wrong. Please try again or contact the site administrator if you continue to experience problems.']
 			} else if (isNew) {
-				goto(`/admin/articles/${savedArticle.id}`, { replaceState: true })
+				goto(`/admin/assets/${savedAsset.id}`, { replaceState: true })
 			} else {
-				article = savedArticle
-				copy = JSON.parse(JSON.stringify(article))
+				asset = savedAsset
+				copy = JSON.parse(JSON.stringify(asset))
 				// disabled = true
 			}
 		}
@@ -139,7 +139,7 @@
 		if (window.confirm('Discard all changes? Careful: This is permanent and cannot be reversed.')) {
 			copy = false // unfortunate rejiggering
 			setTimeout(() => {
-				copy = JSON.parse(JSON.stringify(article))
+				copy = JSON.parse(JSON.stringify(asset))
 				disabled = true
 			}, 0)
 		}

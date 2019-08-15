@@ -3,7 +3,7 @@
 		<li data-on="{section === ''}"><a href="/" rel=prefetch>Home</a></li>
 		<li data-on="{section === 'experience'}"><a href="/experience" rel=prefetch>Experience</a></li>
 		<li data-on="{section === 'tournaments'}"><a href="/tournaments">Tournaments</a></li>
-		<li data-on="{section === 'archive'}"><a href="/archive" rel=prefetch>Archive</a></li>
+		<li data-on="{section === 'assets'}"><a href="/assets" rel=prefetch>Assets</a></li>
 		<li data-on="{section === 'about'}"><a href="/about" rel=prefetch>About</a></li>
 		<li data-on="{section === 'news'}"><a href="/news" rel=prefetch>News</a></li>
 		<li data-on="{section === 'contact'}"><a href="/contact" rel=prefetch>Contact</a></li>

@@ -2,43 +2,43 @@
 <nav class="admin-bar">
 	{#if $session.user}
 		<div class="first">
-			<h2>
+			<h2 class:on={path.indexOf('/admin/articles') === 0}>
 				<div class="svg"><Article/></div>
 				News Articles
 			</h2>
 			<div class="links">
-				<a href="/admin/articles">All Articles</a>
-				<a href="/admin/articles/new">Create Article</a>
+				<a href="/admin/articles" class:on={path === '/admin/articles'}>All Articles</a>
+				<a href="/admin/articles/new" class:on={path === '/admin/articles/new'}>Create Article</a>
 				<!-- <a href="/admin/articles/categories">Article Categories</a> -->
 				<!-- <a href="/admin/articles/tags">Article Tags</a> -->
 			</div>
-			<h2>
+			<h2 class:on={path.indexOf('/admin/assets') === 0}>
 				<div class="svg"><Asset/></div>
 				Archive Assets
 			</h2>
 			<div class="links">
-				<a href="/admin/assets">All Assets</a>
-				<a href="/admin/assets/new">Create Asset</a>
+				<a href="/admin/assets" class:on={path === '/admin/assets'}>All Assets</a>
+				<a href="/admin/assets/new" class:on={path === '/admin/assets/new'}>Create Asset</a>
 				<!-- <a href="/admin/assets/categories">Asset Categories</a> -->
 				<!-- <a href="/admin/assets/tags">Asset Tags</a> -->
 			</div>
-			<h2>
+			<!-- <h2 class:on={path.indexOf('/admin/media') === 0}>
 				<div class="svg"><Media/></div>
 				Media
 			</h2>
 			<div class="links">
-				<a href="/admin/media">All Media</a>
-				<a href="/admin/media/upload">Upload Media</a>
-			</div>
+				<a href="/admin/media" class:on={path === '/admin/media'}>All Media</a>
+				<a href="/admin/media/upload" class:on={path === '/admin/media/upload'}>Upload Media</a>
+			</div> -->
 		</div>
 		<div class="second">
-			<h2>
+			<h2 class:on={path.indexOf('/admin/accounts') === 0}>
 				<div class="svg"><Settings/></div>
 				Settings
 			</h2>
 			<div class="links">
-				<a href="/admin/accounts">All Accounts</a>
-				<a href="/admin/accounts/{$session.user.username}">Edit Your Account</a>
+				<a href="/admin/accounts" class:on={path === '/admin/accounts'}>All Accounts</a>
+				<!-- <a href="/admin/accounts/{$session.user.username}">Edit Your Account</a> -->
 				<div class="div"></div>
 				<a href="/auth/logout" on:click={logout}>Log Out</a>
 			</div>
@@ -55,7 +55,8 @@
 
 <script>
 	import { stores } from '@sapper/app'
-	const { session } = stores()
+	const { session, page } = stores()
+	$: path = $page.path
 	import { GET } from '@johnny/utils/loaders'
 	import Settings from '@johnny/svg/admin-settings.svelte'
 	import Article from '@johnny/svg/admin-article.svelte'
@@ -94,9 +95,12 @@
 		padding: 10rem;
 		font-size: inherit;
 		background-color: $gray-dark;
-		border-bottom: 1px solid $gray-1;
 		color: $gray-6;
 		cursor: default;
+		&.on {
+			background-color: $orange-l2;
+			color: $black;
+		}
 	}
 	.svg {
 		flex-basis: 20rem;
@@ -105,14 +109,21 @@
 	.links {
 		display: flex;
 		flex-direction: column;
-		padding: 8rem 10rem;
+		padding: 8rem 6rem;
 	}
 	a {
-		padding: 6rem 0;
+		padding: 6rem;
 		color: $gray-4;
 		text-decoration: none;
+		transition: none;
 		&:hover {
-			color: $red-l1;
+			background-color: $gray-dark;
+			transition: background-color 0.15s ease-in-out;
+		}
+		&.on {
+			color: $orange-l2;
+			font-weight: $bold;
+			pointer-events: none;
 		}
 	}
 	.div {

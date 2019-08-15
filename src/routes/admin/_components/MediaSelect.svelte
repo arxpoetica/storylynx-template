@@ -70,7 +70,7 @@
 		if (page !== priorPage) {
 			priorPage = page
 			items = []
-			const res = await POST('/admin/api/media/page.json', { page })
+			const res = await POST('/api/admin/media/page.json', { page })
 			items = res.items
 			itemsCount = res.itemsCount
 			pageSize = res.pageSize

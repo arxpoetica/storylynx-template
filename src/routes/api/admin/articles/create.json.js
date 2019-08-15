@@ -22,7 +22,7 @@ export async function post(req, res) {
 		if (changes.assets || changes.tags) {
 			create += 'create('
 			create += changes.assets ? '$assets: [AssetWhereUniqueInput!] ' : ''
-			create += changes.tags ? '$tags: [TagWhereUniqueInput!] ' : ''
+			create += changes.tags ? '$tags: [ArticleTagWhereUniqueInput!] ' : ''
 			create += ')'
 		}
 

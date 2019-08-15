@@ -31,6 +31,8 @@
 								{/if}
 								{dayjs(item[col.col]).format('M/D/YYYY')}
 							</div>
+						{:else if col.type === 'function'}
+							{col.col(item)}
 						{:else}
 							{item[col.col]}
 						{/if}

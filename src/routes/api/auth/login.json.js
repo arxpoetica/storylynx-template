@@ -1,6 +1,7 @@
 import bcrypt from 'bcryptjs'
 import { handleError, cmsQuery } from '@johnny/utils/loaders.js'
 import { setToken } from '@johnny/services/auth-helpers.js'
+import { src } from '@johnny/utils/basic-utils.js'
 
 export async function post(req, res) {
 
@@ -25,7 +26,7 @@ export async function post(req, res) {
 				role
 				firstName
 				lastName
-				avatar
+				avatar { url handle }
 			}
 		}`
 		const answer = await cmsQuery(query)
@@ -48,7 +49,7 @@ export async function post(req, res) {
 			role: account.role,
 			firstName: account.firstName,
 			lastName: account.lastName,
-			avatar: account.avatar,
+			avatar: src(account.avatar, { crop: true }),
 		}
 		setToken(payload, res)
 		return res.json(payload)
