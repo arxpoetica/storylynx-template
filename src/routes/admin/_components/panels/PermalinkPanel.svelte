@@ -6,9 +6,7 @@
 	<ul>
 		<li>
 			<strong>Preview:</strong>
-			<a href="{process.env.JM_HOST}/news/{slug}" target="_blank">
-				{process.env.JM_HOST}/news/{slug}
-			</a>
+			<a href={url} target="_blank">{url}</a>
 		</li>
 	</ul>
 </Panel>
@@ -16,8 +14,10 @@
 <script>
 	import { hyphenate } from '@johnny/utils/basic-utils'
 	import Panel from './Panel.svelte'
-	export let slug
-	export let title
+	export let slug = ''
+	export let path = ''
+	export let title = ''
+	$: url = process.env.JM_HOST + path + slug
 	function setSlug() {
 		if (!slug) {
 			slug = hyphenate(title).toLowerCase()

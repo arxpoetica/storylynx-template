@@ -2,7 +2,7 @@
 
 <!-- <a class="news-item" href="/news/{item.id}" rel=prefetch> -->
 <div class="news-item">
-	<a href="/news/{item.id}">
+	<a href="/news/{item.slug}">
 		<div class="img">
 			<LazyImg {src} {alt}/>
 		</div>
@@ -10,7 +10,7 @@
 	</a>
 	<h3>{formattedstamp(item.publishedDatetime)}</h3>
 	<p>{summary}</p>
-	<!-- <a href="/archive/{item.id}" rel=prefetch>Explore</a> -->
+	<!-- <a href="/assets/{item.id}" rel=prefetch>Explore</a> -->
 	<Tags url="/news" {tags}/>
 </div>
 

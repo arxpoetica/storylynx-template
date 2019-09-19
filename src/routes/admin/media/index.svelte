@@ -6,7 +6,7 @@
 				Discard Changes
 			</button>
 		{/if}
-		{#if articleCopy.status === 'PUBLISHED'}
+		{#if copy.status === 'PUBLISHED'}
 			<button class="button warning" {disabled} on:click={event => save(event, 'DRAFT')}>
 				Switch to Draft
 			</button>
@@ -21,20 +21,20 @@
 		<label>
 			Title
 			<em> - (Required.)</em>
-			<input bind:value={articleCopy.title} type="text" required>
+			<input bind:value={copy.title} type="text" required>
 		</label>
 		<label>
 			Summary
-			<input bind:value={articleCopy.summary} type="text">
+			<input bind:value={copy.summary} type="text">
 		</label>
-		<Quill title="Content" bind:html={articleCopy.html}/>
+		<Quill title="Content" bind:html={copy.html}/>
 	</form> -->
 </div>
 <div class="admin-side">
 	<!-- <div class="accordion">
-		<DetailsPanel bind:status={articleCopy.status} bind:datetime={articleCopy.publishedDatetime}/>
-		<PermalinkPanel bind:slug={articleCopy.slug}/>
-		<MediaPanel bind:articleCopy/>
-		<TagsPanel bind:tags bind:articleCopy/>
+		<DetailsPanel bind:status={copy.status} bind:datetime={copy.publishedDatetime}/>
+		<PermalinkPanel bind:slug={copy.slug}/>
+		<MediaPanel bind:copy/>
+		<TagsPanel bind:tags bind:copy/>
 	</div> -->
 </div>

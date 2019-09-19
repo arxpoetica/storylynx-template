@@ -1,38 +1,53 @@
-<div class="info">Page {page} of {itemsCount}</div>
-<nav>
-	{#if page > 1}
+<div class="pagination">
+	<div class="info">{itemsCount} items</div>
+	<nav>
 		{#if href}
-			<a href="{href}?{createQuery(page - 1)}" class="prev">Previous</a>
+			<a href="{href}?{createQuery(page - 1, query)}" class="prev" class:on={page > 1}>
+				<div class="ghost">Previous</div>
+				<div class="svg"><Prev/></div>
+			</a>
 		{:else}
-			<button on:click={() => page -= 1} class="prev">Previous</button>
+			<button on:click={() => page -= 1} class="prev" class:on={page > 1}>
+				<div class="ghost">Previous</div>
+				<div class="svg"><Prev/></div>
+			</button>
 		{/if}
-	{/if}
-	<div class="pages">
-		{#each range as rangeNumber}
-			{#if rangeNumber === page}
-				<span class="current">{rangeNumber}</span>
-			{:else if rangeNumber === '...'}
-				<span class="etc">{rangeNumber}</span>
-			{:else}
-				{#if href}
-					<a href="{href}?{createQuery(rangeNumber)}">{rangeNumber}</a>
+		<div class="pages">
+			{#each range as rangeNumber}
+				{#if rangeNumber === page}
+					<span class="current">{rangeNumber}</span>
+				{:else if rangeNumber === '...'}
+					<span class="etc">{rangeNumber}</span>
 				{:else}
-					<button on:click={() => page = rangeNumber}>{rangeNumber}</button>
+					{#if href}
+						<a href="{href}?{createQuery(rangeNumber, query)}">{rangeNumber}</a>
+					{:else}
+						<button on:click={() => page = rangeNumber}>{rangeNumber}</button>
+					{/if}
 				{/if}
-			{/if}
-		{/each}
-	</div>
-	{#if page < pagesCount}
+			{/each}
+		</div>
 		{#if href}
-			<a href="{href}?{createQuery(page + 1)}" class="next">Next</a>
+			<a href="{href}?{createQuery(page + 1, query)}" class="next" class:on={page < pagesCount}>
+				<div class="ghost">Next</div>
+				<div class="svg"><Next/></div>
+			</a>
 		{:else}
-			<button on:click={() => page += 1} class="next">Next</button>
+			<button on:click={() => page += 1} class="next" class:on={page < pagesCount}>
+				<div class="ghost">Next</div>
+				<div class="svg"><Next/></div>
+			</button>
 		{/if}
-	{/if}
-</nav>
+	</nav>
+</div>
 
 <script>
-	import { createPaginationRange, createQuery } from './page-helpers'
+	import { stores } from '@sapper/app'
+	const { page: pageStore } = stores()
+	import { createPaginationRange, createQuery } from '@johnny/utils/page-helpers'
+
+	import Prev from '@johnny/svg/prev.svelte'
+	import Next from '@johnny/svg/next.svelte'
 
 	export let href = ''
 	export let page = 1
@@ -45,56 +60,63 @@
 	// ALSO: `page` is the current number
 	$: pagesCount = Math.ceil(itemsCount / pageSize)
 	$: range = createPaginationRange(page, pagesCount)
+	$: query = $pageStore.query
 </script>
 
 <style type="text/scss">
+	.pagination {
+		display: flex;
+		align-items: center;
+	}
 	.info {
-		margin: 0 0 10rem;
+		margin: 0 10rem 0 0;
 	}
 	nav {
 		display: flex;
 		align-items: center;
+		// margin: 0 -2rem;
+		// padding: 0 2rem;
+		line-height: 1;
 	}
 	.pages {
 		display: flex;
-		line-height: 1;
-		a,
-		span,
-		button {
-			margin: 0 20rem 0 0;
-			padding: 10rem;
-			border: 0;
-			user-select: none;
-		}
-		a,
-		button {
-			background-color: $yellow-l4;
-			outline: 0;
-			cursor: pointer;
-		}
-		.current {
-			background-color: $green-main;
-			color: white;
-			cursor: default;
-		}
-		.etc {
-			background-color: $gray-7;
-			cursor: default;
-		}
+	}
+	a,
+	span,
+	button {
+		margin: 0 2rem;
+		padding: 6rem 10rem;
+		border: 0;
+		user-select: none;
+	}
+	a,
+	button {
+		background-color: $yellow-l4;
+		outline: 0;
+		cursor: pointer;
+	}
+	.current {
+		background-color: $green-main;
+		color: white;
+		cursor: default;
+	}
+	.etc {
+		background-color: $gray-7;
+		color: $gray-5;
+		cursor: default;
+	}
+	.svg {
+		width: 8rem;
 	}
 	.prev,
 	.next {
-		padding: 0;
-		border: 0;
-		color: $links;
-		outline: 0;
-		cursor: pointer;
-		&:hover {
-			text-decoration: underline;
+		background-color: $gray-7;
+		color: $gray-5;
+		pointer-events: none;
+		&.on {
+			background-color: $yellow-l4;
+			color: $links;
+			pointer-events: all;
 		}
 	}
-	.prev {
-		margin: 0 20rem 0 0;
-	}
-	// .next {}
 </style>

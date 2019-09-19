@@ -28,6 +28,7 @@ export async function post(req, res) {
 				id
 				publishedDatetime
 				title
+				slug
 				summary
 				assets { id url summary handle fileName }
 				tags { tag }

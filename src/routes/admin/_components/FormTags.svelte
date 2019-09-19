@@ -9,11 +9,11 @@
 <script>
 	import { onMount } from 'svelte'
 	export let tags
-	export let articleCopy
+	export let copy
 
 	let tagsCopy
 	onMount(() => {
-		const tagIds = articleCopy.tags.map(tagObj => tagObj.id)
+		const tagIds = copy.tags.map(tagObj => tagObj.id)
 		tagsCopy = tags.map(tagObj => ({
 			id: tagObj.id,
 			tag: tagObj.tag,
@@ -23,17 +23,17 @@
 
 	const toggleTag = tag => {
 		// FIXME: MAINTAIN THE ORDER OF THE ARRAY!!!
-		const index = articleCopy.tags.findIndex(tagObj => tagObj.id === tag.id)
+		const index = copy.tags.findIndex(tagObj => tagObj.id === tag.id)
 		if (index > -1) {
-			articleCopy.tags.splice(index, 1)
-			articleCopy = articleCopy
+			copy.tags.splice(index, 1)
+			copy = copy
 			const copyIndex = tagsCopy.findIndex(tagObj => tagObj.id === tag.id)
 			tag.on = false
 			tagsCopy.splice(copyIndex, 1, tag)
 			tagsCopy = tagsCopy
 		} else {
-			articleCopy.tags.push({ id: tag.id, tag: tag.tag })
-			articleCopy = articleCopy
+			copy.tags.push({ id: tag.id, tag: tag.tag })
+			copy = copy
 			tag.on = true
 			tagsCopy.push(tag)
 			tagsCopy = tagsCopy

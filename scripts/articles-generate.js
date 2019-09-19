@@ -11,7 +11,7 @@ async function runMutation(article, index) {
 		const mutation = `
 			mutation create(
 				$status: Status,
-				$connect: [TagWhereUniqueInput!]
+				$connect: [ArticleTagWhereUniqueInput!]
 			) {
 				createArticle(data: {
 					status: $status
