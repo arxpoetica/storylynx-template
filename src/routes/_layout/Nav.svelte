@@ -20,15 +20,13 @@
 
 <style type="text/scss">
 	nav {
-		margin-top:25rem;
+		margin-top: 25rem;
 		display: flex;
-		justify-content: space-between;
-		align-items: right;
-		width: 100%;
+		justify-content: flex-end;
+		align-items: center;
 	}
 	ul {
 		display: flex;
-		align-items: center;
 	}
 	li {
 		display: flex;

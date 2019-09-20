@@ -19,7 +19,6 @@
 		font: $bold 15rem/1 $font;
 		z-index: $z-front;
 		height: 200rem;
-		// width:100%;
 	}
 	.header-evil-wrap {
 		display: flex;
