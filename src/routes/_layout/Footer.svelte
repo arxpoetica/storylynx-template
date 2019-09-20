@@ -13,11 +13,11 @@
 
 <style type="text/scss">
 	footer {
-		height: $footer-height;
+		height: 150rem;;
 		bottom: 0;
 		left: 0;
 		width: 100%;
-		background-color: $bg2;
+		background-color: #F5F5F5;
 		color: $black;
 		font: 13rem/1 $font;
 		a {
