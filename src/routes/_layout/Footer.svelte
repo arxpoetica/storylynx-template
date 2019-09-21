@@ -2,8 +2,9 @@
 	<div class="footer-evil-wrap">
 			<ul>
 				<li> <b>&copy; Copyright 2019</b> </li>
-				<li><a data-on="{section === 'terms'}"href="/terms">Terms &amp; Conditions</a></li>
-				<li><a data-on="{section === 'privacy'}"href="/privacy-policy">Privacy Policy</a></li>
+				<li><a data-on="{section === 'terms'}" href="/terms">Terms &amp; Conditions</a></li>
+				<li><a data-on="{section === 'privacy'}" href="/privacy-policy">Privacy Policy</a></li>
+				<a data-on="{section === 'global-styles'}" href="/global-styles">Global Styles</a>
 			</ul>
 	</div>
 		<a class="cobranding" href="https://www.johnnymillerchampfoundation.org/" target="_blank">The Champ Foundation</a>
