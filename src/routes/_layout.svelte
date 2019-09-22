@@ -25,7 +25,8 @@
 	import AdminBar from './admin/_components/AdminBar.svelte'
 	import Footer from './_layout/Footer.svelte'
 
-	$: admin = $session.user || process.env.NODE_ENV === 'development'
+	// $: admin = $session.user || process.env.NODE_ENV === 'development'
+	$: admin = $session.user
 
 	// DOM ONLY STUFF ---------- >>>>
 	let html

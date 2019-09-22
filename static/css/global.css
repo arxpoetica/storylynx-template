@@ -60,7 +60,6 @@
 }ul, ol, dl {
 	margin-bottom: 10rem;
 	list-style-position: outside;
-	line-height: 1.6;
 }li {
 	font-size: inherit;
 }ul {

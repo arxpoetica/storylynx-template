@@ -14,18 +14,17 @@
 
 <style type="text/scss">
 	header {
-		background-color: #F5F5F5;
+		background-color: $gray-light;
 		color: $black;
 		font: $bold 15rem/1 $font;
-		z-index: $z-front;
-		height: 200rem;
+		// z-index: $z-front;
 	}
 	.header-evil-wrap {
 		display: flex;
 		justify-content: space-between;
-		align-items: right;
+		align-items: center;
 		// max-width: $max;
-		height: $header-height;
+		// height: $header-height;
 		margin: 0 auto;
 		padding: 0 20px;
 	}
@@ -33,7 +32,5 @@
 		background-image: url('');
 		width: 200rem;
 		height: 50rem;
-		
-		
 	}
 </style>

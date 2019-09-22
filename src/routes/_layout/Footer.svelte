@@ -17,44 +17,44 @@
 
 <style type="text/scss">
 	footer {
-	  height: 150rem;
-	  bottom: 0;
-	  left: 0;
-	  width: 100%;
-	  background-color: #f5f5f5;
-	  color: $black;
-	  font: 13rem/1 $font;
-	  a{
-	    height: 28px;
-	    padding: 0 8px;
-	    border-radius: 1px;
-	    color: $black;
-	    line-height: 28rem;
-	    text-decoration: none;
-	    transition: background-color 0.15s ease-in-out;
-	    &:hover,
-	    &:focus {
-	      text-decoration: underline;
-	    }
-	    &.cobranding {
-	      margin-left: auto;
-	    }
-	  }
-	  b{
-		height: 28px;
-	    padding: 0 8px;
-	    border-radius: 1px;
-	    color: $black;
-	    line-height: 28rem;
-	  }
+		height: 150rem;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background-color: $gray-light;
+		color: $black;
+		font: 13rem/1 $font;
+		a {
+			height: 28px;
+			padding: 0 8px;
+			border-radius: 1px;
+			color: $black;
+			line-height: 28rem;
+			text-decoration: none;
+			transition: background-color 0.15s ease-in-out;
+			&:hover,
+			&:focus {
+				text-decoration: underline;
+			}
+			&.cobranding {
+				margin-left: auto;
+			}
+		}
+		b {
+			height: 28px;
+			padding: 0 8px;
+			border-radius: 1px;
+			color: $black;
+			line-height: 28rem;
+		}
 	}
 	.footer-evil-wrap {
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
-	  height: $footer-height;
-	  margin: 0 auto;
-	  padding: 0 20rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: $footer-height;
+		margin: 0 auto;
+		padding: 0 20rem;
 	}
 	ul {
 		display: flex;
