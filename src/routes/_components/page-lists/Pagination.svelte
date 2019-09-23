@@ -2,14 +2,12 @@
 	<div class="info">{itemsCount} items</div>
 	<nav>
 		{#if href}
-			<a href="{href}?{createQuery(page - 1, query)}" class="prev" class:on={page > 1}>
-				<div class="ghost">Previous</div>
-				<div class="svg"><Prev/></div>
+			<a href="{href}?{createQuery(page - 1, query)}" class="prev-next" class:on={page > 1}>
+				<div class="prev-next">prev</div>
 			</a>
 		{:else}
-			<button on:click={() => page -= 1} class="prev" class:on={page > 1}>
-				<div class="ghost">Previous</div>
-				<div class="svg"><Prev/></div>
+			<button on:click={() => page -= 1} class="prev-next" class:on={page > 1}>
+				<div class="prev-next">prev</div>
 			</button>
 		{/if}
 		<div class="pages">
@@ -28,14 +26,14 @@
 			{/each}
 		</div>
 		{#if href}
-			<a href="{href}?{createQuery(page + 1, query)}" class="next" class:on={page < pagesCount}>
-				<div class="ghost">Next</div>
-				<div class="svg"><Next/></div>
+			<a href="{href}?{createQuery(page + 1, query)}" class="prev-next" class:on={page < pagesCount}>
+				<div class="prev-next">next</div>
+				<!-- <div class="svg"><Next/></div> -->
 			</a>
 		{:else}
-			<button on:click={() => page += 1} class="next" class:on={page < pagesCount}>
-				<div class="ghost">Next</div>
-				<div class="svg"><Next/></div>
+			<button on:click={() => page += 1} class="prev-next" class:on={page < pagesCount}>
+				<div class="prev-next">next</div>
+				<!-- <div class="svg"><Next/></div> -->
 			</button>
 		{/if}
 	</nav>
@@ -67,6 +65,8 @@
 	.pagination {
 		display: flex;
 		align-items: center;
+		justify-content: center;
+		padding: 20rem;
 	}
 	.info {
 		margin: 0 10rem 0 0;
@@ -88,34 +88,39 @@
 		padding: 6rem 10rem;
 		border: 0;
 		user-select: none;
+		background-color: transparent;
+		color: $black;
+		border: 1rem solid $black;
+		
 	}
 	a,
 	button {
-		background-color: $yellow-l4;
+		background-color: transparent;
 		outline: 0;
 		cursor: pointer;
 	}
 	.current {
-		background-color: $green-main;
-		color: white;
+		background-color: transparent;
+		color: $gray-7;
 		cursor: default;
 	}
 	.etc {
-		background-color: $gray-7;
+		background-color: transparent;
 		color: $gray-5;
 		cursor: default;
+		border: none;
 	}
 	.svg {
 		width: 8rem;
 	}
-	.prev,
-	.next {
-		background-color: $gray-7;
+	.prev-next {
+		background-color: transparent;
 		color: $gray-5;
 		pointer-events: none;
+		border: none;
 		&.on {
-			background-color: $yellow-l4;
-			color: $links;
+			background-color: transparent;
+			// color: $links;
 			pointer-events: all;
 		}
 	}
