@@ -28,12 +28,10 @@
 		{#if href}
 			<a href="{href}?{createQuery(page + 1, query)}" class="prev-next" class:on={page < pagesCount}>
 				<div class="prev-next">Next</div>
-				<!-- <div class="svg"><Next/></div> -->
 			</a>
 		{:else}
 			<button on:click={() => page += 1} class="prev-next" class:on={page < pagesCount}>
 				<div class="prev-next">Next</div>
-				<!-- <div class="svg"><Next/></div> -->
 			</button>
 		{/if}
 	</nav>
@@ -111,9 +109,6 @@
 		color: $black;
 		cursor: default;
 		border: none;
-	}
-	.svg {
-		width: 8rem;
 	}
 	.prev-next {
 		background-color: transparent;
