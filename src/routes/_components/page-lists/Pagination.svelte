@@ -3,11 +3,11 @@
 	<nav>
 		{#if href}
 			<a href="{href}?{createQuery(page - 1, query)}" class="prev-next" class:on={page > 1}>
-				<div class="prev-next">prev</div>
+				<div class="prev-next">Prev</div>
 			</a>
 		{:else}
 			<button on:click={() => page -= 1} class="prev-next" class:on={page > 1}>
-				<div class="prev-next">prev</div>
+				<div class="prev-next">Prev</div>
 			</button>
 		{/if}
 		<div class="pages">
@@ -27,12 +27,12 @@
 		</div>
 		{#if href}
 			<a href="{href}?{createQuery(page + 1, query)}" class="prev-next" class:on={page < pagesCount}>
-				<div class="prev-next">next</div>
+				<div class="prev-next">Next</div>
 				<!-- <div class="svg"><Next/></div> -->
 			</a>
 		{:else}
 			<button on:click={() => page += 1} class="prev-next" class:on={page < pagesCount}>
-				<div class="prev-next">next</div>
+				<div class="prev-next">Next</div>
 				<!-- <div class="svg"><Next/></div> -->
 			</button>
 		{/if}
@@ -90,8 +90,10 @@
 		user-select: none;
 		background-color: transparent;
 		color: $black;
-		border: 1rem solid $black;
-		
+		border: 1rem solid #f0f4f5;
+		&:hover {
+			border: 1rem solid $black;
+		}	
 	}
 	a,
 	button {
@@ -101,12 +103,12 @@
 	}
 	.current {
 		background-color: transparent;
-		color: $gray-7;
+		color: $black;
 		cursor: default;
 	}
 	.etc {
 		background-color: transparent;
-		color: $gray-5;
+		color: $black;
 		cursor: default;
 		border: none;
 	}
@@ -115,13 +117,15 @@
 	}
 	.prev-next {
 		background-color: transparent;
-		color: $gray-5;
+		color: $black;
 		pointer-events: none;
 		border: none;
 		&.on {
 			background-color: transparent;
-			// color: $links;
 			pointer-events: all;
 		}
+		&:hover {
+			border: none;
+		}	
 	}
 </style>
