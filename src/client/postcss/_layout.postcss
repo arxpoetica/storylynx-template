@@ -16,7 +16,21 @@ body {
 	margin: 0;
 	background-color: $white;
 	color: $black;
-	font: 14rem/1.35 $font;
+	font: 15rem/1.15 $font;
+	letter-spacing: 0.02em;
+}
+.layout-outer {
+	padding: 0 30rem;
+}
+.layout-inner {
+	width: 100%;
+	max-width: $layout-width;
+	margin: 0 auto;
+}
+// https://css-tricks.com/full-width-containers-limited-width-parents/
+// https://codepen.io/tigt/post/bust-elements-out-of-containers-with-one-line-of-css
+.full-width {
+	margin: 0 calc(50% - 50vw);
 }
 .yavascript {
 	overflow: hidden;

@@ -1,6 +1,6 @@
 <svelte:head><title>Johnny Miller - News</title></svelte:head>
 
-<h1>News</h1>
+<BannerHeader title="News"/>
 
 <!-- <ul>
 	<li><a href="/news?page=1&tags=family&tags=awards">page: 1, tag: family, awards</a></li>
@@ -38,6 +38,7 @@
 </script>
 
 <script>
+	import BannerHeader from '../_components/BannerHeader.svelte'
 	import Pagination from '../_components/page-lists/Pagination.svelte'
 	import NewsItem from './_news-item.svelte'
 	import { stores } from '@sapper/app'
