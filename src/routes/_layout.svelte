@@ -8,8 +8,10 @@
 		<AdminBar/>
 	{/if}
 	<Header {section}/>
-	<main class="main-{segment}">
-		<slot></slot>
+	<main class="main-{segment} layout-outer">
+		<div class="layout-inner">
+			<slot></slot>
+		</div>
 	</main>
 	<Footer {section}/>
 </div>
@@ -94,11 +96,11 @@
 		grid-column: main;
 		margin: 0 auto;
 		width: 100%;
-		max-width: $max;
-		padding: 40rem 20rem 20rem;
-		:global(.admin-section) & {
-			max-width: none;
-			padding: 0;
-		}
+		// padding-top: 30rem;
+		// padding-bottom: 30rem;
+		// :global(.admin-section) & {
+		// 	max-width: none;
+		// 	padding: 0;
+		// }
 	}
 </style>

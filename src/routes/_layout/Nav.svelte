@@ -38,13 +38,22 @@
 		// }
 	}
 	a {
-		// padding: 0 8px;
 		color: $black;
 		text-decoration: none;
-		// transition: text-decoration 0.15s ease-in-out;
-		&:hover,
-		&:focus {
-			text-decoration: underline;
+		&:hover::after,
+		&:focus::after {
+			width: 100%;
+		}
+		&::after {
+			content: '';
+			display: block;
+			position: relative;
+			left: -2rem; // there's a weird positioning issue w/ this font, hence the negative spacing
+			width: 0;
+			height: 2px;
+			margin: 4rem auto 0;
+			background-color: $black;
+			transition: width 0.4s ease-in-out;
 		}
 	}
 	// @media (--small) {
