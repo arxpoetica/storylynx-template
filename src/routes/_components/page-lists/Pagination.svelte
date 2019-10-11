@@ -1,42 +1,30 @@
 <div class="pagination">
-	<div class="info">{itemsCount} items</div>
+	<div class="info">Page {page} of {Math.ceil(itemsCount / pageSize)}</div>
 	<nav>
 		{#if href}
-			<a href="{href}?{createQuery(page - 1, query)}" class="prev" class:on={page > 1}>
-				<div class="ghost">Previous</div>
-				<div class="svg"><Prev/></div>
-			</a>
+			<a href="{href}?{createQuery(page - 1, query)}" class="prev-next prev" class:on={page > 1}>Prev</a>
 		{:else}
-			<button on:click={() => page -= 1} class="prev" class:on={page > 1}>
-				<div class="ghost">Previous</div>
-				<div class="svg"><Prev/></div>
-			</button>
+			<button on:click={() => page -= 1} class="prev-next prev" class:on={page > 1}>Prev</button>
 		{/if}
 		<div class="pages">
 			{#each range as rangeNumber}
 				{#if rangeNumber === page}
-					<span class="current">{rangeNumber}</span>
+					<span class="page current">{rangeNumber}</span>
 				{:else if rangeNumber === '...'}
 					<span class="etc">{rangeNumber}</span>
 				{:else}
 					{#if href}
-						<a href="{href}?{createQuery(rangeNumber, query)}">{rangeNumber}</a>
+						<a class="page" href="{href}?{createQuery(rangeNumber, query)}">{rangeNumber}</a>
 					{:else}
-						<button on:click={() => page = rangeNumber}>{rangeNumber}</button>
+						<button class="page" on:click={() => page = rangeNumber}>{rangeNumber}</button>
 					{/if}
 				{/if}
 			{/each}
 		</div>
 		{#if href}
-			<a href="{href}?{createQuery(page + 1, query)}" class="next" class:on={page < pagesCount}>
-				<div class="ghost">Next</div>
-				<div class="svg"><Next/></div>
-			</a>
+			<a href="{href}?{createQuery(page + 1, query)}" class="prev-next next" class:on={page < pagesCount}>Next</a>
 		{:else}
-			<button on:click={() => page += 1} class="next" class:on={page < pagesCount}>
-				<div class="ghost">Next</div>
-				<div class="svg"><Next/></div>
-			</button>
+			<button on:click={() => page += 1} class="prev-next next" class:on={page < pagesCount}>Next</button>
 		{/if}
 	</nav>
 </div>
@@ -66,57 +54,67 @@
 <style type="text/scss">
 	.pagination {
 		display: flex;
+		flex-direction: column;
+		justify-content: center;
 		align-items: center;
+		margin: 0 0 20rem;
 	}
 	.info {
-		margin: 0 10rem 0 0;
+		margin: 0 0 18rem;
 	}
 	nav {
 		display: flex;
 		align-items: center;
-		// margin: 0 -2rem;
-		// padding: 0 2rem;
 		line-height: 1;
 	}
+	.prev-next {
+		background-color: transparent;
+		color: $black;
+		pointer-events: none;
+		border-color: transparent;
+		&.on {
+			background-color: transparent;
+			pointer-events: all;
+		}
+		&:hover {
+			border: none;
+			text-decoration: underline;
+		}	
+	}
+	.prev { margin-right: 35rem; }
+	.next { margin-left: 35rem; }
 	.pages {
 		display: flex;
 	}
-	a,
-	span,
-	button {
-		margin: 0 2rem;
-		padding: 6rem 10rem;
-		border: 0;
-		user-select: none;
+	.page,
+	.current,
+	.etc {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 25rem;
+		min-width: 25rem;
+		margin: 0 5rem;
+		padding: 0 4rem;
 	}
-	a,
-	button {
-		background-color: $yellow-l4;
+	.page {
+		background-color: transparent;
+		border: 1px solid #acacac;
+		color: $black;
+		text-decoration: none;
 		outline: 0;
-		cursor: pointer;
+		user-select: none;
+		transition: border-color 0.25s ease-in-out;
+		&:hover,
+		&:active {
+			border-color: $red-main;
+		}
 	}
 	.current {
-		background-color: $green-main;
-		color: white;
+		border-color: $black;
 		cursor: default;
 	}
 	.etc {
-		background-color: $gray-7;
-		color: $gray-5;
 		cursor: default;
-	}
-	.svg {
-		width: 8rem;
-	}
-	.prev,
-	.next {
-		background-color: $gray-7;
-		color: $gray-5;
-		pointer-events: none;
-		&.on {
-			background-color: $yellow-l4;
-			color: $links;
-			pointer-events: all;
-		}
 	}
 </style>
