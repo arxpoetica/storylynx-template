@@ -837,6 +837,10 @@ body {
 	margin: 0 auto;
 }
 
+.layout-main {
+	padding: 100rem 0;
+}
+
 .full-width {
 	margin: 0 calc(50% - 50vw);
 }

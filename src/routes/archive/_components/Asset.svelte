@@ -1,7 +1,7 @@
 <!-- <p>{JSON.stringify(asset)}</p> -->
 
 <div class="asset">
-	<a href="/assets/{asset.slug}" rel=prefetch>
+	<a href="/archive/{asset.slug}" rel=prefetch>
 		<LazyImg {src} {alt}/>
 		<h2>{asset.title || '[This Asset has no title.]'}</h2>
 		<h3>{formattedstamp(asset.publishedDatetime)}</h3>

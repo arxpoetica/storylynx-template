@@ -12,19 +12,20 @@
 <p>page: {page}</p>
 <p>pageSize: {pageSize}</p>
 <p>itemsCount: {itemsCount}</p> -->
-
-{#if items && items.length}
-	<div class="news-items">
-		{#each items as item}
-			<NewsItem {item}/>
-		{/each}
-	</div>
-	{#if itemsCount > pageSize}
-		<Pagination href="/news" {page} {pageSize} {items} {itemsCount}/>
+<div class="layout-main">
+	{#if items && items.length}
+		<div class="news-items">
+			{#each items as item}
+				<NewsItem {item}/>
+			{/each}
+		</div>
+		{#if itemsCount > pageSize}
+			<Pagination href="/news" {page} {pageSize} {items} {itemsCount}/>
+		{/if}
+	{:else}
+		<h2>Loading . . .</h2>
 	{/if}
-{:else}
-	<h2>Loading . . .</h2>
-{/if}
+</div>
 
 <script context="module">
 	import { POST } from '@johnny/utils/loaders'
@@ -55,6 +56,6 @@
 	.news-items {
 		display: flex;
 		flex-wrap: wrap;
-		margin: 0 -6rem 20rem;
+		margin: 0 -40rem 40rem;
 	}
 </style>
