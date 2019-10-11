@@ -4,7 +4,7 @@
 			<li> <b>&copy; Copyright 2019</b> </li>
 			<li><a data-on="{section === 'terms'}" href="/terms">Terms &amp; Conditions</a></li>
 			<li><a data-on="{section === 'privacy'}" href="/privacy-policy">Privacy Policy</a></li>
-			<a data-on="{section === 'global-styles'}" href="/global-styles">Global Styles</a>
+			<li><a data-on="{section === 'global-styles'}" href="/global-styles">Global Styles</a></li>
 		</ul>
 		<a class="cobranding" href="https://www.johnnymillerchampfoundation.org/" target="_blank">The Champ Foundation</a>
 	</div>
@@ -74,12 +74,12 @@
 				
 				text-decoration: underline ;
 			}
-		}
-		&[data-on=true] a {
-			text-decoration: underline;
-			color: $black;
-			font-weight: $bold;
-			cursor: default;
+			&[data-on=true] {
+				text-decoration: underline;
+				color: $black;
+				font-weight: $bold;
+				cursor: default;
+			}
 		}
 	}
 </style>
