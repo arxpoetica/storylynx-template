@@ -32,4 +32,20 @@
 		background: url('/img/logo.png') no-repeat center transparent;
 		background-size: contain;
 	}
+	@media (--medium-down) {
+		.layout-inner {
+			flex-direction: column;
+			justify-content: flex-start;
+		}
+	}
+	@media (--medium-to-small) {
+		.logo { margin-bottom: 16rem; }
+	}
+	@media (--smallest) {
+		.logo {
+			width: 100%;
+			height: 0;
+			padding-bottom: 25.3%;
+		}
+	}
 </style>

@@ -47,11 +47,11 @@
 	.asset {
 		flex: 1;
 		max-width: 400rem;
-		min-width: 300rem;
-		margin: 0 6rem 12rem;
-		padding: 12rem 20rem;
-		background-color: $gray-7;
-		box-shadow: 0 0 2px $gray-5;
+		min-width: 200rem;
+		margin: 0 20rem 12rem;
+		// padding: 12rem 20rem;
+		// background-color: $gray-7;
+		// box-shadow: 0 0 2px $gray-5;
 	}
 	h4 {
 		margin: 0 0 4rem;

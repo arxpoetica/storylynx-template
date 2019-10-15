@@ -831,6 +831,11 @@ body {
 	padding: 0 30rem;
 }
 
+@media (max-width: 767px) {
+
+.layout-outer { padding: 0 20rem
+} }
+
 .layout-inner {
 	width: 100%;
 	max-width: 1200rem;
@@ -840,6 +845,11 @@ body {
 .layout-main {
 	padding: 100rem 0;
 }
+
+@media (max-width: 767px) {
+
+.layout-main { padding: 40rem 0
+} }
 
 .full-width {
 	margin: 0 calc(50% - 50vw);

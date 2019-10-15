@@ -21,4 +21,10 @@
 		color: $red-main;
 		text-align: center;
 	}
+	@media (--medium) {
+		.layout-outer { padding: 6rem 20rem 30rem; }
+	}
+	@media (--small) {
+		.layout-outer { padding: 6rem 20rem 30rem; }
+	}
 </style>

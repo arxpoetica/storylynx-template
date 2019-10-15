@@ -28,7 +28,7 @@
 	}
 	li {
 		display: flex;
-		margin: 0 18px;
+		margin: 0 18rem;
 		// &[data-on=true] a {
 		// 	// border-bottom: 2rem solid black;
 		// 	text-decoration: underline;
@@ -44,6 +44,11 @@
 		&:focus::after {
 			width: 100%;
 		}
+		&::before {
+			content: '';
+			display: block;
+			height: 6rem;
+		}
 		&::after {
 			content: '';
 			display: block;
@@ -56,10 +61,17 @@
 			transition: width 0.4s ease-in-out;
 		}
 	}
-	// @media (--small) {
-	// 	nav {
-	// 		justify-content: center;
-	// 		margin-bottom: 20rem;
-	// 	}
-	// }
+	@media (--small) {
+		li {
+			margin: 0 10rem;
+		}
+	}
+	@media (--smallest) {
+		ul {
+			flex-direction: column;
+		}
+		li {
+			justify-content: center;
+		}
+	}
 </style>

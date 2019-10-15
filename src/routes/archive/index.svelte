@@ -42,6 +42,6 @@
 	.archive {
 		display: flex;
 		flex-wrap: wrap;
-		margin: 0 -6rem 20rem;
+		margin: 0 -20rem 20rem;
 	}
 </style>
