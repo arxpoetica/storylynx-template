@@ -1,13 +1,13 @@
 <footer class="layout-outer">
-	<div class="layout-inner">
+	<nav class="layout-inner">
 		<ul>
-			<li> <b>&copy; Copyright 2019</b> </li>
-			<li><a data-on="{section === 'terms'}" href="/terms">Terms &amp; Conditions</a></li>
-			<li><a data-on="{section === 'privacy'}" href="/privacy-policy">Privacy Policy</a></li>
-			<li><a data-on="{section === 'global-styles'}" href="/global-styles">Global Styles</a></li>
+			<li><span>Copyright &copy; 2019 <br>Johnny Miller</span></li>
+			<li><a href="/terms" data-on="{section === 'terms'}">Terms &amp; Conditions</a></li>
+			<li><a href="/privacy-policy" data-on="{section === 'privacy-policy'}">Privacy Policy</a></li>
+			<!-- <li><a href="/global-styles" data-on="{section === 'global-styles'}">Global Styles</a></li> -->
 		</ul>
-		<a class="cobranding" href="https://www.johnnymillerchampfoundation.org/" target="_blank">The Champ Foundation</a>
-	</div>
+		<a class="cobrand" href="https://www.johnnymillerchampfoundation.org/" target="_blank">The Champ Foundation</a>
+	</nav>
 </footer>
 
 <script>
@@ -16,70 +16,77 @@
 
 <style type="text/scss">
 	footer {
-		height: 150rem;
-		bottom: 0;
-		left: 0;
-		width: 100%;
+		padding-top: 40rem;
+		padding-bottom: 50rem;
 		background-color: $orange-light;
-		color: $black;
-		font: 13rem/1 $font;
-		a {
-			height: 28px;
-			padding: 0 8px;
-			border-radius: 1px;
-			color: $black;
-			line-height: 28rem;
-			text-decoration: none;
-			transition: background-color 0.15s ease-in-out;
-			&:hover,
-			&:focus {
-				text-decoration: underline;
-			}
-			&.cobranding {
-				margin-left: auto;
-			}
-		}
-		b {
-			height: 28px;
-			padding: 0 8px;
-			border-radius: 1px;
-			color: $black;
-			line-height: 28rem;
-		}
+		color: $gray-3;
+		font: $bold 13rem/1 $font;
+		text-transform: uppercase;
+		letter-spacing: 4rem;
 	}
 	.layout-inner {
 		display: flex;
+		flex-direction: column;
 		align-items: center;
-		justify-content: center;
 		margin: 0 auto;
 		padding: 16rem 0;
 	}
 	ul {
 		display: flex;
 	}
-	li {
+	ul {
 		display: flex;
-		margin: 0 2px;
-		a {
-			height: 28px;
-			padding: 0 8px;
-			border-radius: 1px;
-			color: $black;
-			line-height: 28rem;
-			text-decoration: none;
-			// margin-bottom: 2rem;
-			transition: text-decoration 0.15s ease-in-out;
-			&:hover,
-			&:focus {
-				
-				text-decoration: underline ;
-			}
-			&[data-on=true] {
-				text-decoration: underline;
-				color: $black;
-				font-weight: $bold;
-				cursor: default;
-			}
+		margin: 0 0 40rem;
+	}
+	li {
+		margin: 0 10rem;
+	}
+	span {
+		display: block;
+		padding: 6rem 0;
+	}
+	br { display: none; }
+	a {
+		color: $gray-3;
+		text-decoration: none;
+		&::before {
+			content: '';
+			display: block;
+			height: 6rem;
 		}
+		&::after {
+			content: '';
+			display: block;
+			position: relative;
+			left: -2rem; // there's a weird positioning issue w/ this font, hence the negative spacing
+			width: 0;
+			height: 2px;
+			margin: 4rem auto 0;
+			background-color: $gray-3;
+			transition: width 0.3s ease-in-out;
+		}
+		&:hover::after,
+		&:focus::after {
+			width: 100%;
+		}
+		&[data-on=true] {
+			pointer-events: none;
+			&::after { width: 100%; }
+		}
+	}
+	.cobrand {
+		color: black;
+		&::after { width: 100%; }
+	}
+	@media (--medium-down) {
+		ul {
+			flex-direction: column;
+		}
+		li {
+			display: flex;
+			justify-content: center;
+			text-align: center;
+		}
+		br { display: block; }
 	}
 </style>
