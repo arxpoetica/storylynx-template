@@ -26,7 +26,6 @@
 </script>
 
 <script>
-	// export let segment
 	import { formattedstamp } from '@johnny/utils/basic-utils'
 	export let article
 	$: tags = article.tags.map(tag => tag.tag)

@@ -1,7 +1,5 @@
 <svelte:head><title>Johnny Miller - News</title></svelte:head>
 
-<BannerHeader title="News"/>
-
 <!-- <ul>
 	<li><a href="/news?page=1&tags=family&tags=awards">page: 1, tag: family, awards</a></li>
 	<li><a href="/news?page=1&tags=1950s">tag: 1950s</a></li>
@@ -26,6 +24,7 @@
 		<h2>Loading . . .</h2>
 	{/if}
 </div>
+<BannerSignup/>
 
 <script context="module">
 	import { POST } from '@johnny/utils/loaders'
@@ -45,7 +44,6 @@
 	import { stores } from '@sapper/app'
 	const { page: pageStore } = stores()
 
-	export let segment
 	export let items = []
 	export let itemsCount = 0
 	export let pageSize = 0
