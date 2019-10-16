@@ -1,7 +1,7 @@
 {
   "name": "johnnymiller",
   "description": "Johnny Miller's personal website.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "SEE LICENCE IN LICENSE",
   "scripts": {
     "dev": "sapper dev",
