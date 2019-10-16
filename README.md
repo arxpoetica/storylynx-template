@@ -25,17 +25,6 @@ Is replaced with with the JWT secret.
 
 ## Deploying
 
-### delete the GCR image
+### Using Netlify to deploy
 
-	gcloud container images delete [IMAGE_NAME]
-
-### list all git commits since TAG
-
-	git log v0.1.0..HEAD --pretty=format:'%h'
-
-### list the commit sha1s for all TAGs
-
-git log --oneline --decorate --tags --no-walk --pretty=format:'%h'
-you take the full list (1st git command) and exclude the tags' commits (2nd git command)
-pipe the remaining results thru to gcloud. requires/assumes that your images are setup in this format:
-gcr.io/PROJECT/service_name:commit_hash
+...instructions to come...
