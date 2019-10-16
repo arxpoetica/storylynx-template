@@ -25,9 +25,7 @@ Is replaced with with the JWT secret.
 
 ## Deploying
 
-### Using Netlify to deploy
-
-...instructions to come...
+We're currently deployed on Google Cloud Run.
 
 ### Environment Variables
 
@@ -36,3 +34,6 @@ We're using a Google Cloud keyring to encrypt variables and import them directly
 	yarn run keyring
 
 That will encrypt the environment variables. Then commit the changes to `.env.enc` to this repo, and deploy as normal.
+
+### Deploying Changes
+

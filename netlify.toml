@@ -1,4 +1,0 @@
-[build]
-	command = "yarn run export"
-	publish = "__sapper__/export/"
-	# functions = "lambda"

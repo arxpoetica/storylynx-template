@@ -1,7 +1,7 @@
 {
   "name": "johnnymiller",
   "description": "Johnny Miller's personal website.",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "license": "SEE LICENCE IN LICENSE",
   "scripts": {
     "dev": "sapper dev",
@@ -17,7 +17,7 @@
     "dev:resources:generate": "node -r esm -r ./config.js scripts/resources-generate.js",
     "keyring": "gcloud kms encrypt --plaintext-file=.env.enc-source --ciphertext-file=.env.enc --location=global --keyring=johnny --key=cloudbuild-env",
     "publish": "gcloud builds submit --config=cloudbuild.yaml .",
-    "deploy": "beta run deploy dinoey --image gcr.io/arxpoetica/dinoey --region us-central1",
+    "deploy": "beta run deploy johnny --image gcr.io/arxpoetica/johnny --region us-central1",
     "bake": "run-s build publish deploy",
     "watch": "trim watch --svgo --postcss --json"
   },
