@@ -8,23 +8,27 @@
 		<AdminBar/>
 	{/if}
 	<Header {section}/>
-	<main class="main-{segment} layout-outer">
-		<div class="layout-inner">
-			<slot></slot>
-		</div>
-	</main>
+	<div class="layout-{section} layout-all">
+		<main class="layout-outer">
+			<div class="layout-inner">
+				<slot></slot>
+			</div>
+		</main>
+		<BannerSignup/>
+	</div>
 	<Footer {section}/>
 </div>
 
 <script>
 	import { onMount } from 'svelte'
 	import { stores } from '@sapper/app'
-	const { session } = stores()
+	const { session, page } = stores()
 	import { target } from '@johnny/stores/app-store'
 	import { hyphenate } from '@johnny/utils/basic-utils'
 
 	import Header from './_layout/Header.svelte'
 	import AdminBar from './admin/_components/AdminBar.svelte'
+	import BannerSignup from './_components/BannerSignup.svelte'
 	import Footer from './_layout/Footer.svelte'
 
 	// $: admin = $session.user || process.env.NODE_ENV === 'development'
@@ -32,8 +36,7 @@
 
 	// DOM ONLY STUFF ---------- >>>>
 	let html
-	export let segment
-	$: section = segment ? segment : 'home'
+	$: section = $page.path === '/' ? 'home' : $page.path.split('/')[1]
 	let priorSection
 	$: if (process.browser && html) {
 		if (admin) { html.classList.add('admin') }
@@ -91,16 +94,20 @@
 			grid-column: footer;
 		}
 	}
-	main {
+	.layout-all {
+		display: grid;
+		grid-template-areas:
+			"top"
+			"bottom";
+		grid-template-rows: 1fr auto;
+		grid-template-columns: 1fr;
+		// flex: 1;
 		grid-row: main;
 		grid-column: main;
 		margin: 0 auto;
 		width: 100%;
-		// padding-top: 30rem;
-		// padding-bottom: 30rem;
-		// :global(.admin-section) & {
-		// 	max-width: none;
-		// 	padding: 0;
-		// }
 	}
+	// .layout-outer {
+	// 	grid-row: top;
+	// }
 </style>

@@ -16,8 +16,9 @@
 	header {
 		background-color: $gray-light;
 		color: $black;
-		font: $bold 15rem/1 $font;
-		// z-index: $z-front;
+		font: $bold 13rem/1 $font;
+		text-transform: uppercase;
+		letter-spacing: 4rem;
 	}
 	.layout-inner {
 		display: flex;
@@ -31,5 +32,21 @@
 		height: 95rem;
 		background: url('/img/logo.png') no-repeat center transparent;
 		background-size: contain;
+	}
+	@media (--medium-down) {
+		.layout-inner {
+			flex-direction: column;
+			justify-content: flex-start;
+		}
+	}
+	@media (--medium-to-small) {
+		.logo { margin-bottom: 16rem; }
+	}
+	@media (--smallest) {
+		.logo {
+			width: 100%;
+			height: 0;
+			padding-bottom: 25.3%;
+		}
 	}
 </style>

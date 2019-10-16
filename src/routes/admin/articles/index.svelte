@@ -39,7 +39,6 @@
 	import List from '../_components/lists/List.svelte'
 	import ToolBar from './_tools/ToolBar.svelte'
 
-	// export let segment
 	let cols = [
 		{ type: 'asset', col: 'assets', title: 'Cover' },
 		{ type: 'url', col: 'title', title: 'Title', url: '/admin/articles/', slug: 'id', sort: true },

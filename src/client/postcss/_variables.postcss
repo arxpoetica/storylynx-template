@@ -24,14 +24,14 @@ $red-main: #cc5654;
 
 $green-main: #629275;
 
-$orange-light: #f9f3ea;
+$orange-light: #f8f3ea;
 
+$gray-3: #949699;
 
 // FIXME:
 $gray-dark: #3b5054;
 $gray-1: #4e5e61;
 $gray-2: #6b787b;
-$gray-3: #889294;
 $gray-4: #aeb6b8;
 $gray-5: #cbd0d1;
 $gray-6: #e1e5e6;
@@ -121,15 +121,18 @@ $z-front-modal: 10000;
 
 $res-smallest: 450px;
 $res-small: 768px;
-$res-medium: 1024px;
-$res-large: 1400px;
-$res-huge: 1900px;
+$res-medium: 900px;
+$res-large: 1100px;
+$res-huge: 1260px;
 
 @custom-media --smallest (width < $res-smallest);
-@custom-media --small (width < $res-small);
+@custom-media --small ($res-smallest <= width < $res-small);
+@custom-media --small-down (width < $res-small);
+@custom-media --small-up (width >= $res-smallest);
 @custom-media --medium ($res-small <= width < $res-medium);
 @custom-media --medium-down (width < $res-medium);
 @custom-media --medium-up (width >= $res-small);
+@custom-media --medium-to-small ($res-smallest <= width < $res-medium);
 @custom-media --large ($res-medium <= width < $res-large);
 @custom-media --large-up (width >= $res-medium);
 @custom-media --huge (width >= $res-large);

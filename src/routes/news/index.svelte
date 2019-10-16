@@ -1,7 +1,5 @@
 <svelte:head><title>Johnny Miller - News</title></svelte:head>
 
-<BannerHeader title="News"/>
-
 <!-- <ul>
 	<li><a href="/news?page=1&tags=family&tags=awards">page: 1, tag: family, awards</a></li>
 	<li><a href="/news?page=1&tags=1950s">tag: 1950s</a></li>
@@ -12,19 +10,21 @@
 <p>page: {page}</p>
 <p>pageSize: {pageSize}</p>
 <p>itemsCount: {itemsCount}</p> -->
-
-{#if items && items.length}
-	<div class="news-items">
-		{#each items as item}
-			<NewsItem {item}/>
-		{/each}
-	</div>
-	{#if itemsCount > pageSize}
-		<Pagination href="/news" {page} {pageSize} {items} {itemsCount}/>
+<div class="layout-main">
+	{#if items && items.length}
+		<div class="news-items">
+			{#each items as item}
+				<NewsItem {item}/>
+			{/each}
+		</div>
+		{#if itemsCount > pageSize}
+			<Pagination href="/news" {page} {pageSize} {items} {itemsCount}/>
+		{/if}
+	{:else}
+		<h2>Loading . . .</h2>
 	{/if}
-{:else}
-	<h2>Loading . . .</h2>
-{/if}
+</div>
+<BannerSignup/>
 
 <script context="module">
 	import { POST } from '@johnny/utils/loaders'
@@ -44,7 +44,6 @@
 	import { stores } from '@sapper/app'
 	const { page: pageStore } = stores()
 
-	// export let segment
 	export let items = []
 	export let itemsCount = 0
 	export let pageSize = 0
@@ -55,6 +54,6 @@
 	.news-items {
 		display: flex;
 		flex-wrap: wrap;
-		margin: 0 -6rem 20rem;
+		margin: 0 -40rem 40rem;
 	}
 </style>

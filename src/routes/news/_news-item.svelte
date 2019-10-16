@@ -10,7 +10,7 @@
 	</a>
 	<h3>{formattedstamp(item.publishedDatetime)}</h3>
 	<p>{summary}</p>
-	<!-- <a href="/assets/{item.id}" rel=prefetch>Explore</a> -->
+	<!-- <a href="/archive/{item.id}" rel=prefetch>Explore</a> -->
 	<Tags url="/news" {tags}/>
 </div>
 
@@ -48,10 +48,10 @@
 		flex: 1;
 		max-width: 400rem;
 		min-width: 300rem;
-		margin: 0 6rem 12rem;
-		padding: 12rem 20rem;
-		background-color: $gray-7;
-		box-shadow: 0 0 2px $gray-5;
+		margin: 0 20rem 40rem;
+		// padding: 12rem 20rem;
+		// background-color: $gray-7;
+		// box-shadow: 0 0 2px $gray-5;
 	}
 	.img {
 		margin: 0 0 12rem;

@@ -1,6 +1,10 @@
 <svelte:head><title>Johnny Miller - Home</title></svelte:head>
 
-<div class="content">
+<!-- <BannerHeader title="Contact"/> -->
+<div class="layout-main"></div>
+
+
+<!-- <div class="content">
 	<h1>Johnny Miller</h1>
 	<h2>His personal website.</h2>
 	<img src="/img/johnny-miller.jpg" alt="Johnny Miller wins an award.">
@@ -11,11 +15,12 @@
 			{JSON.stringify($session)}
 		{/if}
 	</div>
-</div>
+</div> -->
 
 <script>
-	import { stores } from '@sapper/app'
-	const { session } = stores()
+	// import { stores } from '@sapper/app'
+	// const { session } = stores()
+	// import BannerHeader from './_components/BannerHeader.svelte'
 </script>
 
 <!-- <style type="text/scss"></style> -->

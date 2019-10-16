@@ -1,0 +1,61 @@
+<div class="full-width layout-outer">
+	<div class="layout-inner">
+		<h2>Newsletter Signup</h2>
+		<div class="signup">
+			<input type="email" placeholder="Enter your email">
+			<button>Submit</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	export let title = ''
+</script>
+
+<style type="text/scss">
+	.layout-outer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: url('/img/singup-bg.jpg') repeat center $orange-light;
+		height: 375rem;
+		border: 36rem solid #323335;
+	}
+	h2 {
+		margin: 0 0 25rem;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 4rem;
+	}
+	.signup {
+		display: flex;
+		align-items: center;
+	}
+	input {
+		padding: 0 20rem;
+		height: 50rem;
+		margin: 0;
+		background-color: transparent;
+		border: 1px solid rgba(0, 0, 0, 0.3);
+		border-radius: 0;
+		font-size: 22rem;
+		&:focus {
+			background-color: transparent;
+		}
+	}
+	button {
+		margin: 0 0 0 10rem;
+		padding: 0 40rem;
+		height: 50rem;
+		border: 1px solid rgba(0, 0, 0, 0.3);
+		font: $bold 15rem/1 $font;
+		text-transform: uppercase;
+		letter-spacing: 6rem;
+	}
+	// @media (--medium) {
+	// 	// .layout-outer { padding: 6rem 20rem 30rem; }
+	// }
+	// @media (--small) {
+	// 	// .layout-outer { padding: 6rem 20rem 30rem; }
+	// }
+</style>

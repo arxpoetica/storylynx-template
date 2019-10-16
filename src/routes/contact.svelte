@@ -1,3 +1,10 @@
 <svelte:head><title>Johnny Miller - Contact</title></svelte:head>
 
-<h1>Contact</h1>
+<BannerHeader title="Contact"/>
+<div class="layout-main">
+</div>
+
+
+<script>
+	import BannerHeader from './_components/BannerHeader.svelte'
+</script>
