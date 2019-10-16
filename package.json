@@ -15,6 +15,10 @@
     "dev:externalassets-1:generate": "node -r esm -r ./config.js scripts/externalassets-generate-1.js",
     "dev:externalassets-2:generate": "node -r esm -r ./config.js scripts/externalassets-generate-2.js",
     "dev:resources:generate": "node -r esm -r ./config.js scripts/resources-generate.js",
+    "keyring": "gcloud kms encrypt --plaintext-file=.env.enc-source --ciphertext-file=.env.enc --location=global --keyring=johnny --key=cloudbuild-env",
+    "publish": "gcloud builds submit --config=cloudbuild.yaml .",
+    "deploy": "beta run deploy dinoey --image gcr.io/arxpoetica/dinoey --region us-central1",
+    "bake": "run-s build publish deploy",
     "watch": "trim watch --svgo --postcss --json"
   },
   "dependencies": {

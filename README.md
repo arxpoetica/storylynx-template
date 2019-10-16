@@ -28,3 +28,11 @@ Is replaced with with the JWT secret.
 ### Using Netlify to deploy
 
 ...instructions to come...
+
+### Environment Variables
+
+We're using a Google Cloud keyring to encrypt variables and import them directly in an encoded `.env.enc` file. If you need to add, change, or delete any environment variables, make sure the `.env.enc-source` file exists with all appropriate environment variables, then run:
+
+	yarn run keyring
+
+That will encrypt the environment variables. Then commit the changes to `.env.enc` to this repo, and deploy as normal.

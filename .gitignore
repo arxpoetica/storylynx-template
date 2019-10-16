@@ -4,6 +4,7 @@
 .env
 .env.*
 !.env.defaults
+!.env.enc
 /_hidden
 /src/routes/_refresh.svelte
 
