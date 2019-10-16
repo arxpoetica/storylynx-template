@@ -32,7 +32,7 @@ steps:
 
 # deploy the container image to cloud run
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'johnny', '--image', 'gcr.io/$PROJECT_ID/johnny', '--region', 'us-central1']
+  args: ['beta', 'run', 'deploy', 'johnny', '--image', 'gcr.io/$PROJECT_ID/johnny', '--region', 'us-central1', '--platform', 'managed']
 
 images:
 - gcr.io/$PROJECT_ID/johnny
