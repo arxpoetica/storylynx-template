@@ -10,5 +10,5 @@
 /node_modules
 !/src/node_modules
 /src/node_modules/@sapper
-/src/build/firebase.json
+/firebase.json
 /src/routes/admin/_components/dist

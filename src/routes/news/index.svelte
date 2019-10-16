@@ -24,7 +24,6 @@
 		<h2>Loading . . .</h2>
 	{/if}
 </div>
-<BannerSignup/>
 
 <script context="module">
 	import { POST } from '@johnny/utils/loaders'

@@ -1,33 +1,33 @@
-import { yellow, magenta } from 'ansi-colors'
-import './src/build/config'
+import { config as johnnyConfig } from './config.js'
+const rollupVars = johnnyConfig.getAll()
 
-import resolve from 'rollup-plugin-node-resolve';
-import replace from 'rollup-plugin-replace';
-import commonjs from 'rollup-plugin-commonjs';
+import resolve from 'rollup-plugin-node-resolve'
+import replace from 'rollup-plugin-replace'
+import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
-import svelte from 'rollup-plugin-svelte';
-import babel from 'rollup-plugin-babel';
-import { terser } from 'rollup-plugin-terser';
-import config from 'sapper/config/rollup.js';
-import pkg from './package.json';
+import svelte from 'rollup-plugin-svelte'
+import babel from 'rollup-plugin-babel'
+import { terser } from 'rollup-plugin-terser'
+import config from 'sapper/config/rollup.js'
+import pkg from './package.json'
 import { preprocess } from '@sapper-dragon/postcss/tools'
 
-import sharedVars from './src/build/rollup.vars'
+const dev = process.env.NODE_ENV === 'development'
+const legacy = !!process.env.SAPPER_LEGACY_BUILD
 
-const mode = process.env.NODE_ENV;
-const dev = mode === 'development';
-const legacy = !!process.env.SAPPER_LEGACY_BUILD;
+const onwarn = (warning, onwarn) => (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) || onwarn(warning)
+const dedupe = importee => importee === 'svelte' || importee.startsWith('svelte/')
 
 export default {
 	client: {
 		input: config.client.input(),
 		output: config.client.output(),
-		onwarn,
 		plugins: [
-			replace(Object.assign({
+			replace({
 				'process.browser': true,
 				'process.server': false,
-			}, sharedVars)),
+				...rollupVars,
+			}),
 			svelte({
 				dev,
 				extensions: ['.html', '.svelte', '.svg'],
@@ -36,7 +36,10 @@ export default {
 				preprocess: preprocess('client'),
 			}),
 			json(),
-			resolve({ browser: true }),
+			resolve({
+				browser: true,
+				dedupe,
+			}),
 			commonjs(),
 
 			legacy && babel({
@@ -60,17 +63,18 @@ export default {
 				module: true,
 			}),
 		],
+		onwarn,
 	},
 
 	server: {
 		input: config.server.input(),
 		output: config.server.output(),
-		onwarn,
 		plugins: [
-			replace(Object.assign({
+			replace({
 				'process.browser': false,
 				'process.server': true,
-			}, sharedVars)),
+				...rollupVars,
+			}),
 			svelte({
 				dev,
 				extensions: ['.html', '.svelte', '.svg'],
@@ -78,27 +82,13 @@ export default {
 				preprocess: preprocess('server'),
 			}),
 			json(),
-			resolve(),
+			resolve({ dedupe }),
 			commonjs(),
 		],
 		external: Object.keys(pkg.dependencies).concat(
 			require('module').builtinModules || Object.keys(process.binding('natives'))
 		),
+		onwarn,
 	},
 
-};
-
-function onwarn(warning) {
-	// Silence circular dependency warning for @sapper shtuff
-	if (
-		warning.code === 'CIRCULAR_DEPENDENCY' &&
-		warning.message.indexOf(' -> src/node_modules/@sapper')
-	) {
-		return
-	}
-	console.log()
-	console.log(yellow(warning.message))
-	console.log('in', magenta(warning.filename))
-	if (warning.frame) { console.log(warning.frame) }
-	console.log()
 }
