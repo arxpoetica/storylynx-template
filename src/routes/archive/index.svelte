@@ -32,6 +32,7 @@
 	import BannerHeader from '../_components/BannerHeader.svelte'
 	import Asset from './_components/Asset.svelte'
 
+	export let segment
 	export let items = []
 	export let itemsCount = 0
 	export let pageSize = 0

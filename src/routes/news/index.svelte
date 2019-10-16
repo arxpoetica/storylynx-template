@@ -45,7 +45,7 @@
 	import { stores } from '@sapper/app'
 	const { page: pageStore } = stores()
 
-	// export let segment
+	export let segment
 	export let items = []
 	export let itemsCount = 0
 	export let pageSize = 0

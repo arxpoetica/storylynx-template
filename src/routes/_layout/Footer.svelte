@@ -3,7 +3,7 @@
 		<ul>
 			<li><span>Copyright &copy; 2019 <br>Johnny Miller</span></li>
 			<li><a href="/terms" data-on="{section === 'terms'}">Terms &amp; Conditions</a></li>
-			<li><a href="/privacy-policy" data-on="{section === 'privacy-policy'}">Privacy Policy</a></li>
+			<li><a href="/privacy" data-on="{section === 'privacy'}">Privacy Policy</a></li>
 			<!-- <li><a href="/global-styles" data-on="{section === 'global-styles'}">Global Styles</a></li> -->
 		</ul>
 		<a class="cobrand" href="https://www.johnnymillerchampfoundation.org/" target="_blank">The Champ Foundation</a>
