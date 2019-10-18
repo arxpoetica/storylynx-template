@@ -28,8 +28,8 @@
 	import { onMount } from 'svelte'
 	import { stores } from '@sapper/app'
 	const { page: pageStore } = stores()
-	import BannerHeader from '../_components/BannerHeader.svelte'
-	import Asset from './_components/Asset.svelte'
+	import BannerHeader from '@johnny/svelte/BannerHeader.svelte'
+	import Asset from '@johnny/svelte/archive/Asset.svelte'
 
 	export let items = []
 	export let itemsCount = 0

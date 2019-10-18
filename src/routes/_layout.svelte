@@ -4,9 +4,9 @@
 {/if} -->
 
 <div class="site">
-	{#if admin}
+	<!-- {#if admin}
 		<AdminBar/>
-	{/if}
+	{/if} -->
 	<Header {section}/>
 	<div class="layout-{section} layout-all">
 		<main class="layout-outer">
@@ -27,8 +27,8 @@
 	import { hyphenate } from '@johnny/utils/basic-utils'
 
 	import Header from './_layout/Header.svelte'
-	import AdminBar from './admin/_components/AdminBar.svelte'
-	import BannerSignup from './_components/BannerSignup.svelte'
+	// import AdminBar from './admin/_components/AdminBar.svelte'
+	import BannerSignup from '@johnny/svelte/BannerSignup.svelte'
 	import Footer from './_layout/Footer.svelte'
 
 	// $: admin = $session.user || process.env.NODE_ENV === 'development'

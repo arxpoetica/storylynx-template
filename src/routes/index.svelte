@@ -1,7 +1,11 @@
 <svelte:head><title>Johnny Miller - Home</title></svelte:head>
 
 <!-- <BannerHeader title="Contact"/> -->
-<div class="layout-main"></div>
+<div class="layout-main">
+
+	<p><a href="/global-styles">Global Styles</a></p>
+
+</div>
 
 
 <!-- <div class="content">
@@ -20,7 +24,7 @@
 <script>
 	// import { stores } from '@sapper/app'
 	// const { session } = stores()
-	// import BannerHeader from './_components/BannerHeader.svelte'
+	// import BannerHeader from '@johnny/svelte/BannerHeader.svelte'
 </script>
 
 <!-- <style type="text/scss"></style> -->

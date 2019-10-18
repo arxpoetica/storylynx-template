@@ -3,5 +3,5 @@
 <BannerHeader title="Terms &amp; Conditions"/>
 
 <script>
-	import BannerHeader from './_components/BannerHeader.svelte'
+	import BannerHeader from '@johnny/svelte/BannerHeader.svelte'
 </script>
