@@ -1,7 +1,11 @@
 <svelte:head><title>Johnny Miller - Home</title></svelte:head>
 
 <!-- <BannerHeader title="Contact"/> -->
-<div class="layout-main"></div>
+<div class="layout-main">
+
+	<p><a href="/global-styles">Global Styles</a></p>
+
+</div>
 
 
 <!-- <div class="content">
