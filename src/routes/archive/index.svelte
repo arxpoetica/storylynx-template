@@ -1,13 +1,16 @@
-<svelte:head><title>Johnny Miller - Assets</title></svelte:head>
+<svelte:head><title>Johnny Miller - Archive</title></svelte:head>
 
 <BannerHeader title="Archive"/>
 <div class="layout-main">
 	{#if items.length}
 		<div class="archive">
-			{#each items as asset}
-				<Asset {asset}/>
+			{#each items as item}
+				<ArchiveItem {item}/>
 			{/each}
 		</div>
+		{#if itemsCount > pageSize}
+			<Pagination href="/news" {page} {pageSize} {items} {itemsCount}/>
+		{/if}
 	{:else}
 		<h2>Loading . . .</h2>
 	{/if}
@@ -25,11 +28,11 @@
 </script>
 
 <script>
-	import { onMount } from 'svelte'
+	import BannerHeader from '@johnny/svelte/BannerHeader.svelte'
+	import Pagination from '@johnny/svelte/page-lists/Pagination.svelte'
+	import ArchiveItem from '@johnny/svelte/archive/ArchiveItem.svelte'
 	import { stores } from '@sapper/app'
 	const { page: pageStore } = stores()
-	import BannerHeader from '@johnny/svelte/BannerHeader.svelte'
-	import Asset from '@johnny/svelte/archive/Asset.svelte'
 
 	export let items = []
 	export let itemsCount = 0
@@ -41,6 +44,6 @@
 	.archive {
 		display: flex;
 		flex-wrap: wrap;
-		margin: 0 -20rem 20rem;
+		margin: 0 -40rem 40rem;
 	}
 </style>
