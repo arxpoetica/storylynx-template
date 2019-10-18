@@ -1,5 +1,8 @@
 export default {
-	json: { input: 'src/client/json' },
+	json: {
+		input: 'src/client/json',
+		outputStatic: 'scripts/data',
+	},
 	postcss: { input: 'src/client/postcss' },
 	svgo: {
 		input: 'src/client/svgo',
