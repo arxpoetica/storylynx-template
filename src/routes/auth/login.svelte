@@ -1,20 +1,22 @@
-<form on:submit={submit}>
-	<h1>Log In</h1>
-	{#if message}
-		<!-- FIXME: turn this into a component -->
-		<div class="error">{message}</div>
-	{/if}
-	<div class="border">
-		<label>Username
-			<!-- autofocus="autofocus" -->
-			<input bind:value={username} type="text" name="username" required="required">
-		</label>
-		<label>Password
-			<input bind:value={password} type="password" name="password" required="required">
-		</label>
-	</div>
-	<button type="submit" class="button">Log In</button>
-</form>
+<BannerHeader title="Log In"/>
+<div class="layout-main">
+	<form on:submit={submit}>
+		{#if message}
+			<!-- FIXME: turn this into a component -->
+			<div class="error">{message}</div>
+		{/if}
+		<div class="border">
+			<label>Username
+				<!-- autofocus="autofocus" -->
+				<input bind:value={username} type="text" name="username" required="required">
+			</label>
+			<label>Password
+				<input bind:value={password} type="password" name="password" required="required">
+			</label>
+		</div>
+		<button type="submit" class="button">Log In</button>
+	</form>
+</div>
 
 <script context="module">
 	export function preload(page, session) {
@@ -27,6 +29,7 @@
 	import { stores } from '@sapper/app'
 	const { session } = stores()
 	import { POST } from '@johnny/utils/loaders'
+	import BannerHeader from '../_components/BannerHeader.svelte'
 
 	let message
 	let username = ''

@@ -37,3 +37,7 @@ That will encrypt the environment variables. Then commit the changes to `.env.en
 
 ### Deploying Changes
 
+The following command publishes a new target.
+
+	yarn run publish
+
