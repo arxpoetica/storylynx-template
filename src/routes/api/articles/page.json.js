@@ -6,7 +6,7 @@ export async function post(req, res) {
 
 		let { page, pageSize, tags } = req.body
 		page = parseInt(page || 1)
-		pageSize = parseInt(pageSize || 3) // just hard coding for now
+		pageSize = parseInt(pageSize || 9) // just hard coding for now
 		tags = typeof tags === 'string' ? [tags] : tags
 
 		let where
@@ -30,14 +30,14 @@ export async function post(req, res) {
 				title
 				slug
 				summary
-				assets { id url summary handle fileName }
+				assets { id url summary handle mimeType fileName }
 				tags { tag }
 			}
 
 			articlesConnection(where: ${where}) { aggregate { count } }
 		}`)
 
-		res.json({
+		return res.json({
 			pageSize,
 			items: articles,
 			itemsCount: articlesConnection.aggregate.count,
@@ -45,7 +45,7 @@ export async function post(req, res) {
 
 	} catch (error) {
 		console.log(error)
-		res.json({ error: 1, message: error.message })
+		return res.json({ error: 1, message: error.message })
 	}
 
 }

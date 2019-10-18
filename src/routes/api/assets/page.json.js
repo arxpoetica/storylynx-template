@@ -6,7 +6,7 @@ export async function post(req, res) {
 
 		let { page, pageSize, tags } = req.body
 		page = parseInt(page || 1)
-		pageSize = parseInt(pageSize || 20) // just hard coding for now
+		pageSize = parseInt(pageSize || 9) // just hard coding for now
 		tags = typeof tags === 'string' ? [tags] : tags
 
 		let where
@@ -38,7 +38,7 @@ export async function post(req, res) {
 			resourcesConnection(where: ${where}) { aggregate { count } }
 		}`)
 
-		res.json({
+		return res.json({
 			pageSize,
 			items: resources,
 			itemsCount: resourcesConnection.aggregate.count,

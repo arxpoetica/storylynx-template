@@ -1,5 +1,6 @@
 <svelte:head><title>Johnny Miller - News</title></svelte:head>
 
+<BannerHeader title="News"/>
 <!-- <ul>
 	<li><a href="/news?page=1&tags=family&tags=awards">page: 1, tag: family, awards</a></li>
 	<li><a href="/news?page=1&tags=1950s">tag: 1950s</a></li>
@@ -11,7 +12,7 @@
 <p>pageSize: {pageSize}</p>
 <p>itemsCount: {itemsCount}</p> -->
 <div class="layout-main">
-	{#if items && items.length}
+	{#if items.length}
 		<div class="news-items">
 			{#each items as item}
 				<NewsItem {item}/>
