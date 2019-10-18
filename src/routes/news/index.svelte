@@ -37,9 +37,9 @@
 </script>
 
 <script>
-	import BannerHeader from '../_components/BannerHeader.svelte'
-	import Pagination from '../_components/page-lists/Pagination.svelte'
-	import NewsItem from './_news-item.svelte'
+	import BannerHeader from '@johnny/svelte/BannerHeader.svelte'
+	import Pagination from '@johnny/svelte/page-lists/Pagination.svelte'
+	import NewsItem from '@johnny/svelte/news/NewsItem.svelte'
 	import { stores } from '@sapper/app'
 	const { page: pageStore } = stores()
 

@@ -24,7 +24,7 @@
 <script>
 	// import { stores } from '@sapper/app'
 	// const { session } = stores()
-	// import BannerHeader from './_components/BannerHeader.svelte'
+	// import BannerHeader from '@johnny/svelte/BannerHeader.svelte'
 </script>
 
 <!-- <style type="text/scss"></style> -->

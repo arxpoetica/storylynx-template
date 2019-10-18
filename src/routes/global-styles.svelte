@@ -1,8 +1,8 @@
 <svelte:head><title>Johnny Miller - Global Styles</title></svelte:head>
 
-<h1>Global Styles</h1>
+<BannerHeader title="Global Styles"/>
 
-<section class="styles">
+<div class="layout-main">
 	<h1>H1. Lorem ipsum dolor sit amet</h1>
 	<h2>H2. Lorem ipsum dolor sit amet</h2>
 	<h3>H3. Lorem ipsum dolor sit amet</h3>
@@ -47,7 +47,12 @@
 
 	<p class="gs-label">.gray | #505050</p>
 	<div class="color-block gray">&nbsp;</div>
-</section>
+</div>
+
+<script>
+	import BannerHeader from '@johnny/svelte/BannerHeader.svelte'
+</script>
+
 
 <style type="text/scss">
 	.gs-label {
