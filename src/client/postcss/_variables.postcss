@@ -134,7 +134,9 @@ $res-huge: 1260px;
 @custom-media --medium-up (width >= $res-small);
 @custom-media --medium-to-small ($res-smallest <= width < $res-medium);
 @custom-media --large ($res-medium <= width < $res-large);
+@custom-media --large-down (width < $res-large);
 @custom-media --large-up (width >= $res-medium);
+@custom-media --large-to-medium ($res-small <= width < $res-large);
 @custom-media --huge (width >= $res-large);
 @custom-media --max (width >= $res-huge);
 

@@ -44,8 +44,16 @@
 	.archive {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
-		// grid-column-gap: 75rem;
-		// grid-row-gap: 100rem;
 		margin: 0 0 100rem;
+	}
+	@media (--large-to-medium) {
+		.archive {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+	@media (--small-down) {
+		.archive {
+			display: block;
+		}
 	}
 </style>
