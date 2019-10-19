@@ -14,7 +14,7 @@
     "publish": "gcloud builds submit --config=cloudbuild.yaml .",
     "deploy": "beta run deploy johnny --image gcr.io/arxpoetica/johnny --region us-central1",
     "bake": "run-s build publish deploy",
-    "dev:archive:generate": "node -r esm -e 'require(\"./config\").config.getAll()' src/scripts/archive-generate.js",
+    "dev:archive:generate": "node -r esm src/scripts/archive-generate.js",
     "watch": "trim watch --svgo --postcss --json"
   },
   "dependencies": {
