@@ -1,7 +1,7 @@
 import { magenta } from 'ansi-colors'
 import { loremIpsum } from 'lorem-ipsum'
 import { resources } from './resources-sample-data'
-import { assetIds } from '../src/client/js/json-helpers'
+import { assetIds } from '../../client/js/json-helpers'
 import { random } from '@johnny/utils/basic-utils'
 import { cmsMutate } from '@johnny/utils/loaders'
 

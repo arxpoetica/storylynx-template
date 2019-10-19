@@ -10,15 +10,11 @@
     "start": "node __sapper__/build",
     "debug": "sapper dev --inspect",
     "debug:build": "node --inspect --inspect-brk ./node_modules/sapper/sapper build --legacy",
-    "dev:articles:generate": "node -r esm -r ./config.js scripts/articles-generate.js",
-    "dev:articles:fix": "node -r esm -r ./config.js scripts/articles-fix.js",
-    "dev:externalassets-1:generate": "node -r esm -r ./config.js scripts/externalassets-generate-1.js",
-    "dev:externalassets-2:generate": "node -r esm -r ./config.js scripts/externalassets-generate-2.js",
-    "dev:resources:generate": "node -r esm -r ./config.js scripts/resources-generate.js",
     "keyring": "gcloud kms encrypt --plaintext-file=.env.enc-source --ciphertext-file=.env.enc --location=global --keyring=johnny --key=cloudbuild-env",
     "publish": "gcloud builds submit --config=cloudbuild.yaml .",
     "deploy": "beta run deploy johnny --image gcr.io/arxpoetica/johnny --region us-central1",
     "bake": "run-s build publish deploy",
+    "dev:archive:generate": "node -r esm src/scripts/archive-generate.js",
     "watch": "trim watch --svgo --postcss --json"
   },
   "dependencies": {

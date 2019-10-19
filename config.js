@@ -2,6 +2,8 @@ import fs from 'fs'
 import path from 'path'
 import dotenv from 'dotenv'
 
+// FIXME: getAll should just HAPPEN in this file, and cache
+// NO NEED TO CALL IT
 export const config = {
 	cached: undefined,
 	getAll() {

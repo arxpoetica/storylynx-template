@@ -13,4 +13,4 @@
 /src/node_modules/@sapper
 /firebase.json
 /src/routes/admin/_components/dist
-/scripts/JM_SELECTS_FOR_ARCHIVE
+/src/scripts/data/JM_SELECTS_FOR_ARCHIVE

@@ -2,7 +2,7 @@ import { magenta } from 'ansi-colors'
 import { loremIpsum } from 'lorem-ipsum'
 import { cmsMutate } from '@johnny/utils/loaders'
 import { random, unique } from '@johnny/utils/basic-utils'
-import { tags/* , mimeTypeEnums */ } from '../src/client/js/json-helpers'
+import { tags/* , mimeTypeEnums */ } from '../../client/js/json-helpers'
 
 const arr = [...Array(49).keys()]
 arr.forEach(async(item, index) => {
