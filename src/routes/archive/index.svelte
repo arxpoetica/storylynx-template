@@ -42,8 +42,10 @@
 
 <style type="text/scss">
 	.archive {
-		display: flex;
-		flex-wrap: wrap;
-		margin: 0 -40rem 40rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		// grid-column-gap: 75rem;
+		// grid-row-gap: 100rem;
+		margin: 0 0 100rem;
 	}
 </style>
