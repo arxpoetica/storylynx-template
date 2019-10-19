@@ -1,4 +1,4 @@
-import { filenames } from '../../../scripts/data/archive-real-assets-data'
+import { filenames } from '../../scripts/data/archive-real-assets-data'
 
 
 // import { loremIpsum } from 'lorem-ipsum'

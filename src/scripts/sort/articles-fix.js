@@ -1,6 +1,6 @@
 import { magenta, red } from 'ansi-colors'
 import articles from './articles-fix-data'
-import { cmsMutate } from '../src/node_modules/@johnny/utils/loaders'
+import { cmsMutate } from '@johnny/utils/loaders'
 
 async function runMutation(article, index) {
 
