@@ -13,23 +13,23 @@
 			{/if}
 		</h1>
 		<h2 class="h6">Archive | {asset.contentType || 'Uncategorized'}</h2>
-		<!-- <h2>{formattedstamp(asset.createdAt)}</h2> -->
 	</div>
 	<div class="img">
 		<LazyImg {src} {alt}/>
 	</div>
 	<div class="post-texts">
 		<div class="content">
-			{@html asset.html}
+			{@html asset.content}
 		</div>
-		<!-- FIXME: provide a source -->
-		<h3 class="h6">Source: Lorem Ipsum Dolor Sit Amet</h3>
+		{#if asset.source}
+			<h3 class="source h6">Source: {asset.source}</h3>
+		{/if}
 		{#if tags.length}
 			<div class="tag-group">
 				<h4 class="h6">Tags:</h4>
 				<div class="tags">
 					{#each tags as tag, index}
-						<strong>{tag}</strong>
+						<div class="tag h6">{tag}</div>
 					{/each}
 				</div>
 			</div>
@@ -52,8 +52,11 @@
 
 	export let asset
 	$: src = source(asset.assets.length ? asset.assets[0] : null, { crop: true })
+	// FIXME: ????
 	$: alt = asset.summary ? asset.summary : 'No description for this asset.'
 	$: tags = asset.tags.map(tag => tag.tag)
+		.concat(asset.contentType ? asset.contentType : [])
+		.concat(asset.decade ? asset.decade : [])
 </script>
 
 <style type="text/scss">
@@ -63,7 +66,10 @@
 		align-items: center;
 		text-align: center;
 	}
-	h1 span { display: block; }
+	h1 {
+		margin: 0 0 40rem;
+		span { display: block; }
+	}
 	h2 {
 		margin: 0 0 15rem;
 		color: $red-main;
@@ -75,5 +81,29 @@
 	.post-texts {
 		max-width: 500rem;
 		margin: 0 auto 100rem;
+	}
+	.content {
+		margin: 0 0 20rem;
+	}
+	.source {
+		margin: 0 0 35rem;
+	}
+	.tag-group {
+		display: flex;
+		h4 {
+			margin-right: 12rem;
+			line-height: 30rem;
+		}
+		.tags {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.tag {
+			margin: 0 10rem 10rem 0;
+			padding: 0 10rem;
+			height: 30rem;
+			line-height: 30rem;
+			border: 1px solid #bfbfbf;
+		}
 	}
 </style>

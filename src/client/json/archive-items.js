@@ -13,8 +13,8 @@ export const compile = () => {
 			publishedDatetime: (new Date()).toISOString(),
 			title: `Archive Asset #${get_file_number(item)}`,
 			slug: 'archival-asset-' + item.id + '-' + get_file_number(item),
-			html: `${get_html('h2')}${get_html('p')}${get_html('p')}`,
-			summary: get_text(7, 20),
+			content: `${get_html('h2')}${get_html('p')}${get_html('p')}`,
+			// summary: get_text(7, 20),
 			// assets { id url summary handle mimeType fileName }
 			assetId: item.id,
 			// externalAssets

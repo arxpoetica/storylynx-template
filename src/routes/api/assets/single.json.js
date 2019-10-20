@@ -7,12 +7,13 @@ export async function post(req, res) {
 			resource(where: { slug: "${req.body.slug}" }) {
 				publishedDatetime
 				title
-				html
+				content
 				assets { id url summary handle fileName }
 				externalAssets
 				tags { tag }
 				contentType
 				decade
+				source
 			}
 		}`)
 		// console.log(resource)

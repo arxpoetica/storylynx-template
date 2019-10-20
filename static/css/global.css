@@ -33,7 +33,7 @@ b, strong {
 h1, .h1 {
 	margin: 0 0 20rem;
 	color: inherit;
-	font: 200 40rem/1.3 'Cerapro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font: 200 40rem/1.25 'Cerapro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	letter-spacing: 0.02em;
 	text-transform: uppercase;
 }
