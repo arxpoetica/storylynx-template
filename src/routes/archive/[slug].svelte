@@ -18,17 +18,25 @@
 	<div class="img">
 		<LazyImg {src} {alt}/>
 	</div>
-	<div class="content">
-		{@html asset.html}
+	<div class="post-texts">
+		<div class="content">
+			{@html asset.html}
+		</div>
+		<!-- FIXME: provide a source -->
+		<h3 class="h6">Source: Lorem Ipsum Dolor Sit Amet</h3>
+		{#if tags.length}
+			<div class="tag-group">
+				<h4 class="h6">Tags:</h4>
+				<div class="tags">
+					{#each tags as tag, index}
+						<strong>{tag}</strong>
+					{/each}
+				</div>
+			</div>
+		{/if}
 	</div>
 </div>
 
-<h4>Tags:</h4>
-<div class="tags">
-	{#each tags as tag, index}
-		<strong>{tag}</strong>
-	{/each}
-</div>
 
 <script context="module">
 	import { POST } from '@johnny/utils/loaders'
@@ -59,5 +67,13 @@
 	h2 {
 		margin: 0 0 15rem;
 		color: $red-main;
+	}
+	.img {
+		max-width: 720rem;
+		margin: 0 auto 100rem;
+	}
+	.post-texts {
+		max-width: 500rem;
+		margin: 0 auto 100rem;
 	}
 </style>
