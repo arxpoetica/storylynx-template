@@ -30,10 +30,8 @@ export async function post(req, res) {
 				publishedDatetime
 				title
 				slug
-				summary
 				assets { id url summary handle mimeType fileName }
 				externalAssets
-				tags { tag }
 				contentType
 				decade
 			}

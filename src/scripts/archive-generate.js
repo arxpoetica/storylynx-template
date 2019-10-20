@@ -23,8 +23,7 @@ async function runMutation(source, index) {
 				title: "${source.title}"
 				slug: "${source.slug}"
 				publishedDatetime: "${(new Date()).toISOString()}"
-				html: "${source.html}"
-				summary: "${source.summary}"
+				content: "${source.content}"
 				assets: { connect: $assets }
 			} ) {
 				id
@@ -32,8 +31,7 @@ async function runMutation(source, index) {
 				publishedDatetime
 				title
 				slug
-				html
-				summary
+				content
 				assets { id url summary handle fileName }
 			}
 		}

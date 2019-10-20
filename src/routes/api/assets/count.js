@@ -14,7 +14,6 @@ export async function post(req, res) {
 				createdAt
 				title
 				content { text }
-				summary
 				assets { url attribution handle fileName }
 				tags { tag }
 			}

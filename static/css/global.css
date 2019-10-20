@@ -33,7 +33,7 @@ b, strong {
 h1, .h1 {
 	margin: 0 0 20rem;
 	color: inherit;
-	font: 200 40rem/1 'Cerapro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font: 200 40rem/1.25 'Cerapro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	letter-spacing: 0.02em;
 	text-transform: uppercase;
 }
@@ -75,13 +75,15 @@ h5, .h5 {
 }
 
 h6, .h6 {
-	margin: 0 0 9px;
+	margin: 0;
 	color: inherit;
 	font-family: 'Cerapro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 17px;
-	font-size: 16rem;
+	font-size: 12px;
+	font-size: 12rem;
 	font-weight: 600;
-	line-height: 1.38;
+	line-height: 1;
+	text-transform: uppercase;
+	letter-spacing: 1.5rem;
 }
 
 p {
