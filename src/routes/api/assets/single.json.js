@@ -12,7 +12,8 @@ export async function post(req, res) {
 				externalAssets
 				tags { tag }
 				contentType
-				decade
+				decadeOld
+				year
 				source
 			}
 		}`)

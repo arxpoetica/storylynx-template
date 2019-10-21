@@ -33,7 +33,8 @@ export async function post(req, res) {
 				assets { id url summary handle mimeType fileName }
 				externalAssets
 				contentType
-				decade
+				decadeOld
+				year
 			}
 
 			resourcesConnection(where: ${where}) { aggregate { count } }
