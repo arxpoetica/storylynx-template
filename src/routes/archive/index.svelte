@@ -2,7 +2,7 @@
 
 <BannerHeader title="Archive"/>
 <div class="layout-main">
-	<ArchiveToolbar bind:contentValue bind:decadeValue/>
+	<ArchiveToolbar bind:contentValue bind:decadeValue on:filter={filter}/>
 	{#if items.length}
 		<div class="archive">
 			{#each items as item}
@@ -33,16 +33,28 @@
 	import Pagination from '@johnny/svelte/page-lists/Pagination.svelte'
 	import ArchiveToolbar from '@johnny/svelte/archive/ArchiveToolbar.svelte'
 	import ArchiveItem from '@johnny/svelte/archive/ArchiveItem.svelte'
-	import { stores } from '@sapper/app'
+	import { stores, goto } from '@sapper/app'
 	const { page: pageStore } = stores()
 
-	let contentValue = ''
-	let decadeValue = ''
 
 	export let items = []
 	export let itemsCount = 0
 	export let pageSize = 0
 	$: page = parseInt($pageStore.query.page)
+	$: contentValue = $pageStore.query.type
+	$: decadeValue = $pageStore.query.decade
+
+	function filter(event) {
+		const params = new URLSearchParams((new URL(location)).search)
+		const { key, value } = event.detail
+		if (value) {
+			params.set(key, value)
+		} else {
+			params.delete(key)
+		}
+		params.set('page', '1')
+		goto(`${location.pathname}?${params.toString()}`)
+	}
 </script>
 
 <style type="text/scss">

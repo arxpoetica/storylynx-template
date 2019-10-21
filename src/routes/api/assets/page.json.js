@@ -5,19 +5,21 @@ export async function post(req, res) {
 
 	try {
 
-		let { page, pageSize, tags } = req.body
+		let { page, pageSize, tags, type, decade } = req.body
 		page = parseInt(page || 1)
 		pageSize = parseInt(pageSize || 9) // just hard coding for now
 		tags = typeof tags === 'string' ? [tags] : tags
 
-		let where
+		let where = '{ AND: ['
+		where += '{ status: PUBLISHED }'
 		if (tags && tags.length) {
-			where = '{ AND: [{ status: PUBLISHED }, '
-			where += tags.map(tag => `{ tags_some: { tag: "${tag}" } }`).join(', ')
-			where += '] }'
-		} else {
-			where = '{ status: PUBLISHED }'
+			where += tags.map(tag => `{ tags_some: { tag: "${tag}" } }`).join(' ')
 		}
+		if (decade) {
+			where += ` { year_gte: ${parseInt(decade)} }`
+			where += ` { year_lt: ${parseInt(decade) + 10} }`
+		}
+		where += '] }'
 
 		const { resources, resourcesConnection } = await cmsQuery(`{
 			resources(
