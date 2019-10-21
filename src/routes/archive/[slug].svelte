@@ -8,8 +8,8 @@
 	<div class="pre-texts">
 		<h1>
 			{asset.title}
-			{#if asset.decade}
-				<span>({asset.decade})</span>
+			{#if asset.decadeOld}
+				<span>({asset.decadeOld})</span>
 			{/if}
 		</h1>
 		<h2 class="h6">Archive | {asset.contentType || 'Uncategorized'}</h2>
@@ -56,7 +56,7 @@
 	$: alt = asset.summary ? asset.summary : 'No description for this asset.'
 	$: tags = asset.tags.map(tag => tag.tag)
 		.concat(asset.contentType ? asset.contentType : [])
-		.concat(asset.decade ? asset.decade : [])
+		.concat(asset.decadeOld ? asset.decadeOld : [])
 </script>
 
 <style type="text/scss">
