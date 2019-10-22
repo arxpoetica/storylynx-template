@@ -41,8 +41,8 @@
 	export let itemsCount = 0
 	export let pageSize = 0
 	$: page = parseInt($pageStore.query.page)
-	$: contentValue = $pageStore.query.type
-	$: decadeValue = $pageStore.query.decade
+	$: contentValue = $pageStore.query.type || ''
+	$: decadeValue = $pageStore.query.decade || ''
 
 	function filter(event) {
 		const params = new URLSearchParams((new URL(location)).search)

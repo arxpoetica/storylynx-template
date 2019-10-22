@@ -1,5 +1,4 @@
 import { cmsQuery } from '@johnny/utils/loaders'
-import { convert_decades } from '@johnny/utils/api-utils'
 
 export async function post(req, res) {
 	try {
@@ -12,13 +11,12 @@ export async function post(req, res) {
 				externalAssets
 				tags { tag }
 				contentType
-				decadeOld
 				year
 				source
 			}
 		}`)
 		// console.log(resource)
-		return res.json(convert_decades([resource])[0])
+		return res.json(resource)
 	} catch (error) {
 		// console.log(error)
 		return res.json({ error: 1, message: error.message })

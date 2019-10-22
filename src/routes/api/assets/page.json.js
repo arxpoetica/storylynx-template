@@ -1,5 +1,4 @@
 import { cmsQuery } from '@johnny/utils/loaders'
-import { convert_decades } from '@johnny/utils/api-utils'
 
 export async function post(req, res) {
 
@@ -35,7 +34,6 @@ export async function post(req, res) {
 				assets { id url summary handle mimeType fileName }
 				externalAssets
 				contentType
-				decadeOld
 				year
 			}
 
@@ -44,7 +42,7 @@ export async function post(req, res) {
 
 		return res.json({
 			pageSize,
-			items: convert_decades(resources),
+			items: resources,
 			itemsCount: resourcesConnection.aggregate.count,
 		})
 
