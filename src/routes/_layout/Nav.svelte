@@ -50,7 +50,7 @@
 			width: 100%;
 		}
 		&[data-on=true] {
-			pointer-events: none;
+			// pointer-events: none;
 			&::after { width: 100%; }
 		}
 	}

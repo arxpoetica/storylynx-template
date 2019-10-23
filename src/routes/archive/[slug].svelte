@@ -15,7 +15,7 @@
 		<h2 class="h6">Archive | {asset.contentType || 'Uncategorized'}</h2>
 	</div>
 	<div class="img">
-		<LazyImg {src} {alt}/>
+		<LazyImg {src} {alt} width={img.width} height={img.height}/>
 	</div>
 	<div class="post-texts">
 		<div class="content">
@@ -47,13 +47,13 @@
 </script>
 
 <script>
-	import { src as source, formattedstamp } from '@johnny/utils/basic-utils'
 	import LazyImg from '@johnny/svelte/LazyImg.svelte'
 
 	export let asset
-	$: src = source(asset.assets.length ? asset.assets[0] : null, { crop: true })
-	// FIXME: ????
-	$: alt = asset.summary ? asset.summary : 'No description for this asset.'
+	$: img = asset.assets.length ? asset.assets[0] : false
+	$: src = img ? img.url : false
+	$: alt = img && img.summary ? img.summary : 'No description for this asset.'
+
 	$: decade = asset.year ? Math.floor(asset.year / 10) * 10 : undefined
 	$: tags = asset.tags.map(tag => tag.tag)
 		.concat(decade ? [`${decade}s`] : [])

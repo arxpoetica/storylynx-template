@@ -7,7 +7,7 @@ export async function post(req, res) {
 				publishedDatetime
 				title
 				content
-				assets { id url summary handle fileName }
+				assets { id url summary handle fileName width height }
 				externalAssets
 				tags { tag }
 				contentType
