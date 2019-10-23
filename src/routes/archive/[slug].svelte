@@ -14,8 +14,11 @@
 		</h1>
 		<h2 class="h6">Archive | {asset.contentType || 'Uncategorized'}</h2>
 	</div>
-	<div class="img">
+	<div class="img" on:click={() => zoom = true}>
 		<LazyImg {src} {alt} width={img.width} height={img.height}/>
+		{#if zoom}
+			<Zoom/>
+		{/if}
 	</div>
 	<div class="post-texts">
 		<div class="content">
@@ -48,6 +51,8 @@
 
 <script>
 	import LazyImg from '@johnny/svelte/LazyImg.svelte'
+	import Zoom from '@johnny/svelte/archive/Zoom.svelte'
+	let zoom = false
 
 	export let asset
 	$: img = asset.assets.length ? asset.assets[0] : false
@@ -78,6 +83,7 @@
 	.img {
 		max-width: 720rem;
 		margin: 0 auto 100rem;
+		cursor: pointer;
 	}
 	.post-texts {
 		max-width: 500rem;
