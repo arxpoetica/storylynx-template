@@ -70,7 +70,6 @@
 	let selected = 0
 	$: img = images[selected]
 	const alt = img => img.summary ? img.summary : 'No description for this asset.'
-	// $: src = asset ? source(asset, { crop: true }) : false
 
 	$: decade = asset.year ? Math.floor(asset.year / 10) * 10 : undefined
 	$: tags = asset.tags.map(tag => tag.tag)
@@ -79,6 +78,20 @@
 </script>
 
 <style type="text/scss">
+	.pre-texts {
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+		text-align: center;
+	}
+	h1 {
+		margin: 0 0 40rem;
+		span { display: block; }
+	}
+	h2 {
+		margin: 0 0 15rem;
+		color: $red-main;
+	}
 
 	.images-group {
 		max-width: 720rem;
@@ -104,23 +117,9 @@
 		}
 	}
 	.img {
-		cursor: pointer;
+		cursor: zoom-in;
 	}
 
-	.pre-texts {
-		display: flex;
-		flex-direction: column-reverse;
-		align-items: center;
-		text-align: center;
-	}
-	h1 {
-		margin: 0 0 40rem;
-		span { display: block; }
-	}
-	h2 {
-		margin: 0 0 15rem;
-		color: $red-main;
-	}
 	.post-texts {
 		max-width: 500rem;
 		margin: 0 auto 100rem;
