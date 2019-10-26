@@ -18,7 +18,7 @@
 		{#if images.length > 1}
 			<div class="thumbs">
 				{#each images as thumb, index}
-					<div class="thumb" on:mouseover={() => selected = index}>
+					<div class="thumb" on:mouseover={() => selected = index} on:click={() => zoomshow = true}>
 						<LazyImg src={src(thumb, { crop: true })} alt={alt(thumb)}/>
 					</div>
 				{/each}
@@ -112,7 +112,7 @@
 		}
 		.thumb {
 			margin: 0 0 10rem;
-			cursor: pointer;
+			cursor: zoom-in;
 			&:last-child { margin: 0; }
 		}
 	}
