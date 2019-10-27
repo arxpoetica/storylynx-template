@@ -46,7 +46,7 @@
 	import ArchiveItem from '@johnny/svelte/archive/ArchiveItem.svelte'
 	import { query_string_to_json } from '@johnny/utils/api-utils'
 	import { onDestroy } from 'svelte'
-	import { stores } from '@sapper/app'
+	import { stores, goto } from '@sapper/app'
 	const { page: pageStore } = stores()
 	import { search_term } from '@johnny/stores/app-store'
 
