@@ -6,6 +6,7 @@
 		bind:contentValue
 		bind:decadeValue
 		bind:subjectValue
+		bind:searchValue
 		on:filter={filter}
 		{content_types}
 		{subjects}
@@ -56,6 +57,7 @@
 	$: contentValue = $pageStore.query.type || ''
 	$: decadeValue = $pageStore.query.decade || ''
 	$: subjectValue = $pageStore.query.subject || ''
+	$: searchValue = $pageStore.query.search || ''
 
 	function filter(event) {
 		const params = new URLSearchParams((new URL(location)).search)
