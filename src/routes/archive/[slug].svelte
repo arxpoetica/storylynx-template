@@ -14,8 +14,19 @@
 		</h1>
 		<h2 class="h6">Archive | {asset.contentType || 'Uncategorized'}</h2>
 	</div>
-	<div class="img" on:click={() => zoomshow = true}>
-		<LazyImg {src} {alt} width={img.width} height={img.height}/>
+	<div class:many class="images-group">
+		{#if images.length > 1}
+			<div class="thumbs">
+				{#each images as thumb, index}
+					<div class="thumb" on:mouseover={() => selected = index} on:click={() => zoomshow = true}>
+						<LazyImg src={src(thumb, { crop: true })} alt={alt(thumb)}/>
+					</div>
+				{/each}
+			</div>
+		{/if}
+		<div class="img" on:click={() => zoomshow = true}>
+			<LazyImg src={img.url} alt={alt(img)} width={img.width} height={img.height}/>
+		</div>
 	</div>
 	<div class="post-texts">
 		<div class="content">
@@ -36,7 +47,7 @@
 		{/if}
 	</div>
 </div>
-<Zoom bind:zoomshow {src} {alt} width={img.width} height={img.height}/>
+<Zoom bind:zoomshow src={img.url} alt={alt(img)} width={img.width} height={img.height}/>
 
 
 <script context="module">
@@ -48,19 +59,23 @@
 </script>
 
 <script>
+	export let asset
+	import { src } from '@johnny/utils/basic-utils'
 	import LazyImg from '@johnny/svelte/LazyImg.svelte'
 	import Zoom from '@johnny/svelte/archive/Zoom.svelte'
 	let zoomshow = false
 
-	export let asset
-	$: img = asset.assets.length ? asset.assets[0] : false
-	$: src = img ? img.url : false
-	$: alt = img && img.summary ? img.summary : 'No description for this asset.'
+	$: images = asset.assets
+	$: many = images.length > 1
+	let selected = 0
+	$: img = images[selected]
+	const alt = img => img.summary ? img.summary : 'No description for this asset.'
 
 	$: decade = asset.year ? Math.floor(asset.year / 10) * 10 : undefined
 	$: tags = asset.tags.map(tag => tag.tag)
 		.concat(decade ? [`${decade}s`] : [])
 		.concat(asset.contentType ? asset.contentType : [])
+		.concat(asset.subject ? asset.subject : [])
 </script>
 
 <style type="text/scss">
@@ -78,11 +93,34 @@
 		margin: 0 0 15rem;
 		color: $red-main;
 	}
-	.img {
+
+	.images-group {
 		max-width: 720rem;
 		margin: 0 auto 100rem;
-		cursor: pointer;
 	}
+	.many {
+		position: relative;
+		padding-left: 110rem;
+		max-width: 830rem;
+		.thumbs {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			max-width: 100rem;
+			overflow-y: auto;
+		}
+		.thumb {
+			margin: 0 0 10rem;
+			cursor: zoom-in;
+			&:last-child { margin: 0; }
+		}
+	}
+	.img {
+		cursor: zoom-in;
+	}
+
 	.post-texts {
 		max-width: 500rem;
 		margin: 0 auto 100rem;

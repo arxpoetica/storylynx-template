@@ -12,6 +12,7 @@ export async function post(req, res) {
 				tags { tag }
 				contentType
 				year
+				subject
 				source
 			}
 		}`)
