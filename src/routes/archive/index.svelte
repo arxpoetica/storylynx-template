@@ -2,15 +2,26 @@
 
 <BannerHeader title="Archive"/>
 <div class="layout-main">
-	<ArchiveToolbar bind:contentValue bind:decadeValue on:filter={filter}/>
-	{#if items.length}
-		<div class="archive">
-			{#each items as item}
-				<ArchiveItem {item}/>
-			{/each}
-		</div>
-		{#if itemsCount > pageSize}
-			<Pagination href="/archive" {page} {pageSize} {items} {itemsCount}/>
+	<ArchiveToolbar
+		bind:contentValue
+		bind:decadeValue
+		bind:subjectValue
+		on:filter={filter}
+		{content_types}
+		{subjects}
+	/>
+	{#if items}
+		{#if items.length}
+			<div class="archive">
+				{#each items as item}
+					<ArchiveItem {item}/>
+				{/each}
+			</div>
+			{#if itemsCount > pageSize}
+				<Pagination href="/archive" {page} {pageSize} {items} {itemsCount}/>
+			{/if}
+		{:else}
+			<h2>No content found.</h2>
 		{/if}
 	{:else}
 		<h2>Loading . . .</h2>
@@ -23,8 +34,8 @@
 		if (typeof query.page === 'undefined') {
 			return this.redirect(302, 'archive?page=1')
 		}
-		const { pageSize, items, itemsCount } = await POST('/api/assets/page.json', query)
-		return { pageSize, items, itemsCount }
+		const { pageSize, items, itemsCount, content_types, subjects } = await POST('/api/assets/page.json', query)
+		return { pageSize, items, itemsCount, content_types, subjects }
 	}
 </script>
 
@@ -36,13 +47,15 @@
 	import { stores, goto } from '@sapper/app'
 	const { page: pageStore } = stores()
 
-
-	export let items = []
+	export let items
 	export let itemsCount = 0
+	export let content_types = []
+	export let subjects = []
 	export let pageSize = 0
 	$: page = parseInt($pageStore.query.page)
 	$: contentValue = $pageStore.query.type || ''
 	$: decadeValue = $pageStore.query.decade || ''
+	$: subjectValue = $pageStore.query.subject || ''
 
 	function filter(event) {
 		const params = new URLSearchParams((new URL(location)).search)

@@ -75,6 +75,7 @@
 	$: tags = asset.tags.map(tag => tag.tag)
 		.concat(decade ? [`${decade}s`] : [])
 		.concat(asset.contentType ? asset.contentType : [])
+		.concat(asset.subject ? asset.subject : [])
 </script>
 
 <style type="text/scss">
