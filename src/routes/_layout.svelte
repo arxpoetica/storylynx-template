@@ -23,7 +23,6 @@
 	import { onMount } from 'svelte'
 	import { stores } from '@sapper/app'
 	const { session, page } = stores()
-	import { target } from '@johnny/stores/app-store'
 	import { hyphenate } from '@johnny/utils/basic-utils'
 
 	import Header from './_layout/Header.svelte'
@@ -50,7 +49,6 @@
 		// if (process.env.NODE_ENV === 'development') {
 		// 	Refresh = (await import('./_refresh.svelte')).default
 		// }
-		document.addEventListener('click', event => target.set(event.target))
 		html = document.querySelector('html')
 		html.classList.add($session.user ? 'auth' : 'no-auth')
 		setTimeout(() => html.classList.remove('preloaded'), 150)

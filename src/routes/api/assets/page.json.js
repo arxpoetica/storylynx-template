@@ -4,7 +4,7 @@ export async function post(req, res) {
 
 	try {
 
-		let { page, pageSize, tags, type, decade, subject } = req.body
+		let { page, pageSize, tags, type, decade, subject, search_term } = req.body
 		page = parseInt(page || 1)
 		pageSize = parseInt(pageSize || 9) // just hard coding for now
 		tags = typeof tags === 'string' ? [tags] : tags
@@ -23,6 +23,14 @@ export async function post(req, res) {
 		}
 		if (subject) {
 			where += ` { subject: ${subject} }`
+		}
+		if (search_term) {
+			where += [
+				'{ OR: [',
+				`{ title_contains: "${search_term}" }`,
+				`{ content_contains: "${search_term}" }`,
+				']}',
+			].join(' ')
 		}
 		where += '] }'
 

@@ -6,7 +6,6 @@
 		bind:contentValue
 		bind:decadeValue
 		bind:subjectValue
-		bind:searchValue
 		on:filter={filter}
 		{content_types}
 		{subjects}
@@ -45,8 +44,11 @@
 	import Pagination from '@johnny/svelte/page-lists/Pagination.svelte'
 	import ArchiveToolbar from '@johnny/svelte/archive/ArchiveToolbar.svelte'
 	import ArchiveItem from '@johnny/svelte/archive/ArchiveItem.svelte'
-	import { stores, goto } from '@sapper/app'
+	import { query_string_to_json } from '@johnny/utils/api-utils'
+	import { onDestroy } from 'svelte'
+	import { stores } from '@sapper/app'
 	const { page: pageStore } = stores()
+	import { search_term } from '@johnny/stores/app-store'
 
 	export let items
 	export let itemsCount = 0
@@ -57,9 +59,21 @@
 	$: contentValue = $pageStore.query.type || ''
 	$: decadeValue = $pageStore.query.decade || ''
 	$: subjectValue = $pageStore.query.subject || ''
-	$: searchValue = $pageStore.query.search || ''
 
-	function filter(event) {
+	let initialized = false
+	const unsubscribe = search_term.subscribe(term => {
+		if (initialized) {
+			filter({ detail: { key: 'search_term', value: $search_term } }, true)
+		} else {
+			initialized = true
+		}
+	})
+	onDestroy(() => {
+		unsubscribe()
+		search_term.set('')
+	})
+
+	async function filter(event, is_search_term) {
 		const params = new URLSearchParams((new URL(location)).search)
 		const { key, value } = event.detail
 		if (value) {
@@ -68,7 +82,22 @@
 			params.delete(key)
 		}
 		params.set('page', '1')
-		goto(`${location.pathname}?${params.toString()}`)
+
+		// manually fetching and setting history state
+		// because `goto` forces input blue
+		// SEE: https://github.com/sveltejs/sapper/blob/a52bdb2f4e1a722f06134b4065da2a32969e12e2/runtime/src/app/app.ts#L191
+		if (is_search_term) {
+			const res = await POST('/api/assets/page.json', query_string_to_json(params.toString()))
+			pageSize = res.pageSize
+			items = res.items
+			itemsCount = res.itemsCount
+			content_types = res.content_types
+			subjects = res.subjects
+			history.pushState({}, '', `${location.pathname}?${params.toString()}`)
+		} else {
+			goto(`${location.pathname}?${params.toString()}`)
+		}
+
 	}
 </script>
 
