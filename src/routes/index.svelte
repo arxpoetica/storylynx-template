@@ -108,7 +108,7 @@
 		}
 		blockquote {
 			margin: 0 auto;
-			padding: 150rem 0 125rem;
+			padding: 150rem 40rem 125rem;
 			max-width: 950rem;
 			text-transform: uppercase;
 			text-align: center;
@@ -174,11 +174,11 @@
 			align-items: center;
 			flex: 1;
 		}
-		.medal {
-			width: 100%;
-		}
-		.archive-medal { max-width: 300rem; }
-		.about-medal { max-width: 234rem; }
+		// .medal {
+		// 	width: 100%;
+		// }
+		.archive-medal { width: 60%; }
+		.about-medal { width: 46.8%; }
 		.pod {
 			width: 100%;
 			height: 0;
@@ -190,6 +190,49 @@
 		.about-medal .pod {
 			background-image: url('/img/home-medal-about.png');
 			padding-bottom: 83.76%;
+		}
+	}
+
+	@media (--small-down) {
+		.chapter-1 {
+			.blocks { display: block; }
+			.img { position: relative; }
+			// .block .img::before {
+			// 	content: '';
+			// 	display: block;
+			// 	position: absolute;
+			// 	top: 0;
+			// 	bottom: 0;
+			// 	width: 10.2%;
+			// 	background-color: rgba(255, 255, 255, 0.2);
+			// }
+			// .block-1 .img::before { left: 0; }
+			// .block-2 .img::before { right: 0; width: 9.065%; }
+			.block-2 .img::after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				left: 0;
+				height: 10%;
+				margin-top: -5%;
+				background-color: rgba(255, 255, 255, 0.4);
+			}
+		}
+		.chapter-2 {
+			blockquote {
+				padding: 80rem 40rem;
+			}
+			p {
+				display: inline;
+				font: $light 26rem/38rem $font;
+			}
+		}
+		.chapter-3 {
+			.blocks {
+				flex-direction: column;
+			}
 		}
 	}
 </style>
