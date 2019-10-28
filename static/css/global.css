@@ -853,6 +853,12 @@ body {
 .layout-main { padding: 40rem 0
 } }
 
+.chapter-content {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200rem;
+}
+
 .full-width {
 	margin: 0 calc(50% - 50vw);
 }

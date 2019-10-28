@@ -108,4 +108,7 @@
 	// .layout-outer {
 	// 	grid-row: top;
 	// }
+	.layout-inner {
+		height: 100%;
+	}
 </style>
