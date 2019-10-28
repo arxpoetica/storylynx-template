@@ -19,7 +19,7 @@
 	<div class="chapter chapter-2">
 		<div class="chapter-content">
 			<blockquote>
-				<p>Johnny Miller is a very honest guy.</p>
+				<!-- <p>Johnny Miller is a very honest guy.</p>
 				<p>That may have been to his detriment sometimes.</p>
 				<p>
 					On television, he’s too honest.
@@ -32,7 +32,20 @@
 				</p>
 				<footer>
 					Jack Nicklaus
-				</footer>
+				</footer> -->
+
+
+				<!-- https://www.golfdigest.com/story/7-questions-with-dan-hicks-on-johnny-miller-the-quirks-you-dont-see-johnnys-legendary-lexicon-and-what-hell-miss-most-about-miller -->
+				<!-- I’ll miss most, in addition to the broadcasting brilliance, and just never a dull moment and every single show he makes so interesting, I’ll miss just as much just being with him. -->
+				<p>In addition to the broadcasting brilliance,</p>
+				<!-- <p>some of the things we talk about in the tower before we go on the air.</p> -->
+				<p>It’s not all golf, it’s not all research.</p>
+				<p>We talk about life, we talk about family.</p>
+				<p>
+					He has given me more nuggets of wisdom about being a good father,
+					being a good husband, and being a good friend than anyone I’ve ever known in my life.
+				</p>
+				<footer>Dan Hicks</footer>
 			</blockquote>
 		</div>
 	</div>

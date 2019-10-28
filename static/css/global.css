@@ -831,18 +831,15 @@ body {
 
 .layout-outer {
 	padding: 0 30rem;
+	width: 100%;
+	max-width: 1200rem;
+	margin: 0 auto;
 }
 
 @media (max-width: 767px) {
 
 .layout-outer { padding: 0 20rem
 } }
-
-.layout-inner {
-	width: 100%;
-	max-width: 1200rem;
-	margin: 0 auto;
-}
 
 .layout-main {
 	padding: 100rem 0;
@@ -853,14 +850,19 @@ body {
 .layout-main { padding: 40rem 0
 } }
 
+.chapters {
+	margin: 0 -30rem;
+}
+
+@media (max-width: 767px) {
+
+.chapters { margin: 0 -20rem
+} }
+
 .chapter-content {
 	margin: 0 auto;
 	width: 100%;
 	max-width: 1200rem;
-}
-
-.full-width {
-	margin: 0 calc(50% - 50vw);
 }
 
 .yavascript {

@@ -8,11 +8,9 @@
 			<blockquote>
 				<h1>About Johnny</h1>
 				<p>
-					Lorem ipsum dolor sit amet, consetetur
-					sadipscing elitr, sed diam nonumy eirmod
-					tempor invidunt ut labore et dolore magna aliquyam
-					erat, sed diam voluptua. At vero eos et accusam et
-					justo duo dolores.
+					It’s not so much what you accomplish in life that really
+					matters, but what you overcome that proves who you are,
+					what you are, and whether you are a champion.
 				</p>
 			</blockquote>
 		</div>
