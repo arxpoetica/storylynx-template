@@ -37,7 +37,7 @@
 		</div>
 	</div>
 
-	<div class="full-width chapter chapter-3">
+	<div class="chapter chapter-3">
 		<div class="chapter-content">
 			<div class="blocks">
 				<div class="block block-1">
@@ -116,7 +116,7 @@
 		p {
 			margin: 0;
 			color: #89a9b5;
-			font: $light 34rem/42rem $font;
+			font: $light 34rem/46rem $font;
 		}
 		footer {
 			margin-top: 60rem;
