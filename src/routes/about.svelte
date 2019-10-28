@@ -72,7 +72,6 @@
 	// .chapter-content {}
 
 	.chapter-1 {
-		display: none;
 		border-top: 35rem solid #b7ccc1;
 		.chapter-content {
 			position: relative;
@@ -110,7 +109,6 @@
 	}
 
 	.chapter-2 {
-		display: none;
 		.chapter-content {
 			width: 100%;
 		}
