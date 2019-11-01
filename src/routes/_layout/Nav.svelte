@@ -32,7 +32,7 @@
 		&::before {
 			content: '';
 			display: block;
-			height: 6rem;
+			height: 10rem;
 		}
 		&::after {
 			content: '';
@@ -41,7 +41,7 @@
 			left: -2rem; // there's a weird positioning issue w/ this font, hence the negative spacing
 			width: 0;
 			height: 2px;
-			margin: 4rem auto 0;
+			margin: 8rem auto 0;
 			background-color: $black;
 			transition: width 0.3s ease-in-out;
 		}
