@@ -28,8 +28,8 @@
 		padding: 16rem 0;
 	}
 	.logo {
-		width: 376rem;
-		height: 95rem;
+		width: 318rem;
+		height: 75rem;
 		background: url('/img/logo.png') no-repeat center transparent;
 		background-size: contain;
 	}
