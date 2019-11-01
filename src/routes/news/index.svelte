@@ -52,8 +52,18 @@
 
 <style type="text/scss">
 	.news-items {
-		display: flex;
-		flex-wrap: wrap;
-		margin: 0 -40rem 40rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		margin: 0 0 40rem;
+	}
+	@media (--large-to-medium) {
+		.news-items {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+	@media (--small-down) {
+		.news-items {
+			display: block;
+		}
 	}
 </style>

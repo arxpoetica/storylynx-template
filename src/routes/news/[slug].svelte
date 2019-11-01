@@ -3,18 +3,19 @@
 </svelte:head>
 
 <!-- {JSON.stringify(article)} -->
+<div class="layout-main">
+	<h1>{article.title}</h1>
+	<h2>{formattedstamp(article.createdAt)}</h2>
+	<h4>Tags:</h4>
+	<div class="tags">
+		{#each tags as tag, index}
+			<strong>{tag}</strong>
+		{/each}
+	</div>
 
-<h1>{article.title}</h1>
-<h2>{formattedstamp(article.createdAt)}</h2>
-<h4>Tags:</h4>
-<div class="tags">
-	{#each tags as tag, index}
-		<strong>{tag}</strong>
-	{/each}
-</div>
-
-<div class="content">
-	{@html article.html}
+	<div class="content">
+		{@html article.html}
+	</div>
 </div>
 
 <script context="module">
