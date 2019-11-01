@@ -16,9 +16,9 @@
 	header {
 		background-color: $gray-light;
 		color: $black;
-		font: 10rem/1 $font-2;
+		font: 11rem/1 $font-2;
 		text-transform: uppercase;
-		letter-spacing: 3rem;
+		letter-spacing: 4rem;
 	}
 	.layout-inner {
 		display: flex;

@@ -832,7 +832,7 @@ body {
 .layout-outer {
 	padding: 0 30rem;
 	width: 100%;
-	max-width: 1200rem;
+	max-width: 1400rem;
 	margin: 0 auto;
 }
 
@@ -862,7 +862,7 @@ body {
 .chapter-content {
 	margin: 0 auto;
 	width: 100%;
-	max-width: 1200rem;
+	max-width: 1400rem;
 }
 
 .yavascript {
