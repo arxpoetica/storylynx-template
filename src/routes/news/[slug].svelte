@@ -4,17 +4,18 @@
 
 <!-- {JSON.stringify(article)} -->
 <div class="layout-main">
-	<h1>{article.title}</h1>
-	<h2>{formattedstamp(article.createdAt)}</h2>
-	<h4>Tags:</h4>
-	<div class="tags">
-		{#each tags as tag, index}
-			<strong>{tag}</strong>
-		{/each}
-	</div>
-
-	<div class="content">
-		{@html article.html}
+	<div class="box">
+		<h1>{article.title}</h1>
+		<h2>{formattedstamp(article.createdAt)}</h2>
+		{#if asset}
+			<div class="img">
+				<LazyImg {src} {alt} width={asset.width} height={asset.height}/>
+			</div>
+		{/if}
+		<div class="content">
+			{@html article.html}
+		</div>
+		<Tags url="/news" {tags}/>
 	</div>
 </div>
 
@@ -27,9 +28,31 @@
 </script>
 
 <script>
-	import { formattedstamp } from '@johnny/utils/basic-utils'
+	import { formattedstamp, src as source } from '@johnny/utils/basic-utils'
 	export let article
+
+	import LazyImg from '@johnny/svelte/LazyImg.svelte'
+	$: asset = article.assets ? article.assets[0] : false
+	$: src = asset ? source(asset, { crop: true, height: Math.floor(asset.height / asset.width * 400), width: 400 }) : false
+	$: alt = asset ? asset.summary : 'No description for this image.'
+
+	import Tags from '@johnny/svelte/Tags.svelte'
 	$: tags = article.tags.map(tag => tag.tag)
 </script>
 
-<!-- <style type="text/scss"></style> -->
+<style type="text/scss">
+	.box {
+		width: 100%;
+		max-width: 800rem;
+		margin: 0 auto;
+	}
+	.img {
+		width: 100%;
+		max-width: 400rem;
+		margin: 0 auto 50rem;
+	}
+	h2 {
+		margin: 0 0 20rem;
+		text-align: center;
+	}
+</style>
