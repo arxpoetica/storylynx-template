@@ -26,7 +26,6 @@
 		<div class="chapter-content">
 			<div class="blocks">
 				<div class="block block-1">
-					<div class="img"></div>
 					<div class="content">
 						<div class="thing thing-1"><div class="pod"></div></div>
 						<h2 class="h6">About this Project</h2>
@@ -41,7 +40,6 @@
 					</div>
 				</div>
 				<div class="block block-2">
-					<div class="img"></div>
 					<div class="content">
 						<div class="thing thing-2"><div class="pod"></div></div>
 						<h2 class="h6">About the Champ Foundation</h2>
@@ -71,20 +69,10 @@
 
 	.chapter-1 {
 		border-top: 35rem solid #b7ccc1;
+		background: url('/img/about-bg-green.jpg') repeat center #94bfae;
 		.chapter-content {
 			position: relative;
-			background: url('/img/about-bg-green.jpg') no-repeat center -28rem #94bfae;
 			background-size: cover;
-			&::after {
-				content: '';
-				display: block;
-				position: absolute;
-				right: 0;
-				bottom: -28rem;
-				left: 0;
-				height: 56rem;
-				background-color: rgba(255, 255, 255, 0.4);
-			}
 		}
 		blockquote {
 			margin: 0 auto;
@@ -107,36 +95,54 @@
 	}
 
 	.chapter-2 {
+		background: url('/img/home-gray.jpg') repeat 0 0 #dfdeda;
 		.chapter-content {
 			width: 100%;
 		}
 		.bg {
+			position: relative;
 			height: 0;
-			padding-bottom: 58.16%;
+			padding-bottom: 58.1429%;
 			background: url('/img/about-bg.jpg') no-repeat center #b4c599;
+			background-size: cover;
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 96.5%;
+				bottom: 0;
+				left: -3.5%;
+				background-color: rgba(255, 255, 255, 0.4);
+				z-index: 2;
+			}
 		}
 	}
 
 	.chapter-3 {
+		// .chapter-content {}
+		background: url('/img/square-blue.jpg') repeat 0 0 #93c6ba;
 		color: white;
 		font: $light 18rem/22rem $font;
 		text-align: center;
-		// .chapter-content {}
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: 50vw;
+			background: url('/img/square-green.jpg') repeat 0 0 #ef6d6b;
+		}
 		.blocks {
 			display: flex;
 		}
 		.block {
 			position: relative;
 			flex: 1;
+			padding-bottom: 45.35%;
 		}
-		.img {
-			height: 100%;
-			padding-bottom: 90.7%;
-			background: none no-repeat center #e4e3df;
-			background-size: cover;
-		}
-		.block-1 .img { background-image: url('/img/square-green.jpg'); }
-		.block-2 .img { background-image: url('/img/square-blue.jpg'); }
 		.content {
 			display: flex;
 			flex-direction: column;
@@ -187,6 +193,24 @@
 		}
 	}
 
+	@media (--large) {
+		.chapter-3 {
+			.content {
+				right: 40rem;
+				left: 40rem;
+			}
+		}
+	}
+	@media (--medium-down) {
+		.chapter-3 {
+			background: none;
+			&::after { display: none; }
+			.blocks { flex-direction: column; }
+			.block { padding-bottom: 90.7%; }
+			.block-1 { background: url('/img/square-green.jpg') repeat 0 0 #ef6d6b; }
+			.block-2 { background: url('/img/square-blue.jpg') repeat 0 0 #93c6ba; }
+		}
+	}
 	@media (--small-down) {
 		.chapter-1 {
 			blockquote {
@@ -197,11 +221,13 @@
 				font: $light 26rem/38rem $font;
 			}
 		}
-		// .chapter-2 {
-		// }
 		.chapter-3 {
-			.blocks {
-				flex-direction: column;
+			.block {
+				padding: 0;
+			}
+			.content {
+				position: static;
+				padding: 80rem 40rem;
 			}
 		}
 	}
