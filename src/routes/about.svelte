@@ -16,11 +16,7 @@
 		</div>
 	</div>
 
-	<div class="chapter chapter-2">
-		<div class="chapter-content">
-			<div class="bg"></div>
-		</div>
-	</div>
+	<div class="chapter chapter-2"></div>
 
 	<div class="chapter chapter-3">
 		<div class="chapter-content">
@@ -95,28 +91,9 @@
 	}
 
 	.chapter-2 {
-		background: url('/img/home-gray.jpg') repeat 0 0 #dfdeda;
-		.chapter-content {
-			width: 100%;
-		}
-		.bg {
-			position: relative;
-			height: 0;
-			padding-bottom: 58.1429%;
-			background: url('/img/about-bg.jpg') no-repeat center #b4c599;
-			background-size: cover;
-			&::before {
-				content: '';
-				display: block;
-				position: absolute;
-				top: 0;
-				right: 96.5%;
-				bottom: 0;
-				left: -3.5%;
-				background-color: rgba(255, 255, 255, 0.4);
-				z-index: 2;
-			}
-		}
+		background: url('/img/about-bg.jpg') no-repeat center #dfdeda;
+		background-size: cover;
+		height: 75vh;
 	}
 
 	.chapter-3 {
@@ -202,6 +179,9 @@
 		}
 	}
 	@media (--medium-down) {
+		.chapter-2 {
+			height: 50vh;
+		}
 		.chapter-3 {
 			background: none;
 			&::after { display: none; }
