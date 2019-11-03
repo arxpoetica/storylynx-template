@@ -8,8 +8,12 @@
 			<div class="blocks">
 				<div class="block block-1"><div class="img"></div></div>
 				<div class="block block-2">
-					<div class="img">
-						<h1 class="ghost">The Johnny Miller Experience</h1>
+					<div class="img"></div>
+					<div class="detail">
+						<div class="logo"></div>
+						<h1><span>The </span><strong>Johnny <br>Miller</strong> <span>Experience</span></h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Proin porta justo.</p>
+						<div class="button" disabled>Coming Soon</div>
 					</div>
 				</div>
 			</div>
@@ -19,22 +23,6 @@
 	<div class="chapter chapter-2">
 		<div class="chapter-content">
 			<blockquote>
-				<!-- <p>Johnny Miller is a very honest guy.</p>
-				<p>That may have been to his detriment sometimes.</p>
-				<p>
-					On television, he’s too honest.
-					We talk about it a lot.
-					Do you really need to be that honest?
-				</p>
-				<p>
-					But he’s a good man.
-					He’s got good values.
-				</p>
-				<footer>
-					Jack Nicklaus
-				</footer> -->
-
-
 				<!-- https://www.golfdigest.com/story/7-questions-with-dan-hicks-on-johnny-miller-the-quirks-you-dont-see-johnnys-legendary-lexicon-and-what-hell-miss-most-about-miller -->
 				<!-- I’ll miss most, in addition to the broadcasting brilliance, and just never a dull moment and every single show he makes so interesting, I’ll miss just as much just being with him. -->
 				<p>In addition to the broadcasting brilliance,</p>
@@ -87,7 +75,6 @@
 
 </div>
 
-
 <!-- <script></script> -->
 
 <style type="text/scss">
@@ -100,8 +87,20 @@
 		// .chapter-content {}
 		.blocks {
 			display: flex;
+			position: relative;
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 45%;
+				bottom: 0;
+				left: 45.5%;
+				background-color: rgba(255, 255, 255, 0.4);
+			}
 		}
 		.block {
+			position: relative;
 			flex: 1;
 		}
 		.img {
@@ -112,6 +111,67 @@
 		}
 		.block-1 .img { background-image: url('/img/home-main-johnny.jpg'); }
 		.block-2 .img { background-image: url('/img/home-main-texts.jpg'); }
+		.detail {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			padding: 0 40rem;
+			text-align: center;
+			> * {
+				position: relative;
+				z-index: 2;
+			}
+		}
+		.logo {
+			position: absolute;
+			top: 24.5%;
+			left: 9.5%;
+			height: 19.6365%;
+			width: 88.2865%;
+			background: url('/img/logo-home.png') no-repeat center transparent;
+			background-size: contain;
+			z-index: 1;
+		}
+		h1 {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			margin: 31% 0 0;
+			color: #939291;
+			font: $bold 16rem/1 $font;
+			letter-spacing: 5rem;
+			br { display: none; }
+			:first-child {
+				margin-bottom: 17.55%;
+			}
+			strong {
+				margin-bottom: 3.1%;
+				font: $bold 20rem/1 $font;
+				letter-spacing: 12rem;
+				color: #e36362;
+			}
+			// :last-child {}
+			&:after {
+				content: '';
+				display: block;
+				width: 85rem;
+				height: 1rem;
+				margin: 13% auto;
+				background-color: $black;
+			}
+		}
+		p {
+			width: 50%;
+			margin-bottom: 13%;
+			font: 20rem/24rem $font;
+		}
 	}
 
 	.chapter-2 {
@@ -206,21 +266,35 @@
 		}
 	}
 
+	@media (--large-to-medium) {
+		.chapter-1 {
+			.logo { top: 20.5%; }
+			h1 {
+				margin-top: 27%;
+				br { display: block; }
+				:first-child { margin-bottom: 20%; }
+				strong { margin-bottom: 3.1%; }
+				&:after { margin: 8% auto; }
+			}
+			p {
+				width: 80%;
+				margin-bottom: 8%;
+				font-size: 17rem;
+			}
+		}
+	}
 	@media (--small-down) {
 		.chapter-1 {
-			.blocks { display: block; }
+			.blocks {
+				display: block;
+				&::after {
+					top: 48%;
+					right: 0;
+					bottom: 47%;
+					left: 0;
+				}
+			}
 			.img { position: relative; }
-			// .block .img::before {
-			// 	content: '';
-			// 	display: block;
-			// 	position: absolute;
-			// 	top: 0;
-			// 	bottom: 0;
-			// 	width: 10.2%;
-			// 	background-color: rgba(255, 255, 255, 0.2);
-			// }
-			// .block-1 .img::before { left: 0; }
-			// .block-2 .img::before { right: 0; width: 9.065%; }
 			.block-2 .img::after {
 				content: '';
 				display: block;
@@ -232,6 +306,7 @@
 				margin-top: -5%;
 				background-color: rgba(255, 255, 255, 0.4);
 			}
+			p { width: 75%; }
 		}
 		.chapter-2 {
 			blockquote {
@@ -245,6 +320,23 @@
 		.chapter-3 {
 			.blocks {
 				flex-direction: column;
+			}
+		}
+	}
+	@media (--smallest) {
+		.chapter-1 {
+			.logo { top: 20.5%; }
+			h1 {
+				margin-top: 27%;
+				br { display: block; }
+				:first-child { margin-bottom: 20%; }
+				strong { margin-bottom: 3.1%; }
+				&:after { margin: 8% auto; }
+			}
+			p {
+				width: 100%;
+				margin-bottom: 8%;
+				font-size: 17rem;
 			}
 		}
 	}

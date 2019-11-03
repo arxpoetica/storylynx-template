@@ -15,24 +15,28 @@
 		margin: 0 6rem;
 	}
 }
+$button-black: #323335;
 .button {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+	height: 45rem;
 	margin: 0 0 10rem;
-	padding: 8rem 16rem;
-	background-color: $teal-main;
-	border: 1px solid transparent;
-	border-radius: 1px;
-	color: $white;
-	font: $bold 14rem/1 $font;
+	padding: 0 40rem;
+	background-color: transparent;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	font: $bold 15rem/45rem $font;
+	text-transform: uppercase;
 	text-align: center;
+	letter-spacing: 6rem;
+	white-space: nowrap;
 	transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
 	cursor: pointer;
 	-webkit-appearance: none;
 	&:hover,
 	&:focus {
-		background-color: $teal-d2;
+		background-color: $button-black;
+		color: white;
 	}
 	&.tiny {
 		padding: 4rem 8rem;
@@ -63,11 +67,11 @@
 	}
 	&.warning {
 		background-color: $yellow-main;
-		color: $black;
+		color: $button-black;
 		&:hover,
 		&:focus {
 			background-color: $yellow-l3;
-			color: $black;
+			color: $button-black;
 		}
 	}
 	&.alert {
@@ -81,11 +85,11 @@
 	}
 	&.dull {
 		background-color: $gray-6;
-		color: $black;
+		color: $button-black;
 		&:hover,
 		&:focus {
 			background-color: $gray-5;
-			color: $black;
+			color: $button-black;
 		}
 	}
 	&.link {
@@ -108,24 +112,26 @@
 	&.off {
 		padding: 0;
 		background-color: transparent;
-		color: $black;
+		color: $button-black;
 		cursor: default;
 		pointer-events: none;
 		&:hover,
 		&:focus {
 			background-color: transparent;
-			color: $black;
+			color: $button-black;
 		}
 	}
 	&[disabled] {
-		background-color: $gray-5;
-		color: white;
+		// background-color: $gray-5;
+		// color: white;
 		cursor: default;
 		pointer-events: none;
 		&:hover,
 		&:focus {
-			background-color: $gray-5;
-			color: white;
+			// background-color: $gray-5;
+			// color: white;
+			background-color: transparent;
+			color: $button-black;
 		}
 	}
 }
