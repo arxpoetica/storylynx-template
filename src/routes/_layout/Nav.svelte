@@ -24,7 +24,8 @@
 		display: flex;
 	}
 	li {
-		margin: 0 18rem;
+		margin: 0 36rem 0 0;
+		&:last-child { margin: 0; }
 	}
 	a {
 		color: $black;
@@ -57,6 +58,7 @@
 	@media (--small) {
 		li {
 			margin: 0 10rem;
+			&:last-child { margin: 0 10rem; }
 		}
 	}
 	@media (--smallest) {
@@ -66,6 +68,8 @@
 		li {
 			display: flex;
 			justify-content: center;
+			margin: 0 0 10rem;
+			&:last-child { margin: 0; }
 		}
 	}
 </style>

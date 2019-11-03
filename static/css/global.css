@@ -832,15 +832,18 @@ body {
 
 .layout-outer {
 	padding: 0 30rem;
-	width: 100%;
-	max-width: 1400rem;
-	margin: 0 auto;
 }
 
 @media (max-width: 767px) {
 
 .layout-outer { padding: 0 20rem
 } }
+
+.layout-inner {
+	width: 100%;
+	max-width: 1400rem;
+	margin: 0 auto;
+}
 
 .layout-main {
 	padding: 100rem 0;
@@ -860,10 +863,21 @@ body {
 .chapters { margin: 0 -20rem
 } }
 
+.chapter {
+	position: relative;
+	z-index: 1;
+}
+
 .chapter-content {
+	position: relative;
 	margin: 0 auto;
 	width: 100%;
 	max-width: 1400rem;
+	z-index: 2;
+}
+
+.full-width {
+	margin: 0 calc(50% - 50vw);
 }
 
 .yavascript {

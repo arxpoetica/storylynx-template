@@ -42,7 +42,6 @@
 		<div class="chapter-content">
 			<div class="blocks">
 				<div class="block block-1">
-					<div class="img"></div>
 					<a href="/archive" class="content" rel=prefetch>
 						<h2>
 							Archive
@@ -56,7 +55,6 @@
 					</a>
 				</div>
 				<div class="block block-2">
-					<div class="img"></div>
 					<a href="/about" class="content" rel=prefetch>
 						<h2>
 							About
@@ -84,19 +82,28 @@
 
 	.chapter-1 {
 		border-top: 35rem solid #e4e3df;
+		background: url('/img/home-gray.jpg') repeat 0 0 #dfdeda;
 		// .chapter-content {}
 		.blocks {
 			display: flex;
 			position: relative;
+			&::before,
 			&::after {
 				content: '';
 				display: block;
 				position: absolute;
 				top: 0;
-				right: 45%;
 				bottom: 0;
-				left: 45.5%;
 				background-color: rgba(255, 255, 255, 0.4);
+				z-index: 2;
+			}
+			&::before {
+				right: 96.5%;
+				left: -3.5%;
+			}
+			&::after {
+				right: 45%;
+				left: 45.5%;
 			}
 		}
 		.block {
@@ -105,12 +112,11 @@
 		}
 		.img {
 			height: 100%;
-			padding-bottom: 121.5%;
-			background: none no-repeat center #e4e3df;
+			padding-bottom: 127.21%;
+			background: none no-repeat center transparent;
 			background-size: cover;
 		}
 		.block-1 .img { background-image: url('/img/home-main-johnny.jpg'); }
-		.block-2 .img { background-image: url('/img/home-main-texts.jpg'); }
 		.detail {
 			display: flex;
 			flex-direction: column;
@@ -175,10 +181,8 @@
 	}
 
 	.chapter-2 {
-		.chapter-content {
-			background: url('/img/home-bg-black.jpg') no-repeat center black;
-			background-size: cover;
-		}
+		background: url('/img/home-bg-black.jpg') repeat 0 0 #323232;
+		// .chapter-content {}
 		blockquote {
 			margin: 0 auto;
 			padding: 150rem 40rem 125rem;
@@ -201,21 +205,25 @@
 
 	.chapter-3 {
 		// .chapter-content {}
+		background: url('/img/square-teal.jpg') repeat 0 0 #93c6ba;
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: 50vw;
+			background: url('/img/square-red.jpg') repeat 0 0 #ef6d6b;
+		}
 		.blocks {
 			display: flex;
 		}
 		.block {
 			position: relative;
 			flex: 1;
+			padding-bottom: 45.35%;
 		}
-		.img {
-			height: 100%;
-			padding-bottom: 90.7%;
-			background: none no-repeat center #e4e3df;
-			background-size: cover;
-		}
-		.block-1 .img { background-image: url('/img/square-red.jpg'); }
-		.block-2 .img { background-image: url('/img/square-teal.jpg'); }
 		.content {
 			display: flex;
 			flex-direction: column;
@@ -287,6 +295,7 @@
 		.chapter-1 {
 			.blocks {
 				display: block;
+				&::before { display: none; }
 				&::after {
 					top: 48%;
 					right: 0;
@@ -318,9 +327,12 @@
 			}
 		}
 		.chapter-3 {
-			.blocks {
-				flex-direction: column;
-			}
+			background: none;
+			&::after { display: none; }
+			.blocks { flex-direction: column; }
+			.block { padding-bottom: 90.7%; }
+			.block-1 { background: url('/img/square-red.jpg') repeat 0 0 #ef6d6b; }
+			.block-2 { background: url('/img/square-teal.jpg') repeat 0 0 #93c6ba; }
 		}
 	}
 	@media (--smallest) {
