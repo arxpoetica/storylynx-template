@@ -46,7 +46,7 @@
 							erat, sed diam voluptua. At vero eos et accusam et
 							justo duo dolores.
 						</p>
-						<a href="/archive" rel=prefetch>Visit</a>
+						<a href="https://www.johnnymillerchampfoundation.org" target="_blank">Visit</a>
 					</div>
 				</div>
 			</div>

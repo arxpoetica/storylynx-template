@@ -46,6 +46,7 @@
 			</div>
 		{/if}
 	</div>
+	<Related {related}/>
 </div>
 <Zoom bind:zoomshow src={img.url} alt={alt(img)} width={img.width} height={img.height}/>
 
@@ -54,14 +55,31 @@
 	import { POST } from '@johnny/utils/loaders'
 	export async function preload({ params }) {
 		const asset = await POST('/api/assets/single.json', { slug: params.slug })
-		return { asset }
+
+		const related = { pageSize: 4 }
+		if (asset.subject) {
+			related.subject = asset.subject
+		} else if (asset.contentType) {
+			related.type = asset.contentType
+		} else {
+			related.decade = asset.year
+		}
+		let { items } = await POST('/api/assets/page.json', related)
+		const index = items.findIndex(item => asset.id === item.id)
+		if (index > -1) {
+			items.splice(index, 1)
+		}
+
+		return { asset, related: items }
 	}
 </script>
 
 <script>
 	export let asset
+	export let related = []
 	import { src } from '@johnny/utils/basic-utils'
 	import LazyImg from '@johnny/svelte/LazyImg.svelte'
+	import Related from '@johnny/svelte/archive/Related.svelte'
 	import Zoom from '@johnny/svelte/archive/Zoom.svelte'
 	let zoomshow = false
 

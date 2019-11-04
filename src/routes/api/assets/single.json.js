@@ -4,6 +4,7 @@ export async function post(req, res) {
 	try {
 		const { resource } = await cmsQuery(`{
 			resource(where: { slug: "${req.body.slug}" }) {
+				id
 				publishedDatetime
 				title
 				content
