@@ -6,7 +6,7 @@ export async function post(req, res) {
 			article(where: { slug: "${req.body.slug}" }) {
 				publishedDatetime
 				title
-				html
+				detail { html }
 				assets { id url summary handle fileName width height }
 				tags { tag }
 			}

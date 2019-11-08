@@ -13,7 +13,7 @@
 			</div>
 		{/if}
 		<div class="content">
-			{@html article.html}
+			{@html article.detail.html || ''}
 		</div>
 		<Tags url="/news" {tags}/>
 	</div>
@@ -33,7 +33,7 @@
 
 	import LazyImg from '@johnny/svelte/LazyImg.svelte'
 	$: asset = article.assets ? article.assets[0] : false
-	$: src = asset ? source(asset, { crop: true, height: Math.floor(asset.height / asset.width * 400), width: 400 }) : false
+	$: src = asset ? source(asset, { crop: true, height: Math.floor(asset.height / asset.width * 800), width: 800 }) : false
 	$: alt = asset ? asset.summary : 'No description for this image.'
 
 	import Tags from '@johnny/svelte/Tags.svelte'
@@ -48,7 +48,7 @@
 	}
 	.img {
 		width: 100%;
-		max-width: 400rem;
+		max-width: 800rem;
 		margin: 0 auto 50rem;
 	}
 	h2 {
