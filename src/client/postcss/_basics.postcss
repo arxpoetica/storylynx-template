@@ -560,6 +560,24 @@ q:after {
 	content: '';
 }
 
+blockquote {
+	margin: 50rem 0 0;
+	padding: 0 50rem;
+	color: inherit;
+	font: $light 30rem/1.4 $font;
+	letter-spacing: 1rem;
+	text-transform: uppercase;
+	text-align: center;
+	&::after {
+		content: '';
+		display: block;
+		width: 50%;
+		height: 4rem;
+		margin: 20rem auto 50rem;
+		background-color: $red-main;
+	}
+}
+
 /* Text-level semantics (https://html.spec.whatwg.org/multipage/semantics.html#text-level-semantics)
    ========================================================================== */
 

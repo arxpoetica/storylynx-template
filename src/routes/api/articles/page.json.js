@@ -27,7 +27,7 @@ export async function post(req, res) {
 			) {
 				id
 				publishedDatetime
-				title
+				headline
 				slug
 				summary
 				assets { id url summary handle mimeType fileName }

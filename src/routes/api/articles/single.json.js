@@ -5,7 +5,7 @@ export async function post(req, res) {
 		const { article } = await cmsQuery(`{
 			article(where: { slug: "${req.body.slug}" }) {
 				publishedDatetime
-				title
+				headline
 				detail { html }
 				assets { id url summary handle fileName width height }
 				tags { tag }
