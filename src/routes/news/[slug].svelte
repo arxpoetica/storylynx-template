@@ -26,6 +26,32 @@
 					{/if}
 				</div>
 			{/if}
+
+			<ul class="share">
+				<li>
+					<a href="https://www.facebook.com/sharer/sharer.php?u={safe_url}" target="_blank" rel="nofollow">
+						<FacebookIcon/>
+					</a>
+				</li>
+				<li>
+					<!-- FIXME: add the `&via=twitter_account_handle` to the end -->
+					<!-- <a href="https://twitter.com/share?text={safe_headline}&url={safe_url}&via=FIXME:" target="_blank" rel="nofollow"> -->
+					<a href="https://twitter.com/share?text={safe_headline}&url={safe_url}" target="_blank" rel="nofollow">
+						<TwitterIcon/>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/shareArticle?mini=true&url={safe_url}&title={safe_headline}&summary={safe_summary}&source=The%20Johnny%20Miller%20Experience" target="_blank" rel="nofollow">
+						<LinkedInIcon/>
+					</a>
+				</li>
+				<li>
+					<a href="mailto:?to=&amp;subject={safe_headline}&amp;body={safe_url}" rel="nofollow">
+						<EmailIcon/>
+					</a>
+				</li>
+			</ul>
+
 		</div>
 
 		<div class="content">
@@ -66,6 +92,14 @@
 
 	import Tags from '@johnny/svelte/Tags.svelte'
 	$: tags = article.tags.map(tag => tag.tag)
+
+	import FacebookIcon from '@johnny/svg/social-facebook.svelte'
+	import TwitterIcon from '@johnny/svg/social-twitter.svelte'
+	import LinkedInIcon from '@johnny/svg/social-linkedin.svelte'
+	import EmailIcon from '@johnny/svg/social-email.svelte'
+	$: safe_headline = encodeURIComponent(article.headline)
+	$: safe_summary = encodeURIComponent(article.subheadline)
+	$: safe_url = encodeURIComponent(`${process.env.JM_HOST}/news/${article.slug}`)
 </script>
 
 <style type="text/scss">
@@ -130,13 +164,16 @@
 			}
 		}
 	}
-
 	.info-bar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 		margin: 0 0 40rem;
 		padding: 10rem 0;
 		border-top: 1px solid #cdccd0;
 		border-bottom: 1px solid #cdccd0;
-		// .info {}
+	}
+	.info {
 		h3,
 		h4 {
 			font: 12rem/1.3 $font;
@@ -145,6 +182,24 @@
 		}
 		h4 {
 			color: #8c8891;
+		}
+	}
+	.share {
+		display: flex;
+		align-items: center;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		li {
+			min-width: 22rem;
+			margin: 0 0 0 15rem;
+		}
+		a {
+			color: $black;
+			transition: color 0.2s ease-in-out;
+			&:hover {
+				color: $red-main;
+			}
 		}
 	}
 	.source-article {

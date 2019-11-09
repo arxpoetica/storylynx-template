@@ -4,6 +4,7 @@ export async function post(req, res) {
 	try {
 		const { article } = await cmsQuery(`{
 			article(where: { slug: "${req.body.slug}" }) {
+				slug
 				headline
 				subheadline
 				byline
