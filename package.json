@@ -15,6 +15,7 @@
     "deploy": "beta run deploy johnny --image gcr.io/arxpoetica/johnny --region us-central1",
     "bake": "run-s build publish deploy",
     "dev:archive:generate": "node -r esm src/scripts/archive-generate.js",
+    "dev:articles:get": "node -r esm src/scripts/articles-get.js",
     "watch": "trim watch --svgo --postcss --json"
   },
   "dependencies": {
@@ -47,6 +48,7 @@
     "@sapper-dragon/postcss": "0.0.10",
     "@sapper-dragon/svgo": "0.0.10",
     "@sapper-dragon/trimmings": "0.0.10",
+    "cheerio": "1.0.0-rc.3",
     "npm-run-all": "^4.1.5",
     "rollup": "1.24.0",
     "rollup-plugin-babel": "4.3.3",
