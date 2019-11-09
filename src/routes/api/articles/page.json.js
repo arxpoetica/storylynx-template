@@ -28,8 +28,8 @@ export async function post(req, res) {
 				id
 				publishedDatetime
 				headline
+				subheadline
 				slug
-				summary
 				assets { id url summary handle mimeType fileName }
 				tags { tag }
 			}
