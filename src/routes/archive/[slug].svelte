@@ -25,7 +25,9 @@
 			</div>
 		{/if}
 		<div class="img" on:click={() => zoomshow = true}>
-			<LazyImg src={img.url} alt={alt(img)} width={img.width} height={img.height}/>
+			<Magnifier src={img.url} alt={alt(img)} width={img.width} height={img.height} {loaded}>
+				<LazyImg src={img.url} alt={alt(img)} width={img.width} height={img.height} bind:loaded/>
+			</Magnifier>
 		</div>
 	</div>
 	<div class="post-texts">
@@ -75,10 +77,12 @@
 </script>
 
 <script>
+	export let loaded = false
 	export let asset
 	export let related = []
 	import { src } from '@johnny/utils/basic-utils'
 	import LazyImg from '@johnny/svelte/LazyImg.svelte'
+	import Magnifier from '@johnny/svelte/Magnifier.svelte'
 	import Related from '@johnny/svelte/archive/Related.svelte'
 	import Zoom from '@johnny/svelte/archive/Zoom.svelte'
 	let zoomshow = false
