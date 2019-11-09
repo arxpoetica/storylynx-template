@@ -66,22 +66,23 @@
 	.content {
 		& :global {
 			img {
+				width: 100%;
 				margin: 50rem 0;
 				line-height: 0;
 			}
 			img + .source,
 			img + .caption {
-				margin: -30rem 0 50rem;
+				margin: -44rem 0 50rem;
 			}
 			img + .source + .caption {
-				margin: -32rem 0 50rem;
+				margin: -48rem 0 50rem;
 			}
 			.source {
 				color: #b2b2b2;
-				font: $light 13rem/1.2rem $font;
+				font: $light 13rem/18rem $font;
 			}
 			.caption {
-				font: $bold 13rem/1.2rem $font;
+				font: $bold 13rem/18rem $font;
 				text-transform: uppercase;
 			}
 			img,
