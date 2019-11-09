@@ -14,7 +14,7 @@
 		</h1>
 		<h2 class="h6">Archive | {asset.contentType || 'Uncategorized'}</h2>
 	</div>
-	<div class:many class="images-group">
+	<div class:many class="images-group" on:contextmenu={event => event.preventDefault()}>
 		{#if images.length > 1}
 			<div class="thumbs">
 				{#each images as thumb, index}
