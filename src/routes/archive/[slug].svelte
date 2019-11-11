@@ -14,25 +14,23 @@
 		</h1>
 		<h2 class="h6">Archive | {asset.contentType || 'Uncategorized'}</h2>
 	</div>
-	<div class:many class="images-group" on:contextmenu={event => event.preventDefault()}>
-		{#if images.length > 1}
+	<div class:many class="assets-group" on:contextmenu={event => event.preventDefault()}>
+		{#if all_assets.length > 1}
 			<div class="thumbs">
-				{#each images as thumb, index}
+				{#each all_assets as thumb, index}
 					<div class="thumb" on:mouseover={() => selected = index} on:click={() => zoomshow = true}>
-						<LazyImg src={src(thumb, { crop: true })} alt={alt(thumb)}/>
+						<Asset asset={thumb} thumb={true}/>
 					</div>
 				{/each}
 			</div>
 		{/if}
 		<div class="img" on:click={() => zoomshow = true}>
-			<Magnifier src={img.url} alt={alt(img)} width={img.width} height={img.height} {loaded}>
-				<LazyImg src={img.url} alt={alt(img)} width={img.width} height={img.height} bind:loaded/>
-			</Magnifier>
+			<Asset asset={main_asset} magnifier={true}/>
 		</div>
 	</div>
 	<div class="post-texts">
 		<div class="content">
-			{@html asset.content}
+			{@html html}
 		</div>
 		{#if asset.source}
 			<h3 class="source h6">Source: {asset.source}</h3>
@@ -50,7 +48,7 @@
 	</div>
 	<Related {related}/>
 </div>
-<Zoom bind:zoomshow src={img.url} alt={alt(img)} width={img.width} height={img.height}/>
+<Zoom bind:zoomshow src={main_asset.url} alt={alt(main_asset)} width={main_asset.width} height={main_asset.height}/>
 
 
 <script context="module">
@@ -77,21 +75,22 @@
 </script>
 
 <script>
-	export let loaded = false
 	export let asset
 	export let related = []
-	import { src } from '@johnny/utils/basic-utils'
-	import LazyImg from '@johnny/svelte/LazyImg.svelte'
-	import Magnifier from '@johnny/svelte/Magnifier.svelte'
+	import { src, alt } from '@johnny/utils/basic-utils'
+	import Asset from '@johnny/svelte/Asset.svelte'
 	import Related from '@johnny/svelte/archive/Related.svelte'
 	import Zoom from '@johnny/svelte/archive/Zoom.svelte'
 	let zoomshow = false
 
-	$: images = asset.assets
-	$: many = images.length > 1
+	$: all_assets = asset.externalAssets.concat(asset.assets)
+	$: many = all_assets.length > 1
 	let selected = 0
-	$: img = images[selected]
-	const alt = img => img.summary ? img.summary : 'No description for this asset.'
+	$: main_asset = all_assets[selected]
+
+	// FIXME: ????? CAN I EVEN???
+	// THIS IS GROSS THAT I HAVE TO CLEAN IT UP ON BEHALF OF GRAPHCMS, BUT WHATEVS
+	$: html = asset.detail.html ? asset.detail.html.replace(/<p><\/p>/gi, '') : ''
 
 	$: decade = asset.year ? Math.floor(asset.year / 10) * 10 : undefined
 	$: tags = asset.tags.map(tag => tag.tag)
@@ -116,7 +115,7 @@
 		color: $red-main;
 	}
 
-	.images-group {
+	.assets-group {
 		max-width: 720rem;
 		margin: 0 auto 100rem;
 	}

@@ -13,8 +13,8 @@
 	{#if items}
 		{#if items.length}
 			<div class="archive">
-				{#each items as item}
-					<ArchiveItem {item}/>
+				{#each items as asset}
+					<ArchiveItem {asset}/>
 				{/each}
 			</div>
 			{#if itemsCount > pageSize}
