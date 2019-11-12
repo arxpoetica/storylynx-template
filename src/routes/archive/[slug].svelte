@@ -4,7 +4,7 @@
 
 <!-- {JSON.stringify(asset)} -->
 
-<div class="layout-main">
+<div class="layout-main" class:external>
 	<div class="pre-texts">
 		<h1>
 			{asset.title}
@@ -18,13 +18,13 @@
 		{#if all_assets.length > 1}
 			<div class="thumbs">
 				{#each all_assets as thumb, index}
-					<div class="thumb" on:mouseover={() => selected = index} on:click={() => zoomshow = true}>
+					<div class="thumb" on:mouseover={() => selected = index} on:click={show_zoom}>
 						<Asset asset={thumb} thumb={true}/>
 					</div>
 				{/each}
 			</div>
 		{/if}
-		<div class="img" on:click={() => zoomshow = true}>
+		<div class="img" on:click={show_zoom}>
 			<Asset asset={main_asset} magnifier={true}/>
 		</div>
 	</div>
@@ -46,10 +46,11 @@
 			</div>
 		{/if}
 	</div>
-	<Related {related}/>
+	<!-- <Related {related}/> -->
 </div>
-<Zoom bind:zoomshow src={main_asset.url} alt={alt(main_asset)} width={main_asset.width} height={main_asset.height}/>
-
+{#if main_asset.url}
+	<Zoom bind:zoomshow src={main_asset.url} alt={alt(main_asset)} width={main_asset.width} height={main_asset.height}/>
+{/if}
 
 <script context="module">
 	import { POST } from '@johnny/utils/loaders'
@@ -83,10 +84,17 @@
 	import Zoom from '@johnny/svelte/archive/Zoom.svelte'
 	let zoomshow = false
 
-	$: all_assets = asset.externalAssets.concat(asset.assets)
+	$: all_assets = asset.assetLinks.concat(asset.assets)
 	$: many = all_assets.length > 1
 	let selected = 0
 	$: main_asset = all_assets[selected]
+	$: external = main_asset.link
+
+	const show_zoom = () => {
+		if (!external) {
+			zoomshow = true
+		}
+	}
 
 	// FIXME: ????? CAN I EVEN???
 	// THIS IS GROSS THAT I HAVE TO CLEAN IT UP ON BEHALF OF GRAPHCMS, BUT WHATEVS
@@ -105,6 +113,8 @@
 		flex-direction: column-reverse;
 		align-items: center;
 		text-align: center;
+		max-width: 900rem;
+		margin: 0 auto;
 	}
 	h1 {
 		margin: 0 0 40rem;
@@ -141,7 +151,12 @@
 	.img {
 		cursor: zoom-in;
 	}
-
+	.external {
+		.many .thumb,
+		.img {
+			cursor: default;
+		}
+	}
 	.post-texts {
 		max-width: 500rem;
 		margin: 0 auto 100rem;
