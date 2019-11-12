@@ -46,7 +46,7 @@
 			</div>
 		{/if}
 	</div>
-	<!-- <Related {related}/> -->
+	<Related {related}/>
 </div>
 {#if main_asset.url}
 	<Zoom bind:zoomshow src={main_asset.url} alt={alt(main_asset)} width={main_asset.width} height={main_asset.height}/>
@@ -66,10 +66,9 @@
 			related.decade = asset.year
 		}
 		let { items } = await POST('/api/assets/page.json', related)
-		const index = items.findIndex(item => asset.id === item.id)
-		if (index > -1) {
-			items.splice(index, 1)
-		}
+		let index = items.findIndex(item => asset.id === item.id)
+		index = index > -1 ? index : 3
+		items.splice(index, 1)
 
 		return { asset, related: items }
 	}
