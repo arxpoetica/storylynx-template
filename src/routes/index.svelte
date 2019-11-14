@@ -136,8 +136,8 @@
 		}
 		.logo {
 			position: absolute;
-			top: 24.5%;
-			left: 9.5%;
+			top: 19%;
+			left: 12%;
 			height: 19.6365%;
 			width: 88.2865%;
 			background: url('/img/logo-home.png') no-repeat center transparent;
@@ -276,7 +276,7 @@
 
 	@media (--large-to-medium) {
 		.chapter-1 {
-			.logo { top: 20.5%; }
+			.logo { top: 17%; }
 			h1 {
 				margin-top: 27%;
 				br { display: block; }
@@ -293,6 +293,12 @@
 	}
 	@media (--small-down) {
 		.chapter-1 {
+			.logo {
+				top: 20%;
+				left: 24%;
+				height: 14%;
+				width: 60%;
+			}
 			.blocks {
 				display: block;
 				&::before { display: none; }
@@ -337,7 +343,12 @@
 	}
 	@media (--smallest) {
 		.chapter-1 {
-			.logo { top: 20.5%; }
+			.logo {
+				top: 15.5%;
+				left: 17%;
+				height: 17%;
+				width: 80%;
+			}
 			h1 {
 				margin-top: 27%;
 				br { display: block; }
