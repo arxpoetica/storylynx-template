@@ -24,7 +24,7 @@
 				{/each}
 			</div>
 		{/if}
-		<div class="img" on:click={show_zoom}>
+		<div class:video class="media" on:click={show_zoom}>
 			<Asset asset={main_asset} magnifier={true}/>
 		</div>
 	</div>
@@ -87,10 +87,11 @@
 	$: many = all_assets.length > 1
 	let selected = 0
 	$: main_asset = all_assets[selected]
+	$: video = main_asset.mimeType && main_asset.mimeType.split('/')[0] === 'video'
 	$: external = main_asset.link
 
 	const show_zoom = () => {
-		if (!external) {
+		if (!external && !video) {
 			zoomshow = true
 		}
 	}
@@ -147,12 +148,15 @@
 			&:last-child { margin: 0; }
 		}
 	}
-	.img {
+	.media {
 		cursor: zoom-in;
+		&.video {
+			cursor: default;
+		}
 	}
 	.external {
 		.many .thumb,
-		.img {
+		.media {
 			cursor: default;
 		}
 	}

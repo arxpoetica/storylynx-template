@@ -50,7 +50,10 @@ export async function post(req, res) {
 				publishedDatetime
 				title
 				slug
-				assets { id url summary handle mimeType fileName }
+				assets {
+					cover { url summary handle mimeType fileName }
+					id url summary handle mimeType fileName
+				}
 				assetLinks {
 					summary
 					link
