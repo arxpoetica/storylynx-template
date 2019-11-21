@@ -1,6 +1,6 @@
 export const filenames = [
 
-	// UPLOADED:
+	// UPLOADED OCT 2019:
 
 	{ fileName: 'JOHNNY_MILLER_IMG_00001.jpg', id: 'ck1vlksqm5ruj0a300oxyhmye' },
 	{ fileName: 'JOHNNY_MILLER_IMG_00012.jpg', id: 'ck1vlksop5rue0a308j3w9z15' },
@@ -244,4 +244,30 @@ export const filenames = [
 	// 'JOHNNY_MILLER_IMG_00786.jpg',
 	// 'JOHNNY_MILLER_IMG_00787.jpg',
 	// 'JOHNNY_MILLER_IMG_00788.jpg',
+]
+
+
+// UPLOADED NOV 20 2019
+export const shadow_and_gradient_files = [
+	{ fileName: 'JOHNNY_MILLER_IMG_00568_SH.jpg', id: 'ck389l6e18k2y0a30e2iypzyr' },
+	{ fileName: 'JOHNNY_MILLER_IMG_00341_SH.jpg', id: 'ck389l6e18k2z0a30ssniidih' },
+	{ fileName: 'JOHNNY_MILLER_IMG_00570_SH.jpg', id: 'ck389l6e18k300a30jm1t9n6n' },
+	{ fileName: 'JOHNNY_MILLER_IMG_00318_SH.jpg', id: 'ck389l6eb8k340a30h4xtju9m' },
+	{ fileName: 'JOHNNY_MILLER_IMG_00420_SH.jpg', id: 'ck389l6hd8k3d0a30fjyau8q5' },
+	{ fileName: 'JOHNNY_MILLER_IMG_00414_SH.jpg', id: 'ck389l6hd8k3e0a30ajd5uui9' },
+	{ fileName: 'JOHNNY_MILLER_IMG_00293_SH.jpg', id: 'ck389l6hi8k3i0a30wgcl8qai' },
+	{ fileName: 'JOHNNY_MILLER_IMG_00561_SH.jpg', id: 'ck389l6jo8k3s0a30jbhb1spu' },
+	{ fileName: 'JOHNNY_MILLER_IMG_00426_SH.jpg', id: 'ck389l6k08k3x0a30hzze7bm0' },
+	{ fileName: 'JOHNNY_MILLER_IMG_00508_SH.jpg', id: 'ck389l6m18k420a30lrd8ievc' },
+
+	{ fileName: 'JOHNNY_MILLER_IMG_00025_GR.jpg', id: 'ck389o9e78k9f0a30fm1hw26z' },
+	{ fileName: 'JOHNNY_MILLER_IMG_00165_GR.jpg', id: 'ck389o9e98k9j0a30cvhduu9e' },
+	{ fileName: 'JOHNNY_MILLER_IMG_00129_GR.jpg', id: 'ck389o9ej8k9n0a30f775ao3f' },
+	{ fileName: 'JOHNNY_MILLER_IMG_00130_GR.jpg', id: 'ck389o9go8k9u0a30hofljajk' },
+	{ fileName: 'JOHNNY_MILLER_IMG_00022_GR.jpg', id: 'ck389o9h18k9z0a30kfev3txt' },
+	{ fileName: 'JOHNNY_MILLER_IMG_00234_GR.jpg', id: 'ck389o9iv8ka40a30gmotatoe' },
+	{ fileName: 'JOHNNY_MILLER_IMG_00059_GR.jpg', id: 'ck389o9je8ka90a307rnm7ppy' },
+	{ fileName: 'JOHNNY_MILLER_IMG_00201_GR.jpg', id: 'ck389o9lg8kae0a30ufhy4u6e' },
+	{ fileName: 'JOHNNY_MILLER_IMG_00268_GR.jpg', id: 'ck389o9lu8kaj0a30430zfw0n' },
+	{ fileName: 'JOHNNY_MILLER_IMG_00181_GR.jpg', id: 'ck389o9o78kao0a30bhnk7dn6' },
 ]

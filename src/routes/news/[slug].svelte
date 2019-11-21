@@ -54,7 +54,7 @@
 
 		</div>
 
-		<div class="content">
+		<div class="detail">
 			{@html html}
 		</div>
 		{#if article.linkBack}
@@ -125,7 +125,7 @@
 		letter-spacing: 0.02em;
 		text-transform: uppercase;
 	}
-	.content {
+	.detail {
 		& :global {
 			> p:first-child::first-letter {
 				float: left;

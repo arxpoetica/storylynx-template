@@ -29,7 +29,7 @@
 		</div>
 	</div>
 	<div class="post-texts">
-		<div class="content">
+		<div class="detail">
 			{@html html}
 		</div>
 		{#if asset.source}
@@ -164,7 +164,7 @@
 		max-width: 500rem;
 		margin: 0 auto 100rem;
 	}
-	.content {
+	.detail {
 		margin: 0 0 20rem;
 	}
 	.source {
