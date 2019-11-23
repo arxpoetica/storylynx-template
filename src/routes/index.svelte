@@ -42,30 +42,24 @@
 		<div class="chapter-content">
 			<div class="blocks">
 				<div class="block block-1">
-					<a href="/archive" class="content" rel=prefetch>
-						<h2>
-							Archive
-							<span>02</span>
-						</h2>
+					<div class="content">
 						<div class="medal-hold">
 							<div class="medal archive-medal">
 								<div class="pod"></div>
 							</div>
 						</div>
-					</a>
+						<a href="/archive" rel=prefetch>Archive</a>
+					</div>
 				</div>
 				<div class="block block-2">
-					<a href="/about" class="content" rel=prefetch>
-						<h2>
-							About
-							<span>03</span>
-						</h2>
+					<div class="content">
 						<div class="medal-hold">
 							<div class="medal about-medal">
 								<div class="pod"></div>
 							</div>
 						</div>
-					</a>
+						<a href="/about" rel=prefetch>About</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -228,6 +222,7 @@
 		.content {
 			display: flex;
 			flex-direction: column;
+			justify-content: center;
 			position: absolute;
 			top: 50rem;
 			right: 50rem;
@@ -235,30 +230,14 @@
 			left: 50rem;
 			text-decoration: none;
 		}
-		h2 {
-			display: flex;
-			justify-content: space-between;
-			align-items: flex-end;
-			padding-bottom: 10rem;
-			border-bottom: 1px solid white;
-			color: white;
-			font: $bold 17rem/1 $font;
-			letter-spacing: 3rem;
-			text-transform: uppercase;
-		}
-		span {
-			font: 15rem/1 $font;
-			letter-spacing: 2rem;
-		}
 		.medal-hold {
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			flex: 1;
+			margin: 0 0 50rem;
 		}
-		// .medal {
-		// 	width: 100%;
-		// }
+		// .medal { width: 100%; }
 		.archive-medal { width: 60%; }
 		.about-medal { width: 46.8%; }
 		.pod {
@@ -272,6 +251,22 @@
 		.about-medal .pod {
 			background-image: url('/img/home-medal-about.png');
 			padding-bottom: 83.76%;
+		}
+		a {
+			align-self: center;
+			height: 42rem;
+			padding: 0 30rem;
+			color: white;
+			font: $bold 13rem/42rem $font;
+			letter-spacing: 4rem;
+			text-transform: uppercase;
+			border: 1px solid white;
+			text-decoration: none;
+			transition: all 0.2s ease-in-out;
+			&:hover {
+				background-color: white;
+				color: $black;
+			}
 		}
 	}
 
