@@ -189,6 +189,7 @@
 			max-width: 950rem;
 			text-transform: uppercase;
 			text-align: center;
+			&::after { display: none; }
 		}
 		p {
 			margin: 0;
