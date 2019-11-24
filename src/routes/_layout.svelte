@@ -108,6 +108,9 @@
 	.layout-outer {
 		// grid-row: top;
 		background-color: white;
+		.layout-contact & {
+			background-color: $orange-light;
+		}
 	}
 	.layout-inner {
 		height: 100%;

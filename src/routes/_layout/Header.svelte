@@ -14,9 +14,9 @@
 
 <style type="text/scss">
 	header {
-		background-color: $gray-light;
+		background-color: $orange-light;
 		color: $black;
-		font: 11rem/1 $font-2;
+		font: 9.5rem/1 $font-2;
 		text-transform: uppercase;
 		letter-spacing: 4rem;
 	}
