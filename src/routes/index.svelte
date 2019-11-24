@@ -10,8 +10,12 @@
 				<div class="block block-2">
 					<div class="img"></div>
 					<div class="detail">
-						<div class="logo"></div>
-						<h1><span>The </span><strong>Johnny <br>Miller</strong> <span>Experience</span></h1>
+						<h1>
+							<span>The </span>
+							<span class="logo"></span>
+							<strong>Johnny <br>Miller </strong>
+							<span>Experience</span>
+						</h1>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Proin porta justo.</p>
 						<div class="button" disabled>Coming Soon</div>
 					</div>
@@ -126,7 +130,7 @@
 		.detail {
 			display: flex;
 			flex-direction: column;
-			justify-content: flex-start;
+			justify-content: center;
 			align-items: center;
 			position: absolute;
 			top: 0;
@@ -135,33 +139,27 @@
 			left: 0;
 			padding: 0 40rem;
 			text-align: center;
-			> * {
-				position: relative;
-				z-index: 2;
-			}
-		}
-		.logo {
-			position: absolute;
-			top: 19%;
-			left: 12%;
-			height: 19.6365%;
-			width: 88.2865%;
-			background: url('/img/logo-home.png') no-repeat center transparent;
-			background-size: contain;
-			z-index: 1;
 		}
 		h1 {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			width: 100%;
-			margin: 31% 0 0;
+			margin: 0;
 			color: #939291;
 			font: $bold 16rem/1 $font;
 			letter-spacing: 5rem;
 			br { display: none; }
 			:first-child {
-				margin-bottom: 17.55%;
+				margin: 0 0 5rem;
+			}
+			.logo {
+				width: 88.2865%;
+				height: 0;
+				padding-bottom: 19.6365%;
+				margin: 0 0 5rem;
+				background: url('/img/logo-home.png') no-repeat center transparent;
+				background-size: contain;
 			}
 			strong {
 				margin-bottom: 3.1%;
@@ -182,7 +180,11 @@
 		p {
 			width: 50%;
 			margin-bottom: 13%;
-			font: 20rem/24rem $font;
+			font: 18rem/22rem $font;
+		}
+		.button {
+			margin: 0;
+			border-color: $black;
 		}
 	}
 
@@ -277,13 +279,8 @@
 
 	@media (--large-to-medium) {
 		.chapter-1 {
-			.logo { top: 17%; }
 			h1 {
-				margin-top: 27%;
 				br { display: block; }
-				:first-child { margin-bottom: 20%; }
-				strong { margin-bottom: 3.1%; }
-				&:after { margin: 8% auto; }
 			}
 			p {
 				width: 80%;
@@ -300,12 +297,6 @@
 			}
 		}
 		.chapter-1 {
-			.logo {
-				top: 20%;
-				left: 24%;
-				height: 14%;
-				width: 60%;
-			}
 			.blocks {
 				display: block;
 				&::before { display: none; }
@@ -350,16 +341,8 @@
 	}
 	@media (--smallest) {
 		.chapter-1 {
-			.logo {
-				top: 15.5%;
-				left: 17%;
-				height: 17%;
-				width: 80%;
-			}
 			h1 {
-				margin-top: 27%;
 				br { display: block; }
-				:first-child { margin-bottom: 20%; }
 				strong { margin-bottom: 3.1%; }
 				&:after { margin: 8% auto; }
 			}

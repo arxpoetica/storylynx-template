@@ -49,14 +49,14 @@
 
 <style type="text/scss">
 	.contact {
-		font: $bold 38rem/48rem $font;
+		font: $bold 28rem/34rem $font;
 		text-align: center;
 		text-transform: uppercase;
 	}
 	h2 {
 		margin: 0;
 		color: #939598;
-		font: $bold 15rem/18rem $font;
+		font: $bold 11rem/14rem $font;
 		letter-spacing: 6rem;
 		text-transform: uppercase;
 		+ a {
