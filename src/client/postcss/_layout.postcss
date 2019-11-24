@@ -1,6 +1,6 @@
 html {
 	height: 100%;
-	background-color: $white;
+	background-color: #e4e3df;
 	font: 1px/1.2 $font; // 1rem === 1px in this scenario
 	box-sizing: border-box;
 	text-size-adjust: 100%;
@@ -14,29 +14,19 @@ body {
 	display: flex;
 	min-height: 100%;
 	margin: 0;
-	background-color: $white;
+	background-color: #e4e3df;
 	color: $black;
 	font: 15rem/1.15 $font;
 	letter-spacing: 0.02em;
 }
 .layout-outer {
-	padding: 0 30rem;
-	@media (--small-down) { padding: 0 20rem; }
-}
-.layout-inner {
 	width: 100%;
 	max-width: $layout-width;
+	padding: 0 30rem;
 	margin: 0 auto;
+	@media (--small-down) { padding: 0 20rem; }
 }
-// .layout-outer {
-// 	padding: 0 30rem;
-// 	width: 100%;
-// 	max-width: $layout-width;
-// 	margin: 0 auto;
-// 	@media (--small-down) { padding: 0 20rem; }
-// }
-// .layout-inner {
-// }
+// .layout-inner {}
 .layout-main {
 	padding: 100rem 0;
 	@media (--small-down) { padding: 40rem 0; }

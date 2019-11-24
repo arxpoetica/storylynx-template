@@ -105,9 +105,10 @@
 		margin: 0 auto;
 		width: 100%;
 	}
-	// .layout-outer {
-	// 	grid-row: top;
-	// }
+	.layout-outer {
+		// grid-row: top;
+		background-color: white;
+	}
 	.layout-inner {
 		height: 100%;
 	}

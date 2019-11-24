@@ -827,7 +827,7 @@ a, area, button, label, summary, [tabindex] {
 
 html {
 	height: 100%;
-	background-color: #ffffff;
+	background-color: #e4e3df;
 	font: 1px/1.2 'Cerapro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	box-sizing: border-box;
 	text-size-adjust: 100%;
@@ -843,26 +843,23 @@ body {
 	display: flex;
 	min-height: 100%;
 	margin: 0;
-	background-color: #ffffff;
+	background-color: #e4e3df;
 	color: #000000;
 	font: 15rem/1.15 'Cerapro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	letter-spacing: 0.02em;
 }
 
 .layout-outer {
+	width: 100%;
+	max-width: 1200rem;
 	padding: 0 30rem;
+	margin: 0 auto;
 }
 
 @media (max-width: 767px) {
 
 .layout-outer { padding: 0 20rem
 } }
-
-.layout-inner {
-	width: 100%;
-	max-width: 1400rem;
-	margin: 0 auto;
-}
 
 .layout-main {
 	padding: 100rem 0;
@@ -891,7 +888,7 @@ body {
 	position: relative;
 	margin: 0 auto;
 	width: 100%;
-	max-width: 1400rem;
+	max-width: 1200rem;
 	z-index: 2;
 }
 

@@ -1,7 +1,7 @@
 <svelte:head><title>Johnny Miller - Home</title></svelte:head>
 <!-- <p><a href="/global-styles">Global Styles</a></p> -->
 
-<div class="full-width chapters">
+<div class="chapters">
 
 	<div class="chapter chapter-1">
 		<div class="chapter-content">
@@ -70,18 +70,34 @@
 <!-- <script></script> -->
 
 <style type="text/scss">
-	// .chapters {}
+	.chapters {
+		position: relative;
+		&::before,
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 36rem;
+			right: 97%;
+			bottom: 0;
+			left: 0%;
+			background-color: rgba(255, 255, 255, 0.25);
+			z-index: 2;
+		}
+		&::after {
+			right: 0%;
+			left: 97%;
+		}
+	}
 	// .chapter {}
 	// .chapter-content {}
-
 	.chapter-1 {
-		border-top: 35rem solid #e4e3df;
+		border-top: 36rem solid #e4e3df;
 		background: url('/img/home-gray.jpg') repeat 0 0 #dfdeda;
 		// .chapter-content {}
 		.blocks {
 			display: flex;
 			position: relative;
-			&::before,
 			&::after {
 				content: '';
 				display: block;
@@ -90,10 +106,6 @@
 				bottom: 0;
 				background-color: rgba(255, 255, 255, 0.4);
 				z-index: 2;
-			}
-			&::before {
-				right: 96.5%;
-				left: -3.5%;
 			}
 			&::after {
 				right: 45%;
@@ -201,16 +213,6 @@
 	.chapter-3 {
 		// .chapter-content {}
 		background: url('/img/square-teal.jpg') repeat 0 0 #93c6ba;
-		&::after {
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			width: 50vw;
-			background: url('/img/square-red.jpg') repeat 0 0 #ef6d6b;
-		}
 		.blocks {
 			display: flex;
 		}
@@ -218,6 +220,9 @@
 			position: relative;
 			flex: 1;
 			padding-bottom: 45.35%;
+		}
+		.block-1 {
+			background: url('/img/square-red.jpg') repeat center #ef6d6b;
 		}
 		.content {
 			display: flex;
@@ -288,6 +293,12 @@
 		}
 	}
 	@media (--small-down) {
+		.chapters {
+			&::before,
+			&::after {
+				display: none;
+			}
+		}
 		.chapter-1 {
 			.logo {
 				top: 20%;
