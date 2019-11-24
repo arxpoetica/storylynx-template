@@ -35,16 +35,7 @@
 		{#if asset.source}
 			<h3 class="source h6">Source: {asset.source}</h3>
 		{/if}
-		{#if tags.length}
-			<div class="tag-group">
-				<h4 class="h6">Tags:</h4>
-				<div class="tags">
-					{#each tags as tag, index}
-						<div class="tag h6">{tag}</div>
-					{/each}
-				</div>
-			</div>
-		{/if}
+		<Tags url="/archive" {tags}/>
 	</div>
 	<Related {related}/>
 </div>
@@ -100,6 +91,7 @@
 	// THIS IS GROSS THAT I HAVE TO CLEAN IT UP ON BEHALF OF GRAPHCMS, BUT WHATEVS
 	$: html = asset.detail.html ? asset.detail.html.replace(/<p><\/p>/gi, '') : ''
 
+	import Tags from '@johnny/svelte/Tags.svelte'
 	$: decade = asset.year ? Math.floor(asset.year / 10) * 10 : undefined
 	$: tags = asset.tags.map(tag => tag.tag)
 		.concat(decade ? [`${decade}s`] : [])
@@ -121,7 +113,7 @@
 		span { display: block; }
 	}
 	h2 {
-		margin: 0 0 15rem;
+		margin: 0 0 12rem;
 		color: $red-main;
 	}
 
@@ -169,23 +161,5 @@
 	}
 	.source {
 		margin: 0 0 35rem;
-	}
-	.tag-group {
-		display: flex;
-		h4 {
-			margin-right: 12rem;
-			line-height: 30rem;
-		}
-		.tags {
-			display: flex;
-			flex-wrap: wrap;
-		}
-		.tag {
-			margin: 0 10rem 10rem 0;
-			padding: 0 10rem;
-			height: 30rem;
-			line-height: 30rem;
-			border: 1px solid #bfbfbf;
-		}
 	}
 </style>

@@ -60,9 +60,7 @@
 		{#if article.linkBack}
 			<p class="source-article"><strong>Source article:</strong> <a href={article.linkBack} target="_blank">{article.linkBack}</a></p>
 		{/if}
-		{#if tags.length}
-			<Tags url="/news" {tags}/>
-		{/if}
+		<Tags url="/news" {tags}/>
 	</div>
 </div>
 
