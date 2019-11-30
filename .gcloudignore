@@ -1,0 +1,6 @@
+#!include:.dockerignore
+!/.env.enc
+!/rollup.config.js
+!/config.js
+!/trimmings.config.js
+!/src

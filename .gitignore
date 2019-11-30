@@ -1,0 +1,16 @@
+.DS_Store
+/.vscode
+/__sapper__/
+.esm-cache
+.env
+.env.*
+!.env.example
+!.env.enc
+/_hidden
+/src/routes/_refresh.svelte
+
+/node_modules
+!/src/node_modules
+/src/node_modules/@sapper
+/firebase.json
+/src/routes/admin/_components/dist
