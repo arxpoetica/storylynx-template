@@ -33,7 +33,7 @@ app.use(sapper.middleware({
 		const token = getToken(req)
 		return {
 			user: token.unauthorized ? null : token,
-			cookie: req.cookies.jm,
+			cookie: req.cookies.lynx,
 		}
 	},
 }))
