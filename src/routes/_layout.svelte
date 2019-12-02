@@ -103,13 +103,9 @@
 		margin: 0 auto;
 		width: 100%;
 	}
-	.layout-outer {
-		// grid-row: top;
-		background-color: white;
-		.layout-contact & {
-			background-color: $orange-light;
-		}
-	}
+	// .layout-outer {
+	// 	grid-row: top;
+	// }
 	.layout-inner {
 		height: 100%;
 	}

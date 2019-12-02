@@ -36,7 +36,7 @@ $button-black: #323335;
 	&:hover,
 	&:focus {
 		background-color: $button-black;
-		color: white;
+		color: $white;
 	}
 	&.tiny {
 		padding: 4rem 8rem;
@@ -57,39 +57,30 @@ $button-black: #323335;
 		font-size: 34rem;
 	}
 	&.success {
-		background-color: $green-main;
+		background-color: $success-1;
 		color: $white;
 		&:hover,
 		&:focus {
-			background-color: $green-d2;
+			background-color: $success-2;
 			color: $white;
 		}
 	}
 	&.warning {
-		background-color: $yellow-main;
+		background-color: $warning-1;
 		color: $button-black;
 		&:hover,
 		&:focus {
-			background-color: $yellow-l3;
+			background-color: $warning-2;
 			color: $button-black;
 		}
 	}
 	&.alert {
-		background-color: $alert;
+		background-color: $alert-1;
 		color: #fefefe;
 		&:hover,
 		&:focus {
-			background-color: $alert-light;
+			background-color: $alert-2;
 			color: #fefefe;
-		}
-	}
-	&.dull {
-		background-color: $gray-6;
-		color: $button-black;
-		&:hover,
-		&:focus {
-			background-color: $gray-5;
-			color: $button-black;
 		}
 	}
 	&.link {
@@ -122,16 +113,14 @@ $button-black: #323335;
 		}
 	}
 	&[disabled] {
-		// background-color: $gray-5;
-		// color: white;
+		background-color: $gray-main;
+		color: $white;
 		cursor: default;
 		pointer-events: none;
 		&:hover,
 		&:focus {
-			// background-color: $gray-5;
-			// color: white;
-			background-color: transparent;
-			color: $button-black;
+			background-color: $gray-main;
+			color: $white;
 		}
 	}
 }

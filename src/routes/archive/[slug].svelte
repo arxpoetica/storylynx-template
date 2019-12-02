@@ -95,9 +95,7 @@
 	}
 	h2 {
 		margin: 0 0 12rem;
-		color: $red-main;
 	}
-
 	.assets-group {
 		max-width: 720rem;
 		margin: 0 auto 100rem;

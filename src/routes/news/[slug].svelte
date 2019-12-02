@@ -195,7 +195,7 @@
 			color: $black;
 			transition: color 0.2s ease-in-out;
 			&:hover {
-				color: $red-main;
+				color: $links;
 			}
 		}
 	}

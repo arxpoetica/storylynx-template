@@ -1,6 +1,6 @@
 html {
 	height: 100%;
-	background-color: #e4e3df;
+	background-color: $layout-1;
 	font: 1px/1.2 $font; // 1rem === 1px in this scenario
 	box-sizing: border-box;
 	text-size-adjust: 100%;
@@ -14,7 +14,7 @@ body {
 	display: flex;
 	min-height: 100%;
 	margin: 0;
-	background-color: #e4e3df;
+	background-color: $layout-1;
 	color: $black;
 	font: 15rem/1.15 $font;
 	letter-spacing: 0.02em;
@@ -26,27 +26,12 @@ body {
 	margin: 0 auto;
 	@media (--small-down) { padding: 0 20rem; }
 }
-// .layout-inner {}
+.layout-inner {
+	background-color: $white;
+}
 .layout-main {
 	padding: 100rem 0;
 	@media (--small-down) { padding: 40rem 0; }
-}
-.chapters {
-	margin: 0 -30rem;
-	@media (--small-down) { margin: 0 -20rem; }
-}
-.chapter {
-	position: relative;
-	z-index: 1;
-}
-.chapter-content {
-	position: relative;
-	margin: 0 auto;
-	// padding: 0 40rem;
-	width: 100%;
-	max-width: $layout-width;
-	z-index: 2;
-	// @media (--small-down) { padding: 0 20rem; }
 }
 // https://css-tricks.com/full-width-containers-limited-width-parents/
 // https://codepen.io/tigt/post/bust-elements-out-of-containers-with-one-line-of-css
