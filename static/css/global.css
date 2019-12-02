@@ -36,6 +36,7 @@ h1, .h1 {
 	font: 300 28rem/1.25 'Muli', sans-serif;
 	letter-spacing: 0.02em;
 	text-transform: uppercase;
+	text-align: center;
 }
 
 h2, .h2 {
@@ -377,10 +378,6 @@ input[type='search'] {
 	-webkit-appearance: none;
 }
 
-[type="checkbox"]:checked, [type="radio"]:checked {
-		background: url('/svg/checkbox.svg') no-repeat 1px 3px #ffffff;
-	}
-
 input[type="checkbox"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime-local"]:focus, input[type="datetime"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="radio"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, select:focus, textarea:focus {
 	border-color: #5b9dd9;
 	box-shadow: 0 0 2px rgba(30, 140, 190, 0.8);
@@ -417,7 +414,6 @@ select {
 	padding: 5rem 15rem 5rem 5rem;
 	font: inherit;
 	color: inherit;
-	background: url('/svg/select-handle-off.svg') no-repeat right -10rem center white;
 	background-origin: content-box;
 	background-size: 8px 11px;
 	border: 1px solid #cbd0d1;
