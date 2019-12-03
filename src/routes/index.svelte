@@ -1,7 +1,41 @@
 <svelte:head><title>{process.env.LYNX_SITE_NAME} - Home</title></svelte:head>
 
-<script>
-</script>
+<h1>{process.env.LYNX_SITE_NAME}</h1>
+<ul>
+	<li><a href="/archive">Visit your archive.</a></li>
+	<li><a href="/news">Check out some news.</a></li>
+</ul>
+
+<!-- <script></script> -->
 
 <style type="text/scss">
+	ul {
+		list-style: none;
+		display: grid;
+		grid-auto-flow: column;
+		grid-gap: 20rem;
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		flex: 1;
+		position: relative;
+		padding: 0 0 100%;
+	}
+	a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		border: 1px solid $gray-light;
+		text-decoration: none;
+		transition: border-color 0.2s ease-in-out;
+		&:hover {
+			border-color: $links;
+		}
+	}
 </style>

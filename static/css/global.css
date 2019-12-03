@@ -844,14 +844,20 @@ body {
 	margin: 0 auto;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 899px) {
 
-.layout-outer { padding: 0 20rem
+.layout-outer { padding: 0
 } }
 
 .layout-inner {
 	background-color: #ffffff;
+	padding: 0 30rem;
 }
+
+@media (max-width: 899px) {
+
+.layout-inner { padding: 0 20rem
+} }
 
 .layout-main {
 	padding: 100rem 0;

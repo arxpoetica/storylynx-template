@@ -24,10 +24,12 @@ body {
 	max-width: $layout-width;
 	padding: 0 30rem;
 	margin: 0 auto;
-	@media (--small-down) { padding: 0 20rem; }
+	@media (--medium-down) { padding: 0; }
 }
 .layout-inner {
 	background-color: $white;
+	padding: 0 30rem;
+	@media (--medium-down) { padding: 0 20rem; }
 }
 .layout-main {
 	padding: 100rem 0;
