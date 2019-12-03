@@ -10,7 +10,8 @@ import babel from 'rollup-plugin-babel'
 import { terser } from 'rollup-plugin-terser'
 import config from 'sapper/config/rollup.js'
 import pkg from './package.json'
-import { preprocess } from '@sapper-dragon/postcss/tools'
+import { set_env_path, preprocess } from '@sapper-dragon/postcss/tools'
+set_env_path('.env')
 
 const dev = process.env.NODE_ENV === 'development'
 const legacy = !!process.env.SAPPER_LEGACY_BUILD
