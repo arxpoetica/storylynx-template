@@ -1,8 +1,8 @@
-# StoryLynx
+# StoryLynx Template
 
 Tell your story through the hyperlynx of the web.
 
-![StoryLynx](./static/img/storylynx.svg)
+![StoryLynx Template](./static/img/storylynx.svg)
 
 ## Setup
 
@@ -16,7 +16,7 @@ Using [degit](https://github.com/Rich-Harris/degit), you can make a copy without
 
 	mkdir my-storylynx
 	cd my-storylynx
-	npx degit arxpoetica/storylynx
+	npx degit arxpoetica/storylynx-template
 
 You're now free to make changes; note these changes will not be tracked unless and are independent of the origin git repo.
 
@@ -28,7 +28,7 @@ First, you'll need to create an empty repository somewhere. For ease of illustra
 
 	git clone git@github.com:arxpoetica/my-storylynx.git
 	cd my-storylynx
-	git remote add upstream git@github.com:arxpoetica/storylynx.git
+	git remote add upstream git@github.com:arxpoetica/storylynx-template.git
 	git pull upstream master
 	git push origin master
 
