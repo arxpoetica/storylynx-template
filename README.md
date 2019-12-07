@@ -38,7 +38,7 @@ This gives you the advantage to pull in upstream template changes as you see fit
 
 ### Environment Variables
 
-StoryLynx uses `rollup-plugin-replace` for environment variable replacement. Any environment variable prefixed with `LYNX_` will automatically be replaced in the code if it's listed as a `process.env.*` variable. For example:
+StoryLynx uses `@rollup/plugin-replace` for environment variable replacement. Any environment variable prefixed with `LYNX_` will automatically be replaced in the code if it's listed as a `process.env.*` variable. For example:
 
 	process.env.LYNX_JWT_SECRET
 
