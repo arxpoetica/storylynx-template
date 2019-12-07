@@ -34,7 +34,8 @@
     "lorem-ipsum": "2.0.3",
     "morgan": "1.9.1",
     "quill": "1.3.7",
-    "sirv": "0.4.2"
+    "sirv": "0.4.2",
+    "storylynx": "link:../storylynx"
   },
   "devDependencies": {
     "@babel/core": "7.7.4",
