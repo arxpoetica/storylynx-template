@@ -18,7 +18,7 @@
 				{/each}
 			</div>
 			{#if itemsCount > pageSize}
-				<Pagination href="/archive" {page} {pageSize} {items} {itemsCount}/>
+				<Pagination href="/archive" {page} {pageSize} {itemsCount}/>
 			{/if}
 		{:else}
 			<h2>No content found.</h2>
