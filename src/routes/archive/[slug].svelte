@@ -41,7 +41,7 @@
 {/if}
 
 <script context="module">
-	import { POST } from '@lynx/utils/loaders'
+	import { POST } from 'storylynx/utils/loaders'
 	export async function preload({ params }) {
 		const asset = await POST('/api/assets/single.json', { slug: params.slug })
 		return { asset }
@@ -50,9 +50,9 @@
 
 <script>
 	export let asset
-	import { src, alt } from '@lynx/utils/basic-utils'
-	import Asset from '@lynx/svelte/Asset.svelte'
-	import Zoom from '@lynx/svelte/archive/Zoom.svelte'
+	import { src, alt } from 'storylynx/utils/basic-utils'
+	import Asset from 'storylynx/svelte/Asset.svelte'
+	import Zoom from 'storylynx/svelte/archive/Zoom.svelte'
 	let zoomshow = false
 
 	$: all_assets = asset.assetLinks.concat(asset.assets)
@@ -72,7 +72,7 @@
 	// THIS IS GROSS THAT I HAVE TO CLEAN IT UP ON BEHALF OF GRAPHCMS, BUT WHATEVS
 	$: html = asset.detail.html ? asset.detail.html.replace(/<p><\/p>/gi, '') : ''
 
-	import Tags from '@lynx/svelte/Tags.svelte'
+	import Tags from 'storylynx/svelte/Tags.svelte'
 	$: decade = asset.year ? Math.floor(asset.year / 10) * 10 : undefined
 	$: tags = asset.tags.map(tag => tag.tag)
 		.concat(decade ? [`${decade}s`] : [])

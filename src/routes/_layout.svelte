@@ -19,14 +19,14 @@
 </div>
 
 <script>
-	import { onMount } from 'svelte'
+	import { onMount, setContext } from 'svelte'
 	import { stores } from '@sapper/app'
 	const { session, page } = stores()
-	import { hyphenate } from '@lynx/utils/basic-utils'
+	setContext('@sapper/app', { get_sapper_stores: () => ({ session, page }) })
 
-	import Header from '@lynx/svelte/layout/Header.svelte'
+	import Header from 'storylynx/svelte/layout/Header.svelte'
 	// import AdminBar from './admin/_components/AdminBar.svelte'
-	import Footer from '@lynx/svelte/layout/Footer.svelte'
+	import Footer from 'storylynx/svelte/layout/Footer.svelte'
 
 	// $: admin = $session.user || process.env.NODE_ENV === 'development'
 	$: admin = $session.user

@@ -64,7 +64,7 @@
 </div>
 
 <script context="module">
-	import { POST } from '@lynx/utils/loaders'
+	import { POST } from 'storylynx/utils/loaders'
 	export async function preload({ params }) {
 		const article = await POST('/api/articles/single.json', { slug: params.slug })
 		return { article }
@@ -73,10 +73,10 @@
 
 <script>
 	import dayjs from 'dayjs'
-	import { src as source } from '@lynx/utils/basic-utils'
+	import { src as source } from 'storylynx/utils/basic-utils'
 	export let article
 
-	import LazyImg from '@lynx/svelte/LazyImg.svelte'
+	import LazyImg from 'storylynx/svelte/LazyImg.svelte'
 	$: asset = article.assets ? article.assets[0] : false
 	$: src = asset ? source(asset, { crop: true, height: Math.floor(asset.height / asset.width * 1000), width: 1000 }) : false
 	$: alt = asset ? asset.summary : 'No description for this image.'
@@ -87,13 +87,13 @@
 	// THIS IS GROSS THAT I HAVE TO CLEAN IT UP ON BEHALF OF GRAPHCMS, BUT WHATEVS
 	$: html = article.detail.html ? article.detail.html.replace(/<p><\/p>/gi, '') : ''
 
-	import Tags from '@lynx/svelte/Tags.svelte'
+	import Tags from 'storylynx/svelte/Tags.svelte'
 	$: tags = article.tags.map(tag => tag.tag)
 
-	import FacebookIcon from '@lynx/svg/social-facebook.svelte'
-	import TwitterIcon from '@lynx/svg/social-twitter.svelte'
-	import LinkedInIcon from '@lynx/svg/social-linkedin.svelte'
-	import EmailIcon from '@lynx/svg/social-email.svelte'
+	import FacebookIcon from 'storylynx/svg/social-facebook.svelte'
+	import TwitterIcon from 'storylynx/svg/social-twitter.svelte'
+	import LinkedInIcon from 'storylynx/svg/social-linkedin.svelte'
+	import EmailIcon from 'storylynx/svg/social-email.svelte'
 	$: safe_headline = encodeURIComponent(article.headline)
 	$: safe_summary = encodeURIComponent(article.subheadline)
 	$: safe_url = encodeURIComponent(`${process.env.LYNX_HOST}/news/${article.slug}`)

@@ -29,7 +29,7 @@
 </div>
 
 <script context="module">
-	import { POST } from '@lynx/utils/loaders'
+	import { POST } from 'storylynx/utils/loaders'
 	export async function preload({ query }) {
 		if (typeof query.page === 'undefined') {
 			return this.redirect(302, 'archive?page=1')
@@ -40,14 +40,14 @@
 </script>
 
 <script>
-	import Pagination from '@lynx/svelte/page-lists/Pagination.svelte'
-	import ArchiveToolbar from '@lynx/svelte/archive/ArchiveToolbar.svelte'
-	import ArchiveItem from '@lynx/svelte/archive/ArchiveItem.svelte'
-	import { query_string_to_json } from '@lynx/utils/api-utils'
+	import Pagination from 'storylynx/svelte/page-lists/Pagination.svelte'
+	import ArchiveToolbar from 'storylynx/svelte/archive/ArchiveToolbar.svelte'
+	import ArchiveItem from 'storylynx/svelte/archive/ArchiveItem.svelte'
+	import { query_string_to_json } from 'storylynx/utils/api-utils'
 	import { onDestroy } from 'svelte'
 	import { stores, goto } from '@sapper/app'
 	const { page: pageStore } = stores()
-	import { search_term } from '@lynx/stores/app-store'
+	import { search_term } from 'storylynx/stores/app-store'
 
 	export let items
 	export let itemsCount = 0

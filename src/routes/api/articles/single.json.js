@@ -1,4 +1,4 @@
-import { cmsQuery } from '@lynx/utils/loaders'
+import { cmsQuery } from 'storylynx/utils/loaders'
 
 export async function post(req, res) {
 	try {

@@ -17,7 +17,7 @@
 </div>
 
 <script context="module">
-	import { POST } from '@lynx/utils/loaders'
+	import { POST } from 'storylynx/utils/loaders'
 	export async function preload({ query }) {
 		if (typeof query.page === 'undefined') {
 			return this.redirect(302, 'news?page=1')
@@ -28,8 +28,8 @@
 </script>
 
 <script>
-	import Pagination from '@lynx/svelte/page-lists/Pagination.svelte'
-	import NewsItem from '@lynx/svelte/news/NewsItem.svelte'
+	import Pagination from 'storylynx/svelte/page-lists/Pagination.svelte'
+	import NewsItem from 'storylynx/svelte/news/NewsItem.svelte'
 	import { stores } from '@sapper/app'
 	const { page: pageStore } = stores()
 
