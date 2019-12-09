@@ -2,7 +2,7 @@
 
 Tell your story through the hyperlynx of the web.
 
-![StoryLynx Template](./static/img/storylynx.svg)
+![StoryLynx Template](./src/node_modules/@themes/lynx/static/img/storylynx.svg)
 
 ## Setup
 

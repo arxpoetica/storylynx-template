@@ -24,7 +24,7 @@ app.use(morgan(development ? 'dev' : 'combined', {
 app.use(helmet())
 app.set('trust proxy', 1) // trust first proxy
 app.use(compression({ threshold: 0 }))
-app.use(sirv('static', { development }))
+app.use(sirv(`src/node_modules/@themes/${process.env.LYNX_TEMPLATE}/static`, { development }))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieParser())

@@ -2,7 +2,7 @@
 !/__sapper__
 /__sapper__/*
 !/__sapper__/build
-!/static
+!/src/node_modules/@themes/*/static
 !/package.json
 !/yarn.lock
 !/Dockerfile

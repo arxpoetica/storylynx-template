@@ -14,5 +14,5 @@
 /src/node_modules/@sapper
 /firebase.json
 /src/routes/admin/_components/dist
-/static/css/global.css
-/static/css/global.css.map
+/src/node_modules/@themes/*/static/css/global.css
+/src/node_modules/@themes/*/static/css/global.css.map
