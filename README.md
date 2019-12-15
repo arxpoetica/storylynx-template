@@ -28,7 +28,7 @@ First, you'll need to create an empty repository somewhere. For ease of illustra
 
 	git clone git@github.com:arxpoetica/my-storylynx.git
 	cd my-storylynx
-	git remote add upstream git@github.com:arxpoetica/storylynx-template.git
+	git remote add upstream https://github.com/arxpoetica/storylynx-template.git
 	git pull upstream master
 	git push origin master
 
