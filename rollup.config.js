@@ -1,10 +1,10 @@
 import { config as lynxConfig } from './config.js'
 const rollupVars = lynxConfig.getAll()
 
-import resolve from 'rollup-plugin-node-resolve'
+import resolve from '@rollup/plugin-node-resolve'
 import replace from '@rollup/plugin-replace'
 import overrides from './rollup-plugin-svelte-overrides.js'
-import commonjs from 'rollup-plugin-commonjs'
+import commonjs from '@rollup/plugin-commonjs'
 import json from '@rollup/plugin-json'
 import svelte from 'rollup-plugin-svelte'
 import babel from 'rollup-plugin-babel'
