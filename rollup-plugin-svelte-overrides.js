@@ -1,14 +1,16 @@
 import path from 'path'
 import { EOL } from 'os'
 import { yellow, red } from 'ansi-colors'
-import { appendFile, readFile } from 'fs-extra'
+import { readFile, writeFile } from 'fs-extra'
 import totalist from 'totalist'
 import CheapWatch from 'cheap-watch'
 
 let overrides_path
 const storylynx_svelte_path = path.join(process.cwd(), '/node_modules/storylynx/svelte')
 const ext_regex = /\.(html|js|postcss)$/
-const files = new Set()
+const postcss_regex = /<style([\S\s]*?)>([\S\s]*?)<\/style>/ig
+const js_regex = /<script>([\S\s]*?)<\/script>/ig
+const files = {}
 let init = false
 
 export default function overrides({ template }) {
@@ -18,9 +20,9 @@ export default function overrides({ template }) {
 			if (!init) {
 				overrides_path = path.join(process.cwd(), `/src/node_modules/@themes/${template}/overrides`)
 
-				await totalist(overrides_path, (name, abs) => {
-					if (/\.(html|js|postcss)$/.test(abs)) {
-						files.add(name)
+				await totalist(overrides_path, async(name, abs) => {
+					if (ext_regex.test(abs)) {
+						await add_file(name)
 					}
 				})
 
@@ -32,41 +34,76 @@ export default function overrides({ template }) {
 				await watch.init()
 				watch.on('+', async({ path: filepath, stats, isNew }) => {
 					if (stats.isFile()) {
-						console.log('~>', yellow(isNew ? 'Adding' : 'Changing'), './' + filepath)
+						console.log('\n~>', yellow(isNew ? 'Adding' : 'Changing'), './' + filepath, '\n')
 						if (isNew) {
-
+							await add_file(filepath)
 						}
-
-						// ...yes, we're mutating the file, but carefully...
-						const file = path.join(storylynx_svelte_path, filepath.replace(ext_regex, '.svelte'))
-						await appendFile(file, EOL, 'utf8')
+						await mutate_and_bump_file(filepath)
 					}
 				})
 				watch.on('-', async({ path: filepath, stats }) => {
 					if (stats.isFile()) {
-						console.log('~>', red('Deleting'), './' + filepath)
+						console.log('\n~>', red('Deleting'), './' + filepath, '\n')
+						const filename = filepath.replace(ext_regex, '')
+						const ext = filepath.match(ext_regex)[0]
+						delete files[filename][ext]
+						if (Object.keys(files[filename]).length === 0) {
+							delete files[filename]
+						}
+						await mutate_and_bump_file(filepath)
 					}
 				})
 			}
 		},
 		async transform(code, id) {
-			if (init && /\/storylynx\/svelte\//.test(id) && /\.svelte$/.test(id)) {
+			if (/\/storylynx\/svelte\//.test(id) && /\.svelte$/.test(id)) {
 				const match = id.split('/storylynx/svelte/')[1].replace(/\.svelte$/, '')
-				const replacers = [...files].filter(file => file.indexOf(match) === 0)
-				for (let replacer of replacers) {
-					const postcss = await readFile(`${overrides_path}/${replacer}`, 'utf8')
-					// TODO: mark the type, right now it's assuming it's `.postcss`
-					code = code.replace(/<style([\S\s]*?)>([\S\s]*?)<\/style>/ig, `<style type="text/scss">${postcss}</style>`)
+				const fileset = files[match]
+				if (fileset) {
+					for (let type in fileset) {
+						const ref = fileset[type]
+						const content = await readFile(`${overrides_path}/${ref}`, 'utf8')
+
+						if (type === '.postcss') {
+							code = code.replace(postcss_regex, `<style type="text/scss">${content}</style>`)
+						} else if (type === '.js') {
+							code = code.replace(js_regex, `<script>${content}</script>`)
+						} else if (type === '.html') {
+							const postcss = code.match(postcss_regex)
+							const js = code.match(js_regex)
+							code = content
+							code += js.length ? js[0] : ''
+							code += postcss.length ? postcss[0] : ''
+						}
+					}
+					return { code, map: null }
 				}
-				return { code }
 			}
 			return null
 		},
 		buildEnd() {
 			if (!init) {
 				init = true
-				// console.log('------ BUILD START INITIALIZED ------')
 			}
 		},
+	}
+}
+
+async function add_file(filepath) {
+	// TODO: explicitly check that this file set can be added because it exists in the engine???
+	const filename = filepath.replace(ext_regex, '')
+	const ext = filepath.match(ext_regex)[0]
+	files[filename] = files[filename] || {}
+	files[filename][ext] = filepath
+}
+
+// ...yes, we're mutating the file, but in a premeditated, controlled fashion...
+async function mutate_and_bump_file(filepath) {
+	filepath = path.join(storylynx_svelte_path, filepath.replace(ext_regex, '.svelte'))
+	const contents = await readFile(filepath, 'utf8')
+	if (contents.endsWith(' ')) {
+		await writeFile(filepath, contents.trim(), 'utf8')
+	} else {
+		await writeFile(filepath, contents + EOL + ' ', 'utf8')
 	}
 }
