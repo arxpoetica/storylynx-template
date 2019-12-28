@@ -3,7 +3,7 @@ const rollupVars = lynxConfig.getAll()
 
 import resolve from '@rollup/plugin-node-resolve'
 import replace from '@rollup/plugin-replace'
-import overrides from './rollup-plugin-svelte-overrides.js'
+import overrides from 'storylynx/utils/rollup-plugin-svelte-overrides'
 import commonjs from '@rollup/plugin-commonjs'
 import json from '@rollup/plugin-json'
 import svelte from 'rollup-plugin-svelte'
