@@ -3,6 +3,7 @@ const rollupVars = lynxConfig.getAll()
 
 import resolve from 'rollup-plugin-node-resolve'
 import replace from '@rollup/plugin-replace'
+import overrides from './rollup-plugin-svelte-overrides.js'
 import commonjs from 'rollup-plugin-commonjs'
 import json from '@rollup/plugin-json'
 import svelte from 'rollup-plugin-svelte'
@@ -24,6 +25,7 @@ export default {
 		input: config.client.input(),
 		output: config.client.output(),
 		plugins: [
+			overrides({ template: process.env.LYNX_TEMPLATE }),
 			replace({
 				'process.browser': true,
 				'process.server': false,
@@ -42,7 +44,6 @@ export default {
 				dedupe,
 			}),
 			commonjs(),
-
 			legacy && babel({
 				extensions: ['.js', '.mjs', '.html', '.svelte', '.svg'],
 				runtimeHelpers: true,
@@ -59,11 +60,9 @@ export default {
 					}],
 				],
 			}),
-
-			!dev && terser({
-				module: true,
-			}),
+			!dev && terser({ module: true }),
 		],
+		watch: { chokidar: true },
 		onwarn,
 	},
 
@@ -89,6 +88,7 @@ export default {
 		external: Object.keys(pkg.dependencies).concat(
 			require('module').builtinModules || Object.keys(process.binding('natives'))
 		),
+		watch: { chokidar: true },
 		onwarn,
 	},
 
