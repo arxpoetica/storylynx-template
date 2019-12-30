@@ -2,7 +2,7 @@
 	<title>{article.headline} | News | {process.env.LYNX_SITE_NAME}</title>
 </svelte:head>
 
-<SlugLayout {article}/>
+<SlugLayout {article}></SlugLayout>
 
 <script context="module">
 	import { preloader } from 'storylynx/svelte/news/SlugLayout.preload.js'

@@ -1,6 +1,6 @@
 <svelte:head><title>{process.env.LYNX_SITE_NAME} - Archive</title></svelte:head>
 
-<IndexLayout {items} {itemsCount} {content_types} {subjects} {pageSize}/>
+<IndexLayout {items} {itemsCount} {content_types} {subjects} {pageSize}></IndexLayout>
 
 <script context="module">
 	import { preloader } from 'storylynx/svelte/archive/IndexLayout.preload.js'

@@ -1,6 +1,6 @@
 <svelte:head><title>{process.env.LYNX_SITE_NAME} - News</title></svelte:head>
 
-<IndexLayout {items} {pageSize} {itemsCount}/>
+<IndexLayout {items} {pageSize} {itemsCount}></IndexLayout>
 
 <script context="module">
 	import { preloader } from 'storylynx/svelte/news/IndexLayout.preload.js'
