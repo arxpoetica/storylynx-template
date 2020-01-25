@@ -1,8 +1,8 @@
 <svelte:head>
-	<title>{asset.title} | Assets | {process.env.LYNX_SITE_NAME}</title>
+	<title>{asset_group.title} | Assets | {process.env.LYNX_SITE_NAME}</title>
 </svelte:head>
 
-<SlugLayout {asset}></SlugLayout>
+<SlugLayout {asset_group}></SlugLayout>
 
 <script context="module">
 	import { preloader } from 'storylynx/svelte/archive/SlugLayout.preload.js'
@@ -11,5 +11,5 @@
 
 <script>
 	import SlugLayout from 'storylynx/svelte/archive/SlugLayout.svelte'
-	export let asset
+	export let asset_group
 </script>
