@@ -2,7 +2,7 @@
 
 <h1>{process.env.LYNX_SITE_NAME}</h1>
 <ul>
-	<li><a href="/archive">Visit your archive.</a></li>
+	<li><a href="/assets">Visit your assets archive.</a></li>
 	<li><a href="/posts">Check out some posts.</a></li>
 </ul>
 

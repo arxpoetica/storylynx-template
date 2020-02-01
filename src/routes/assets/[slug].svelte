@@ -5,11 +5,11 @@
 <SlugLayout {asset_group}></SlugLayout>
 
 <script context="module">
-	import { preloader } from 'storylynx/svelte/archive/SlugLayout.preload.js'
+	import { preloader } from 'storylynx/svelte/assets/SlugLayout.preload.js'
 	export const preload = preloader
 </script>
 
 <script>
-	import SlugLayout from 'storylynx/svelte/archive/SlugLayout.svelte'
+	import SlugLayout from 'storylynx/svelte/assets/SlugLayout.svelte'
 	export let asset_group
 </script>
