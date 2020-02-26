@@ -3,7 +3,8 @@ const rollupVars = lynxConfig.getAll()
 
 import resolve from '@rollup/plugin-node-resolve'
 import replace from '@rollup/plugin-replace'
-import overrides from 'storylynx/utils/rollup-plugin-svelte-overrides'
+import inject_templates from 'storylynx/utils/rollup-plugin-inject-templates'
+import svelte_overrides from 'storylynx/utils/rollup-plugin-svelte-overrides'
 import commonjs from '@rollup/plugin-commonjs'
 import json from '@rollup/plugin-json'
 import svelte from 'rollup-plugin-svelte'
@@ -25,7 +26,8 @@ export default {
 		input: config.client.input(),
 		output: config.client.output(),
 		plugins: [
-			overrides({ template: process.env.LYNX_TEMPLATE }),
+			svelte_overrides({ template: process.env.LYNX_TEMPLATE }),
+			inject_templates({ template: process.env.LYNX_TEMPLATE, domain: 'client' }),
 			replace({
 				'process.browser': true,
 				'process.server': false,
@@ -70,6 +72,7 @@ export default {
 		input: config.server.input(),
 		output: config.server.output(),
 		plugins: [
+			inject_templates({ template: process.env.LYNX_TEMPLATE, domain: 'server' }),
 			replace({
 				'process.browser': false,
 				'process.server': true,
