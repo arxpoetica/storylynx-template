@@ -44,7 +44,7 @@ StoryLynx uses `@rollup/plugin-replace` for environment variable replacement. An
 
 Is replaced with with a JWT secret.
 
-`process.env.NODE_ENV` and `process.env.PORT` are the only non-prefixed variables to also be replaced.
+`process.env.NODE_ENV` is the only non-prefixed variables replaced.
 
 ### Environment Keyring
 

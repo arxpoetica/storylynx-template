@@ -1,3 +1,6 @@
+import { config } from 'dotenv'
+config()
+// console.log(process.env)
 import { green, red } from 'ansi-colors'
 import express from 'express'
 import morgan from 'morgan'

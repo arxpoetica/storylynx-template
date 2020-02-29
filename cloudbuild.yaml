@@ -11,7 +11,9 @@ steps:
   - --key=yourkey
 
 # project install
-- name: 'gcr.io/cloud-builders/yarn'
+# - name: mhart/alpine-node:13
+- name: node:13
+  entrypoint: yarn
   args: ['install']
 
 # # run tests
@@ -19,7 +21,9 @@ steps:
 #   args: ['run', 'test:unit-or-whatever']
 
 # sapper build
-- name: 'gcr.io/cloud-builders/yarn'
+# - name: mhart/alpine-node:13
+- name: node:13
+  entrypoint: yarn
   args: ['run', 'build']
 
 # build the container image
@@ -32,7 +36,7 @@ steps:
 
 # deploy the container image to cloud run
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'yourproject', '--image', 'gcr.io/$PROJECT_ID/yourproject', '--region', 'us-central1', '--platform', 'managed']
+  args: ['run', 'deploy', 'yourproject', '--image', 'gcr.io/$PROJECT_ID/yourproject', '--region', 'us-central1', '--platform', 'managed']
 
 images:
 - gcr.io/$PROJECT_ID/yourproject
