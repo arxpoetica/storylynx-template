@@ -14,5 +14,5 @@
 	const { session, page, goto } = stores()
 	setContext('@sapper/app', { get_sapper_stores: () => ({ session, page, goto }) })
 	import LayoutMain from 'storylynx/svelte/layout/LayoutMain.svelte'
-	import LayoutStories from 'storylynx/svelte/layout/LayoutStories.svelte'
+	import LayoutStories from 'storylynx/svelte/stories/LayoutStories.svelte'
 </script>

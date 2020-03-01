@@ -1,2 +1,2 @@
-import single from 'storylynx/api/modals/single.post.js'
+import single from 'storylynx/api/stories/single.post.js'
 export const post = single
