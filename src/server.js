@@ -9,7 +9,7 @@ import compression from 'compression'
 import sirv from 'sirv'
 import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
-import { getToken } from 'storylynx/services/auth-helpers'
+import { getToken } from 'storylynx/utils/auth-utils.js'
 import * as sapper from '@sapper/server'
 
 const { PORT, NODE_ENV } = process.env
