@@ -3,14 +3,8 @@
 	<svelte:component this={Refresh}/>
 {/if} -->
 
-{#if $page.path.indexOf('/stories') === 0}
-	<LayoutStories>
-		<slot></slot>
-	</LayoutStories>
-{:else if $page.path.indexOf('/admin') === 0}
-	<LayoutAdmin>
-		<slot></slot>
-	</LayoutAdmin>
+{#if $page.path.indexOf('/stories') === 0 || $page.path.indexOf('/admin') === 0}
+	<slot></slot>
 {:else}
 	<LayoutMain>
 		<slot></slot>
@@ -26,8 +20,6 @@
 	// LEAVE ABOVE AS IS -- REMOVING WILL BREAK THE APP
 
 	import LayoutMain from 'storylynx/svelte/layout/LayoutMain.svelte'
-	import LayoutStories from 'storylynx/svelte/stories/LayoutStories.svelte'
-	import LayoutAdmin from 'storylynx/svelte/admin/LayoutAdmin.svelte'
 
 	// let Refresh = false
 	// onMount(async () => {
