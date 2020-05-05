@@ -64,6 +64,7 @@ export default {
 			!dev && terser({ module: true }),
 		],
 		watch: { chokidar: true },
+		preserveSymlinks: true,
 		preserveEntrySignatures: false,
 		onwarn,
 	},
@@ -92,6 +93,7 @@ export default {
 			require('module').builtinModules || Object.keys(process.binding('natives'))
 		),
 		watch: { chokidar: true },
+		preserveSymlinks: true,
 		onwarn,
 	},
 
