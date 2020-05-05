@@ -1,3 +1,7 @@
+<!-- DO NOT DELETE THIS FILE OR ANY FILES IN THE /src/routes/admin FOLDER --
+	 DOING SO WILL BREAK THE CMS / ADMIN CAPABILITIES OF YOUR APP -->
+
+
 <div class="admin-header">
 	<h1>Media Library</h1>
 </div>

@@ -55,7 +55,7 @@
 					mimeType: file.mimetype, // note the case difference
 				}))
 				// TODO: tag as recent uploads
-				const { items, itemsCount } = await POST('/api/admin/media/attach.json', { assets })
+				const { items, items_count } = await POST('/api/admin/media/attach.json', { assets })
 				tab = 'select'
 			},
 		})

@@ -1,8 +1,8 @@
 <div class="media-select">
 	<div class="tools">
 		<div class="pagination">
-			{#if itemsCount > pageSize}
-				<Pagination bind:page {pageSize} {items} {itemsCount}/>
+			{#if items_count > page_size}
+				<Pagination bind:page {page_size} {items} {items_count}/>
 			{/if}
 		</div>
 		<div class="buttons">
@@ -64,16 +64,16 @@
 	let page = 1
 	let priorPage
 	let items = []
-	let itemsCount = 0
-	let pageSize = 0
+	let items_count = 0
+	let page_size = 0
 	beforeUpdate(async() => {
 		if (page !== priorPage) {
 			priorPage = page
 			items = []
 			const res = await POST('/api/admin/media/page.json', { page })
 			items = res.items
-			itemsCount = res.itemsCount
-			pageSize = res.pageSize
+			items_count = res.items_count
+			page_size = res.page_size
 		}
 	})
 	async function toggleItem(item) {

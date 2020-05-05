@@ -11,5 +11,5 @@
 </script>
 
 <script>
-	import LayoutAdmin from 'storylynx/svelte/admin/LayoutAdmin.svelte'
+	import LayoutAdmin from 'storylynx/svelte/admin/layout/LayoutAdmin.svelte'
 </script>

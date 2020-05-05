@@ -1,3 +1,7 @@
+<!-- DO NOT DELETE THIS FILE OR ANY FILES IN THE /src/routes/admin FOLDER --
+	 DOING SO WILL BREAK THE CMS / ADMIN CAPABILITIES OF YOUR APP -->
+
+
 <!-- {#if copy}
 	<div class="admin-header">
 		<h1>{$page.params.id === 'new' ? 'Create' : 'Edit'} Asset</h1>
@@ -39,7 +43,7 @@
 	</div>
 	<div class="admin-side">
 		<div class="accordion">
-			<DetailsPanel bind:status={copy.status} bind:datetime={copy.publishedDatetime}/>
+			<DetailsPanel bind:status={copy.status} bind:datetime={copy.published}/>
 			<PermalinkPanel bind:slug={copy.slug} path="/asset/" title={copy.title}/>
 			<MediaPanel bind:copy/>
 			<TagsPanel bind:tags bind:copy/>
@@ -54,7 +58,7 @@
 			const { tags } = await GET('/api/tags/asset-all.json')
 			return { asset: {
 				status: '',
-				publishedDatetime: (new Date()).toISOString(),
+				published: (new Date()).toISOString(),
 				title: '',
 				slug: '',
 				html: '',

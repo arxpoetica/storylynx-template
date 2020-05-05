@@ -1,6 +1,9 @@
+<!-- DO NOT DELETE THIS FILE OR ANY FILES IN THE /src/routes/admin FOLDER --
+	 DOING SO WILL BREAK THE CMS / ADMIN CAPABILITIES OF YOUR APP -->
+
 <!-- {#if copy}
 	<div class="admin-header">
-		<h1>{$page.params.id === 'new' ? 'Create' : 'Edit'} Article</h1>
+		<h1>{$page.params.id === 'new' ? 'Create' : 'Edit'} Post</h1>
 		<div class="buttons">
 			{#if $page.params.id === 'new'}
 				<button class="button warning" {disabled} on:click={() => save('DRAFT')}>Save as Draft</button>
@@ -17,7 +20,7 @@
 					</button>
 				{/if}
 				<button class="button success" {disabled} on:click={() => save('PUBLISHED')}>
-					{article.status === 'PUBLISHED' ? 'Update' : 'Publish'}
+					{post.status === 'PUBLISHED' ? 'Update' : 'Publish'}
 				</button>
 			{/if}
 		</div>
@@ -39,7 +42,7 @@
 	</div>
 	<div class="admin-side">
 		<div class="accordion">
-			<DetailsPanel bind:status={copy.status} bind:datetime={copy.publishedDatetime}/>
+			<DetailsPanel bind:status={copy.status} bind:datetime={copy.published}/>
 			<PermalinkPanel bind:slug={copy.slug} path="/news/" title={copy.title}/>
 			<MediaPanel bind:copy/>
 			<TagsPanel bind:tags bind:copy/>
@@ -51,10 +54,10 @@
 	import { GET, POST } from '@johnny/utils/loaders'
 	export async function preload({ params }, session) {
 		if (params.id === 'new') {
-			const { tags } = await GET('/api/tags/article-all.json')
-			return { article: {
+			const { tags } = await GET('/api/tags/post-all.json')
+			return { post: {
 				status: '',
-				publishedDatetime: (new Date()).toISOString(),
+				published: (new Date()).toISOString(),
 				title: '',
 				slug: '',
 				html: '',
@@ -63,11 +66,11 @@
 				tags: [],
 			}, tags, bounce: true }
 		}
-		const { article, tags } = await POST('/api/admin/articles/single.json', {
+		const { post, tags } = await POST('/api/admin/posts/single.json', {
 			id: params.id,
 			cookie: session.cookie,
 		})
-		return { article, tags, bounce: true }
+		return { post, tags, bounce: true }
 	}
 </script>
 
@@ -84,7 +87,7 @@
 	import MediaPanel from '../_components/panels/MediaPanel.svelte'
 	import TagsPanel from '../_components/panels/TagsPanel.svelte'
 
-	export let article
+	export let post
 	export let tags
 	export let bounce
 
@@ -92,13 +95,13 @@
 	beforeUpdate(() => {
 		if (bounce) {
 			// see: https://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-deep-clone-an-object-in-javascript
-			copy = JSON.parse(JSON.stringify(article))
+			copy = JSON.parse(JSON.stringify(post))
 			bounce = false
 		}
 	})
 
 	// see: https://stackoverflow.com/questions/1068834/object-comparison-in-javascript
-	$: disabled = copy ? JSON.stringify(article) === JSON.stringify(copy) : true
+	$: disabled = copy ? JSON.stringify(post) === JSON.stringify(copy) : true
 
 	let errors = []
 	async function save(status) {
@@ -114,23 +117,23 @@
 			}
 			const changes = {}
 			for (let key in copy) {
-				if (JSON.stringify(copy[key]) !== JSON.stringify(article[key])) {
+				if (JSON.stringify(copy[key]) !== JSON.stringify(post[key])) {
 					changes[key] = copy[key]
 				}
 			}
 
 			const data = { changes }
 			const isNew = $page.params.id === 'new'
-			if (!isNew) { data.id = article.id }
-			const savedArticle = await POST(`/api/admin/articles/${isNew ? 'create' : 'update'}.json`, data)
+			if (!isNew) { data.id = post.id }
+			const savedPost = await POST(`/api/admin/posts/${isNew ? 'create' : 'update'}.json`, data)
 
-			if (savedArticle.error) {
+			if (savedPost.error) {
 				return errors = ['Something went wrong. Please try again or contact the site administrator if you continue to experience problems.']
 			} else if (isNew) {
-				goto(`/admin/articles/${savedArticle.id}`, { replaceState: true })
+				goto(`/admin/posts/${savedPost.id}`, { replaceState: true })
 			} else {
-				article = savedArticle
-				copy = JSON.parse(JSON.stringify(article))
+				post = savedPost
+				copy = JSON.parse(JSON.stringify(post))
 				// disabled = true
 			}
 		}
@@ -139,7 +142,7 @@
 		if (window.confirm('Discard all changes? Careful: This is permanent and cannot be reversed.')) {
 			copy = false // unfortunate rejiggering
 			setTimeout(() => {
-				copy = JSON.parse(JSON.stringify(article))
+				copy = JSON.parse(JSON.stringify(post))
 				disabled = true
 			}, 0)
 		}

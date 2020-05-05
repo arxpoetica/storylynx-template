@@ -1,6 +1,6 @@
 <Panel title="Permalink" type="permalink">
 	<label>
-		<em>(Must be unique. If empty, url will derive from article title.)</em>
+		<em>(Must be unique. If empty, url will derive from post title.)</em>
 		<input on:blur={setSlug} bind:value={slug} type="text"/>
 	</label>
 	<ul>

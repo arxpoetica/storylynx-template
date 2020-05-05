@@ -1,5 +1,8 @@
+<!-- DO NOT DELETE THIS FILE OR ANY FILES IN THE /src/routes/admin FOLDER --
+	 DOING SO WILL BREAK THE CMS / ADMIN CAPABILITIES OF YOUR APP -->
+
 <div class="admin-header">
-	<h1>Edit News Article</h1>
+	<h1>Edit Post</h1>
 	<!-- <div class="buttons">
 		{#if !disabled}
 			<button class="button blank" on:click={event => discard()}>
@@ -12,7 +15,7 @@
 			</button>
 		{/if}
 		<button class="button success" {disabled} on:click={event => save(event, 'PUBLISHED')}>
-			{article.status === 'PUBLISHED' ? 'Update' : 'Publish'}
+			{post.status === 'PUBLISHED' ? 'Update' : 'Publish'}
 		</button>
 	</div> -->
 </div>
@@ -32,7 +35,7 @@
 </div>
 <div class="admin-side">
 	<!-- <div class="accordion">
-		<DetailsPanel bind:status={copy.status} bind:datetime={copy.publishedDatetime}/>
+		<DetailsPanel bind:status={copy.status} bind:datetime={copy.published}/>
 		<PermalinkPanel bind:slug={copy.slug}/>
 		<MediaPanel bind:copy/>
 		<TagsPanel bind:tags bind:copy/>
