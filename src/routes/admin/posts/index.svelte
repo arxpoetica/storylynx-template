@@ -5,7 +5,7 @@
 	<title>Posts | Admin | {process.env.LYNX_SITE_NAME}</title>
 </svelte:head>
 
-<PostsLayout {items} {items_count}/>
+<PostsLayout {items} {items_count} {...$$props}/>
 
 <script context="module">
 	import { preloader } from 'storylynx/svelte/admin/posts/PostsLayout.preload.js'
