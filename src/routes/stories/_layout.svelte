@@ -3,5 +3,5 @@
 </LayoutStories>
 
 <script>
-	import LayoutStories from 'storylynx/svelte/stories/LayoutStories.svelte'
+	import LayoutStories from 'storylynx/svelte/stories/layout/LayoutStories.svelte'
 </script>
