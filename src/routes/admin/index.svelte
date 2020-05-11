@@ -5,13 +5,13 @@
 	<title>Home | Admin | {process.env.LYNX_SITE_NAME}</title>
 </svelte:head>
 
-<AdminLayout/>
+<DashboardLayout/>
 
 <!-- <script context="module">
-	import { preloader } from 'storylynx/svelte/admin/AdminLayout.preload.js'
+	import { preloader } from 'storylynx/svelte/admin/DashboardLayout.preload.js'
 	export const preload = preloader
 </script> -->
 
 <script>
-	import AdminLayout from 'storylynx/svelte/admin/AdminLayout.svelte'
+	import DashboardLayout from 'storylynx/svelte/admin/DashboardLayout.svelte'
 </script>
