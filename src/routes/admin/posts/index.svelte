@@ -5,15 +5,4 @@
 	<title>Posts | Admin | {process.env.LYNX_SITE_NAME}</title>
 </svelte:head>
 
-<PostsLayout {items} {items_count} {...$$props}/>
-
-<script context="module">
-	import { preloader } from 'storylynx/svelte/admin/posts/PostsLayout.preload.js'
-	export const preload = preloader
-</script>
-
-<script>
-	import PostsLayout from 'storylynx/svelte/admin/posts/PostsLayout.svelte'
-	export let items
-	export let items_count
-</script>
+<!-- <script></script> -->
