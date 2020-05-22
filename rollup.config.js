@@ -94,6 +94,7 @@ export default {
 		),
 		watch: { chokidar: true },
 		preserveSymlinks: true,
+		preserveEntrySignatures: false,
 		onwarn,
 	},
 
