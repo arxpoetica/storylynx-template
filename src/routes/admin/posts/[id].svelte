@@ -75,7 +75,7 @@
 	import { GET, POST } from '@johnny/utils/loaders'
 	export async function preload({ params }, session) {
 		if (params.id === 'new') {
-			const { tags } = await GET('/api/tags/post-all.json')
+			const { tags } = await GET('/api/public/tags/post-all.json')
 			return { post: {
 				status: '',
 				published: (new Date()).toISOString(),
