@@ -35,7 +35,7 @@ module.exports = {
 		'max-params': ['error', { max: 4 }],
 		'max-statements-per-line': ['error', { max: 2 }],
 		'no-extra-semi': 'error',
-		'object-property-newline': ['error', { allowMultiplePropertiesPerLine: true }],
+		'object-property-newline': ['error', { allowMultiplePropertiesPerLine: true }], // eslint-disable-line
 		'one-var': ['error', 'never'],
 		quotes: ['error', 'single'],
 		semi: ['error', 'never'],
