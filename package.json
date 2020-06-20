@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "volta": {
-    "node": "14.4.0"
+    "node": "13.14.0"
   },
   "scripts": {
     "lynx-init": "dotenv lynx init",
