@@ -30,7 +30,7 @@
     "helmet": "3.23.1",
     "morgan": "1.10.0",
     "sirv": "1.0.1",
-    "storylynx": "git+https://git@github.com/arxpoetica/storylynx.git"
+    "storylynx": "arxpoetica/storylynx#master"
   },
   "devDependencies": {
     "@babel/core": "7.10.3",
