@@ -15,6 +15,7 @@
     "debug": "sapper dev --inspect",
     "debug:build": "node --inspect --inspect-brk ./node_modules/sapper/sapper build --legacy",
     "keyring": "gcloud kms encrypt --plaintext-file=.env.enc-source --ciphertext-file=.env.enc --location=global --keyring=yourkeyring --key=yourkey",
+    "cleanup": "rm -rf node_modules && rm yarn.lock && yarn cache clean && yarn install",
     "deploy": "gcloud builds submit --config=cloudbuild.yaml .",
     "bake": "run-s keyring deploy",
     "watch": "trim watch --svgo --postcss --env=.env"
