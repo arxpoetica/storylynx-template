@@ -24,7 +24,8 @@ const app = express()
 app.use(morgan(development ? 'dev' : 'combined', {
 	skip: (req, res) => development ? false : res.statusCode < 400,
 }))
-app.use(helmet())
+// SEE: https://github.com/helmetjs/helmet/wiki/Helmet-4-upgrade-guide#there-is-now-a-default-policy
+app.use(helmet({ contentSecurityPolicy: false }))
 app.set('trust proxy', 1) // trust first proxy
 app.use(compression({ threshold: 0 }))
 app.use(sirv(`src/node_modules/@themes/${process.env.LYNX_TEMPLATE}/static`, { development }))
