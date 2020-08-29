@@ -19,9 +19,9 @@ const dev = process.env.NODE_ENV === 'development'
 const legacy = !!process.env.SAPPER_LEGACY_BUILD
 
 const onwarn = (warning, onwarn) =>
-	(warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message))
-	|| (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message))
-	|| onwarn(warning)
+	(warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message)) ||
+	(warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) ||
+	onwarn(warning)
 
 export default {
 	client: {
@@ -67,7 +67,6 @@ export default {
 			!dev && terser({ module: true }),
 		],
 		watch: { chokidar: true },
-		preserveSymlinks: true,
 		preserveEntrySignatures: false,
 		onwarn,
 	},
@@ -93,12 +92,9 @@ export default {
 			resolve({ dedupe: ['svelte'] }),
 			commonjs(),
 		],
-		external: Object.keys(pkg.dependencies).concat(
-			require('module').builtinModules || Object.keys(process.binding('natives'))
-		),
+		external: Object.keys(pkg.dependencies).concat(require('module').builtinModules),
 		watch: { chokidar: true },
-		preserveSymlinks: true,
-		preserveEntrySignatures: false,
+		preserveEntrySignatures: 'strict',
 		onwarn,
 	},
 
