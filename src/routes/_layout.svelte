@@ -11,16 +11,26 @@
 	</LayoutMain>
 {/if}
 
-<script>
+<script context="module">
 	// LEAVE BELOW AS IS -- REMOVING WILL BREAK THE APP
-	import { onMount, setContext } from 'svelte'
-	import { stores, goto } from '@sapper/app'
-	const { session, page } = stores()
-	setContext('@sapper/app', { get_sapper_stores: () => ({ session, page, goto }) })
+	import { goto } from '@sapper/app'
+	import { session as app_session, page as app_page, goto as app_goto } from 'storylynx/stores/app-store.js'
+	export async function preload(page, session) {
+		app_session.set(session)
+		app_page.set(page)
+		app_goto.set(goto)
+		return
+	}
 	// LEAVE ABOVE AS IS -- REMOVING WILL BREAK THE APP
+</script>
+
+<script>
+	import { stores } from '@sapper/app'
+	const { page } = stores()
 
 	import LayoutMain from 'storylynx/svelte/layout/LayoutMain.svelte'
 
+	// import { onMount } from 'svelte'
 	// let Refresh = false
 	// onMount(async () => {
 	// 	if (process.env.NODE_ENV === 'development') {
