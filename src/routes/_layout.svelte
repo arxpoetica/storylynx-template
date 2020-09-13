@@ -25,8 +25,12 @@
 </script>
 
 <script>
+	// LEAVE BELOW AS IS -- REMOVING WILL BREAK THE APP
 	import { stores } from '@sapper/app'
 	const { page } = stores()
+	import { page as app_page_alt } from 'storylynx/stores/app-store.js'
+	page.subscribe(value => $app_page_alt = value)
+	// LEAVE ABOVE AS IS -- REMOVING WILL BREAK THE APP
 
 	import LayoutMain from 'storylynx/svelte/layout/LayoutMain.svelte'
 
