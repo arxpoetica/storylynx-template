@@ -92,7 +92,7 @@ export default {
 			resolve({ dedupe: ['svelte'] }),
 			commonjs(),
 		],
-		external: Object.keys(pkg.dependencies).concat(require('module').builtinModules),
+		external: Object.keys(pkg.dependencies).concat(require('module').builtinModules).concat(['@google-cloud/storage']),
 		watch: { chokidar: true },
 		preserveEntrySignatures: 'strict',
 		onwarn,
