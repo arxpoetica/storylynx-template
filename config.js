@@ -27,6 +27,10 @@ export const config = {
 					this.cached[`process.env.${key}`] = JSON.stringify(process.env[key])
 				}
 			}
+			if (process.env.GOOGLE_APPLICATION_CREDENTIALS) {
+				this.cached['process.env.GOOGLE_APPLICATION_CREDENTIALS']
+					= JSON.stringify(process.env.GOOGLE_APPLICATION_CREDENTIALS)
+			}
 			this.cached['process.env.NODE_ENV'] = JSON.stringify(process.env.NODE_ENV)
 		}
 

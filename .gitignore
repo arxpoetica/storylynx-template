@@ -16,3 +16,4 @@
 /src/routes/admin/_components/dist
 /src/node_modules/@themes/*/static/css/global.css
 /src/node_modules/@themes/*/static/css/global.css.map
+/keyfile-dev.json
