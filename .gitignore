@@ -6,6 +6,7 @@
 .env.*
 !.env.example
 !.env.enc
+cors.json
 /_hidden
 /src/routes/_refresh.svelte
 

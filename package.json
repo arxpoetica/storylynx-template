@@ -18,6 +18,7 @@
     "cleanup": "rm -rf node_modules && rm yarn.lock && yarn cache clean && yarn install",
     "deploy": "gcloud builds submit --config=cloudbuild.yaml .",
     "bake": "run-s keyring deploy",
+    "cors": "gsutil cors set cors.json gs://storylynx-asset-loader",
     "watch": "trim watch --svgo --postcss --env=.env"
   },
   "dependencies": {
