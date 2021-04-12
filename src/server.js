@@ -29,7 +29,7 @@ app.use(helmet({ contentSecurityPolicy: false }))
 app.set('trust proxy', 1) // trust first proxy
 app.use(compression({ threshold: 0 }))
 app.use(sirv(`src/node_modules/@themes/${process.env.LYNX_TEMPLATE}/static`, { development }))
-app.use(bodyParser.json())
+app.use(bodyParser.json({ limit: '50mb' }))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieParser())
 app.use(sapper.middleware({
