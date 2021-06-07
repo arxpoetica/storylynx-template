@@ -32,7 +32,8 @@
     "helmet": "4.1.0",
     "morgan": "1.10.0",
     "sirv": "1.0.6",
-    "storylynx": "arxpoetica/storylynx"
+    "storylynx": "arxpoetica/storylynx",
+    "storylynx-api-graphcms": "arxpoetica/storylynx-api-graphcms"
   },
   "devDependencies": {
     "@babel/core": "7.11.4",
