@@ -1,6 +1,7 @@
 .DS_Store
 /.vscode
-/__sapper__/
+/.svelte-kit
+/package
 .esm-cache
 .env
 .env.*
@@ -8,13 +9,10 @@
 !.env.enc
 cors.json
 /_hidden
-/src/routes/_refresh.svelte
 
 /node_modules
-!/src/node_modules
-/src/node_modules/@sapper
 /firebase.json
-/src/routes/admin/_components/dist
-/src/node_modules/@themes/*/static/css/global.css
-/src/node_modules/@themes/*/static/css/global.css.map
+# /src/routes/admin/_components/dist
+/src/lib/@themes/*/static/css/global.css
+/src/lib/@themes/*/static/css/global.css.map
 /keyfile-dev.json

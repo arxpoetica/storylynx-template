@@ -1,7 +1,7 @@
 /*
-!/__sapper__
-/__sapper__/*
-!/__sapper__/build
+!/.svelte-kit
+/.svelte-kit/*
+!/.svelte-kit/build
 !/src/node_modules/@themes/*/static
 !/package.json
 !/yarn.lock

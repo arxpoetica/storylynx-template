@@ -20,7 +20,7 @@ steps:
 # - name: 'gcr.io/cloud-builders/yarn'
 #   args: ['run', 'test:unit-or-whatever']
 
-# sapper build
+# Svelte Kit build
 # - name: mhart/alpine-node:13
 - name: node:13
   entrypoint: yarn
