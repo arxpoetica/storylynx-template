@@ -107,7 +107,7 @@
 	// FIXME: on `onDestroy` remove all stores
 </script>
 
-<style type="text/scss">
+<style lang="scss">
 
 	// ================================================ >>>
 	// ================================================ >>> TEMPLATE DEFAULTS

@@ -22,7 +22,7 @@
 	import { animate_asset } from './_template-helpers.js'
 </script>
 
-<style type="text/scss">
+<style lang="scss">
 	.column {
 		position: relative;
 	}

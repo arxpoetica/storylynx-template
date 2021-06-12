@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>{asset_group.title} | Assets | {process.env.LYNX_SITE_NAME}</title>
+	<title>{asset_group.title} | Assets | {process.env['LYNX_SITE_NAME']}</title>
 </svelte:head>
 
 <IdLayout {asset_group}></IdLayout>

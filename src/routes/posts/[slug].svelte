@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>{post.headline} | Posts | {process.env.LYNX_SITE_NAME}</title>
+	<title>{post.headline} | Posts | {process.env['LYNX_SITE_NAME']}</title>
 </svelte:head>
 
 <SlugLayout {post}></SlugLayout>

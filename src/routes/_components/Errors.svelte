@@ -10,7 +10,7 @@
 	export let errors = []
 </script>
 
-<style type="text/scss">
+<style lang="scss">
 	.errors {
 		margin: 0 0 20rem;
 		padding: 20rem 20rem 20rem 40rem;

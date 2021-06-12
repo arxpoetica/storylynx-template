@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>{process.env.LYNX_SITE_NAME} - {status}</title>
+	<title>{process.env['LYNX_SITE_NAME']} - {status}</title>
 </svelte:head>
 
 <h1>{status}</h1>
@@ -14,7 +14,7 @@
 	const dev = process.env.NODE_ENV === 'development'
 </script>
 
-<style type="text/scss">
+<style lang="scss">
 	h1 {
 		text-align: center;
 		margin: 0 auto;

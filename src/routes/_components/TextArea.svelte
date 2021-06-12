@@ -9,7 +9,7 @@
 	let clientHeight
 </script>
 
-<style type="text/scss">
+<style lang="scss">
 	.textarea {
 		position: relative;
 		font: 16rem/1.4 $mono-font;

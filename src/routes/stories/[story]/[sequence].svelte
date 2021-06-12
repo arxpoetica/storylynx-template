@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Stories | {process.env.LYNX_SITE_NAME}</title>
+	<title>Stories | {process.env['LYNX_SITE_NAME']}</title>
 </svelte:head>
 
 <StoryPage {story}/>

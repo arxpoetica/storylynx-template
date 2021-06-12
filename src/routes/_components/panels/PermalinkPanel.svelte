@@ -25,4 +25,4 @@
 	}
 </script>
 
-<!-- <style type="text/scss"></style> -->
+<!-- <style lang="scss"></style> -->

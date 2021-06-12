@@ -98,7 +98,7 @@
 	}
 </script>
 
-<style type="text/scss">
+<style lang="scss">
 	.media-select {
 		display: flex;
 		flex-direction: column;

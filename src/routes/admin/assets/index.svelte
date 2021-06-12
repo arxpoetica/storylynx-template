@@ -2,7 +2,7 @@
 	 DOING SO WILL BREAK THE CMS / ADMIN CAPABILITIES OF YOUR APP -->
 
 <svelte:head>
-	<title>Archive Assets | Admin | {process.env.LYNX_SITE_NAME}</title>
+	<title>Archive Assets | Admin | {process.env['LYNX_SITE_NAME']}</title>
 </svelte:head>
 
 <!-- <script></script> -->

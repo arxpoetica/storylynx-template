@@ -36,7 +36,7 @@
 	const options = { width: 600, height: 600, crop: true }
 </script>
 
-<style type="text/scss">
+<style lang="scss">
 	.sticky {
 		position: sticky;
 		top: 0;

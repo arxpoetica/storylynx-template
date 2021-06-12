@@ -56,7 +56,7 @@
 	}
 </script>
 
-<style type="text/scss">
+<style lang="scss">
 	.quill-component {
 		margin: 0 0 20rem;
 	}

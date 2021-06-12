@@ -20,7 +20,7 @@
 	const options = { width: 600, height: 600, crop: true }
 </script>
 
-<style type="text/scss">
+<style lang="scss">
 	.photo-grid {
 		width: 100%;
 		margin: 0 auto;

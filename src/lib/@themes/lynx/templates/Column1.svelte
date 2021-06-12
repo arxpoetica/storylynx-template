@@ -17,4 +17,4 @@
 	import { animate_asset } from './_template-helpers.js'
 </script>
 
-<!-- <style type="text/scss"></style> -->
+<!-- <style lang="scss"></style> -->

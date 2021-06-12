@@ -95,7 +95,7 @@
 	}
 </script>
 
-<style type="text/scss">
+<style lang="scss">
 	// .datetime-picker {
 	// }
 	.years {

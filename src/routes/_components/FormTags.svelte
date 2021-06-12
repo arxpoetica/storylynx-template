@@ -41,7 +41,7 @@
 	}
 </script>
 
-<style type="text/scss">
+<style lang="scss">
 	.tags {
 		display: flex;
 		flex-wrap: wrap;

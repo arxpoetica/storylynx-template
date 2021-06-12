@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Login | {process.env.LYNX_SITE_NAME}</title>
+	<title>Login | {process.env['LYNX_SITE_NAME']}</title>
 </svelte:head>
 
 <LoginLayout/>
@@ -13,4 +13,4 @@
 	import LoginLayout from 'storylynx/svelte/auth/LoginLayout.svelte'
 </script>
 
-<!-- <style type="text/scss"></style> -->
+<!-- <style lang="scss"></style> -->

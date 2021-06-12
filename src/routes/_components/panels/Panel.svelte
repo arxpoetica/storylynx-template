@@ -31,7 +31,7 @@
 	}
 </script>
 
-<style type="text/scss">
+<style lang="scss">
 	.panel {
 		overflow: hidden;
 		border-bottom: 1px solid $gray-6;

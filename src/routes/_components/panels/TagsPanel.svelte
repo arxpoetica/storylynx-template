@@ -9,4 +9,4 @@
 	export let copy
 </script>
 
-<!-- <style type="text/scss"></style> -->
+<!-- <style lang="scss"></style> -->

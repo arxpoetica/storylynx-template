@@ -41,7 +41,7 @@
 	}
 </script>
 
-<style type="text/scss">
+<style lang="scss">
 	.modal {
 		display: flex;
 		justify-content: center;

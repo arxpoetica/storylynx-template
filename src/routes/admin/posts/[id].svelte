@@ -170,7 +170,7 @@
 	}
 </script>
 
-<style type="text/scss">
+<style lang="scss">
 	.frame {
 		max-width: 800rem;
 		margin: 0 auto;

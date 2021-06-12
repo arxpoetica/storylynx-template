@@ -25,7 +25,7 @@
 	let open = false
 </script>
 
-<style type="text/scss">
+<style lang="scss">
 	.datetime {
 		color: $links;
 		cursor: pointer;

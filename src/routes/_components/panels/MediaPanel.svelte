@@ -52,7 +52,7 @@
 	}
 </script>
 
-<style type="text/scss">
+<style lang="scss">
 	// .buttons {
 	// 	margin: 0 -10rem;
 	// }

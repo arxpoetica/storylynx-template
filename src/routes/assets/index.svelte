@@ -1,4 +1,4 @@
-<svelte:head><title>{process.env.LYNX_SITE_NAME} - Assets</title></svelte:head>
+<svelte:head><title>{process.env['LYNX_SITE_NAME']} - Assets</title></svelte:head>
 
 <IndexLayout {...$$props}/>
 

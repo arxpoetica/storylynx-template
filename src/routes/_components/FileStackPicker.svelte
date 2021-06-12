@@ -63,7 +63,7 @@
 	}
 </script>
 
-<style type="text/scss">
+<style lang="scss">
 	#filestack-picker {
 		height: 100%;
 		// & :global {

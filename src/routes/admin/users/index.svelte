@@ -2,7 +2,7 @@
 	 DOING SO WILL BREAK THE CMS / ADMIN CAPABILITIES OF YOUR APP -->
 
 <svelte:head>
-	<title>Users | Admin | {process.env.LYNX_SITE_NAME}</title>
+	<title>Users | Admin | {process.env['LYNX_SITE_NAME']}</title>
 </svelte:head>
 
 <ViewContent model="Users" {...$$props}>
