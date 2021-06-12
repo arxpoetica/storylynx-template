@@ -6,6 +6,9 @@ export default {
 	kit: {
 		target: '#svelte',
 		// adapter: adapter(),
+		files: {
+			assets: `src/lib/@themes/${process.env.LYNX_TEMPLATE}/static`,
+		},
 		vite: {
 			clearScreen: false,
 		},

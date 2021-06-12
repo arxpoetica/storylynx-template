@@ -1,6 +1,6 @@
-<svelte:head><title>{process.env['LYNX_SITE_NAME']} - Home</title></svelte:head>
+<svelte:head><title>{import.meta.env.VITE_LYNX_SITE_NAME} - Home</title></svelte:head>
 
-<h1>{process.env['LYNX_SITE_NAME']}</h1>
+<h1>{import.meta.env.VITE_LYNX_SITE_NAME}</h1>
 <ul>
 	<li><a href="/assets">Visit your assets archive.</a></li>
 	<li><a href="/posts">Check out some posts.</a></li>
