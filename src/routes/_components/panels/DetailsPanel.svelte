@@ -16,8 +16,7 @@
 </Panel>
 
 <script>
-	import { stores } from '@sapper/app'
-	const { page } = stores()
+	import { page } from '$app/stores'
 	import dayjs from 'dayjs'
 	import Panel from './Panel.svelte'
 	import DateTimePicker from '../DateTimePicker.svelte'

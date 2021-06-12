@@ -77,8 +77,8 @@
 
 <script>
 	import { beforeUpdate } from 'svelte'
-	import { stores, goto } from '@sapper/app'
-	const { page } = stores()
+	import { page } from '$app/stores'
+	import { goto } from '$app/navigation'
 	import { hyphenate } from '@johnny/utils/basic-utils'
 	import Errors from '../_components/Errors.svelte'
 	import Quill from '../_components/Quill.svelte'

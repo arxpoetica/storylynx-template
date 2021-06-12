@@ -1,15 +1,14 @@
-import preprocess from 'svelte-preprocess';
+import sveltePreprocess from './postcss.preprocess.js'
+// import adapter from '@sveltejs/adapter-netlify'
 
 /** @type {import('@sveltejs/kit').Config} */
-const config = {
-	// Consult https://github.com/sveltejs/svelte-preprocess
-	// for more information about preprocessors
-	preprocess: preprocess(),
-
+export default {
 	kit: {
-		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte'
-	}
-};
-
-export default config;
+		target: '#svelte',
+		// adapter: adapter(),
+		vite: {
+			clearScreen: false,
+		},
+	},
+	preprocess: sveltePreprocess,
+}

@@ -46,18 +46,43 @@ Is replaced with with a JWT secret.
 
 `process.env.NODE_ENV` is the only non-prefixed variables replaced.
 
+### Running the app locally
+
+Once you've installed dependencies with `pnpm install`, start a development server:
+
+```bash
+pnpm run dev
+
+# or start the server and open the app in a new browser tab
+pnpm run dev -- --open
+```
+
+## Production
+
 ### Environment Keyring
 
 StoryLynx uses a Google Cloud keyring to encrypt variables and import them directly in an encoded `.env.enc` file. If you need to add, change, or delete any environment variables, make sure the `.env.enc-source` file exists with all appropriate environment variables, then run:
 
-	yarn run keyring
+	pnpm run keyring
 
 That will encrypt the environment variables. Then commit the changes to `.env.enc` to this repo, and deploy as normal.
 
+### Building
+
+Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
+
+```bash
+npm run build
+```
+
+> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
+
 ### Deploying Changes
+
+FIXME: this is outdated...
 
 StoryLynx is currently deployed on Google Cloud Run.
 
 The following command publishes a new target.
 
-	yarn run publish
+	pnpm run publish

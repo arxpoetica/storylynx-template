@@ -13,7 +13,7 @@
 
 <script context="module">
 	// LEAVE BELOW AS IS -- REMOVING WILL BREAK THE APP
-	import { goto } from '@sapper/app'
+	import { goto } from '$app/navigation'
 	import { session as app_session, page as app_page, goto as app_goto } from 'storylynx/stores/app-store.js'
 	export async function preload(page, session) {
 		app_session.set(session)
@@ -26,8 +26,7 @@
 
 <script>
 	// LEAVE BELOW AS IS -- REMOVING WILL BREAK THE APP
-	import { stores } from '@sapper/app'
-	const { page } = stores()
+	import { page } from '$app/stores'
 	import { page as app_page_alt } from 'storylynx/stores/app-store.js'
 	page.subscribe(value => $app_page_alt = value)
 	// LEAVE ABOVE AS IS -- REMOVING WILL BREAK THE APP
