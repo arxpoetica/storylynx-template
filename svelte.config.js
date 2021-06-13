@@ -1,4 +1,4 @@
-import preprocess from './postcss.preprocess.js'
+import { preprocess } from './src/build/postcss.preprocess.js'
 // import adapter from '@sveltejs/adapter-netlify'
 
 /** @type {import('@sveltejs/kit').Config} */

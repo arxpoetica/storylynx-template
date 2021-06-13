@@ -10,6 +10,7 @@
   "scripts": {
     "lynx-init": "dotenv lynx init",
     "dev": "dotenv svelte-kit dev",
+    "watch": "dotenv node -r esm src/build/watch.js",
     "build": "svelte-kit build",
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
@@ -23,13 +24,14 @@
   },
   "dependencies": {
     "ansi-colors": "4.1.1",
-    "esm": "3.2.25",
     "storylynx": "link:../storylynx",
     "storylynx-api-faunadb": "link:../storylynx-api-graphcms"
   },
   "devDependencies": {
     "@sveltejs/kit": "1.0.0-next.115",
+    "cheap-watch": "1.0.3",
     "dotenv-cli": "4.0.0",
+    "esm": "3.2.25",
     "npm-run-all": "4.1.5",
     "postcss": "8.3.2",
     "postcss-custom-media": "7.0.8",
