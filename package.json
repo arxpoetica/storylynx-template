@@ -24,8 +24,8 @@
   "dependencies": {
     "ansi-colors": "4.1.1",
     "esm": "3.2.25",
-    "storylynx": "arxpoetica/storylynx",
-    "storylynx-api-graphcms": "arxpoetica/storylynx-api-graphcms"
+    "storylynx": "link:../storylynx",
+    "storylynx-api-faunadb": "link:../storylynx-api-graphcms"
   },
   "devDependencies": {
     "@sveltejs/kit": "1.0.0-next.115",
@@ -34,7 +34,6 @@
     "postcss": "8.3.2",
     "postcss-custom-media": "7.0.8",
     "postcss-easy-import": "3.0.0",
-    "postcss-functions": "3.0.0",
     "postcss-global-nested": "1.2.0",
     "postcss-hexrgba": "2.0.1",
     "postcss-load-config": "3.0.1",
@@ -50,7 +49,6 @@
     "svelte-check": "2.1.0",
     "svelte-preprocess": "4.7.3",
     "svgo": "1.3.2",
-    "tinycolor2": "1.4.1",
     "tslib": "2.3.0",
     "typescript": "4.3.2"
   }
