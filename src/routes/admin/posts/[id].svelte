@@ -4,8 +4,8 @@
 <SinglePostLayout {post} {tags}/>
 
 <script context="module">
-	import { preloader } from 'storylynx/svelte/admin/posts/SinglePostLayout.preload.js'
-	export const preload = preloader
+	import { loader } from 'storylynx/svelte/admin/posts/SinglePostLayout.load.js'
+	export const load = loader
 </script>
 
 <script>
@@ -73,7 +73,7 @@
 
 <script context="module">
 	import { GET, POST } from '@johnny/utils/loaders'
-	export async function preload({ params }, session) {
+	export async function load({ params }, session) {
 		if (params.id === 'new') {
 			const { tags } = await GET('/api/public/tags/post-all.json')
 			return { post: {

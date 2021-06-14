@@ -6,8 +6,8 @@
 </LayoutAdmin>
 
 <script context="module">
-	import { if_no_user_redirect } from 'storylynx/utils/preload-utils.js'
-	export const preload = if_no_user_redirect
+	import { if_no_user_redirect } from 'storylynx/utils/load-utils.js'
+	export const load = if_no_user_redirect
 </script>
 
 <script>

@@ -5,8 +5,8 @@
 <SlugLayout {post}></SlugLayout>
 
 <script context="module">
-	import { preloader } from 'storylynx/svelte/posts/SlugLayout.preload.js'
-	export const preload = preloader
+	import { loader } from 'storylynx/svelte/posts/SlugLayout.load.js'
+	export const load = loader
 </script>
 
 <script>

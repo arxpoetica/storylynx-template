@@ -5,8 +5,8 @@
 <StoryPage {story}/>
 
 <script context="module">
-	import { preloader } from 'storylynx/svelte/stories/StoryPage.preload.js'
-	export const preload = preloader
+	import { loader } from 'storylynx/svelte/stories/StoryPage.load.js'
+	export const load = loader
 </script>
 
 <script>

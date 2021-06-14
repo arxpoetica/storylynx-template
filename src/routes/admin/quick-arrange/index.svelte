@@ -6,8 +6,8 @@
 </QuickArrangeIndex>
 
 <script context="module">
-	import { preloader } from 'storylynx/svelte/admin/assets/QuickArrangeIndex.preload.js'
-	export const preload = preloader
+	import { loader } from 'storylynx/svelte/admin/assets/QuickArrangeIndex.load.js'
+	export const load = loader
 </script>
 
 <script>

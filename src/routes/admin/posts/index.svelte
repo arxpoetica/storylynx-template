@@ -10,8 +10,8 @@
 </ViewContent>
 
 <script context="module">
-	import { preloader } from 'storylynx/svelte/admin/posts/PostsLayout.preload.js'
-	export const preload = preloader
+	import { loader } from 'storylynx/svelte/admin/posts/PostsLayout.load.js'
+	export const load = loader
 </script>
 
 <script>

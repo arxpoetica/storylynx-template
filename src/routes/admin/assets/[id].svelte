@@ -53,7 +53,7 @@
 
 <script context="module">
 	import { GET, POST } from '@johnny/utils/loaders'
-	export async function preload({ params }, session) {
+	export async function load({ params }, session) {
 		if (params.id === 'new') {
 			const { tags } = await GET('/api/public/tags/asset-all.json')
 			return { asset: {
