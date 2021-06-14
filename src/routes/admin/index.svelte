@@ -2,7 +2,7 @@
 	 DOING SO WILL BREAK THE CMS / ADMIN CAPABILITIES OF YOUR APP -->
 
 <svelte:head>
-	<title>Home | Admin | {process.env['LYNX_SITE_NAME']}</title>
+	<title>Home | Admin | {import.meta.env.VITE_LYNX_SITE_NAME}</title>
 </svelte:head>
 
 <IndexDashboard/>

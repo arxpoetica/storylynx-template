@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Login | {process.env['LYNX_SITE_NAME']}</title>
+	<title>Login | {import.meta.env.VITE_LYNX_SITE_NAME}</title>
 </svelte:head>
 
 <LoginLayout/>

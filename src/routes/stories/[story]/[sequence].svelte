@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Stories | {process.env['LYNX_SITE_NAME']}</title>
+	<title>Stories | {import.meta.env.VITE_LYNX_SITE_NAME}</title>
 </svelte:head>
 
 <StoryPage {story}/>

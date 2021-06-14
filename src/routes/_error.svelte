@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>{process.env['LYNX_SITE_NAME']} - {status}</title>
+	<title>{import.meta.env.VITE_LYNX_SITE_NAME} - {status}</title>
 </svelte:head>
 
 <h1>{status}</h1>
