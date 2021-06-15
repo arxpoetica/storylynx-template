@@ -15,7 +15,7 @@ export const preprocess = {
 
 			if (attributes.lang?.includes('scss') || attributes.type?.includes('scss')) {
 
-				const preImport = `@import 'src/lib/@themes/${process.env.LYNX_TEMPLATE}/postcss/variables';\n`
+				const preImport = `@import 'src/lib/@themes/${process.env.LYNX_TEMPLATE}/postcss/svelte-pre-imports';\n`
 				const result = await postcss(plugins).process(preImport + content, {
 					from: 'src',
 					syntax,
