@@ -22,7 +22,7 @@ specifiers:
   postcss-simple-vars: 5.0.2
   postcss-strip-inline-comments: 0.1.5
   storylynx: link:../storylynx
-  storylynx-api-faunadb: link:../storylynx-api-graphcms
+  storylynx-api-graphcms: link:../storylynx-api-graphcms
   svelte: 3.38.2
   svelte-check: 2.1.0
   svelte-preprocess: 4.7.3
@@ -33,7 +33,7 @@ specifiers:
 dependencies:
   ansi-colors: 4.1.1
   storylynx: link:../storylynx
-  storylynx-api-faunadb: link:../storylynx-api-graphcms
+  storylynx-api-graphcms: link:../storylynx-api-graphcms
 
 devDependencies:
   '@sveltejs/kit': 1.0.0-next.115_svelte@3.38.2
@@ -382,8 +382,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /chokidar/3.5.1:
-    resolution: {integrity: sha512-9+s+Od+W0VJJzawDma/gvBNQqkTiqYTWLuZoyAsivsI4AaWTCzHG06/TMjsf1cYe9Cb97UCEhjz7HvnPk2p/tw==}
+  /chokidar/3.5.2:
+    resolution: {integrity: sha512-ekGhOnNVPgT77r4K/U3GDhu+FQ2S8TnK/s2KbIGXi0SZWuwkZ2QNyfWdZW+TVfn84DpEP7rLeCt2UI6bJ8GwbQ==}
     engines: {node: '>= 8.10.0'}
     dependencies:
       anymatch: 3.1.2
@@ -392,7 +392,7 @@ packages:
       is-binary-path: 2.1.0
       is-glob: 4.0.1
       normalize-path: 3.0.0
-      readdirp: 3.5.0
+      readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
@@ -1818,8 +1818,8 @@ packages:
       path-type: 3.0.0
     dev: true
 
-  /readdirp/3.5.0:
-    resolution: {integrity: sha512-cMhu7c/8rdhkHXWsY+osBhfSy0JikwpHK/5+imo+LpeasTF8ouErHrlYkwT0++njiyuDvc7OFY5T3ukvZ8qmFQ==}
+  /readdirp/3.6.0:
+    resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
     engines: {node: '>=8.10.0'}
     dependencies:
       picomatch: 2.3.0
@@ -2154,7 +2154,7 @@ packages:
       svelte: ^3.24.0
     dependencies:
       chalk: 4.1.1
-      chokidar: 3.5.1
+      chokidar: 3.5.2
       glob: 7.1.7
       import-fresh: 3.3.0
       minimist: 1.2.5

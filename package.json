@@ -20,12 +20,13 @@
     "bake": "run-s keyring deploy",
     "cors": "gsutil cors set cors.json gs://storylynx-asset-loader",
     "cleanup": "rm -rf node_modules && rm pnpm-lock.yaml && pnpm install",
-    "update": "pnpm update --interactive --latest"
+    "update": "pnpm update --interactive --latest",
+    "postinstall": "node src/build/post-install.js"
   },
   "dependencies": {
     "ansi-colors": "4.1.1",
     "storylynx": "link:../storylynx",
-    "storylynx-api-faunadb": "link:../storylynx-api-graphcms"
+    "storylynx-api-graphcms": "link:../storylynx-api-graphcms"
   },
   "devDependencies": {
     "@sveltejs/kit": "1.0.0-next.115",

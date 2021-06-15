@@ -11,6 +11,9 @@ export default {
 		},
 		vite: {
 			clearScreen: false,
+			// build: {
+			// 	polyfillDynamicImport: true,
+			// },
 		},
 	},
 	preprocess,
