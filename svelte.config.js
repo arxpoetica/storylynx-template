@@ -11,6 +11,9 @@ export default {
 		},
 		vite: {
 			clearScreen: false,
+			// optimizeDeps: {
+			// 	include: ['cookie'],
+			// },
 			// build: {
 			// 	polyfillDynamicImport: true,
 			// },

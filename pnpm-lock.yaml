@@ -4,6 +4,7 @@ specifiers:
   '@sveltejs/kit': 1.0.0-next.115
   ansi-colors: 4.1.1
   cheap-watch: 1.0.3
+  cookie: 0.4.1
   dotenv-cli: 4.0.0
   esm: 3.2.25
   npm-run-all: 4.1.5
@@ -21,8 +22,8 @@ specifiers:
   postcss-scss: 3.0.5
   postcss-simple-vars: 5.0.2
   postcss-strip-inline-comments: 0.1.5
-  storylynx: link:../storylynx
-  storylynx-api-graphcms: link:../storylynx-api-graphcms
+  storylynx: github:arxpoetica/storylynx
+  storylynx-api-graphcms: github:arxpoetica/storylynx-api-graphcms
   svelte: 3.38.2
   svelte-check: 2.1.0
   svelte-preprocess: 4.7.3
@@ -32,6 +33,7 @@ specifiers:
 
 dependencies:
   ansi-colors: 4.1.1
+  cookie: 0.4.1
   storylynx: link:../storylynx
   storylynx-api-graphcms: link:../storylynx-api-graphcms
 
@@ -460,6 +462,11 @@ packages:
   /concat-map/0.0.1:
     resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
     dev: true
+
+  /cookie/0.4.1:
+    resolution: {integrity: sha512-ZwrFkGJxUR3EIoXtO+yVE69Eb7KlixbaeAWfBQB9vVsNn/o+Yw69gBWSSDK825hQNdN+wF8zELf3dFNl/kxkUA==}
+    engines: {node: '>= 0.6'}
+    dev: false
 
   /copy-descriptor/0.1.1:
     resolution: {integrity: sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=}
