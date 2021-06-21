@@ -26,6 +26,7 @@
   "dependencies": {
     "ansi-colors": "4.1.1",
     "cookie": "0.4.1",
+    "jsonwebtoken": "8.5.1",
     "storylynx": "github:arxpoetica/storylynx",
     "storylynx-api-graphcms": "github:arxpoetica/storylynx-api-graphcms"
   },
